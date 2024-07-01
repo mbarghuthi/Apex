@@ -19,10 +19,10 @@
 <step outcome="successful">And [Input] I click on &apos;Generalization Direction Button&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;Generalize Button&apos;</step>
 <step outcome="successful">Then [Input] I click on &apos;Generalizations Header Button&apos;</step>
-<step outcome="successful">And [Assertion] Verify text of &apos;Generalization First Subject Text&apos; equals saved value &apos;GeneralizationSubjectText&apos;</step>
-<step outcome="failed" keyword="FAILED">And [Assertion] Verify text of &apos;Generalization First Serial Number&apos; equals saved value &apos;GeneralizationSerialNumberValue&apos;<failure>org.junit.ComparisonFailure: expected:&lt;[&#1635;]&gt; but was:&lt;[3]&gt;</failure></step>
+<step outcome="failed" keyword="FAILED">And [Assertion] Verify text of &apos;Generalization First Subject Text&apos; equals saved value &apos;GeneralizationSubjectText&apos;<failure>org.junit.ComparisonFailure: expected:&lt;[Auto3009869380508700]&gt; but was:&lt;[1]&gt;</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify text of &apos;Generalization First Serial Number&apos; equals saved value &apos;GeneralizationSerialNumberValue&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;login Button&apos; is present</step>
-<failure>org.junit.ComparisonFailure: expected:&lt;[&#1635;]&gt; but was:&lt;[3]&gt;
+<failure>org.junit.ComparisonFailure: expected:&lt;[Auto3009869380508700]&gt; but was:&lt;[1]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
 	at com.automation.pages.CannedPage.checkElementText(CannedPage.java:319)
