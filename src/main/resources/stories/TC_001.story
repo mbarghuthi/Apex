@@ -24,3 +24,4 @@ Then [Input] I click on 'Generalizations Header Button'
 And [Assertion] Verify text of 'Generalization First Subject Text' equals saved value 'GeneralizationSubjectText'
 And [Assertion] Verify text of 'Generalization First Serial Number' equals saved value 'GeneralizationSerialNumberValue'
 Then [Input] I click on 'logout Button'
+And [Assertion] Verify 'login Button' is present
