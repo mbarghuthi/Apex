@@ -457,12 +457,4 @@ public class CannedSteps extends AbstractSteps {
 			throw new Exception("Assertion failed: expected '" + expectedValue + "', but was '" + actualValue + "'");
 		}
 	}
-
-//	@Given("[Action] I clear the state")
-//	@When("[Action] I clear the state")
-//	@Then("[Action] I clear the state")
-//	public void clearState() {
-//		stateManager.clear();
-//	}
-
 }
