@@ -415,15 +415,20 @@ public class CannedSteps extends AbstractSteps {
 		cannedPage.handleAlert("dismiss");
 	}
 
+	// Step to get and save element text
 	@Given("[Action] I get text from '$elementName' and save it as '$variableName'")
 	@When("[Action] I get text from '$elementName' and save it as '$variableName'")
 	@Then("[Action] I get text from '$elementName' and save it as '$variableName'")
 	public void getElementTextAndSave(@Named("elementName") String elementName, @Named("variableName") String variableName) throws Exception {
 		String text = cannedPage.getElementWithWaitText(elementName);
+		// Debug log
+		System.out.println("Fetched text from " + elementName + ": " + text);
 		stateManager.put(variableName, text);
-		System.out.println("Saved text from element '" + elementName + "' as '" + variableName + "': " + text);
+		// Debug log
+		System.out.println(variableName + " saved as: " + text);
 	}
 
+	// Step to get and save element value
 	@Given("[Action] I get value from '$elementName' and save it as '$variableName'")
 	@When("[Action] I get value from '$elementName' and save it as '$variableName'")
 	@Then("[Action] I get value from '$elementName' and save it as '$variableName'")
@@ -436,8 +441,7 @@ public class CannedSteps extends AbstractSteps {
 		System.out.println(variableName + " saved as: " + value);
 	}
 
-
-	// step to assert saved text value
+	// Step to assert saved text value
 	@Given("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
 	@When("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
 	@Then("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
@@ -453,4 +457,12 @@ public class CannedSteps extends AbstractSteps {
 			throw new Exception("Assertion failed: expected '" + expectedValue + "', but was '" + actualValue + "'");
 		}
 	}
+
+//	@Given("[Action] I clear the state")
+//	@When("[Action] I clear the state")
+//	@Then("[Action] I clear the state")
+//	public void clearState() {
+//		stateManager.clear();
+//	}
+
 }
