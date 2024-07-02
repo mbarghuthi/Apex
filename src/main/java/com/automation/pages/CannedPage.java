@@ -75,16 +75,16 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	////*[@id="ctl00_MainContent_RadGrid1_ctl00__0"]/td[2]
 	public WebElement GeneralizationFirstSubjectText;
 
-	//
-	@FindBy(css = "[test-attr=\"broker_destination_of_import_export\"]")
-	public WebElement destinationCountryDropDown;
+	// to check that direction button is not clickable
+	@FindBy(css = "#ctl00_MainContent_RadGrid1_ctl00_ctl04_TaskUrl")
+	public WebElement ViewGeneralizationsProcessButton;
 
+// to check the process status
+	@FindBy(xpath = "//span[contains(text(),'معاملاتي')]")
+	public WebElement MyProcessesListHeaderButton;
 
-	@FindBy(css = "[test-attr=\"broker_party_sender\"]")
-	public WebElement partySenderField;
-
-	@FindBy(css = "[test-attr=\"broker_party_sent_to\"]")
-	public WebElement partySentToField;
+	@FindBy(xpath = "//tbody/tr[@id='ctl00_MainContent_RadGrid1_ctl00__0']/td[5]")
+	public WebElement ProcessStatus;
 
 	@FindBy(css = "[test-attr=\"broker_cargo_value\"]")
 	public WebElement cargoValueField;

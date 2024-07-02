@@ -365,6 +365,7 @@ public class CannedSteps extends AbstractSteps {
 	@Then("[Input] I click on '$elementName'")
 	public void click(String elementName) throws Exception {
 		cannedPage.click(elementName);
+
 	}
 
 
