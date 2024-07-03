@@ -13,6 +13,8 @@
 <step outcome="successful">And [Input] I click on &apos;Generalization Button&apos;</step>
 <step outcome="successful">When [Input] Set &apos;Generalization Subject Field&apos; value to &apos;random&apos;</step>
 <step outcome="successful">And [Input] Set &apos;Generalization Date Field&apos; value to &apos;date&apos;</step>
+<step outcome="successful">And [Action] I get value from &apos;Generalization Get Year&apos; and save it as &apos;GeneralizationYearValue&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;GeneralizationYearValue&apos; equals current year</step>
 <step outcome="successful">And [Input] I click on &apos;Generalization Save Button&apos;</step>
 <step outcome="successful">And [Action] I get value from &apos;Generalization Get Serial Number&apos; and save it as &apos;GeneralizationSerialNumberValue&apos;</step>
 <step outcome="successful">And [Action] I get text from &apos;Generalization Subject Field&apos; and save it as &apos;GeneralizationSubjectText&apos;</step>
@@ -21,7 +23,7 @@
 <step outcome="successful">And [Input] I click on &apos;View Generalizations Process Button&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;Generalization Direction Button&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;Generalize Button&apos;</step>
-<step outcome="successful">And [Progress] I wait for &apos;6&apos; sec</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;6&apos; sec</step>
 <step outcome="successful">And [Input] I click on &apos;Generalizations Header Button&apos;</step>
 <step outcome="successful">And [Assertion] Verify text of &apos;Generalization First Subject Text&apos; equals saved value &apos;GeneralizationSubjectText&apos;</step>
 <step outcome="ignorable">!-- And [Assertion] Verify text of &apos;Generalization First Serial Number&apos; equals saved value &apos;GeneralizationSerialNumberValue&apos;</step>

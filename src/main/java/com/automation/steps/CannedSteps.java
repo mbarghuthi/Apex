@@ -487,4 +487,23 @@ public class CannedSteps extends AbstractSteps {
 			throw new Exception("Assertion failed: Values in column 'رقم التعميم' are not unique.");
 		}
 	}
+
+
+	// Step to assert that GeneralizationYearValue equals CurrentYear
+	@Given("[Assertion] Verify '$yearValue' equals current year")
+	@When("[Assertion] Verify '$yearValue' equals current year")
+	@Then("[Assertion] Verify '$yearValue' equals current year")
+	public void assertGeneralizationYearEqualsCurrentYear(@Named("yearValue") String yearValue) throws Exception {
+		String generalizationYear = (String) stateManager.get(yearValue);
+		// Get the current year as a string
+		String currentYear = String.valueOf(LocalDate.now().getYear());
+
+		// Compare the generalization year with the current year
+		if (!generalizationYear.equals(currentYear)) {
+			throw new Exception("Assertion failed: GeneralizationYearValue (" + generalizationYear +
+					") is not equal to current year (" + currentYear + ")");
+		}
+		System.out.println("Assertion passed: GeneralizationYearValue equals current year");
+	}
+
 }

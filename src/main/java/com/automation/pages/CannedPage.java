@@ -60,6 +60,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#MainContent_txtSerial_2583")
 	public WebElement GeneralizationGetSerialNumber; //value
 
+	@FindBy(css = "#MainContent_txt_2584")
+	public WebElement GeneralizationGetYear; //value
+
 	@FindBy(css = "#ctl00_MainContent_btnApprove")
 	public WebElement GeneralizeButton;
 

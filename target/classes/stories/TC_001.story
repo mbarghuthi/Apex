@@ -15,6 +15,8 @@ And [Input] I click on 'Add Process Button'
 And [Input] I click on 'Generalization Button'
 When [Input] Set 'Generalization Subject Field' value to 'random'
 And [Input] Set 'Generalization Date Field' value to 'date'
+And [Action] I get value from 'Generalization Get Year' and save it as 'GeneralizationYearValue'
+And [Assertion] Verify 'GeneralizationYearValue' equals current year
 And [Input] I click on 'Generalization Save Button'
 And [Action] I get value from 'Generalization Get Serial Number' and save it as 'GeneralizationSerialNumberValue'
 And [Action] I get text from 'Generalization Subject Field' and save it as 'GeneralizationSubjectText'
@@ -23,7 +25,7 @@ And [Assertion] Verify 'Process Status' equals 'p:ProcessUnCompletedStatus' text
 And [Input] I click on 'View Generalizations Process Button'
 And [Input] I click on 'Generalization Direction Button'
 And [Input] I click on 'Generalize Button'
-And [Progress] I wait for '6' sec
+!-- And [Progress] I wait for '6' sec
 And [Input] I click on 'Generalizations Header Button'
 And [Assertion] Verify text of 'Generalization First Subject Text' equals saved value 'GeneralizationSubjectText'
 !-- And [Assertion] Verify text of 'Generalization First Serial Number' equals saved value 'GeneralizationSerialNumberValue'
