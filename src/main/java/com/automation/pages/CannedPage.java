@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -83,143 +84,19 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[contains(text(),'معاملاتي')]")
 	public WebElement MyProcessesListHeaderButton;
 
+	//to enter page size
+	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00_ctl03_ctl01_ChangePageSizeTextBox\"]")
+	public WebElement GeneralizationSizePageInput;
+
+	//change button
+	@FindBy(xpath = "//span[contains(text(),'تغيير')]")
+	public WebElement ChangeButton;
+
 	@FindBy(xpath = "//tbody/tr[@id='ctl00_MainContent_RadGrid1_ctl00__0']/td[5]")
 	public WebElement ProcessStatus;
 
-	@FindBy(css = "[test-attr=\"broker_cargo_value\"]")
-	public WebElement cargoValueField;
-
-	@FindBy(css = "[test-attr=\"broker_insurance_amount\"]")
-	public WebElement insuranceAmountField;
-
-	@FindBy(css = "[test-attr=\"broker_broker_authorization_code\"]")
-	public WebElement brokerAuthorizationCodeField;
-
-	@FindBy(xpath = "*//ul/li/button[contains(text(),\"Save and continue\")]")
-	public WebElement saveAndContinueButton;
-
-	@FindBy(css = "[id=\"autocomplete-results\"][style=\"\"] li:not([class=autocomplete-loading])")
-	public WebElement AutoCompleteResult;
-
-// Delivery Order Step
-
-	@FindBy(css = "button[onclick*=\"deliveryOrder.search\"]")
-	public WebElement deliveryOrderAddButton;
-
-	@FindBy(css = "[test-attr=\"broker_delivery_order_number\"]")
-	public WebElement deliveryOrderNumberField;
-
-	@FindBy(css = "[test-attr=\"broker_type\"]")
-	public WebElement deliveryOrderTypeDropDown;
-
-	@FindBy(css = "[test-attr=\"broker_from\"]")
-	public WebElement deliveryOrderFromField;
-
-	@FindBy(css = "[test-attr=\"broker_to\"]")
-	public WebElement deliveryOrderToField;
-
-	@FindBy(css = "[data-i18n=\"broker:Search\"]")
-	public WebElement deliveryOrderSearchButton;
-
-	@FindBy(xpath = "*//button[contains(text(),\"Choose Delivery Order\")]")
-	public WebElement chooseDeliveryOrderButton;
-
-// Items & Invoice Payment Step
-
-	@FindBy(css = "button[onclick*=\"item\"]")
-	public WebElement itemsAddButton;
-
-	@FindBy(css = "[test-attr=\"broker_country_of_origin\"]")
-	public WebElement countryOfOriginField;
-
-	@FindBy(css = "[test-attr=\"broker_tariff_code\"]")
-	public WebElement tariffCodeField;
-
-	@FindBy(css = "button[data-i18n=\"broker:Retrieve_Details\"]")
-	public WebElement retrieveDetailsButton;
-
-	@FindBy(css = "[test-attr=\"broker_origin_quantity\"]")
-	public WebElement originQuantityField;
-
-	@FindBy(css = "[test-attr=\"broker_item_quantity\"]")
-	public WebElement itemQuantityField;
-
-	@FindBy(css = "[test-attr=\"broker_gross_weight_kgm\"]")
-	public WebElement grossWeightField;
-
-	@FindBy(css = "[test-attr=\"broker_net_weight_kgm\"]")
-	public WebElement netWeightField;
-
-	@FindBy(css = "[test-attr=\"broker_original_value\"]")
-	public WebElement originalValueField;
-
-	@FindBy(css = "[test-attr=\"broker_original_duty\"]")
-	public WebElement originalDutyField;
-
-	@FindBy(css = "[test-attr=\"broker_currency_code\"]")
-	public WebElement currencyCodeField;
-
-	@FindBy(css = "[test-attr=\"broker_exemptions_invoice_measurement_unit\"]")
-	public WebElement invoiceMeasurementUnitField;
-
-	@FindBy(css = "[test-attr=\"broker_declaration_date\"] div:nth-child(1) select")
-	public WebElement firstPortDeclarationDateDayDropDown;
-
-	@FindBy(css = "[test-attr=\"broker_declaration_date\"] div:nth-child(2) select")
-	public WebElement firstPortDeclarationDateMonthDropDown;
-
-	@FindBy(css = "[test-attr=\"broker_declaration_date\"] div:nth-child(3) select")
-	public WebElement firstPortDeclarationDateYearDropDown;
-
-	@FindBy(css = "div:nth-child(27) > div.input-text.form-group.autocomplete.col-12.col-md-6.valid > i")
-	public WebElement firstPortCustomsPortField;
-
-	@FindBy(css = "[test-attr=\"broker_declaration_number\"]")
-	public WebElement firstPortDeclarationNoField;
-
-	@FindBy(css = "[test-attr=\"broker_item_number\"]")
-	public WebElement firstPortItemNumberField;
-
-	@FindBy(css = "[test-attr=\"broker_declaration_type_1\"]")
-	public WebElement firstPortDeclarationTypeDropDown;
-
-	@FindBy(css = "button[data-method=\"Save\"]")
-	public WebElement itemsSaveButton;
-
-// Additional Information	
-
-	@FindBy(css = "button[onclick*=\"attachedDocuments\"]")
-	public WebElement attachedDocumentsAddButton;
-
-	@FindBy(css = "[test-attr=\"broker_number\"]")
-	public WebElement attachedDocumentDetailsNoField;
-
-	@FindBy(css = " [test-attr=\"broker_type_1\"]")
-	public WebElement attachedDocumentDetailsTypeDropDown;
-
-	@FindBy(css = "[test-attr=\"broker_date\"]")
-	public WebElement attachedDocumentDetailsDateField;
-
-	@FindBy(css = "button[data-method=\"Save\"]")
-	public WebElement attachedDocumentDetailsSaveButton;
-
-	@FindBy(id = "insurance-tab")
-	public WebElement insuranceInformationTab;
-
-	@FindBy(css = "[test-attr=\"broker_insurance_method\"]")
-	public WebElement insuranceMethodDropDown;
-
-	@FindBy(xpath = "*//button[text()=\"Save\"]")
-	public WebElement insuranceInformationSaveButton;
-
-	@FindBy(xpath = "*//button[text()=\"Submit\"]")
-	public WebElement additionalInformationSubmitButton;
-
-	@FindBy(css = "div[class*=\"alert-success\"]")
-	public WebElement createStatisticalDeclarationSuccessMessage;
-
-	@FindBy(css = "div[class*=\"alert-success\"]")
-	public WebElement MohannadSalemName;
+//	@FindBy(xpath = "//tbody/tr[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[1]")
+//	public WebElement ;
 
 	/**
 	 * Method to open link
@@ -559,5 +436,31 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		else
 			webDriverProvider.get().switchTo().alert().dismiss();
 	}
+
+
+	public List<String> getValuesFromXpaths(int rowCount) throws Exception {
+		List<String> values = new ArrayList<>();
+
+		for (int i = 0; i < rowCount; i++) {
+			String xpath = "//*[@id='ctl00_MainContent_RadGrid1_ctl00__" + i + "']/td[1]";
+			WebElement element = webDriverProvider.get().findElement(By.xpath(xpath));
+			String text = element.getText().trim(); // Trim to remove any leading or trailing whitespace
+
+			if (values.contains(text)) { // Check for duplicates
+				throw new Exception("Duplicate value found: " + text);
+			}
+
+			values.add(text);
+		}
+
+		// Print the fetched values in the console
+		System.out.println("Fetched values from xpaths:");
+		for (String value : values) {
+			System.out.println(value);
+		}
+
+		return values;
+	}
+
 
 }

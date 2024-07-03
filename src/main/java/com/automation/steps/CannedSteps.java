@@ -11,6 +11,9 @@ import com.automation.pages.CannedPage;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @Component
@@ -456,6 +459,32 @@ public class CannedSteps extends AbstractSteps {
 
 		if (!expectedValue.equals(actualValue)) {
 			throw new Exception("Assertion failed: expected '" + expectedValue + "', but was '" + actualValue + "'");
+		}
+	}
+
+
+	// Step to verify uniqueness of values in column "رقم التعميم"
+	@Given("[Assertion] Verify uniqueness of values in column 'رقم التعميم' to approaches '$variableName'")
+	@When("[Assertion] Verify uniqueness of values in column 'رقم التعميم' to approaches '$variableName'")
+	@Then("[Assertion] Verify uniqueness of values in column 'رقم التعميم' to approaches '$variableName'")
+	public void verifyUniqueValuesInColumn(@Named("variableName") String variableName) throws Exception {
+		Object rowCountObj = stateManager.get(variableName); // Fetch as Object
+
+		if (rowCountObj == null) {
+			throw new Exception("Value for '" + variableName + "' not found in stateManager.");
+		}
+
+		String rowCountStr = String.valueOf(rowCountObj); // Convert Object to String
+
+		int rowCount = Integer.parseInt(rowCountStr); // Convert to integer if needed
+
+		// Fetch the values from the xpaths
+		List<String> values = cannedPage.getValuesFromXpaths(rowCount);
+
+		// Verify the values are unique
+		Set<String> uniqueValues = new HashSet<>(values);
+		if (uniqueValues.size() != values.size()) {
+			throw new Exception("Assertion failed: Values in column 'رقم التعميم' are not unique.");
 		}
 	}
 }
