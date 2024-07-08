@@ -16,7 +16,7 @@ public class ReportManager {
 	private static ExtentReports extent;
 	private static Platform platform;
 
-	private static String reportName = "Automation-Report.html";
+	private static String reportName = "Dewan-Automation-Report.html";
 	private static String reportFolderName;
 	private static String Path;
 	private static String reportFilePath;
@@ -34,6 +34,8 @@ public class ReportManager {
 		extent = new ExtentReports(reportFileLocation);
 		extent.loadConfig(new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"
 				+ File.separator + "resources" + File.separator + "report-config.xml"));
+//		extent.config().reportName("Dewan Automation Report");
+//		extent.config().documentTitle("Dewan Automation Report");
 		return extent;
 	}
 
