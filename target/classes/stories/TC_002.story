@@ -1,4 +1,4 @@
-Scenario: TC_002 Create Generalization
+Scenario: TC_001 Create Generalization
 
 Given [Navigation] I navigate to 'p:dewan'
 And [Input] I login as 'p:userName.admin' with password 'p:password'
@@ -35,7 +35,7 @@ And [Input] I click on 'logout Button'
 And [Assertion] Verify 'login Button' is present
 
 
-Scenario: TC_003 Check uniqueness serial number for Generalization
+Scenario: TC_002 Check uniqueness serial number for Generalization
 
 Given [Navigation] I navigate to 'p:dewan'
 And [Input] I login as 'p:userName.admin' with password 'p:password'

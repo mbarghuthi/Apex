@@ -22,9 +22,41 @@
 		<spring.version>3.1.1.RELEASE</spring.version>
 		<extent.version>2.41.2</extent.version>
 		<testng.version>7.8.0</testng.version>
+		<javax.mail.version>1.6.2</javax.mail.version>
+		<spring.core.version>5.3.21</spring.core.version>
+		<spring.context.version>5.3.21</spring.context.version>
+		<spring.beans.version>5.3.21</spring.beans.version>
 	</properties>
 
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>${javax.mail.version}</version>
+		</dependency>
+
+		<!-- Spring Core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.core.version}</version>
+		</dependency>
+
+		<!-- Spring Context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.context.version}</version>
+		</dependency>
+
+		<!-- Spring Beans -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.beans.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.testng</groupId>

@@ -1,6 +1,8 @@
 package com.automation.steps.lifecycle;
 
+import com.automation.util.EmailSender;
 import org.jbehave.core.annotations.AfterScenario;
+import org.jbehave.core.annotations.AfterStories;
 import org.jbehave.core.annotations.AfterStory;
 import org.jbehave.core.annotations.BeforeStory;
 import org.jbehave.web.selenium.WebDriverProvider;
@@ -21,9 +23,7 @@ public class ExecutionLifecycle {
 
 	@BeforeStory
 	public void beforeStory() throws Exception {
-
 		driverProvider.initialize();
-
 		for (Object page : pageObjectPostProcessor.getPageObjects()) {
 			PageFactory.initElements(driverProvider.get(), page);
 		}
@@ -38,5 +38,9 @@ public class ExecutionLifecycle {
 	public void afterStory() throws Exception {
 		driverProvider.end();
 	}
-
+	EmailSender emailSender = new EmailSender();
+	@AfterStories
+	public void afterStories() throws Exception {
+		emailSender.sendSuccessEmail();
+	}
 }
