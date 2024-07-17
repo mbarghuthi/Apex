@@ -17,7 +17,7 @@ import java.util.Properties;
 public class EmailSender {
     private static final String host = "mail.optimiza.me";
     private static final String username = "sjaber@optimizasolutions.com";
-    private static final String password = "J@SS2610";
+    private static final String password = "J@SS1256";
     private static final String from = "DMS@optimizasolutions.com";
     private static final String reportDirectory = "D:\\Automation Quality Projects\\Dewan-Automation\\reports";
     private static final String cc = "mbarghuthi@optimizasolutions.com";
