@@ -8,18 +8,21 @@ import org.jbehave.core.io.StoryFinder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AllStories extends JBehaveReportFormatter {
 
 	private static final String STORY_NAME = "*";
+	private static final String STORY_NAME_PATTERN = "*UOP*";
+	private static final String SPECIFIC_STORY = "stories/TC_004_UOP.story";
+	private static final int RUN_COUNT = 3;
 
 	@Override
 	public ApplicationContext getAnnotatedApplicationContext() {
 		return new AnnotationConfigApplicationContext(ProjectConfiguration.class);
 	}
 
-	private static final String STORY_NAME_PATTERN = "*UOP*";
 	@Override
 	public List<String> storyPaths() {
 		return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()),
@@ -29,6 +32,15 @@ public class AllStories extends JBehaveReportFormatter {
 		//Run a only UOP stories
 //				String.format("stories/**/%s.story", STORY_NAME_PATTERN.trim()), "");
 	}
+
+	// For running the story multiple times
+//	public List<String> storyPaths() {
+//		List<String> paths = new ArrayList<>();
+//		for (int i = 0; i < RUN_COUNT; i++) {
+//			paths.add(SPECIFIC_STORY);
+//		}
+//		return paths;
+//	}
 }
 
 
