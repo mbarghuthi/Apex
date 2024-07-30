@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -104,6 +105,8 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//tbody/tr[@id='ctl00_MainContent_RadGrid1_ctl00__0']/td[5]")
 	public WebElement TaskListFirstSubjectText;
+	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[6]")
+	public WebElement TaskListFirstSubjectTextGeneralization;
 
 	@FindBy(xpath="//*[@id=\"ctl00_RadMenu1\"]/ul/li[9]/span/span")
 	public WebElement UserNameHeaderButton;
