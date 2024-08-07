@@ -14,9 +14,10 @@ import java.util.List;
 public class AllStories extends JBehaveReportFormatter {
 
 	private static final String STORY_NAME = "*";
-	private static final String STORY_NAME_PATTERN = "*UOP*";
-	private static final String SPECIFIC_STORY = "stories/TC_004_UOP.story";
-	private static final int RUN_COUNT = 3;
+	private static final String STORY_NAME_PATTERN_UOP= "*UOP*";
+	private static final String STORY_NAME_PATTERN_SCC= "*SCC*";
+	private static final String STORY_NAME_PATTERN_JIC = "*JIC*";
+
 
 	@Override
 	public ApplicationContext getAnnotatedApplicationContext() {
@@ -27,13 +28,28 @@ public class AllStories extends JBehaveReportFormatter {
 	public List<String> storyPaths() {
 		return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()),
 //				String.format("stories/**/%s.story", STORY_NAME.trim()), "");
-		// to specify running single story / scenario
-				String.format("stories/TC_003_UOP.story", STORY_NAME.trim()), "");
-		//Run a only UOP stories
-//				String.format("stories/**/%s.story", STORY_NAME_PATTERN.trim()), "");
+
+// to specify running single story / scenario
+//				String.format("stories/TC_006_UOP.story", STORY_NAME.trim()), "");
+
+//Run a only for single test scenario
+//				String.format("stories/TC_001_SCC.story", STORY_NAME.trim()), "");
+
+//Run a only UOP stories
+				String.format("stories/**/%s.story", STORY_NAME_PATTERN_UOP.trim()), "");
+
+//Run a only UOP stories
+//		String.format("stories/**/%s.story", STORY_NAME_PATTERN_SCC.trim()), "");
+
+//Run a only UOP stories
+//		String.format("stories/**/%s.story", STORY_NAME_PATTERN_JIC.trim()), "");
 	}
 
-	// For running the story multiple times
+
+	private static final String SPECIFIC_STORY = "stories/TC_004_UOP.story";
+	private static final int RUN_COUNT = 3;
+
+// For running the story multiple times
 //	public List<String> storyPaths() {
 //		List<String> paths = new ArrayList<>();
 //		for (int i = 0; i < RUN_COUNT; i++) {

@@ -19,7 +19,7 @@ And [Action] I get value from 'Incoming Get Serial Number' and save it as 'Incom
 And [Input] I click on 'Direction Button'
 And [Assertion] Verify text of 'Department Liaison Officer Name' contains saved value 'ComboBoxValue'
 And [Input] I click on 'Approve Button'
-And [Progress] I wait for '4' sec
+And [Progress] I wait for '6' sec
 And [Input] I click on 'My Processes List Header Button'
 And [Assertion] Verify 'Process Status' equals 'p:ProcessUnCompletedStatus' text
 And [Input] I click on 'View Process Button'

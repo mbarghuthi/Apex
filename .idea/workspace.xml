@@ -4,43 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="Did some update on TC_002">
+    <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="Did some updates on code">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_24_2024_11_23_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_24_2024_11_23_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Jul 22 15-25-03 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Jul 22 16-30-49 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Jul 22 16-40-21 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Jul 22 16-43-12 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Jul 29 12-12-48 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 21 17-25-38 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 21 17-26-53 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 21 17-33-06 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 11-23-21 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 11-32-54 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 13-05-58 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 16-03-21 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 16-05-48 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 16-27-25 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 16-29-12 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 16-30-36 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 16-31-33 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Sun Jul 28 16-32-41 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Tue Jul 23 09-08-38 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Tue Jul 23 09-31-34 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Tue Jul 23 15-21-07 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Tue Jul 30 12-28-09 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 24 10-36-48 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 24 11-28-04 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 24 11-33-31 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 24 11-55-54 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 31 13-34-52 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 31 13-49-15 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 31 14-36-40 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Wed Jul 31 14-47-05 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/pages/CannedPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/pages/CannedPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/steps/CannedSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/steps/CannedSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/test_runner/AllStories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/test_runner/AllStories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/TC_003_UOP.story" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stories/TC_003_UOP.story" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/test-data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/test-data.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/stories/TC_004_UOP.story" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stories/TC_004_UOP.story" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/TC_005_UOP.story" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stories/TC_005_UOP.story" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/pages/CannedPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/pages/CannedPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/steps/CannedSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/steps/CannedSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/test_runner/AllStories.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/test_runner/AllStories.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stories/TC_004_UOP.story" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stories/TC_004_UOP.story" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stories/TC_005_UOP.story" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stories/TC_005_UOP.story" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_005_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_005_UOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_005_UOP.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_005_UOP.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_006_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_006_UOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_006_UOP.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_006_UOP.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/storyDurations.props" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/storyDurations.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/reports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.xml.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +55,15 @@
     &quot;assignee&quot;: &quot;mbarghuthi&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/mbarghuthi/Dewan-Automation.git&quot;,
-    &quot;accountId&quot;: &quot;80a96b70-f206-4b90-bd20-b38040188261&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mbarghuthi/Dewan-Automation.git",
+    "accountId": "e050cbc5-90d3-45ea-aa31-a62201e83048"
   }
-}</component>
+}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -77,16 +72,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.AllStories.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Automation Quality Projects/Dewan-Automation&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.AllStories.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Automation Quality Projects/Dewan-Automation",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4448276"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="AllStories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Web" />
@@ -206,31 +203,7 @@
       <option name="project" value="LOCAL" />
       <updated>1722173868953</updated>
     </task>
-    <task id="LOCAL-00012" summary="Did some updates">
-      <option name="closed" value="true" />
-      <created>1722174027335</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1722174027335</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Did some updates on TC_003 and TC_006">
-      <option name="closed" value="true" />
-      <created>1722332165139</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1722332165139</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Did some update on TC_002">
-      <option name="closed" value="true" />
-      <created>1722426820802</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1722426820802</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,8 +225,6 @@
     <MESSAGE value="did some updates" />
     <MESSAGE value="add code for running the story multiple times" />
     <MESSAGE value="Did some updates" />
-    <MESSAGE value="Did some updates on TC_003 and TC_006" />
-    <MESSAGE value="Did some update on TC_002" />
-    <option name="LAST_COMMIT_MESSAGE" value="Did some update on TC_002" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did some updates" />
   </component>
 </project>

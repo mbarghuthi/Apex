@@ -12,12 +12,13 @@ And [Input] I click on 'Save Button'
 And [Action] I get text from 'Subject Field' and save it as 'SubjectText'
 And [Action] I get value from 'Outgoing Get Serial Number' and save it as 'OutgoingSerialNumberValue'
 And [Progress] I wait for '3' sec
-And [Input] I click on 'OutgoingUsers Directed To'
+!-- And [Input] I click on 'OutgoingUsers Directed To'
+And [Input] I click on 'Direction Button'
 And [Assertion] Verify 'Outgoing User Name Directed To1' equals 'p:UOPuser.audit1' text
 !-- And [Assertion] Verify 'Outgoing User Name Directed To2' equals 'p:UOPuser.ZainabFarouqa' text
-And [Input] I click on 'Direction Button'
+!-- And [Input] I click on 'Direction Button'
 And [Input] I click on 'Approve Button'
-And [Progress] I wait for '4' sec
+And [Progress] I wait for '6' sec
 And [Input] I click on 'My Processes List Header Button'
 And [Assertion] Verify 'Process Status' equals 'p:ProcessCompletedStatus' text
 Then [Input] I click on 'logout Button'

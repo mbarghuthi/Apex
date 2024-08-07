@@ -160,7 +160,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[contains(text(),'المهام المنجزة')]")
 	public WebElement CompletedTasks;
 
-	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_CompletedTasksGrid_ctl00__0\"]/td[3]")
+	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_CompletedTasksGrid_ctl00__0\"]/td[4]")
 	public WebElement CompletedTasksFirstSubjectText;
 
 	@FindBy(css = "#MainContent_txt_2361")
@@ -201,7 +201,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#MainContent_summary2")
 	public WebElement IncomingUsersDirectedTo;
 
-	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_GVUserAssign_ctl00__1\"]/td[2]")
+	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_GVUserAssign_ctl00__0\"]/td[2]")
 	public WebElement IncomingUserNameDirectedTo1;
 
 	@FindBy(css = "#MainContent_rdchkCopy")
