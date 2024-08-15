@@ -105,10 +105,12 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[contains(text(),'مهام للإجراء')]")
 	public  WebElement TaskListHeaderButton;
 
-	@FindBy(xpath = "//tbody/tr[@id='ctl00_MainContent_RadGrid1_ctl00__0']/td[5]")
+	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[5]")
 	public WebElement TaskListFirstSubjectText;
 	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[6]")
 	public WebElement TaskListFirstSubjectTextGeneralization;
+	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[6]")
+	public WebElement TasksToViewFirstSubjectText;
 
 //	@FindBy(xpath="//*[@id=\"ctl00_RadMenu1\"]/ul/li[9]/span/span")
 @FindBy(xpath="//*[@id=\"ctl00_RadMenu1\"]/ul/li[10]/span")
@@ -576,6 +578,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	public void selectOptionFromDropdown(String optionValue, String dropDownListName) throws Exception {
 		WebElement dropdown = getElementWithWait(this, dropDownListName);
+		dropdown.clear();
 
 		try {
 			// Try to use Select if the element is a <select> tag

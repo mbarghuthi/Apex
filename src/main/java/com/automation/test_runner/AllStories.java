@@ -32,10 +32,10 @@ public class AllStories extends JBehaveReportFormatter {
 //				String.format("stories/TC_007_UOP.story", STORY_NAME.trim()), "");
 
 //Run a only for single test scenario
-				String.format("stories/TC_001_UOP_PRECONDITION.story", STORY_NAME.trim()), "");
+//				String.format("stories/TC_001_UOP_PRECONDITION.story", STORY_NAME.trim()), "");
 
 //Run a only UOP stories
-//				String.format("stories/**/%s.story", STORY_NAME_PATTERN_UOP.trim()), "");
+				String.format("stories/**/%s.story", STORY_NAME_PATTERN_UOP.trim()), "");
 
 //Run a only UOP stories
 //		String.format("stories/**/%s.story", STORY_NAME_PATTERN_SCC.trim()), "");

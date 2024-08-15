@@ -68,6 +68,16 @@ public class ProjectConfiguration {
                     driver = null;
                 }
             }
+
+//            public void switchToNewTab() {
+//                String originalWindow = driver.getWindowHandle();
+//                for (String windowHandle : driver.getWindowHandles()) {
+//                    if (!originalWindow.contentEquals(windowHandle)) {
+//                        driver.switchTo().window(windowHandle);
+//                        break;
+//                    }
+//                }
+//            }
         };
     }
 

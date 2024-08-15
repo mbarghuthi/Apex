@@ -8,9 +8,9 @@ import org.junit.Assert;
 
 @PageObject
 public class CustomPage extends AbstractPage<CustomPage> {
-    @FindBy(css = "#tbxUserName")
+    @FindBy(xpath = "//input[@id='tbxUserName']")
     public WebElement adminUserName;
-    @FindBy(css = "#tbxPassword")
+    @FindBy(xpath = "//input[@id='tbxPassword']")
     public WebElement adminPassword;
     @FindBy(css = "#btnLogin2")
     public WebElement loginAdminButton;
@@ -22,7 +22,8 @@ public class CustomPage extends AbstractPage<CustomPage> {
 
 
 
-    @FindBy(css = "#ctl00_MainContent_rdONMandatory")
+//    @FindBy(css = "#ctl00_MainContent_rdONMandatory")
+    @FindBy(id = "ctl00_MainContent_rdONMandatory")
     public WebElement MandatoryCheckbox;
 
     @FindBy(css = "#ctl00_MainContent_GVViewData_ctl07_HyperLink3")
@@ -74,16 +75,16 @@ public class CustomPage extends AbstractPage<CustomPage> {
         Assert.assertEquals("Radio button state does not match the expected state", shouldBeChecked, radioButton.isSelected());
     }
 
-    public void checkCheckboxButton(String elementName, boolean shouldBeChecked) throws Exception {
+    public void checkCheckboxButton(String elementName, boolean shouldNotBeChecked) throws Exception {
         WebElement checkbox = getElementWithWait(this, elementName);
 
         // Check if the checkbox needs to be clicked or left as is
-        if (shouldBeChecked && !checkbox.isSelected()) {
+        if (shouldNotBeChecked && checkbox.isSelected()) {
             checkbox.click();
         }
 
-        // Verify if the radio button's state matches the expected state
-        Assert.assertEquals("Radio button state does not match the expected state", shouldBeChecked, checkbox.isSelected());
+        // Verify if the checkbox's state matches the expected state
+        Assert.assertEquals("Checkbox state does not match the expected state", !shouldNotBeChecked, checkbox.isSelected());
     }
 
 

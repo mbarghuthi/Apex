@@ -4,6 +4,10 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.jbehave.web.selenium.WebDriverProvider;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -152,7 +156,7 @@ public class CustomSteps extends AbstractSteps {
 	@When("[Input] I login admin as '$userName' with password '$password'")
 	@Then("[Input] I login admin as '$userName' with password '$password'")
 	public void loginAdminAs(@Named("adminUserName") String userName, @Named("adminPassword") String password) throws Throwable {
-		customPage.enterText("adminUserName", userName).enterText("adminPassword", password).click("login Admin Button");
+		customPage.enterText("adminUserName", userName).enterText("adminPassword", password).click("loginAdminButton");
 	}
 
 	//step to assert checkbox is unchecked
@@ -164,13 +168,38 @@ public class CustomSteps extends AbstractSteps {
 		customPage.checkRadioButton(elementName, true);
 	}
 
-//	@Given("[Assertion] Verify Radio  '$elementName' is clicked on")
-//	@When("[Assertion] Verify Radio  '$elementName' is clicked on")
-//	@Then("[Assertion] Verify Radio  '$elementName' is clicked on")
-//	public void is_checkbox_unchecked(String elementName) throws Exception
-//	{
-//		customPage.checkRadioButton(elementName, true);
-//	}
+
+	@Autowired
+	private WebDriverProvider webDriverProvider;
+
+	@Given("[Assertion] Verify Checkbox  '$elementName' is clicked on")
+	@When("[Assertion] Verify Checkbox  '$elementName' is clicked on")
+	@Then("[Assertion] Verify Checkbox  '$elementName' is clicked on")
+	public void is_checkbox_checked(String elementName) throws Exception {
+		customPage.checkCheckboxButton(elementName, true);
+
+		// Access the WebDriver instance
+//		WebDriver driver = webDriverProvider.get();
+//		String originalWindow = driver.getWindowHandle();
+//
+//		// Wait for a new tab to open
+//		Set<String> allWindows = driver.getWindowHandles();
+//		if (allWindows.size() > 1) {
+//			for (String windowHandle : allWindows) {
+//				if (!windowHandle.equals(originalWindow)) {
+//					driver.switchTo().window(windowHandle);
+//					break;
+//				}
+//			}
+//
+//			// Continue with further actions on the new tab
+//			WebElement newTabElement = driver.findElement(By.id("elementIdOnNewTab"));
+//			newTabElement.click();
+//
+//			// Optionally, switch back to the original tab if needed
+//			driver.switchTo().window(originalWindow);
+//		}
+	}
 	
 
 }
