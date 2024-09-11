@@ -4,45 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="Added the switch tab method">
-      <change afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-08-15 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-20-30 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-22-39 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-26-51 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_11_2024_11_01_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_11_2024_11_01_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_2_2024_10_19_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_2_2024_10_19_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_2_2024_10_20_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_2_2024_10_20_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_12_03_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_12_03_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_8_2024_10_04_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_8_2024_10_04_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="Did some updates on for the latest release">
+      <change afterPath="$PROJECT_DIR$/reports/Wed Sep 11 12-02-41 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Sep 02 13-34-00 EET 2024/Dewan-Automation-Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-44-32 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Sep 02 13-49-58 EET 2024/Dewan-Automation-Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-42-21 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Mon Sep 02 14-50-00 EET 2024/Dewan-Automation-Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-42-47 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/Mon Sep 02 10-45-08 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/Mon Sep 02 13-34-00 EET 2024/Dewan-Automation-Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/Wed Sep 11 12-11-36 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/Mon Sep 02 13-49-58 EET 2024/Dewan-Automation-Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-56-35 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/Mon Sep 02 14-50-00 EET 2024/Dewan-Automation-Report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/Wed Sep 11 11-59-26 EET 2024/Dewan-Automation-Report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/Tue Sep 03 12-04-36 EET 2024/Dewan-Automation-Report.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/pages/CannedPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/pages/CannedPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/test_runner/AllStories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/test_runner/AllStories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/TC_006_SCC.story" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stories/TC_006_SCC.story" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/automation/pages/CannedPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/pages/CannedPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/automation/test_runner/AllStories.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/test_runner/AllStories.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_004_UOP.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_005_SCC.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_005_SCC.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_005_SCC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_005_SCC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stories/TC_006_SCC.story" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stories/TC_006_SCC.story" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_006_SCC.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_006_SCC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_006_SCC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_006_SCC.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jbehave/storyDurations.props" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/storyDurations.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jbehave/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jbehave/view/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/reports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_UOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_UOP.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_003_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_003_UOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_003_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_003_UOP.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_UOP.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_SCC.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_SCC.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_SCC.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_SCC.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_UOP.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_UOP.xml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_007_UOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_007_UOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_007_UOP.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_007_UOP.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_SCC.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_SCC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_SCC.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_SCC.xml.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725538656734</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Did some updates on for the latest release">
+      <option name="closed" value="true" />
+      <created>1726044429373</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1726044429373</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -318,6 +308,7 @@
     <MESSAGE value="Uploaded some updates" />
     <MESSAGE value="Uploaded some updates on email sender" />
     <MESSAGE value="Added the switch tab method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the switch tab method" />
+    <MESSAGE value="Did some updates on for the latest release" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did some updates on for the latest release" />
   </component>
 </project>

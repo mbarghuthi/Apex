@@ -92,6 +92,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#ctl00_MainContent_RadGrid1_ctl00_ctl04_OpenLink")
 	public WebElement TaskListViewProcessButton;
 
+	@FindBy(css = "#ctl00_MainContent_rgmyRequest_ctl00_ctl04_OpenLink")
+	public WebElement MyProcessesListViewProcessButton;
+
 // **************************************************************to check the process status*********************************************************************************************************
 //	@FindBy(xpath = "//span[contains(text(),'جميع المهام')]")
 //	public WebElement AllTaskHeaderButton;
@@ -149,7 +152,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[contains(text(),'مشاهدة')]")
 	public WebElement ViewButton;
 
-	@FindBy(xpath = "//span[contains(text(),'المهام المنجزة')]")
+	@FindBy(xpath = "//a[contains(text(),'المهام المنجزة')]")
 	public WebElement CompletedTasks;
 
 	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_CompletedTasksGrid_ctl00__0\"]/td[4]")
