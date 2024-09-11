@@ -28,6 +28,7 @@ And [Assertion] Verify text of 'Department Liaison Officer Name' contains saved 
 And [Input] I click on 'Direction Button'
 And [Progress] I wait for '4' sec
 And [Input] I click on 'My Processes List Header Button'
+And [Progress] I wait for '3' sec
 And [Assertion] Verify 'Process Status' equals 'p:ProcessUnCompletedStatus' text
 And [Input] I click on 'View Process Button'
 And [Input] I click on 'Incoming Users Directed To'
