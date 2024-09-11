@@ -87,10 +87,16 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 // **************************************************************to check that direction button is not clickable**************************************************************************************
 	@FindBy(css = "#ctl00_MainContent_RadGrid1_ctl00_ctl04_TaskUrl")
-	public WebElement ViewProcessButton;
+	public WebElement GeneralizationsViewProcessButton;
+
+	@FindBy(css = "#ctl00_MainContent_RadGrid1_ctl00_ctl04_OpenLink")
+	public WebElement TaskListViewProcessButton;
 
 // **************************************************************to check the process status*********************************************************************************************************
-	@FindBy(xpath = "//span[contains(text(),'معاملاتي')]")
+//	@FindBy(xpath = "//span[contains(text(),'جميع المهام')]")
+//	public WebElement AllTaskHeaderButton;
+
+	@FindBy(xpath = "//a[contains(text(),'معاملاتي')]")
 	public WebElement MyProcessesListHeaderButton;
 
 // **************************************************************to enter page size*******************************************************************************************************************
@@ -101,7 +107,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[contains(text(),'تغيير')]")
 	public WebElement ChangeGridSizeButton;
 
-	@FindBy(xpath = "//tbody/tr[@id='ctl00_MainContent_RadGrid1_ctl00__0']/td[5]")
+	@FindBy(xpath = "//tbody/tr[@id='ctl00_MainContent_rgmyRequest_ctl00__0']/td[5]")
 	public WebElement ProcessStatus;
 
 	@FindBy(xpath = "//span[contains(text(),'مهام للإجراء')]")
@@ -113,7 +119,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[6]")
 	public WebElement TasksToViewFirstSubjectText;
 
-	@FindBy(xpath="//*[@id=\"ctl00_RadMenu1\"]/ul/li[10]/span")
+	@FindBy(xpath="//*[@id=\"ctl00_RadMenu1\"]/ul/li[1]/a")
 	public WebElement UserNameHeaderButton;
 
 	@FindBy(xpath = "//a[contains(text(),'الملف الشخصي')]")
