@@ -22,6 +22,7 @@ And [Input] I click on 'Close Notification Button'
 And [Assertion] Verify 'Outgoing User Name Directed To1 SCC' equals 'p:supply1.username' text
 And [Input] I click on 'Direction Button'
 And [Progress] I wait for '10' sec
+And [Input] I hover and click on 'All Task Header Button'
 And [Input] I click on 'My Processes List Header Button'
 And [Assertion] Verify 'Process Status' equals 'p:ProcessCompletedStatus' text
 Then [Input] I click on 'logout Button'
@@ -33,7 +34,7 @@ And [Input] I click on 'Tasks To View'
 !-- And [Input] I click on 'Tasks To View Date'
 !-- And [Input] I click on 'Tasks To View Date'
 And [Assertion] Verify text of 'Tasks To View First Subject Text SCC' equals saved value 'SubjectText'
-And [Input] I click on 'View Process Button'
+And [Input] I click on 'Task List View Process Button'
 And [Assertion] Verify text of 'Subject Field' equals saved value 'SubjectText'
 And [Assertion] Verify value of 'Outgoing Get Serial Number' equals saved value 'OutgoingSerialNumberValue'
 And [Input] I click on 'Direction Tab'

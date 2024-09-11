@@ -2,6 +2,7 @@ package com.automation.pages;
 
 import com.automation.configuration.pageobjects.PageObject;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.junit.Assert;
 
@@ -29,6 +30,9 @@ public class CustomPage extends AbstractPage<CustomPage> {
     @FindBy(css = "#ctl00_MainContent_GVViewData_ctl07_HyperLink3")
     public WebElement EditIncomingMailAttachment;
 
+
+    @FindBy(xpath = "//span[contains(text(),'جميع المهام')]")
+    public WebElement AllTaskHeaderButton;
 
 
     /**
@@ -85,6 +89,16 @@ public class CustomPage extends AbstractPage<CustomPage> {
 
         // Verify if the checkbox's state matches the expected state
         Assert.assertEquals("Checkbox state does not match the expected state", !shouldNotBeChecked, checkbox.isSelected());
+    }
+
+    public CustomPage elementToHover(String elementName) throws Exception {
+        // wait element
+        WebElement element = getElementWithWait(this, elementName);
+		Actions actions = new Actions(webDriverProvider.get());
+//        // Perform the mouse hover action
+        actions.moveToElement(element).perform();
+        log.info("Clicked on '" + elementName + "'");
+        return this;
     }
 
 
