@@ -116,7 +116,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[5]")
 	public WebElement TaskListFirstSubjectText;
 
-	@FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00__0\"]/td[6]")
+	@FindBy(xpath = "//*[@id=\"ctl00_RadMenu1\"]/ul/li[5]/a/span")
 	public WebElement TasksToViewFirstSubjectText;
 
 	@FindBy(xpath="//*[@id=\"ctl00_RadMenu1\"]/ul/li[1]/a")
@@ -140,7 +140,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//a[contains(text(),'بريد صادر الى الخارج')]")
 	public WebElement OutgoingButton;
 
-	@FindBy(xpath = "//*[@id=\"ctl00_RadMenu1\"]/ul/li[3]/a/span")
+	@FindBy(xpath = "//*[@id=\"ctl00_RadMenu1\"]/ul/li[5]/a/span")
 	public WebElement TasksToView;
 
 	@FindBy(xpath = "//a[contains(text(),'تاريخ المهمة')]")
