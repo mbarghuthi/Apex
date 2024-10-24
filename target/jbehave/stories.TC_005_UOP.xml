@@ -20,6 +20,7 @@
 <step outcome="ignorable">!-- And [Input] I click on &apos;Direction Tab&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;Direction Button&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;6&apos; sec</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I hover and click on &apos;All Task Header Button&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;My Processes List Header Button&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;Process Status&apos; equals &apos;p:ProcessCompletedStatus&apos; text</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">Then [Input] I click on &apos;logout Button&apos;</step>
@@ -29,7 +30,7 @@
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;Tasks To View Date&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;Tasks To View Date&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify text of &apos;Tasks To View First Subject Text&apos; equals saved value &apos;SubjectText&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;View Process Button&apos;</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;Task List View Process Button&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify text of &apos;Subject Field&apos; equals saved value &apos;SubjectText&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify value of &apos;Outgoing Get Serial Number&apos; equals saved value &apos;OutgoingSerialNumberValue&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;Direction Tab&apos;</step>

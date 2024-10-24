@@ -1,18 +1,28 @@
 <story path="stories/TC_003_UOP.story" title="">
 <scenario keyword="Scenario:" title="TC_003_UOP_001 UOP login">
 <step outcome="successful">Given [Navigation] I navigate to &apos;http://172.16.30.82:8888/login.aspx&apos;</step>
-<step outcome="successful">When [Input] I login as &apos;alaa.abdelbagi&apos; with password &apos;Aa1&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;User Name Header Button&apos;</step>
-<step outcome="failed" keyword="FAILED">And [Input] I click on &apos;Profile Header Button&apos;<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[contains(text(),&apos;&#1575;&#1604;&#1605;&#1604;&#1601; &#1575;&#1604;&#1588;&#1582;&#1589;&#1610;&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)</failure></step>
+<step outcome="failed" keyword="FAILED">When [Input] I login as &apos;alaa.abdelbagi&apos; with password &apos;Aa1&apos;<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (669e2fc1bff50a1441532d268b62daea)] -&gt; css selector: #btnlogin] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.139, chrome: {chromedriverVersion: 128.0.6613.137 (fe621c5aa2d..., userDataDir: C:\Users\MBARGH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60146}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60146/devtoo..., se:cdpVersion: 128.0.6613.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 669e2fc1bff50a1441532d268b62daea</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;User Name Header Button&apos;</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;Profile Header Button&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;User Name Value&apos; have attribute &apos;value&apos; with &apos;alaa.abdelbagi&apos; <parameter>value</parameter></step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">Then [Input] I click on &apos;logout Button&apos;</step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;login Button&apos; is present</step>
-<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[contains(text(),&apos;&#1575;&#1604;&#1605;&#1604;&#1601; &#1575;&#1604;&#1588;&#1582;&#1589;&#1610;&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
+<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (669e2fc1bff50a1441532d268b62daea)] -&gt; css selector: #btnlogin] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.139, chrome: {chromedriverVersion: 128.0.6613.137 (fe621c5aa2d..., userDataDir: C:\Users\MBARGH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60146}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60146/devtoo..., se:cdpVersion: 128.0.6613.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 669e2fc1bff50a1441532d268b62daea
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
 	at com.automation.pages.AbstractPage.getElementWithWait(AbstractPage.java:43)
-	at com.automation.pages.CannedPage.click(CannedPage.java:405)
-	at com.automation.steps.CannedSteps.click(CannedSteps.java:386)
+	at com.automation.pages.CannedPage.click(CannedPage.java:408)
+	at com.automation.steps.CannedSteps.loginAs(CannedSteps.java:396)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.jbehave.core.steps.StepCreator$ParametrisedStep.perform(StepCreator.java:599)
