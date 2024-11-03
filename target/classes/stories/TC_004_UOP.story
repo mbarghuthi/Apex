@@ -31,8 +31,8 @@ And [Assertion] Verify 'Generalize Button' not present
 And [Input] I hover and click on 'All Task Header Button'
 And [Input] I click on 'My Processes List Header Button'
 And [Assertion] Verify 'Process Status' equals 'p:ProcessCompletedStatus' text
-And [Navigation] I hover over 'User Profile DDL'
-Then [Input] I click on 'logout Button'
+Then [Navigation] I hover over 'User Profile DDL'
+And [Input] I click on 'logout Button'
 And [Assertion] Verify 'login Button' is present
 And [Input] I login as 'p:UOPuser.mmalhis' with password 'p:password'
 And [Input] I click on 'Generalizations Header Button'
