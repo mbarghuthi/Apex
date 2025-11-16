@@ -4,6 +4,7 @@ com\automation\steps\CustomSteps.class
 com\automation\configuration\ProjectConfiguration$2.class
 com\automation\jbehave\format\CustomConfigurationFormat.class
 com\automation\jbehave\format\PropertyConverter.class
+com\automation\util\EmailSender$2.class
 com\automation\pages\CustomPage.class
 com\automation\test_runner\AllStories.class
 com\automation\pages\AbstractPage.class
@@ -21,7 +22,8 @@ com\automation\configuration\pageobjects\PageObject.class
 com\automation\jbehave\format\PropertyConverterHelper.class
 com\automation\jbehave\JBehaveReportFormatter.class
 com\automation\steps\CannedSteps.class
+com\automation\util\EmailSender$1.class
+com\automation\util\EmailSender.class
 com\automation\steps\lifecycle\ExecutionLifecycle.class
 com\automation\jbehave\PropertyParameterConverter.class
-com\automation\steps\lifecycle\ExecutionLifecycle$1.class
 com\automation\configuration\Browsers.class
