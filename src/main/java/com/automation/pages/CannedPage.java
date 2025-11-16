@@ -40,7 +40,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#t_TreeNav_2")
 	public WebElement ClientsDataDDL;
 
-	@FindBy(css = "#t_TreeNav_10")
+	@FindBy(xpath = "//a[normalize-space()='Client Data']")
 	public WebElement ClientsDataButton;
 
 	/**
