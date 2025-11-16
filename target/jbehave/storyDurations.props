@@ -1,0 +1,6 @@
+#org.jbehave.core.embedder.StoryManager
+#Sun Nov 16 13:49:00 EET 2025
+stories/TC_002_Apex2.story=4000
+threadAverage=4000
+threads=1
+total=4000
