@@ -37,7 +37,11 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 
 // ************************************************************ Elements **********************************************************************************************
+	@FindBy(css = "#t_TreeNav_2")
+	public WebElement ClientsDataDDL;
 
+	@FindBy(css = "#t_TreeNav_10")
+	public WebElement ClientsDataButton;
 
 	/**
 	 *
