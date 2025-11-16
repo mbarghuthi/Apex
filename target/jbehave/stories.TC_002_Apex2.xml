@@ -4,19 +4,9 @@
   <asA keyword="I want to">perform an action</asA>
   <iWantTo keyword="So that">I can achieve a business goal</iWantTo>
 </narrative>
-<step outcome="pending" keyword="PENDING">When I do something</step>
-<step outcome="pending" keyword="PENDING">Then system is in a different state</step>
-<pendingMethod>@When(&quot;I do something&quot;)
-@Pending
-public void whenIDoSomething() {
-  // PENDING
-}
-</pendingMethod>
-<pendingMethod>@Then(&quot;system is in a different state&quot;)
-@Pending
-public void thenSystemIsInADifferentState() {
-  // PENDING
-}
-</pendingMethod>
+<scenario keyword="Scenario:" title="Apex randomly test">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:aman&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;10&apos; sec</step>
 </scenario>
 </story>
