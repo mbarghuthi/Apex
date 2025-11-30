@@ -58,18 +58,26 @@ public class CustomSteps extends AbstractSteps {
 	@Given("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
 	@When("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
 	@Then("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
-	public void assertElementTextEqualsSavedValue(@Named("elementName") String elementName, @Named("variableName") String variableName) throws Exception {
+	public void assertElementTextEqualsSavedValue(@Named("elementName") String elementName,
+												  @Named("variableName") String variableName) throws Exception {
 		String expectedValue = (String) stateManager.get(variableName);
-		String actualValue = cannedPage.getElementWithWaitText(elementName);
+		String actualValue   = cannedPage.getElementWithWaitText(elementName);
 
-		// Debug log
 		System.out.println("Expected value (from stateManager, key='" + variableName + "'): " + expectedValue);
 		System.out.println("Actual value (from element '" + elementName + "'): " + actualValue);
+
+		if (expectedValue == null) {
+			throw new Exception("Assertion failed: no value found in stateManager for key '" + variableName + "'");
+		}
+
+		expectedValue = expectedValue.trim();
+		actualValue   = actualValue != null ? actualValue.trim() : "";
 
 		if (!expectedValue.equals(actualValue)) {
 			throw new Exception("Assertion failed: expected '" + expectedValue + "', but was '" + actualValue + "'");
 		}
 	}
+
 	@Given("[Assertion] Verify text of '$elementName' equals saved value or zero '$variableName'")
 	@When("[Assertion] Verify text of '$elementName' equals saved value or zero '$variableName'")
 	@Then("[Assertion] Verify text of '$elementName' equals saved value or zero '$variableName''")

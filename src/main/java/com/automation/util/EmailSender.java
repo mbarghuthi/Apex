@@ -19,7 +19,7 @@ public class EmailSender {
     private static final String username = "test-automation@optimizasolutions.com";
     private static final String password = "M@RT1299";
     private static final String from = "test-automation@optimizasolutions.com";
-    private static final String reportDirectory = "D:\\Automation Quality Projects\\Dewan-Automation\\reports";
+    private static final String reportDirectory = "D:\\Automation Quality Projects\\Apex-evaluation\\reports";
 //    private static final String cc = "hmeqdad@optimizasolutions.com";
 //    private static final String to = "DMS@optimizasolutions.com";
     private static final String to = "sjaber@optimizasolutions.com";
@@ -98,12 +98,12 @@ public class EmailSender {
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
         message.addRecipient(Message.RecipientType.CC, new InternetAddress(cc));
-        message.setSubject("Recent Dewan Automation Test Report");
+        message.setSubject("Recent Apex Automation Test Report");
 
         Multipart multipart = new MimeMultipart();
 
         BodyPart messageBodyPart = new MimeBodyPart();
-        messageBodyPart.setText("Dear,\nI hope this message finds you well. Please find attached the most recent automation test report for Dewan.\n\nFeel free to review it and share any feedback or observations.\n\nBest regards,\nImageLinks Automation Team");
+        messageBodyPart.setText("Dear,\nI hope this message finds you well. Please find attached the most recent automation test report for Apex.\n\nFeel free to review it and share any feedback or observations.\n\nBest regards,\nImageLinks Automation Team");
         multipart.addBodyPart(messageBodyPart);
 
         messageBodyPart = new MimeBodyPart();

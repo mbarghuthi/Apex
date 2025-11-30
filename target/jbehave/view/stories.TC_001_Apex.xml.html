@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>stories.TC_001_Apex</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+<story path="stories/TC_001_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_001_Apex Apex Test Case">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:aman&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">When [Input] I click on &apos;ClientsDataDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ClientsDataButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;6&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;IndividualButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="ignorable">!-- Switch to iframe</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="ignorable">!-- Assert individual Radio Button is checked</step>
+<step outcome="successful">And [Assertion] Verify &apos;IndividualClientTypeRadioButton&apos; is selected</step>
+<step outcome="ignorable">!-- Fill</step>
+<step outcome="successful">And [Input] Set &apos;ClientNoInput&apos; value to &apos;nanotime&apos;</step>
+<step outcome="successful">And [Action] I get text from &apos;ClientNoInput&apos; and save it as &apos;ClientNoText&apos;</step>
+<step outcome="successful">And [Input] Set &apos;CustomerNameInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Action] I get text from &apos;CustomerNameInput&apos; and save it as &apos;CustomerNameText&apos;</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CustProfessionButton&apos; in current iframe</step>
+<step outcome="ignorable">!-- Cust Profession</step>
+<step outcome="successful">And [Input] I click on &apos;CustProfessionButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:GovernmentalInstitutionsEmployee&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- National /resident</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;NationalityResidencyButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:NationalResident&apos; value from &apos;PopupResidenceSearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- PEP Status</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;PEPStatusButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:yes&apos; value from &apos;PopupPEPStatusSearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- Annual Income Range</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AnnualIncomeRangeButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:BelowOrEqual2000JD&apos; value from &apos;PopupAnnualIncomeRangeSearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- Nationality</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;NationalityButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:Afghanistan&apos; value from &apos;PopupNationalitySearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- Residency</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ResidencyButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:Afghanistan&apos; value from &apos;PopupResidencySearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- City of Residency</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CityOfResidencyButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:Amman&apos; value from &apos;PopupCityOfResidencySearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- Product Type</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ProductTypeButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:CriticalIllnessInsuranceArabiProtect&apos; value from &apos;PopupProductTypeSearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- click on create</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CustProfessionButton&apos; in current iframe</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;20&apos; sec</step>
+<step outcome="ignorable">!-- Assert</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;ClientNoTextFromIframe&apos; equals saved value &apos;ClientNoText&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;CustomerNameTextFromIframe&apos; equals saved value &apos;CustomerNameText&apos;</step>
+<step outcome="ignorable">!-- Exit client iframe after create</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] I click on &apos;CloseClientIframeAfterCreate&apos;</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="ignorable">!-- Assert table</step>
+<step outcome="successful">And [Progress] I wait for &apos;6&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;CustomerNameTextFromTable&apos; equals saved value &apos;CustomerNameText&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;ClientNoTextFromTable&apos; equals saved value &apos;ClientNoText&apos;</step>
+<step outcome="ignorable">!-- Edit</step>
+<step outcome="successful">And [Input] I click on &apos;EditButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ClientIframe&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;ClientNoTextFromIframe&apos; equals saved value &apos;ClientNoText&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;CustomerNameTextFromIframe&apos; equals saved value &apos;CustomerNameText&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButtonPopup&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;10&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

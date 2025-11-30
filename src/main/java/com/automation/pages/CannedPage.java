@@ -32,9 +32,12 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	public WebElement password;
 	@FindBy(css = "#B544824351875391624")
 	public WebElement loginButton;
-//	@FindBy(xpath = "//a[contains(text(),'خروج')]")
-//	public WebElement logoutButton;
 
+	@FindBy(css = "#L560550008972078375")
+	public WebElement UserDDL;
+
+	@FindBy(css = "#menu_L560550008972078375_2i")
+	public WebElement LogoutButton;
 
 // ************************************************************ Elements **********************************************************************************************
 	@FindBy(css = "#t_TreeNav_2")
@@ -43,6 +46,99 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//a[normalize-space()='Client Data']")
 	public WebElement ClientsDataButton;
 
+	@FindBy(xpath = "//button[@id='B436183513358430790']")
+	public WebElement IndividualButton;
+
+	@FindBy(css = "#P203_CL_CLIENT_TYPE_0")
+	public WebElement IndividualClientTypeRadioButton;
+
+	@FindBy(css = "iframe[title='Client']")
+	public WebElement ClientIframe;
+
+	@FindBy(css = "#P203_CLIENT_NO")
+	public WebElement ClientNoInput;
+
+	@FindBy(css = "#P203_CUSTOMER_NAME")
+	public WebElement CustomerNameInput;
+
+	@FindBy(css = "#P203_CUST_PROFESSION")
+	public WebElement CustProfessionInput;
+
+	@FindBy(css = "#P203_CUST_PROFESSION_lov_btn")
+	public WebElement CustProfessionButton;
+
+	@FindBy(css = "input[aria-label='Search']")
+	public WebElement PopupLOVSearchBar;
+
+	@FindBy(css = "#P203_RESIDENCE_lov_btn")
+	public WebElement NationalityResidencyButton;
+
+	@FindBy(css = "div[id='PopupLov_203_P203_RESIDENCE_dlg'] input[aria-label='Search']")
+	public WebElement PopupResidenceSearchBar;
+
+	@FindBy(css = "#P203_PEP_STATUS_lov_btn")
+	public WebElement PEPStatusButton;
+
+	@FindBy(css = "div[id='PopupLov_203_P203_PEP_STATUS_dlg'] input[aria-label='Search']")
+	public WebElement PopupPEPStatusSearchBar;
+
+	@FindBy(css = "#P203_ANNUAL_INCOME_RANGE_lov_btn")
+	public WebElement AnnualIncomeRangeButton;
+
+	@FindBy(css = "div[id='PopupLov_203_P203_ANNUAL_INCOME_RANGE_dlg'] input[aria-label='Search']")
+	public WebElement PopupAnnualIncomeRangeSearchBar;
+
+	@FindBy(css = "#P203_CUST_NATIONALITY_MULTIV_lov_btn")
+	public WebElement NationalityButton;
+
+	@FindBy(css = "div[id='PopupLov_203_P203_CUST_NATIONALITY_MULTIV_dlg'] input[aria-label='Search']")
+	public WebElement PopupNationalitySearchBar;
+
+	@FindBy(css = "#P203_CUST_RESIDENCY_MULTIV_lov_btn")
+	public WebElement ResidencyButton;
+
+	@FindBy(css = "div[id='PopupLov_203_P203_CUST_RESIDENCY_MULTIV_dlg'] input[aria-label='Search']")
+	public WebElement PopupResidencySearchBar;
+
+	@FindBy(css = "#P203_CUST_CITY_OF_RESIDENCY_MULTIV_lov_btn")
+	public WebElement CityOfResidencyButton;
+
+	@FindBy(css = "div[id='PopupLov_203_P203_CUST_CITY_OF_RESIDENCY_MULTIV_dlg'] input[aria-label='Search']")
+	public WebElement PopupCityOfResidencySearchBar;
+
+	@FindBy(css = "#P203_CUST_PRODUCT_TYPE_MULTIV_lov_btn")
+	public WebElement ProductTypeButton;
+
+	@FindBy(css = "div[id='PopupLov_203_P203_CUST_PRODUCT_TYPE_MULTIV_dlg'] input[aria-label='Search']")
+	public WebElement PopupProductTypeSearchBar;
+
+	@FindBy(css = "#B536822739705614679")
+	public WebElement CreateButton;
+
+	@FindBy(css = "#P203_CLIENT_NO_DISPLAY")
+	public WebElement ClientNoTextFromIframe;
+
+	@FindBy(css = "#P203_NAME_DISPLAY")
+	public WebElement CustomerNameTextFromIframe;
+
+	@FindBy(css = "button[title='Close']")
+	public WebElement CloseClientIframeAfterCreate;
+
+	@FindBy(css = "body > form:nth-child(2) > div:nth-child(10) > div:nth-child(3) > div:nth-child(2) > main:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)")
+	public WebElement CustomerNameTextFromTable;
+	@FindBy(css = "body > form:nth-child(2) > div:nth-child(10) > div:nth-child(3) > div:nth-child(2) > main:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(3)")
+	public WebElement ClientNoTextFromTable;
+
+	@FindBy(css = "td[id='R536824524846614698_ig_grid_vc_cur'] a")
+	public WebElement EditButton;
+
+	@FindBy(css = "#B536821921096614678")
+	public WebElement DeleteButton;
+
+	@FindBy(css = ".js-confirmBtn.ui-button.ui-corner-all.ui-widget.ui-button--danger")
+	public WebElement DeleteButtonPopup;
+
+
 	/**
 	 *
 	 * Method to open link
@@ -50,6 +146,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	 * @param url : String : URL for navigation
 	 * @throws Exception
 	 */
+
 	public void navigateTo(String url) {
 
 		webDriverProvider.get().manage().window().maximize();
@@ -176,10 +273,23 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	 * @return String
 	 * @throws Exception
 	 */
-	public String   getElementWithWaitText(String elementName) throws Exception {
-		return getElementWithWait(this, elementName).getText();
+	public String getElementWithWaitText(String elementName) throws Exception {
+		WebElement element = getElementWithWait(this, elementName);
 
+		String tagName = element.getTagName();
+		String value;
+
+		if ("input".equalsIgnoreCase(tagName) || "textarea".equalsIgnoreCase(tagName)) {
+			// for inputs and textareas use "value"
+			value = element.getAttribute("value");
+		} else {
+			// for labels/divs/spans use inner text
+			value = element.getText();
+		}
+
+		return value != null ? value.trim() : "";
 	}
+
 
 	/**
 	 * Method to wait element disappear
@@ -258,6 +368,14 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		JavascriptExecutor executor = (JavascriptExecutor) webDriverProvider.get();
 		executor.executeScript("arguments[0].scrollIntoView();", element);
 		log.info("I scroll to '" + elementName + "'");
+	}
+
+	public void scrollToElementInCurrentFrame(String elementName) throws Exception {
+		WebDriver driver = webDriverProvider.get();
+		WebElement element = getElementWithWait(this, elementName);
+
+		((JavascriptExecutor) driver)
+				.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
 	}
 
 	/**
@@ -341,40 +459,106 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 
 	public void isRadioButtonSelected(String elementName, boolean shouldBeSelected) throws Exception {
-		WebElement checkbox = getElementWithWait(this, elementName);
-		if ((!checkbox.isSelected()) && shouldBeSelected)
-			Assert.assertTrue("Radio Button is not Selected", (!checkbox.isSelected()) && shouldBeSelected);
-		else if (checkbox.isSelected() && !shouldBeSelected)
-			Assert.assertTrue("Radio Button is Selected", checkbox.isSelected() && !shouldBeSelected);
+		// Use getElement (no visibility wait)
+		WebElement radio = getElement(this, elementName);
+
+		if ((!radio.isSelected()) && shouldBeSelected) {
+			Assert.assertTrue("Radio Button is not Selected",
+					(!radio.isSelected()) && shouldBeSelected);
+		} else if (radio.isSelected() && !shouldBeSelected) {
+			Assert.assertTrue("Radio Button is Selected",
+					radio.isSelected() && !shouldBeSelected);
+		}
 	}
+
 
 	public void clearText(String elementName) throws Exception {
 		WebElement element = getElementWithWait(this, elementName);
+		String type = element.getAttribute("type");
+		if ("hidden".equalsIgnoreCase(type)) {
+			throw new IllegalStateException(
+					"Trying to clear hidden input for '" + elementName +
+							"' (id=" + element.getAttribute("id") + ")");
+		}
 		element.clear();
 	}
 
+
 	public void selectOptionFromDropdown(String optionValue, String dropDownListName) throws Exception {
 		WebElement dropdown = getElementWithWait(this, dropDownListName);
-		dropdown.clear();
+		WebDriver driver = webDriverProvider.get();
 
+		// 1) Try plain <select>
 		try {
-			// Try to use Select if the element is a <select> tag
-			Select selectList = new Select(dropdown);
-			selectList.selectByVisibleText(optionValue);
-		} catch (UnexpectedTagNameException e) {
-			// Handle the case where the element is not a <select> tag
-			if (dropdown.getTagName().equalsIgnoreCase("input")) {
-				dropdown.click();
-				dropdown.clear();
-				dropdown.sendKeys(optionValue);
-				dropdown.sendKeys(Keys.DOWN);
-				dropdown.sendKeys(Keys.ENTER);
-				Thread.sleep(1000);
-			} else {
-				throw new Exception("Element is neither a <select> nor an <input> tag.");
+			Select select = new Select(dropdown);
+			select.selectByVisibleText(optionValue);
+			log.info("Selected '" + optionValue + "' from <select> '" + dropDownListName + "'");
+			return;
+		} catch (UnexpectedTagNameException ignored) {
+			// not a <select>, fall through
+		}
+
+		// 2) Generic LOV search <input>
+		if (!"input".equalsIgnoreCase(dropdown.getTagName())) {
+			throw new Exception("Element '" + dropDownListName + "' is neither a <select> nor an <input>.");
+		}
+
+		dropdown.click();
+		try {
+			dropdown.clear();
+		} catch (InvalidElementStateException ex) {
+			// read-only inputs – ignore
+		}
+
+		// type the visible text (already resolved from p:NationalResident, etc.)
+		dropdown.sendKeys(optionValue);
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+		// 2a) GENERIC: click any visible LOV Search button (if this LOV uses one)
+		List<WebElement> searchButtons = driver.findElements(
+				By.cssSelector("button.a-PopupLOV-doSearch"));
+		for (WebElement btn : searchButtons) {
+			if (btn.isDisplayed() && btn.isEnabled()) {
+				btn.click();
+				break;
 			}
 		}
+
+		// 2b) GENERIC: wait until at least one visible <li> exists inside any ul.a-IconList
+		By optionsLocator = By.cssSelector("ul.a-IconList li");
+
+		List<WebElement> visibleOptions = wait.until(d -> {
+			List<WebElement> all = d.findElements(optionsLocator);
+			List<WebElement> visible = new ArrayList<>();
+			for (WebElement e : all) {
+				try {
+					if (e.isDisplayed()) {
+						visible.add(e);
+					}
+				} catch (StaleElementReferenceException ignored) {
+					// element was refreshed; ignore and let the wait retry
+				}
+			}
+			return visible.isEmpty() ? null : visible;
+		});
+
+		// 2c) Click the option whose text equals optionValue
+		for (WebElement opt : visibleOptions) {
+			String text = opt.getText().trim();
+			if (text.equals(optionValue)) {
+				opt.click();
+				log.info("Selected '" + optionValue + "' from LOV '" + dropDownListName + "'");
+				return;
+			}
+		}
+
+		throw new Exception("Option '" + optionValue + "' not found in LOV for '" + dropDownListName + "'.");
 	}
+
+
+
+
 
 	public void selectFromDropdown(String elementName, String valueToSelect) throws Exception {
 		WebElement dropdownElement = getElementWithWait(this, elementName);
@@ -506,4 +690,20 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		}
 	}
 
+	public void switchToIframe(String iframeElementName) throws Exception {
+		WebElement frame = getElementWithWait(this, iframeElementName);
+		webDriverProvider.get().switchTo().frame(frame);
+	}
+
+	public void switchToDefaultContent() {
+		webDriverProvider.get().switchTo().defaultContent();
+	}
+
+	public void reloadPage() {
+		WebDriver driver = webDriverProvider.get();
+		driver.navigate().refresh();
+		log.info("I reload page");
+		// wait until page fully loaded + loaders gone
+		waitForLoad(driver);
+	}
 }

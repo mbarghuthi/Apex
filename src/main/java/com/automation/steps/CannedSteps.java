@@ -105,6 +105,13 @@ public class CannedSteps extends AbstractSteps {
 		cannedPage.scrollToElement(elementName);
 	}
 
+	@Given("[Navigation] I scroll to '$elementName' in current iframe")
+	@When("[Navigation] I scroll to '$elementName' in current iframe")
+	@Then("[Navigation] I scroll to '$elementName' in current iframe")
+	public void scroll_to_element_in_current_iframe(String elementName) throws Exception {
+		cannedPage.scrollToElementInCurrentFrame(elementName);
+	}
+
 
 	// hover over element
 	// Note: Doesn't work on Windows firefox
@@ -467,6 +474,27 @@ public class CannedSteps extends AbstractSteps {
 	@Then("[Javascript] I closed the new tab")
 	public void close_the_new_tab() {
 		cannedPage.closeLatestTabAndReturnToFirstTab();
+	}
+
+	@Given("[Javascript] I switch to iframe '$elementName'")
+	@When("[Javascript] I switch to iframe '$elementName'")
+	@Then("[Javascript] I switch to iframe '$elementName'")
+	public void switch_to_iframe(String elementName) throws Exception {
+		cannedPage.switchToIframe(elementName);
+	}
+
+	@Given("[Javascript] I switch back to main content")
+	@When("[Javascript] I switch back to main content")
+	@Then("[Javascript] I switch back to main content")
+	public void switch_back_to_main_content() {
+		cannedPage.switchToDefaultContent();
+	}
+
+	@Given("[Navigation] I reload page")
+	@When("[Navigation] I reload page")
+	@Then("[Navigation] I reload page")
+	public void reload_page() {
+		cannedPage.reloadPage();
 	}
 
 }
