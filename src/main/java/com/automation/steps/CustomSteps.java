@@ -8,12 +8,14 @@ import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.automation.pages.CustomPage;
 import com.automation.pages.CannedPage;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
@@ -207,19 +209,35 @@ public class CustomSteps extends AbstractSteps {
 	@Given("[Assertion] Verify text of '$elementName' contains saved value '$variableName'")
 	@When("[Assertion] Verify text of '$elementName' contains saved value '$variableName'")
 	@Then("[Assertion] Verify text of '$elementName' contains saved value '$variableName'")
-	public void assertElementTextContainsSavedValue(@Named("elementName") String elementName, @Named("variableName") String variableName) throws Exception {
+	public void assertElementTextContainsSavedValue(@Named("elementName") String elementName,
+													@Named("variableName") String variableName) throws Exception {
+
 		String expectedValue = (String) stateManager.get(variableName);
 		String actualValue = cannedPage.getElementWithWaitText(elementName);
 
-		// Debug log
 		System.out.println("Expected value (from stateManager, key='" + variableName + "'): " + expectedValue);
 		System.out.println("Actual value (from element '" + elementName + "'): " + actualValue);
 
-		// Extract the relevant part if needed
-		String relevantPart = expectedValue.split("\\|")[1].trim();  // Extract after '|'
+		if (expectedValue == null) {
+			throw new Exception("StateManager value is null for key: '" + variableName + "'");
+		}
+
+		// If expected value contains '|', take the part after it; otherwise use full value
+		String relevantPart;
+		if (expectedValue.contains("|")) {
+			String[] parts = expectedValue.split("\\|", 2); // split into max 2 parts
+			relevantPart = parts.length > 1 ? parts[1].trim() : expectedValue.trim();
+		} else {
+			relevantPart = expectedValue.trim();
+		}
+
+		if (actualValue == null) actualValue = "";
 
 		if (!actualValue.contains(relevantPart)) {
-			throw new Exception("Assertion failed: expected value to be contained in actual value. Expected part '" + relevantPart + "', but actual value was '" + actualValue + "'");
+			throw new Exception(
+					"Assertion failed: element '" + elementName + "' text does not contain saved value '" + variableName + "'. "
+							+ "Expected part '" + relevantPart + "', but actual was '" + actualValue + "'"
+			);
 		}
 	}
 
@@ -316,7 +334,110 @@ public class CustomSteps extends AbstractSteps {
 	}
 
 
+	@Given("[Input] I set IG '$regionId' row '$rowText' column '$columnHeader' to '$value'")
+	@When("[Input] I set IG '$regionId' row '$rowText' column '$columnHeader' to '$value'")
+	@Then("[Input] I set IG '$regionId' row '$rowText' column '$columnHeader' to '$value'")
+	public void set_ig_value(String regionId, String rowText, String columnHeader, String value) throws Exception {
+		customPage.setIGValue(regionId, rowText, columnHeader, value);
+	}
 
 
+	@Given("[Input] I set IG '$regionId' from first row '$firstRowText' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	@When("[Input] I set IG '$regionId' from first row '$firstRowText' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	@Then("[Input] I set IG '$regionId' from first row '$firstRowText' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	public void set_ig_random_all_enabled_cells_excluding_ddl(String regionId, String firstRowText, int min, int max) throws Exception {
+		int updated = customPage.fillCalcIgRandomAndSave(regionId, firstRowText, min, max);
+		if (updated <= 0) throw new Exception("No enabled non-DDL cells were updated.");
+	}
+
+
+	@Given("[Input] I fill IG '$igId' with random numbers between '$min' and '$max' and save page")
+	@When("[Input] I fill IG '$igId' with random numbers between '$min' and '$max' and save page")
+	@Then("[Input] I fill IG '$igId' with random numbers between '$min' and '$max' and save page")
+	public void fillIgRandomAndSavePage(String igId, int min, int max) throws Exception {
+
+		int updated = customPage.fillCalcIgRandomAndSave(igId, "20 - LC invoice value", min, max);
+		if (updated <= 0) throw new Exception("Nothing was filled in IG. updated=0");
+	}
+
+
+	@Given("[Action] I enable IG edit mode for '$regionId'")
+	@When("[Action] I enable IG edit mode for '$regionId'")
+	@Then("[Action] I enable IG edit mode for '$regionId'")
+	public void enable_ig_edit_mode(String regionId) throws Exception {
+		customPage.ensureIgEditModePublic(regionId);
+	}
+
+	@Given("[Assertion] Verify IG '$igId' row '$rowText' column '$columnHeader' is not zero")
+	@When("[Assertion] Verify IG '$igId' row '$rowText' column '$columnHeader' is not zero")
+	@Then("[Assertion] Verify IG '$igId' row '$rowText' column '$columnHeader' is not zero")
+	public void verifyIgCellNotZero(String igId, String rowText, String columnHeader) throws Exception {
+
+		WebDriver driver = webDriverProvider.get();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+		Boolean ok = wait.until(d -> {
+			try {
+				String val = customPage.getIGCellText(igId, rowText, columnHeader);
+				if (val == null) return false;
+				String v = val.trim();
+				return !v.isEmpty() && !"0".equals(v);
+			} catch (Exception e) {
+				return false;
+			}
+		});
+
+		if (!Boolean.TRUE.equals(ok)) {
+			String val = customPage.getIGCellText(igId, rowText, columnHeader);
+			throw new Exception("IG cell is zero/empty. row=" + rowText + ", col=" + columnHeader + ", value=" + val);
+		}
+	}
+
+	@Given("[Input] I set SECOND IG '$ig2' from first row '$firstRow2' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	@When("[Input] I set SECOND IG '$ig2' from first row '$firstRow2' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	@Then("[Input] I set SECOND IG '$ig2' from first row '$firstRow2' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	public void set_second_ig_random_all_enabled_cells_excluding_ddl(
+			@Named("ig2") String ig2,
+			@Named("firstRow2") String firstRow2,
+			@Named("min") int min,
+			@Named("max") int max
+	) throws Exception {
+
+		int updated = customPage.fillSecondIgRandomAndSaveOnly(ig2, firstRow2, min, max);
+		if (updated <= 0) throw new Exception("No enabled non-DDL cells were updated in second IG.");
+	}
+
+	@Given("[Input] I set IG number '$igIndex' from first row '$firstRowText' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	@When("[Input] I set IG number '$igIndex' from first row '$firstRowText' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	@Then("[Input] I set IG number '$igIndex' from first row '$firstRowText' to random numbers between '$min' and '$max' for all enabled cells excluding DDL")
+	public void set_ig_by_index_random_all_enabled_cells_excluding_ddl(
+			@Named("igIndex") int igIndex,
+			@Named("firstRowText") String firstRowText,
+			@Named("min") int min,
+			@Named("max") int max
+	) throws Exception {
+		int updated = customPage.fillIgByIndexRandomAndSave(igIndex, firstRowText, min, max);
+		if (updated <= 0) throw new Exception("Nothing was filled in IG. updated=0");
+	}
+
+	@Given("[Assertion] Verify IG '$igId' row '$rowText' Local/Amount can be filled")
+	@When("[Assertion] Verify IG '$igId' row '$rowText' Local/Amount can be filled")
+	@Then("[Assertion] Verify IG '$igId' row '$rowText' Local/Amount can be filled")
+	public void verify_ig_local_amount_fillable(
+			@Named("igId") String igId,
+			@Named("rowText") String rowText
+	) throws Exception {
+		customPage.assertIgLocalAmountFillable(igId, rowText);
+	}
+
+	@Given("[Assertion] Verify IG '$igId' row '$rowText' Foreign/Foreign Amount can be filled")
+	@When("[Assertion] Verify IG '$igId' row '$rowText' Foreign/Foreign Amount can be filled")
+	@Then("[Assertion] Verify IG '$igId' row '$rowText' Foreign/Foreign Amount can be filled")
+	public void verify_ig_foreign_amount_fillable(
+			@Named("igId") String igId,
+			@Named("rowText") String rowText
+	) throws Exception {
+		customPage.assertIgForeignAmountFillable(igId, rowText);
+	}
 
 }

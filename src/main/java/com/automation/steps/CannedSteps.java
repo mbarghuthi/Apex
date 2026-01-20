@@ -4,12 +4,14 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.openqa.selenium.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.automation.pages.CannedPage;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -59,8 +61,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Navigation] I resize browser window size to width '$widthValue' and height '$heightValue'")
 	@When("[Navigation] I resize browser window size to width '$widthValue' and height '$heightValue'")
 	@Then("[Navigation] I resize browser window size to width '$widthValue' and height '$heightValue'")
-	public void resize_browser(int widthValue, int heightValue)
-	{
+	public void resize_browser(int widthValue, int heightValue) {
 		cannedPage.resizeBrowser(widthValue, heightValue);
 	}
 
@@ -68,19 +69,16 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Navigation] I maximize browser window")
 	@When("[Navigation] I maximize browser window")
 	@Then("[Navigation] I maximize browser window")
-	public void maximize_browser()
-	{
+	public void maximize_browser() {
 		cannedPage.maximizeBrowser();
 	}
-
 
 
 	// scroll webpage top
 	@Given("[Navigation] I scroll to top of page")
 	@When("[Navigation] I scroll to top of page")
 	@Then("[Navigation] I scroll to top of page")
-	public void scroll_page_top() throws Exception
-	{
+	public void scroll_page_top() throws Exception {
 		cannedPage.scrollPage("top");
 	}
 
@@ -89,8 +87,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Navigation] I scroll to end of page")
 	@When("[Navigation] I scroll to end of page")
 	@Then("[Navigation] I scroll to end of page")
-	public void scroll_page_end() throws Exception
-	{
+	public void scroll_page_end() throws Exception {
 		cannedPage.scrollPage("end");
 	}
 
@@ -100,8 +97,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Navigation] I scroll to '$elementName'")
 	@When("[Navigation] I scroll to '$elementName'")
 	@Then("[Navigation] I scroll to '$elementName'")
-	public void scroll_to_element(String elementName) throws Exception
-	{
+	public void scroll_to_element(String elementName) throws Exception {
 		cannedPage.scrollToElement(elementName);
 	}
 
@@ -118,43 +114,41 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Navigation] I hover over '$elementName'")
 	@When("[Navigation] I hover over '$elementName'")
 	@Then("[Navigation] I hover over '$elementName'")
-	public void hover_over_element(String elementName) throws Exception
-	{
+	public void hover_over_element(String elementName) throws Exception {
 
 		cannedPage.hoverOverElement(elementName);
 	}
 
 
-
-
-
 	//Assertion steps
 
-	/** page title checking
+	/**
+	 * page title checking
+	 *
 	 * @param titleValue :
 	 * @throws Exception
 	 */
 	@Given("[Assertion] Verify page title equals '$titleValue'")
 	@When("[Assertion] Verify page title equals '$titleValue'")
 	@Then("[Assertion] Verify page title equals '$titleValue'")
-	public void check_title(String titleValue) throws Exception
-	{
-		cannedPage.checkTitle(titleValue,true);
+	public void check_title(String titleValue) throws Exception {
+		cannedPage.checkTitle(titleValue, true);
 	}
 
 
 	//Assertion steps
 
-	/** page title checking
+	/**
+	 * page title checking
+	 *
 	 * @param titleValue :
 	 * @throws Exception
 	 */
 	@Given("[Assertion] Verify page title not equals '$titleValue'")
 	@When("[Assertion] Verify page title not equals '$titleValue'")
 	@Then("[Assertion] Verify page title not equals '$titleValue'")
-	public void check_not_equals_title(String titleValue) throws Exception
-	{
-		cannedPage.checkTitle(titleValue,false);
+	public void check_not_equals_title(String titleValue) throws Exception {
+		cannedPage.checkTitle(titleValue, false);
 	}
 
 	// step to check element text
@@ -194,8 +188,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Assertion] Verify '$elementName' have attribute '$attributeName' with '$attributeValue' value")
 	@When("[Assertion] Verify '$elementName' have attribute '$attributeName' with '$attributeValue' value")
 	@Then("[Assertion] Verify '$elementName' have attribute '$attributeName' with '$attributeValue' value")
-	public void check_element_attribute(String elementName, String attributeName, String attributeValue) throws Exception
-	{
+	public void check_element_attribute(String elementName, String attributeName, String attributeValue) throws Exception {
 		cannedPage.checkElementAttribute(elementName, attributeName, attributeValue, true);
 	}
 
@@ -203,8 +196,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Assertion] Verify '$elementName' not have attribute '$attributeName' with '$attributeValue' value")
 	@When("[Assertion] Verify '$elementName' not have attribute '$attributeName' with '$attributeValue' value")
 	@Then("[Assertion] Verify '$elementName' not have attribute '$attributeName' with '$attributeValue' value")
-	public void check_element_not_have_attribute(String elementName, String attributeName, String attributeValue) throws Exception
-	{
+	public void check_element_not_have_attribute(String elementName, String attributeName, String attributeValue) throws Exception {
 		cannedPage.checkElementAttribute(elementName, attributeName, attributeValue, false);
 	}
 
@@ -213,8 +205,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Assertion] Verify '$elementName' is enable")
 	@When("[Assertion] Verify '$elementName' is enable")
 	@Then("[Assertion] Verify '$elementName' is enable")
-	public void check_element_enable(String elementName) throws Exception
-	{
+	public void check_element_enable(String elementName) throws Exception {
 		cannedPage.checkElementEnable(elementName, true);
 	}
 
@@ -223,8 +214,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Assertion] Verify '$elementName' is disable")
 	@When("[Assertion] Verify '$elementName' is disable")
 	@Then("[Assertion] Verify '$elementName' is disable")
-	public void check_element_disable(String elementName) throws Exception
-	{
+	public void check_element_disable(String elementName) throws Exception {
 		cannedPage.checkElementEnable(elementName, false);
 	}
 
@@ -246,14 +236,11 @@ public class CannedSteps extends AbstractSteps {
 	}
 
 
-
-
 	//step to assert checkbox is checked
 	@Given("[Assertion] Verify '$elementName' is checked")
 	@When("[Assertion] Verify '$elementName' is checked")
 	@Then("[Assertion] Verify '$elementName' is checked")
-	public void is_checkbox_checked(String elementName) throws Exception
-	{
+	public void is_checkbox_checked(String elementName) throws Exception {
 		cannedPage.isCheckboxChecked(elementName, true);
 	}
 
@@ -262,20 +249,16 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Assertion] Verify '$elementName' is unchecked")
 	@When("[Assertion] Verify '$elementName' is unchecked")
 	@Then("[Assertion] Verify '$elementName' is unchecked")
-	public void is_checkbox_unchecked(String elementName) throws Exception
-	{
+	public void is_checkbox_unchecked(String elementName) throws Exception {
 		cannedPage.isCheckboxChecked(elementName, false);
 	}
-
-
 
 
 	//step to assert radio button is selected
 	@Given("[Assertion] Verify '$elementName' is selected")
 	@When("[Assertion] Verify '$elementName' is selected")
 	@Then("[Assertion] Verify '$elementName' is selected")
-	public void is_radioButton_selected(String elementName) throws Exception
-	{
+	public void is_radioButton_selected(String elementName) throws Exception {
 		cannedPage.isRadioButtonSelected(elementName, true);
 	}
 
@@ -284,8 +267,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Assertion] Verify '$elementName' is unselected")
 	@When("[Assertion] Verify '$elementName' is unselected")
 	@Then("[Assertion] Verify '$elementName' is unselected")
-	public void is_radioButton_unselected(String elementName) throws Exception
-	{
+	public void is_radioButton_unselected(String elementName) throws Exception {
 		cannedPage.isRadioButtonSelected(elementName, false);
 	}
 
@@ -297,31 +279,59 @@ public class CannedSteps extends AbstractSteps {
 	public void enter_text(String elementName, String value) throws Exception {
 		cannedPage.clearText(elementName);
 
-		if (value.toLowerCase().contains("random")) {
+		if (value.toLowerCase().contains("random5")) {
+//			cannedPage.doubleClick(elementName);
+			String key = value.toLowerCase().replace("random5", "").trim();
+			int n = java.util.concurrent.ThreadLocalRandom.current().nextInt(10000, 100000); // 5 digits
+			value = String.valueOf(n);
+			stateManager.put(key, value);
+		}
+
+		else if (value.toLowerCase().contains("random2")) {
+			String key = value.toLowerCase().replace("random2", "").trim();
+			int n = java.util.concurrent.ThreadLocalRandom.current().nextInt(10, 100); // 2 digits
+			value = String.valueOf(n);
+			stateManager.put(key, value);
+		}
+
+		else if (value.toLowerCase().contains("random")) {
 			String key = value.toLowerCase().replace("random", "").trim();
 			value = value.toLowerCase().replace("random", "Auto" + String.valueOf(System.nanoTime()));
 			stateManager.put(key, value);
 		}
 
-		if (value.toLowerCase().contains("date")) {
+		else if (value.toLowerCase().contains("sysdateformatted")) {
+			String key = value.toLowerCase().replace("sysdateformatted", "").trim();
+			String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+			value = value.toLowerCase().replace("sysdateformatted", today);
+			stateManager.put(key, value);
+		}
+
+		else if (value.toLowerCase().contains("sysyear")) {
+			String key = value.toLowerCase().replace("sysyear", "").trim();
+			String year = String.valueOf(LocalDate.now().getYear());
+			value = value.toLowerCase().replace("sysyear", year);
+			stateManager.put(key, value);
+		}
+
+		else if (value.toLowerCase().contains("date")) {
 			String key = value.toLowerCase().replace("date", "").trim();
 			value = value.toLowerCase().replace("date", LocalDate.now().toString());
 			stateManager.put(key, value);
 		}
 
-		if (value.toLowerCase().contains("statemanager")) {
+		else if (value.toLowerCase().contains("statemanager")) {
 			String key = value.toLowerCase().replace("statemanager", "").trim();
 			value = (String) stateManager.get(key);
 		}
 
-		if (value.toLowerCase().contains("nanotime")) {
+		else if (value.toLowerCase().contains("nanotime")) {
 			String key = value.toLowerCase().replace("nanotime", "").trim();
 			value = String.valueOf(System.nanoTime());
 			stateManager.put(key, value);
 		}
 
 		cannedPage.enterText(elementName, value);
-
 	}
 
 
@@ -329,38 +339,32 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Input] Clear '$elementName' field")
 	@When("[Input] Clear '$elementName' field")
 	@Then("[Input] Clear '$elementName' field")
-	public void clear_text(String elementName) throws Exception
-	{
+	public void clear_text(String elementName) throws Exception {
 		cannedPage.clearText(elementName);
 	}
-
 
 
 	// select option by text from dropdown
 	@Given("[Input] Select '$optionValue' value from '$dropDownListName' dropdown list")
 	@When("[Input] Select '$optionValue' value from '$dropDownListName' dropdown list")
 	@Then("[Input] Select '$optionValue' value from '$dropDownListName' dropdown list")
-	public void select_option_from_dropdown(String optionValue,String dropDownListName) throws Exception
-	{
+	public void select_option_from_dropdown(String optionValue, String dropDownListName) throws Exception {
 		cannedPage.selectOptionFromDropdown(optionValue, dropDownListName);
 	}
 
 	@Given("[Input] Select '$elementName' value from '$optionValue'")
 	@When("[Input] Select '$elementName' value from '$optionValue'")
 	@Then("[Input] Select '$elementName' value from '$optionValue'")
-	public void select_value_from_dropdown(String elementName, String optionValue) throws Exception
-	{
+	public void select_value_from_dropdown(String elementName, String optionValue) throws Exception {
 		cannedPage.selectFromDropdown(elementName, optionValue);
 	}
-
 
 
 	//check checkbox steps
 	@Given("[Input] I check the '$elementName'")
 	@When("[Input] I check the '$elementName'")
 	@Then("[Input] I check the '$elementName'")
-	public void check_checkbox(String elementName) throws Exception
-	{
+	public void check_checkbox(String elementName) throws Exception {
 		cannedPage.checkCheckbox(elementName);
 	}
 
@@ -369,8 +373,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Input] I uncheck the '$elementName'")
 	@When("[Input] I uncheck the '$elementName'")
 	@Then("[Input] I uncheck the '$elementName'")
-	public void uncheck_checkbox(String elementName) throws Exception
-	{
+	public void uncheck_checkbox(String elementName) throws Exception {
 		cannedPage.uncheckCheckbox(elementName);
 	}
 
@@ -379,8 +382,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Input] I select the '$elementName'")
 	@When("[Input] I select the '$elementName'")
 	@Then("[Input] I select the '$elementName'")
-	public void select_radio_button(String elementName) throws Exception
-	{
+	public void select_radio_button(String elementName) throws Exception {
 		cannedPage.selectRadioButton(elementName);
 	}
 
@@ -394,17 +396,24 @@ public class CannedSteps extends AbstractSteps {
 
 	}
 
+	@Given("[Input] I double click on '$elementName'")
+	@When("[Input] I double click on '$elementName'")
+	@Then("[Input] I double click on '$elementName'")
+	public void double_click(String elementName) throws Exception {
+		cannedPage.doubleClick(elementName);
+	}
+
 
 	@Given("[Input] I login as '$userName' with password '$password'")
 	@When("[Input] I login as '$userName' with password '$password'")
 	@Then("[Input] I login as '$userName' with password '$password'")
 	public void loginAs(@Named("userName") String userName, @Named("password") String password) throws Throwable {
 //		cannedPage.uncheckCheckbox("Unified Login");
-				Thread.sleep(3000);
+		Thread.sleep(3000);
 		cannedPage.enterText("userName", userName);
-				Thread.sleep(3000);
+		Thread.sleep(3000);
 		cannedPage.click("password");
-			Thread.sleep(3000);
+		Thread.sleep(3000);
 		cannedPage.enterText("password", password).click("login Button");
 	}
 
@@ -416,13 +425,11 @@ public class CannedSteps extends AbstractSteps {
 	}
 
 
-
 	// wait for specific period of time
 	@Given("[Progress] I wait for '$value' sec")
 	@When("[Progress] I wait for '$value' sec")
 	@Then("[Progress] I wait for '$value' sec")
-	public void wait(String value) throws NumberFormatException, InterruptedException
-	{
+	public void wait(String value) throws NumberFormatException, InterruptedException {
 		cannedPage.wait(value);
 	}
 
@@ -439,8 +446,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Javascript] I accept alert")
 	@When("[Javascript] I accept alert")
 	@Then("[Javascript] I accept alert")
-	public void handle_alert()
-	{
+	public void handle_alert() {
 		cannedPage.handleAlert("accept");
 	}
 
@@ -449,8 +455,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Javascript] I dismiss alert")
 	@When("[Javascript] I dismiss alert")
 	@Then("[Javascript] I dismiss alert")
-	public void dismiss_alert()
-	{
+	public void dismiss_alert() {
 		cannedPage.handleAlert("dismiss");
 	}
 
@@ -495,6 +500,114 @@ public class CannedSteps extends AbstractSteps {
 	@Then("[Navigation] I reload page")
 	public void reload_page() {
 		cannedPage.reloadPage();
+	}
+
+	@Given("[Assertion] Verify '$elementName' value equals sysdate")
+	@When("[Assertion] Verify '$elementName' value equals sysdate")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate")
+	public void assert_field_equals_sysdate(String elementName) throws Exception {
+		String expectedDate = LocalDate.now()
+				.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+		String actualValue = cannedPage.getElementWithWaitText(elementName);
+
+		if (!expectedDate.equals(actualValue)) {
+			throw new AssertionError(
+					"Expected sysdate '" + expectedDate + "' but found '" + actualValue + "'");
+		}
+	}
+
+	@Given("[Assertion] Verify '$elementName' value equals sysdate with format '$pattern'")
+	@When("[Assertion] Verify '$elementName' value equals sysdate with format '$pattern'")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate with format '$pattern'")
+	public void assert_field_equals_sysdate_with_format(String elementName, String pattern) throws Exception {
+		String expectedDate = LocalDate.now()
+				.format(DateTimeFormatter.ofPattern(pattern));
+
+		String actualValue = cannedPage.getElementWithWaitText(elementName);
+
+		if (!expectedDate.equals(actualValue)) {
+			throw new AssertionError(
+					"Expected sysdate '" + expectedDate + "' but found '" + actualValue + "'");
+		}
+	}
+
+	@Given("[Assertion] Verify '$elementName' value equals saved sysdate '$key'")
+	@When("[Assertion] Verify '$elementName' value equals saved sysdate '$key'")
+	@Then("[Assertion] Verify '$elementName' value equals saved sysdate '$key'")
+	public void assert_field_equals_saved_sysdate(String elementName, String key) throws Exception {
+		String expectedDate = (String) stateManager.get(key);
+		String actualValue = cannedPage.getElementWithWaitText(elementName);
+
+		if (!expectedDate.equals(actualValue)) {
+			throw new AssertionError(
+					"Expected saved sysdate '" + expectedDate + "' but found '" + actualValue + "'");
+		}
+	}
+
+	@Given("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus one day")
+	@When("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus one day")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus one day")
+	public void assert_sysdate_plus_months_minus_one_day(String elementName, int months) throws Exception {
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		String expected = LocalDate.now()
+				.plusMonths(months)
+				.minusDays(1)
+				.format(formatter);
+
+		String actual = cannedPage.getElementWithWaitText(elementName);
+
+		if (!expected.equals(actual)) {
+			throw new AssertionError(
+					"Expected date '" + expected + "' (sysdate + " + months +
+							" months - 1 day) but found '" + actual + "'");
+		}
+	}
+
+	@Given("[Assertion] Verify '$elementName' value equals sysdate plus '$years' years minus one day")
+	@When("[Assertion] Verify '$elementName' value equals sysdate plus '$years' years minus one day")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate plus '$years' years minus one day")
+	public void assert_sysdate_plus_years_minus_one_day(String elementName, int years) throws Exception {
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		String expected = LocalDate.now()
+				.plusYears(years)
+				.minusDays(1)
+				.format(formatter);
+
+		String actual = cannedPage.getElementWithWaitText(elementName);
+
+		if (!expected.equals(actual)) {
+			throw new AssertionError(
+					"Expected date '" + expected + "' (sysdate + " + years +
+							" years - 1 day) but found '" + actual + "'");
+		}
+	}
+
+
+
+	@Given("[Input] I press Enter on '$elementName'")
+	@When("[Input] I press Enter on '$elementName'")
+	@Then("[Input] I press Enter on '$elementName'")
+	public void press_enter_on_element(String elementName) throws Exception {
+		cannedPage.pressEnter(elementName);
+	}
+
+	@Given("[Assertion] Verify '$elementName' input is empty")
+	@When("[Assertion] Verify '$elementName' input is empty")
+	@Then("[Assertion] Verify '$elementName' input is empty")
+	public void verify_input_is_empty(String elementName) throws Exception {
+		cannedPage.assertInputEmpty(elementName, true);
+	}
+
+	@Given("[Assertion] Verify '$elementName' input is not empty")
+	@When("[Assertion] Verify '$elementName' input is not empty")
+	@Then("[Assertion] Verify '$elementName' input is not empty")
+	public void verify_input_is_not_empty(String elementName) throws Exception {
+		cannedPage.assertInputEmpty(elementName, false);
 	}
 
 }

@@ -26,123 +26,258 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 //************************************************************ Login Page elements ********************************************************************
 
-	@FindBy(css = "#P101_USERNAME")
+	@FindBy(css = "#P9999_USERNAME")
 	public WebElement userName;
-	@FindBy(css = "#P101_PASSWORD")
+	@FindBy(css = "#P9999_PASSWORD")
 	public WebElement password;
-	@FindBy(css = "#B544824351875391624")
+	@FindBy(css = "#OK")
 	public WebElement loginButton;
 
-	@FindBy(css = "#L560550008972078375")
+	@FindBy(css = "#userNavItem")
 	public WebElement UserDDL;
 
-	@FindBy(css = "#menu_L560550008972078375_2i")
+	@FindBy(css = "#menu_L120831929885889141_1i")
 	public WebElement LogoutButton;
 
-// ************************************************************ Elements **********************************************************************************************
-	@FindBy(css = "#t_TreeNav_2")
-	public WebElement ClientsDataDDL;
+	@FindBy(xpath = "//span[normalize-space()='Create']")
+	public WebElement CreateButton;
 
-	@FindBy(xpath = "//a[normalize-space()='Client Data']")
-	public WebElement ClientsDataButton;
+	@FindBy(css = "h2[role='alert']")
+	public WebElement SuccessfullyAlert;
 
-	@FindBy(xpath = "//button[@id='B436183513358430790']")
-	public WebElement IndividualButton;
+	@FindBy(xpath = "//span[normalize-space()='Next']")
+	public WebElement NextButton;
 
-	@FindBy(css = "#P203_CL_CLIENT_TYPE_0")
-	public WebElement IndividualClientTypeRadioButton;
-
-	@FindBy(css = "iframe[title='Client']")
-	public WebElement ClientIframe;
-
-	@FindBy(css = "#P203_CLIENT_NO")
-	public WebElement ClientNoInput;
-
-	@FindBy(css = "#P203_CUSTOMER_NAME")
-	public WebElement CustomerNameInput;
-
-	@FindBy(css = "#P203_CUST_PROFESSION")
-	public WebElement CustProfessionInput;
-
-	@FindBy(css = "#P203_CUST_PROFESSION_lov_btn")
-	public WebElement CustProfessionButton;
+	@FindBy(css = "#PageUpdate")
+	public WebElement ApplyChangesButton;
 
 	@FindBy(css = "input[aria-label='Search']")
 	public WebElement PopupLOVSearchBar;
 
-	@FindBy(css = "#P203_RESIDENCE_lov_btn")
-	public WebElement NationalityResidencyButton;
+	@FindBy(xpath = "//div[@class='t-Alert-body']")
+	public WebElement loginAlert;
 
-	@FindBy(css = "div[id='PopupLov_203_P203_RESIDENCE_dlg'] input[aria-label='Search']")
-	public WebElement PopupResidenceSearchBar;
-
-	@FindBy(css = "#P203_PEP_STATUS_lov_btn")
-	public WebElement PEPStatusButton;
-
-	@FindBy(css = "div[id='PopupLov_203_P203_PEP_STATUS_dlg'] input[aria-label='Search']")
-	public WebElement PopupPEPStatusSearchBar;
-
-	@FindBy(css = "#P203_ANNUAL_INCOME_RANGE_lov_btn")
-	public WebElement AnnualIncomeRangeButton;
-
-	@FindBy(css = "div[id='PopupLov_203_P203_ANNUAL_INCOME_RANGE_dlg'] input[aria-label='Search']")
-	public WebElement PopupAnnualIncomeRangeSearchBar;
-
-	@FindBy(css = "#P203_CUST_NATIONALITY_MULTIV_lov_btn")
-	public WebElement NationalityButton;
-
-	@FindBy(css = "div[id='PopupLov_203_P203_CUST_NATIONALITY_MULTIV_dlg'] input[aria-label='Search']")
-	public WebElement PopupNationalitySearchBar;
-
-	@FindBy(css = "#P203_CUST_RESIDENCY_MULTIV_lov_btn")
-	public WebElement ResidencyButton;
-
-	@FindBy(css = "div[id='PopupLov_203_P203_CUST_RESIDENCY_MULTIV_dlg'] input[aria-label='Search']")
-	public WebElement PopupResidencySearchBar;
-
-	@FindBy(css = "#P203_CUST_CITY_OF_RESIDENCY_MULTIV_lov_btn")
-	public WebElement CityOfResidencyButton;
-
-	@FindBy(css = "div[id='PopupLov_203_P203_CUST_CITY_OF_RESIDENCY_MULTIV_dlg'] input[aria-label='Search']")
-	public WebElement PopupCityOfResidencySearchBar;
-
-	@FindBy(css = "#P203_CUST_PRODUCT_TYPE_MULTIV_lov_btn")
-	public WebElement ProductTypeButton;
-
-	@FindBy(css = "div[id='PopupLov_203_P203_CUST_PRODUCT_TYPE_MULTIV_dlg'] input[aria-label='Search']")
-	public WebElement PopupProductTypeSearchBar;
-
-	@FindBy(css = "#B536822739705614679")
-	public WebElement CreateButton;
-
-	@FindBy(css = "#P203_CLIENT_NO_DISPLAY")
-	public WebElement ClientNoTextFromIframe;
-
-	@FindBy(css = "#P203_NAME_DISPLAY")
-	public WebElement CustomerNameTextFromIframe;
-
-	@FindBy(css = "button[title='Close']")
-	public WebElement CloseClientIframeAfterCreate;
-
-	@FindBy(css = "body > form:nth-child(2) > div:nth-child(10) > div:nth-child(3) > div:nth-child(2) > main:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)")
-	public WebElement CustomerNameTextFromTable;
-	@FindBy(css = "body > form:nth-child(2) > div:nth-child(10) > div:nth-child(3) > div:nth-child(2) > main:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(3)")
-	public WebElement ClientNoTextFromTable;
-
-	@FindBy(css = "td[id='R536824524846614698_ig_grid_vc_cur'] a")
-	public WebElement EditButton;
-
-	@FindBy(css = "#B536821921096614678")
+	@FindBy(xpath = "//span[normalize-space()='Delete']")
 	public WebElement DeleteButton;
 
-	@FindBy(css = ".js-confirmBtn.ui-button.ui-corner-all.ui-widget.ui-button--danger")
+	@FindBy(xpath = "//button[contains(text(),'Delete')]")
 	public WebElement DeleteButtonPopup;
 
+// ************************************************************ Elements **********************************************************************************************
 
+	@FindBy(css = "#t_Button_navControl")
+	public WebElement navControlButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Quotations']")
+	public WebElement QuotationsSideMenu;
+
+	@FindBy(xpath = "//span[normalize-space()='Quotation - Menu']")
+	public WebElement QuotationMenuSideMenu;
+
+	@FindBy(xpath = "//h3[normalize-space()='Quotations']")
+	public WebElement QuotationCardDashboard;
+
+	@FindBy(xpath = "//a[normalize-space()='Quotations']")
+	public WebElement QuotationNavigationSideMenu;
+
+	@FindBy(xpath = "//h2[normalize-space()='Quotations']")
+	public WebElement QuotationsTitle;
+
+	@FindBy(xpath = "//h3[normalize-space()='4-Jeddah Claim Center']")
+	public WebElement JeddahClaimCenterCard;
+
+	@FindBy(css = "#OFF_QUT_IG_ig_toolbar_btn-add_off_qut")
+	public WebElement NewQuotationButton;
+
+	@FindBy(xpath = "//h3[normalize-space()='Motor']")
+	public WebElement MotorCard;
+	@FindBy(xpath = "//h3[normalize-space()='Motor Private']")
+	public WebElement MotorPrivateCard;
+	@FindBy(xpath = "//h3[normalize-space()='Motor Commercial']")
+	public WebElement MotorCommercialCard;
+	@FindBy(xpath = "//h3[normalize-space()='Comprehensive']")
+	public WebElement ComprehensiveCard;
+	@FindBy(xpath = "//h3[normalize-space()='Third Party']")
+	public WebElement ThirdPartyCard;
+
+	@FindBy(xpath = "//h3[normalize-space()='Marine']")
+	public WebElement MarineCard;
+	@FindBy(xpath = "//h3[normalize-space()='Marine Cargo']")
+	public WebElement MarineCargoCard;
+	@FindBy(xpath = "//h3[normalize-space()='Cargo Policy']")
+	public WebElement CargoPolicyCard;
+	@FindBy(xpath = "//h3[normalize-space()='Open Cover']")
+	public WebElement OpenCoverCard;
+	@FindBy(xpath = "//h3[normalize-space()='Certificate']")
+	public WebElement CertificateCard;
+	@FindBy(xpath = "//h3[normalize-space()='Marine Hull']")
+	public WebElement MarineHullCard;
+	@FindBy(xpath = "//h3[normalize-space()='Hull and Machinery']")
+	public WebElement HullAndMachineryCard;
+	@FindBy(xpath = "//h3[normalize-space()='Liability']")
+	public WebElement LiabilityCard;
+
+	@FindBy(xpath = "//h3[normalize-space()='FGA']")
+	public WebElement FGACard;
+	@FindBy(xpath = "//h3[normalize-space()='Fire']")
+	public WebElement FireCard;
+	@FindBy(xpath = "//h3[normalize-space()='Engineering']")
+	public WebElement EngineeringCard;
+//	@FindBy(xpath = "//h3[normalize-space()='Open Cover']")
+//	public WebElement OpenCoverCard;
+
+
+
+
+// ************************************************************ Quotation Details Elements **********************************************************************************************
+
+	@FindBy(css = "#P101_QUT_CLASS_OF_BUSINESS_DISPLAY")
+	public WebElement QutClassOfBusinessDisplay;
+
+	@FindBy(css = "#P101_QUT_POLICY_TYPE_DISPLAY")
+	public WebElement QutPolicyTypeDisplay;
+
+	@FindBy(css = "#P101_QUT_SOURCE")
+	public WebElement QutSourceCombobox;
+
+	@FindBy(css = "#P101_QUT_PAYMENT_TERM")
+	public WebElement QutPaymentTermCombobox;
+
+	@FindBy(css = "#P101_QUT_QUOT_DT")
+	public WebElement QutQuotDate;
+
+	@FindBy(css = "#P101_QUT_QUOT_VALIDITY_DT")
+	public WebElement QutQuotValidityDate;
+
+	@FindBy(css = "#P101_QUT_INS_ST_DT_input")
+	public WebElement QutInsStDateInput;
+
+	@FindBy(css = "#P101_QUT_INS_ED_DT_input")
+	public WebElement QutInsEdDateInput;
+
+	@FindBy(css = "#P101_QUT_AWARDED_TO")
+	public WebElement QutAwardedToInput;
+
+	@FindBy(css = "#P101_QUT_CALCULATION_BASIS")
+	public WebElement QutCalculationBasisCombobox;
+
+	@FindBy(css = "#P101_QUT_CR_CD")
+	public WebElement QutCrCdCombobox;
+
+	@FindBy(css = "#P101_QUT_BUSINESS_TYPE")
+	public WebElement QutBusinessTypeCombobox;
+
+	@FindBy(css = "#P101_QUT_UNIT_PRICE")
+	public WebElement QutUnitPriceVal;
+
+	@FindBy(css = "#P101_QUT_QUOT_NO_DISPLAY")
+	public WebElement QutQuotNoCreateText;
+
+
+	// ************************************************************ Risk Details Elements **********************************************************************************************
+	@FindBy(css = "#P43_QUR_VEHICLE_MAKE")
+	public WebElement QurVehicleMakeCombobox;
+
+	@FindBy(css = "#P43_QUR_VEHICLE_MODEL")
+	public WebElement QurVehicleModelCombobox;
+
+	@FindBy(css = "#P43_QUR_YEAR_OF_MAKE")
+	public WebElement QurYearOfMakeCombobox;
+
+	@FindBy(css = "#P43_QUR_CHASSIS_NO")
+	public WebElement QurChassisNoCombobox;
+
+	@FindBy(css = "#P43_QUR_REGISTRATION_NO")
+	public WebElement QurRegistrationNoCombobox;
+
+	@FindBy(css = "#P43_QUR_PLATE_COLOR")
+	public WebElement QurPlateColorCombobox;
+
+	@FindBy(css = "#P43_QUR_TYPE_OF_BODY")
+	public WebElement QurTypeOfBodyCombobox;
+
+	@FindBy(css = "#P43_QUR_VEHICLE_COLOR")
+	public WebElement QurVehicleColorCombobox;
+
+	@FindBy(xpath = "//span[normalize-space()='Add New Risk']")
+	public WebElement AddNewRiskButton;
+	@FindBy(css = "iframe[title='Add New Risk']")
+	public WebElement AddNewRiskIframe;
+	@FindBy(css = "#P92_QUR_RISK_TYPE")
+	public WebElement RiskTypeLiabilityCombobox;
+	@FindBy(css = "#P92_QUR_RATING_BASIS")
+	public WebElement BreakdownCombobox;
+	@FindBy(xpath = "//span[normalize-space()='Apply Changes']")
+	public WebElement ApplyChangesButtonIframe;
+
+
+// ************************************************************ Risk Value Types Elements **********************************************************************************************
+
+	@FindBy(css = ".a-GV-cell.u-tC.a-GV-frozen.a-GV-frozen--start5.is-changed")
+	public WebElement RiskCalculationIg;
+
+	@FindBy(css = "#RiskCalculation_ig_toolbar_m3")
+	public WebElement EditButton;
+
+	@FindBy(css = "td[class='a-GV-cell u-tC a-GV-frozen a-GV-frozen--start5']")
+	public WebElement SIAmountCell;
+
+	@FindBy(css = "button[title='Ctrl+Alt+S']")
+	public WebElement SaveButton;
+
+	@FindBy(css = "button[title='Ctrl+Alt+S']")
+	public WebElement ApplyButton;
+
+	// ************************************************************ Quotation Value Types **********************************************************************************************
+	@FindBy(css = "div[class='a-GV-w-scroll']")
+	public WebElement CalculationsTable;
+
+	@FindBy(css = "#calc_ig_toolbar_m1")
+	public WebElement EditButtonQuotationValue;
+
+	@FindBy(css = "#calc_ig")
+	public WebElement CalculationsIGRegion;
+
+	// ************************************************************ Quotation Client **********************************************************************************************
+	@FindBy(css = "#P96_QUT_CLIENT")
+	public WebElement QurQutClientCombobox;
+
+	@FindBy(css = "#P96_QUT_CUST_NO")
+	public WebElement QurQutClientNoCombobox;
+
+	@FindBy(css = "#P107_QUT_COVER_GROUP")
+	public WebElement QutCoverGroupCombobox;
+
+	@FindBy(css = "#P107_QUT_COLLECTION_TYPE")
+	public WebElement QutCollectionTypeCombobox;
+
+
+	@FindBy(css = "#P107_QUT_QUOT_NO_DISPLAY")
+	public WebElement QutQuotNoFinalPageText;
+
+	// ************************************************************ Items Details Elements **********************************************************************************************
+	@FindBy(xpath = "//span[normalize-space()='Add New Item']")
+	public WebElement AddNewItemButton;
+
+	@FindBy(css = "iframe[title='Fire Risk Items UpdatingApp']")
+	public WebElement FireRiskItemsUpdatingAppIframe;
+	@FindBy(css = "#P90_RIQ_ITEM_CODE")
+	public WebElement RiqItemCodeCombobox;
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement RiqSaveButtonIframe;
+
+	// ************************************************************ Item Value Types Elements **********************************************************************************************
+	@FindBy(css = "#item_c_ig_toolbar_m5")
+	public WebElement ItemValueTypesEditButton;
+
+
+
+	// ************************************************************************************************************************************************************************************
+	// ************************************************************************************************************************************************************************************
 	/**
 	 *
 	 * Method to open link
-	 * 
+	 *
 	 * @param url : String : URL for navigation
 	 * @throws Exception
 	 */
@@ -160,14 +295,14 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to enter text into text field
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @param text        : String : Text value to enter in field
 	 * @throws Exception
 	 */
 	public CannedPage enterText(String elementName, String text) throws Exception {
 		WebElement element = getElementWithWait(this, elementName);
-		 element.clear();
+		element.clear();
 		element.sendKeys(text);
 		log.info("Filled '" + elementName + "' with value: " + text);
 		return this;
@@ -176,7 +311,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to click on an element
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @throws Exception
 	 */
@@ -190,9 +325,17 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		return this;
 	}
 
+	public CannedPage doubleClick(String elementName) throws Exception {
+		WebElement element = getElementWithWait(this, elementName);
+		Actions actions = new Actions(webDriverProvider.get());
+		actions.moveToElement(element).doubleClick().perform();
+		log.info("Double-clicked on '" + elementName + "'");
+		return this;
+	}
+
 	/**
 	 * method to check element presence
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @param testCase    : Boolean : test case [true or false]
 	 * @throws Exception
@@ -214,7 +357,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * method to get element status - displayed?
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @return Boolean
 	 * @throws Exception
@@ -226,7 +369,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to check element text
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @param expected    : String : Expected element text
 	 * @param testCase    : Boolean : test case [true or false]
@@ -245,7 +388,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to check element partial text
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @param expected    : String : Expected element text
 	 * @param testCase    : Boolean : test case [true or false]
@@ -268,7 +411,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to get element text
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @return String
 	 * @throws Exception
@@ -293,7 +436,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to wait element disappear
-	 * 
+	 *
 	 * @param elementName : String : element Name
 	 * @throws Exception
 	 */
@@ -323,7 +466,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to resize browser
-	 * 
+	 *
 	 * @param width  : int : Width for browser resize
 	 * @param height : int : Height for browser resize
 	 */
@@ -340,7 +483,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to scroll page to top or end
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public void scrollPage(String to) throws Exception {
@@ -359,7 +502,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to scroll page to particular element
-	 * 
+	 *
 	 * @param elementName : String : to get element
 	 * @throws Exception
 	 */
@@ -380,7 +523,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to hover on element
-	 * 
+	 *
 	 * @param elementName : String : to get element
 	 * @throws Exception
 	 */
@@ -392,7 +535,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	/**
 	 * Method to verify page title
-	 * 
+	 *
 	 * @param title    : String : expected title
 	 * @param testCase : Boolean : test case [true or false]
 	 * @throws Exception
@@ -473,16 +616,14 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 
 	public void clearText(String elementName) throws Exception {
-		WebElement element = getElementWithWait(this, elementName);
-		String type = element.getAttribute("type");
-		if ("hidden".equalsIgnoreCase(type)) {
-			throw new IllegalStateException(
-					"Trying to clear hidden input for '" + elementName +
-							"' (id=" + element.getAttribute("id") + ")");
-		}
-		element.clear();
-	}
+		WebElement el = getElementWithWait(this, elementName);
+		String tag = el.getTagName().toLowerCase();
 
+		if ("input".equals(tag) || "textarea".equals(tag)) {
+			el.clear();
+		}
+		// else: do nothing (cell/div/span etc.)
+	}
 
 	public void selectOptionFromDropdown(String optionValue, String dropDownListName) throws Exception {
 		WebElement dropdown = getElementWithWait(this, dropDownListName);
@@ -555,10 +696,6 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 		throw new Exception("Option '" + optionValue + "' not found in LOV for '" + dropDownListName + "'.");
 	}
-
-
-
-
 
 	public void selectFromDropdown(String elementName, String valueToSelect) throws Exception {
 		WebElement dropdownElement = getElementWithWait(this, elementName);
@@ -706,4 +843,36 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		// wait until page fully loaded + loaders gone
 		waitForLoad(driver);
 	}
+
+	public void pressEnter(String elementName) throws Exception {
+		WebElement element = getElementWithWait(this, elementName);
+		element.sendKeys(Keys.ENTER);
+	}
+
+	public void assertInputEmpty(String elementName, boolean shouldBeEmpty) throws Exception {
+		WebElement el = getElementWithWait(this, elementName);
+
+		String tag = el.getTagName() == null ? "" : el.getTagName().toLowerCase();
+		String value;
+
+		// For input/textarea, use "value". For other elements, fallback to text.
+		if ("input".equals(tag) || "textarea".equals(tag)) {
+			value = el.getAttribute("value");
+		} else {
+			value = el.getText();
+		}
+
+		String normalized = value == null ? "" : value.trim();
+
+		if (shouldBeEmpty && !normalized.isEmpty()) {
+			throw new AssertionError("Expected '" + elementName + "' to be empty but found: '" + value + "'");
+		}
+
+		if (!shouldBeEmpty && normalized.isEmpty()) {
+			throw new AssertionError("Expected '" + elementName + "' to NOT be empty but it is empty");
+		}
+
+		log.info("Assert '" + elementName + "' empty=" + shouldBeEmpty + " (actual='" + value + "')");
+	}
+
 }

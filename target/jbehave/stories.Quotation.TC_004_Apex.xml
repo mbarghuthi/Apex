@@ -1,0 +1,210 @@
+<story path="stories/Quotation/TC_004_Apex.story" title="&#65279;">
+<scenario keyword="Scenario:" title="TC_004_Apex 001 Apex Test Case Motor - Motor Commercial - Comprehensive (Saudi Riyals)">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Input] I click on &apos;QuotationCardDashboard&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;QuotationsTitle&apos; equals &apos;Quotations&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;JeddahClaimCenterCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;NewQuotationButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MotorCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MotorCommercialCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ComprehensiveCard&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutClassOfBusinessDisplay&apos; equals &apos;p:MotorCommercial&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutPolicyTypeDisplay&apos; equals &apos;p:Comprehensive&apos; text</step>
+<step outcome="ignorable">!-- Fill the mandatory Quotation Details</step>
+<step outcome="successful">And [Input] Select &apos;p:Direct&apos; value from &apos;QutSourceCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutPaymentTermCombobox&apos; contains &apos;p:Account&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotDate&apos; value equals sysdate</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotValidityDate&apos; value equals sysdate plus &apos;1&apos; months minus one day</step>
+<step outcome="successful">And [Input] Set &apos;QutInsStDateInput&apos; value to &apos;sysdateformatted&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;QutInsStDateInput&apos;</step>
+<step outcome="successful">And [Input] I press Enter on &apos;QutInsStDateInput&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateInput&apos; value equals sysdate plus &apos;1&apos; years minus one day</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;QutAwardedToInput&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] Set &apos;QutAwardedToInput&apos; value to &apos;random5&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:ProRata&apos; value from &apos;QutCalculationBasisCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:SaudiRiyals&apos; value from &apos;QutCrCdCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutUnitPriceVal&apos; equals &apos;1&apos; text</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;SuccessfullyAlert&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataSavedSuccessfully&apos; text</step>
+<step outcome="successful">And [Action] I get text from &apos;QutQuotNoCreateText&apos; and save it as &apos;QuotationNo&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill the mandatory Risk Details</step>
+<step outcome="successful">And [Input] Select &apos;p:komatsu&apos; value from &apos;QurVehicleMakeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Equipment&apos; value from &apos;QurVehicleModelCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Set &apos;QurYearOfMakeCombobox&apos; value to &apos;sysyear&apos;</step>
+<step outcome="successful">And [Input] Set &apos;QurChassisNoCombobox&apos; value to &apos;nanotime&apos;</step>
+<step outcome="successful">And [Input] Set &apos;QurRegistrationNoCombobox&apos; value to &apos;nanotime&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:red&apos; value from &apos;QurPlateColorCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Sedan&apos; value from &apos;QurTypeOfBodyCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Green&apos; value from &apos;QurVehicleColorCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;SuccessfullyAlert&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:RowCreated&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill the mandatory Risk Value Types</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;EditButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;EditButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;RiskCalculation_ig&apos; row &apos;1 - SI&apos; Local/Amount can be filled</step>
+<step outcome="successful">And [Input] I set SECOND IG &apos;RiskCalculation_ig&apos; from first row &apos;1 - SI&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill in Quotation Value Types</step>
+<step outcome="successful">And [Input] I click on &apos;EditButtonQuotationValue&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;calc_ig&apos; row &apos;10 - Stamp Fees&apos; Local/Amount can be filled</step>
+<step outcome="successful">And [Input] I set IG &apos;calc_ig&apos; from first row &apos;1 - SI&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill in Quotation Client</step>
+<step outcome="successful">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientNoCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Last Page</step>
+<step outcome="successful">And [Input] Select &apos;p:DriverOnly&apos; value from &apos;QutCoverGroupCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Cheque&apos; value from &apos;QutCollectionTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Navigation] I scroll to end of page</step>
+<step outcome="successful">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;QutQuotNoFinalPageText&apos; contains saved value &apos;QuotationNo&apos;</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButtonPopup&apos;</step>
+<step outcome="failed" keyword="FAILED">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:QuotationDeletedSuccessfully&apos; text<failure>org.junit.ComparisonFailure: expected:&lt;[Quotation Deleted Successfully!]&gt; but was:&lt;[Data Updated Successfully.]&gt;</failure></step>
+<step outcome="ignorable">!-- Logout</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+<failure>org.junit.ComparisonFailure: expected:&lt;[Quotation Deleted Successfully!]&gt; but was:&lt;[Data Updated Successfully.]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.automation.pages.CannedPage.checkElementpartialText(CannedPage.java:404)
+	at com.automation.steps.CannedSteps.check_element_partial_text(CannedSteps.java:175)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.jbehave.core.steps.StepCreator$ParametrisedStep.perform(StepCreator.java:599)
+	at org.jbehave.core.embedder.PerformableTree$FineSoFar.run(PerformableTree.java:340)
+...</failure>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 002 Apex Test Case Motor - Motor Commercial - Comprehensive (US Dollars)">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Input] I click on &apos;QuotationCardDashboard&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;QuotationsTitle&apos; equals &apos;Quotations&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;JeddahClaimCenterCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;NewQuotationButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MotorCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MotorCommercialCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ComprehensiveCard&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutClassOfBusinessDisplay&apos; equals &apos;p:MotorCommercial&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutPolicyTypeDisplay&apos; equals &apos;p:Comprehensive&apos; text</step>
+<step outcome="ignorable">!-- Fill the mandatory Quotation Details</step>
+<step outcome="successful">And [Input] Select &apos;p:Direct&apos; value from &apos;QutSourceCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutPaymentTermCombobox&apos; contains &apos;p:Account&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotDate&apos; value equals sysdate</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotValidityDate&apos; value equals sysdate plus &apos;1&apos; months minus one day</step>
+<step outcome="successful">And [Input] Set &apos;QutInsStDateInput&apos; value to &apos;sysdateformatted&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;QutInsStDateInput&apos;</step>
+<step outcome="successful">And [Input] I press Enter on &apos;QutInsStDateInput&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateInput&apos; value equals sysdate plus &apos;1&apos; years minus one day</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;QutAwardedToInput&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] Set &apos;QutAwardedToInput&apos; value to &apos;random5&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:ProRata&apos; value from &apos;QutCalculationBasisCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:USDollars&apos; value from &apos;QutCrCdCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutUnitPriceVal&apos; equals &apos;3.75&apos; text</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;SuccessfullyAlert&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataSavedSuccessfully&apos; text</step>
+<step outcome="successful">And [Action] I get text from &apos;QutQuotNoCreateText&apos; and save it as &apos;QuotationNo&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill the mandatory Risk Details</step>
+<step outcome="successful">And [Input] Select &apos;p:komatsu&apos; value from &apos;QurVehicleMakeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Equipment&apos; value from &apos;QurVehicleModelCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Set &apos;QurYearOfMakeCombobox&apos; value to &apos;sysyear&apos;</step>
+<step outcome="successful">And [Input] Set &apos;QurChassisNoCombobox&apos; value to &apos;nanotime&apos;</step>
+<step outcome="successful">And [Input] Set &apos;QurRegistrationNoCombobox&apos; value to &apos;nanotime&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:red&apos; value from &apos;QurPlateColorCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Sedan&apos; value from &apos;QurTypeOfBodyCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Green&apos; value from &apos;QurVehicleColorCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;SuccessfullyAlert&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:RowCreated&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill the mandatory Risk Value Types</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;EditButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;EditButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;RiskCalculation_ig&apos; row &apos;1 - SI&apos; Foreign/Foreign Amount can be filled</step>
+<step outcome="successful">And [Input] I set SECOND IG &apos;RiskCalculation_ig&apos; from first row &apos;1 - SI&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill in Quotation Value Types</step>
+<step outcome="successful">And [Input] I click on &apos;EditButtonQuotationValue&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;calc_ig&apos; row &apos;10 - Stamp Fees&apos; Foreign/Foreign Amount can be filled</step>
+<step outcome="successful">And [Input] I set IG &apos;calc_ig&apos; from first row &apos;1 - SI&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill in Quotation Client</step>
+<step outcome="successful">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientNoCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Last Page</step>
+<step outcome="successful">And [Input] Select &apos;p:DriverOnly&apos; value from &apos;QutCoverGroupCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Cheque&apos; value from &apos;QutCollectionTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Navigation] I scroll to end of page</step>
+<step outcome="successful">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;QutQuotNoFinalPageText&apos; contains saved value &apos;QuotationNo&apos;</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButtonPopup&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:QuotationDeletedSuccessfully&apos; text</step>
+<step outcome="ignorable">!-- Logout</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

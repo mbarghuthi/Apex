@@ -1,6 +1,6 @@
 package com.automation.jbehave;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.jbehave.core.steps.ParameterConverters;
 import org.springframework.core.env.Environment;

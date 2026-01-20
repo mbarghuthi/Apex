@@ -1,125 +1,85 @@
 package com.automation.pages;
 
 import com.automation.configuration.pageobjects.PageObject;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.junit.Assert;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
+import java.util.Map;
 
 @PageObject
 public class CustomPage extends AbstractPage<CustomPage> {
-    @FindBy(xpath = "//input[@id='tbxUserName']")
-    public WebElement adminUserName;
-    @FindBy(xpath = "//input[@id='tbxPassword']")
-    public WebElement adminPassword;
-    @FindBy(css = "#btnLogin2")
-    public WebElement loginAdminButton;
 
-
-
-    @FindBy(css = "#ctl00_MainContent_rbOnSaveDraft")
-    public WebElement SaveDraftOnRadioButton;
-
-
-
-//    @FindBy(css = "#ctl00_MainContent_rdONMandatory")
-    @FindBy(id = "ctl00_MainContent_rdONMandatory")
-    public WebElement MandatoryCheckbox;
-
-    @FindBy(css = "#ctl00_MainContent_GVViewData_ctl07_HyperLink3")
-    public WebElement EditIncomingMailAttachment;
-
-
-    @FindBy(xpath = "//span[contains(text(),'جميع المهام')]")
-    public WebElement AllTaskHeaderButton;
-
-    @FindBy(xpath = "//*[@id=\"ctl00_MainContent_RadGrid1_ctl00_ctl02_ctl02_ImgMassAction\"]")
-    public WebElement MassActionButton;
-    /**
-     * Method to enter text into text field
-     *
-     * @param elementName : String : element Name
-     * @param text        : String : Text value to enter in field
-     * @throws Exception
-     */
+    // -------------------------
+    // Common actions
+    // -------------------------
     public CustomPage enterText(String elementName, String text) throws Exception {
         WebElement element = getElementWithWait(this, elementName);
-        // element.clear();
         element.sendKeys(text);
         log.info("Filled '" + elementName + "' with value: " + text);
         return this;
-
     }
 
-    /**
-     * Method to click on an element
-     *
-     * @param elementName : String : element Name
-     * @throws Exception
-     */
     public CustomPage click(String elementName) throws Exception {
-        // wait element
         WebElement element = getElementWithWait(this, elementName);
         element.click();
-//		Actions actions = new Actions(webDriverProvider.get());
-//		actions.moveToElement(element).click().perform();
         log.info("Clicked on '" + elementName + "'");
         return this;
     }
 
     public void checkRadioButton(String elementName, boolean shouldBeChecked) throws Exception {
         WebElement radioButton = getElementWithWait(this, elementName);
-
-        // Check if the radio button needs to be clicked or left as is
         if (shouldBeChecked && !radioButton.isSelected()) {
             radioButton.click();
         }
-
-        // Verify if the radio button's state matches the expected state
-        Assert.assertEquals("Radio button state does not match the expected state", shouldBeChecked, radioButton.isSelected());
+        Assert.assertEquals(
+                "Radio button state does not match the expected state",
+                shouldBeChecked,
+                radioButton.isSelected()
+        );
     }
 
     public void checkCheckboxButton(String elementName, boolean shouldNotBeChecked) throws Exception {
         WebElement checkbox = getElementWithWait(this, elementName);
-
-        // Check if the checkbox needs to be clicked or left as is
         if (shouldNotBeChecked && checkbox.isSelected()) {
             checkbox.click();
         }
-
-        // Verify if the checkbox's state matches the expected state
-        Assert.assertEquals("Checkbox state does not match the expected state", !shouldNotBeChecked, checkbox.isSelected());
+        Assert.assertEquals(
+                "Checkbox state does not match the expected state",
+                !shouldNotBeChecked,
+                checkbox.isSelected()
+        );
     }
 
     public CustomPage elementToHover(String elementName) throws Exception {
         WebDriver driver = webDriverProvider.get();
-
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.rmRootGroup")));
 
         if ("User Name Header Button".equalsIgnoreCase(elementName)) {
             WebElement element = new WebDriverWait(driver, Duration.ofSeconds(10))
                     .until(ExpectedConditions.presenceOfElementLocated(
-                            By.cssSelector("ul.rmRootGroup li.profile a.rmLink.rmRootLink")));
+                            By.cssSelector("ul.rmRootGroup li.profile a.rmLink.rmRootLink")
+                    ));
 
             new WebDriverWait(driver, Duration.ofSeconds(10))
                     .until(ExpectedConditions.visibilityOf(element));
 
             ((JavascriptExecutor) driver).executeScript(
-                    "arguments[0].scrollIntoView({block:'center'});", element);
+                    "arguments[0].scrollIntoView({block:'center'});",
+                    element
+            );
 
-            new Actions(driver).moveToElement(element).pause(Duration.ofMillis(150)).perform();
+            new Actions(driver)
+                    .moveToElement(element)
+                    .pause(Duration.ofMillis(150))
+                    .perform();
+
             log.info("Hovered on 'User Name Header Button'");
             return this;
         }
@@ -130,28 +90,1414 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return this;
     }
 
-
     public int countRowsWithoutImage(int rowCount) throws Exception {
         int count = 0;
-
         for (int i = 0; i < rowCount; i++) {
-            // XPath to find the image with the specified src in the specified cell
-            String imgXpath = "//*[@id='ctl00_MainContent_RadGrid1_ctl00__" + i + "']/td[5]//img[@src='http://172.16.30.82:8888/Images/View.png']";
-
-            // Check if the image exists in the specified cell
+            String imgXpath =
+                    "//*[@id='ctl00_MainContent_RadGrid1_ctl00__" + i + "']/td[5]//img[@src='http://172.16.30.82:8888/Images/View.png']";
             List<WebElement> images = webDriverProvider.get().findElements(By.xpath(imgXpath));
-
-            // Only count the row if the image is not present
             if (images.isEmpty()) {
                 count++;
             }
         }
-
-        // Print the count of rows without the image
         System.out.println("Count of rows without the specified image: " + count);
         return count;
     }
 
+    // =====================================================================
+    // IG – Set single cell by row text + column header (click before fill)
+    // =====================================================================
+    public void setIGValue(String regionIdOrAnyId, String rowText, String columnHeader, String value) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
 
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVcId(regionId))));
+
+        ensureIGEditMode(regionId);
+
+        int colLeafIndex = resolveLeafHeaderIndex(regionId, columnHeader);
+        if (colLeafIndex < 0) {
+            throw new Exception("Header not found: " + columnHeader + "\nFound headers:\n" + dumpHeaders(regionId));
+        }
+
+        WebElement row = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//div[@id='" + gridVcId(regionId) + "']//tr[@role='row' and .//td[normalize-space()=\"" + rowText + "\"]]")
+        ));
+
+        List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+        if (colLeafIndex >= cells.size()) {
+            throw new Exception("Column index out of range. idx=" + colLeafIndex + ", cells=" + cells.size());
+        }
+
+        WebElement cell = cells.get(colLeafIndex);
+        scrollTo(cell);
+
+        String before = normalizeNumberString(safeText(cell));
+
+        boolean uiOk = trySetViaUi(cell, value, 3500);
+        if (!uiOk) {
+            boolean jsOk = setViaModel_ByForEach(regionId, rowText, columnHeader, value);
+            if (!jsOk) {
+                throw new Exception("Failed to set value (UI + JS). region=" + regionId + ", row=" + rowText + ", column=" + columnHeader);
+            }
+        }
+
+        waitUntilCellChangesToExpected(driver, regionId, rowText, colLeafIndex, before, value, 20);
+    }
+
+    private boolean trySetViaUi(WebElement cell, String value, long timeoutMs) {
+        WebDriver driver = webDriverProvider.get();
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        try {
+            clickSafe(cell); // required
+
+            try { cell.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+            try { cell.sendKeys(Keys.F2); } catch (Exception ignored) {}
+            try { cell.sendKeys(Keys.SPACE); } catch (Exception ignored) {}
+
+            By editorBy = By.cssSelector(
+                    "div.a-GV-columnItem input, div.a-GV-columnItem textarea, div.a-GV-columnItem select," +
+                            "td.is-active input, td.is-active textarea, td.is-active select," +
+                            "td.a-GV-cell.is-active input, td.a-GV-cell.is-active textarea, td.a-GV-cell.is-active select"
+            );
+
+            while (System.currentTimeMillis() < end) {
+                List<WebElement> eds = driver.findElements(editorBy);
+                for (WebElement ed : eds) {
+                    if (!ed.isDisplayed()) continue;
+
+                    // do not edit DDL
+                    String tag = safeAttr(ed, "tagName");
+                    if (tag != null && tag.equalsIgnoreCase("select")) return false;
+
+                    if (ed.isEnabled()) {
+                        try { ed.sendKeys(Keys.chord(Keys.CONTROL, "a")); } catch (Exception ignored) {}
+                        try { ed.sendKeys(Keys.DELETE); } catch (Exception ignored) {}
+                        ed.sendKeys(value);
+                        ed.sendKeys(Keys.TAB);
+                        try { ed.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+                        return true;
+                    }
+                }
+                Thread.sleep(150);
+            }
+        } catch (Exception ignored) {
+        }
+
+        return false;
+    }
+
+    private void enableIgEditMode(String regionId) {
+        ((JavascriptExecutor) webDriverProvider.get()).executeScript(
+                "try{" +
+                        "var r=apex.region(arguments[0]); if(!r||!r.widget) return;" +
+                        "var ig$=r.widget(); if(!ig$||!ig$.length||typeof ig$.interactiveGrid!=='function') return;" +
+                        "var a=ig$.interactiveGrid('getActions'); if(a && a.lookup('edit')) a.invoke('edit');" +
+                        "}catch(e){}",
+                regionId
+        );
+    }
+
+    private boolean setViaModel_ByForEach(String regionId, String rowText, String columnHeader, String value) {
+        Object res = ((JavascriptExecutor) webDriverProvider.get()).executeScript(
+                "try {" +
+                        " if(!(window.apex && apex.region)) return false;" +
+                        " var region = apex.region(arguments[0]); if(!region) return false;" +
+                        " var ig$ = region.widget(); if(!ig$) return false;" +
+                        " var grid = ig$.interactiveGrid('getViews','grid');" +
+                        " if(!grid || !grid.model) return false;" +
+                        " var m = grid.model;" +
+                        " if(typeof m.forEach !== 'function') return false;" +
+                        " try { var act = ig$.interactiveGrid('getActions'); if(act && act.lookup('edit')) act.invoke('edit'); } catch(e){}" +
+                        " var cols = null;" +
+                        " try { if(grid.getColumns) cols = grid.getColumns(); } catch(e){}" +
+                        " if(!cols || !cols.length) { try { if(grid.view$ && grid.view$.grid) cols = grid.view$.grid('getColumns'); } catch(e){} }" +
+                        " if(!cols || !cols.length) return false;" +
+                        " var key = (arguments[2]||'').trim().toLowerCase();" +
+                        " function norm(s){return (s||'').replace(/\\u00a0/g,' ').replace(/[\\n\\r\\t]+/g,' ').trim().toLowerCase();}" +
+                        " var prop = null;" +
+                        " for(var i=0;i<cols.length;i++){" +
+                        "   var c=cols[i];" +
+                        "   var h=norm(c.heading||c.label||c.name||'');" +
+                        "   if(h===key){ prop=(c.property||c.name||c.id); break; }" +
+                        " }" +
+                        " if(!prop) return false;" +
+                        " var target = (arguments[1]||'').trim();" +
+                        " var recFound = null;" +
+                        " m.forEach(function(r){" +
+                        "   if(recFound) return;" +
+                        "   for(var k=0;k<cols.length;k++){" +
+                        "     var p = cols[k].property||cols[k].name||cols[k].id;" +
+                        "     if(!p) continue;" +
+                        "     var v='';" +
+                        "     try { v = (m.getValue(r,p) || '').toString().trim(); } catch(e){}" +
+                        "     if(v===target){ recFound=r; return; }" +
+                        "   }" +
+                        " });" +
+                        " if(!recFound) return false;" +
+                        " m.setValue(recFound, prop, arguments[3]);" +
+                        " try { if(m.setEdited) m.setEdited(recFound, true); } catch(e){}" +
+                        " return true;" +
+                        "} catch(e) { return false; }",
+                regionId, rowText, columnHeader, value
+        );
+        return Boolean.TRUE.equals(res);
+    }
+
+    private int resolveLeafHeaderIndex(String regionId, String columnHeader) {
+        // IMPORTANT: use grid VC root if headers are inside grid_vc
+        String gridId = gridVcId(regionId);
+
+        Object idx = ((JavascriptExecutor) webDriverProvider.get()).executeScript(
+                "try {" +
+                        " var root=document.getElementById(arguments[0]); if(!root) return -1;" +
+                        " var key=(arguments[1]||'').trim().toLowerCase();" +
+                        " function norm(s){return (s||'').replace(/\\u00a0/g,' ').replace(/[\\n\\r\\t]+/g,' ').trim().toLowerCase();}" +
+                        " var ths=root.querySelectorAll('thead th');" +
+                        " var leaf=[];" +
+                        " for(var i=0;i<ths.length;i++){" +
+                        "   var th=ths[i];" +
+                        "   var txt=norm(th.textContent)||norm(th.innerText)||norm(th.getAttribute('aria-label'));" +
+                        "   if(!txt) continue;" +
+                        "   var colspan=parseInt(th.getAttribute('colspan')||'1',10);" +
+                        "   if(colspan>1) continue;" +
+                        "   leaf.push(th);" +
+                        " }" +
+                        " for(var j=0;j<leaf.length;j++){" +
+                        "   var t=norm(leaf[j].textContent)||norm(leaf[j].innerText)||norm(leaf[j].getAttribute('aria-label'));" +
+                        "   if(t===key) return j;" +
+                        " }" +
+                        " return -1;" +
+                        "}catch(e){return -1;}",
+                gridId, columnHeader
+        );
+
+        return idx == null ? -1 : ((Number) idx).intValue();
+    }
+
+    private String dumpHeaders(String regionId) {
+        String gridId = gridVcId(regionId);
+
+        Object res = ((JavascriptExecutor) webDriverProvider.get()).executeScript(
+                "try{" +
+                        " var root=document.getElementById(arguments[0]); if(!root) return 'Grid not found';" +
+                        " function norm(s){return (s||'').replace(/\\u00a0/g,' ').replace(/[\\n\\r\\t]+/g,' ').trim();}" +
+                        " var ths=root.querySelectorAll('thead th');" +
+                        " var out=[];" +
+                        " for(var i=0;i<ths.length;i++){" +
+                        "   var th=ths[i];" +
+                        "   var label=norm(th.textContent)||norm(th.innerText)||norm(th.getAttribute('aria-label'));" +
+                        "   if(label) out.push(label);" +
+                        " }" +
+                        " return out.join('\\n');" +
+                        "}catch(e){return 'ERR:'+e.message;}",
+                gridId
+        );
+
+        return res == null ? "" : String.valueOf(res);
+    }
+
+    private void waitUntilCellChangesToExpected(
+            WebDriver driver,
+            String regionId,
+            String rowText,
+            int colLeafIndex,
+            String beforeNorm,
+            String expectedRaw,
+            int timeoutSeconds
+    ) throws Exception {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+        String expectedNorm = normalizeNumberString(expectedRaw);
+
+        Boolean ok = wait.until(d -> {
+            try {
+                WebElement row2 = d.findElement(By.xpath(
+                        "//div[@id='" + gridVcId(regionId) + "']//tr[@role='row' and .//td[normalize-space()=\"" + rowText + "\"]]"
+                ));
+                List<WebElement> cells2 = row2.findElements(By.cssSelector("td[role='gridcell']"));
+                if (colLeafIndex >= cells2.size()) return false;
+
+                String now = normalizeNumberString(safeText(cells2.get(colLeafIndex)));
+                return !now.equals(beforeNorm) && now.equals(expectedNorm);
+            } catch (Exception e) {
+                return false;
+            }
+        });
+
+        if (!Boolean.TRUE.equals(ok)) {
+            WebElement row2 = driver.findElement(By.xpath(
+                    "//div[@id='" + gridVcId(regionId) + "']//tr[@role='row' and .//td[normalize-space()=\"" + rowText + "\"]]"
+            ));
+            List<WebElement> cells2 = row2.findElements(By.cssSelector("td[role='gridcell']"));
+            String actual = normalizeNumberString(safeText(cells2.get(colLeafIndex)));
+            throw new Exception("Value not applied. expected='" + expectedNorm + "', actual='" + actual + "'");
+        }
+    }
+
+    private String normalizeNumberString(String s) {
+        if (s == null) return "";
+        String x = s.replace("\u00a0", " ").replace(",", "").trim();
+        try {
+            java.math.BigDecimal bd = new java.math.BigDecimal(x);
+            if (x.contains(".")) {
+                return bd.setScale(2, java.math.RoundingMode.HALF_UP).toPlainString();
+            }
+            return bd.stripTrailingZeros().toPlainString();
+        } catch (Exception ignored) {
+            return x;
+        }
+    }
+
+    // =====================================================================
+// IG – Fill random numbers for ALL enabled cells (skip DDL),
+// starting from firstRowText (in first data column)
+// IMPORTANT FIXES:
+// 1) Scope rows/cells to THIS IG grid VC only (prevents touching RisksQuery_ig)
+// 2) Scope editor lookup to THIS IG only (prevents editing the other IG editor)
+// =====================================================================
+    public int setIGRandomNumbers_AllEnabledCells_SkipDDL_StartAfterSelector(
+            String regionIdOrAnyId,
+            String firstRowText,
+            int minInclusive,
+            int maxInclusive
+    ) throws Exception {
+
+        if (minInclusive > maxInclusive) {
+            throw new Exception("minInclusive must be <= maxInclusive");
+        }
+
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+
+        // Resolve IG root id (RiskCalculation_ig)
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        // Use THIS IG root and THIS IG grid VC only
+        WebElement igRoot = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(regionId)));
+        String gridVc = gridVcId(regionId);
+        WebElement grid = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+
+        // Ensure grid has rows
+        wait.until(d -> !grid.findElements(By.cssSelector("tr.a-GV-row[role='row']")).isEmpty()
+                || !grid.findElements(By.cssSelector("tr[role='row'].a-GV-row")).isEmpty());
+
+        // Make IG editable (your cell-driven ensure is recommended)
+        ensureIGEditMode(regionId);
+
+        // Collect rows from THIS grid only
+        List<WebElement> rows = grid.findElements(By.cssSelector("tr.a-GV-row[role='row']"));
+        if (rows.isEmpty()) rows = grid.findElements(By.cssSelector("tr[role='row'].a-GV-row"));
+        if (rows.isEmpty()) throw new Exception("No rows found in IG grid: " + gridVc);
+
+        int startRowIndex = resolveStartRowIndexByFirstDataCellText(rows, firstRowText);
+        int updated = 0;
+
+        for (int r = startRowIndex; r < rows.size(); r++) {
+            WebElement row = rows.get(r);
+            scrollTo(row);
+
+            String rowLabel = getRowLabel(row);
+
+            // Cells from THIS row only
+            List<WebElement> dataCells = row.findElements(By.cssSelector("td[role='gridcell']"));
+            if (dataCells.isEmpty()) continue;
+
+            for (int c = 0; c < dataCells.size(); c++) {
+                WebElement cell = dataCells.get(c);
+
+                if (!isCellEditableDom(cell)) continue;
+
+                // Header text: scope to THIS grid (not whole page)
+                String colHeader = getHeaderTextByLeafIndex(grid, c);
+
+                int rnd = randomBetween(minInclusive, maxInclusive);
+
+                // IMPORTANT: scoped editor lookup to THIS IG
+                boolean ok = trySetCellValueViaUi(igRoot, cell, String.valueOf(rnd), 1800);
+
+                if (ok) {
+                    updated++;
+                    log.info(String.format("[IG Fill] region=%s | row='%s' | col='%s' | value=%s",
+                            regionId,
+                            rowLabel,
+                            (colHeader == null || colHeader.isEmpty()) ? ("#colIndex=" + c) : colHeader,
+                            rnd
+                    ));
+                }
+            }
+        }
+
+        return updated;
+    }
+
+
+
+    private int resolveStartRowIndexByFirstDataCellText(List<WebElement> rows, String firstRowText) {
+        if (firstRowText == null || firstRowText.trim().isEmpty()) return 0;
+        String target = firstRowText.trim();
+
+        for (int i = 0; i < rows.size(); i++) {
+            try {
+                List<WebElement> tds = rows.get(i).findElements(By.cssSelector("td[role='gridcell']"));
+                if (tds.isEmpty()) continue;
+                String txt = safeText(tds.get(0)).trim();
+                if (txt.equals(target)) return i;
+            } catch (Exception ignored) {
+            }
+        }
+        return 0;
+    }
+
+    private boolean isCellEditableDom(WebElement cell) {
+        try {
+            String ariaReadonly = safeAttr(cell, "aria-readonly");
+            if ("true".equalsIgnoreCase(ariaReadonly)) return false;
+
+            String cls = safeAttr(cell, "class");
+            if (cls != null) {
+                String l = cls.toLowerCase();
+                if (l.contains("is-readonly")) return false;
+                if (l.contains("is-disabled")) return false;
+            }
+            return cell.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private boolean trySetCellRandomViaUi(WebElement cell, int minInclusive, int maxInclusive, long timeoutMs) {
+        WebDriver driver = webDriverProvider.get();
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        try {
+            scrollTo(cell);
+            clickSafe(cell); // required
+
+            try { cell.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+            try { cell.sendKeys(Keys.F2); } catch (Exception ignored) {}
+
+            By editorBy = By.cssSelector(
+                    "div.a-GV-columnItem input, div.a-GV-columnItem textarea, div.a-GV-columnItem select," +
+                            "td.is-active input, td.is-active textarea, td.is-active select," +
+                            "td.a-GV-cell.is-active input, td.a-GV-cell.is-active textarea, td.a-GV-cell.is-active select"
+            );
+
+            while (System.currentTimeMillis() < end) {
+                List<WebElement> eds = driver.findElements(editorBy);
+
+                for (WebElement ed : eds) {
+                    if (!ed.isDisplayed()) continue;
+
+                    // skip DDL
+                    String tag = safeAttr(ed, "tagName");
+                    if (tag != null && tag.equalsIgnoreCase("select")) return false;
+
+                    // skip known LOV/DDL widgets (best-effort)
+                    String eCls = safeAttr(ed, "class");
+                    if (eCls != null) {
+                        String l = eCls.toLowerCase();
+                        if (l.contains("select") || l.contains("lov") || l.contains("popup")) return false;
+                    }
+
+                    if (ed.isEnabled()) {
+                        int rnd = randomBetween(minInclusive, maxInclusive);
+
+                        try { ed.sendKeys(Keys.chord(Keys.CONTROL, "a")); } catch (Exception ignored) {}
+                        try { ed.sendKeys(Keys.DELETE); } catch (Exception ignored) {}
+
+                        ed.sendKeys(String.valueOf(rnd));
+                        ed.sendKeys(Keys.TAB);
+                        try { ed.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+
+                        return true;
+                    }
+                }
+                Thread.sleep(120);
+            }
+        } catch (Exception ignored) {
+        }
+
+        return false;
+    }
+
+    private int randomBetween(int minInclusive, int maxInclusive) {
+        double r = Math.random();
+        return (int) Math.floor(r * (maxInclusive - minInclusive + 1)) + minInclusive;
+    }
+
+    // =====================================================================
+    // IG – CORE HELPERS (fixed)
+    // =====================================================================
+
+    /**
+     * Resolve to the REAL IG region static id (div.a-IG id).
+     * Accepts: calc_ig, calc, calc_grid_vc, element id inside IG, etc.
+     */
+    private String resolveIgRegionId(String regionIdOrAnyId) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String raw = regionIdOrAnyId == null ? "" : regionIdOrAnyId.trim();
+        if (raw.isEmpty()) throw new Exception("IG id is empty");
+
+        // Fast path: if apex.region(raw) exists
+        if (apexRegionExists(raw)) return raw;
+
+        // Normalize common suffixes to a root guess
+        String base = rootIgId(raw);
+
+        // Try common candidates as region static id
+        String[] candidates = new String[]{
+                raw,
+                base,
+                raw.replace("_grid_vc", ""),
+                base.replace("_grid_vc", ""),
+                base.replace("_ig", ""),
+                base + "_ig",
+                base + "_grid_vc"
+        };
+
+        for (String c : candidates) {
+            if (c == null || c.trim().isEmpty()) continue;
+            if (apexRegionExists(c)) return c;
+        }
+
+        // If DOM element exists by id, climb to closest div.a-IG
+        for (String c : candidates) {
+            if (c == null || c.trim().isEmpty()) continue;
+            List<WebElement> els = driver.findElements(By.id(c));
+            if (els.isEmpty()) continue;
+            try {
+                WebElement ig = els.get(0).findElement(By.xpath("ancestor::div[contains(@class,'a-IG')][1]"));
+                String igId = ig.getAttribute("id");
+                if (igId != null && !igId.trim().isEmpty()) {
+                    if (apexRegionExists(igId)) return igId;
+                    return igId; // still best guess even if apex.region isn't accessible yet
+                }
+            } catch (Exception ignored) {
+            }
+        }
+
+        // Last resort: scan all IG roots and try to pick closest match
+        Object scan = ((JavascriptExecutor) driver).executeScript(
+                "try{" +
+                        " var guess=(arguments[0]||'').toLowerCase();" +
+                        " var list=Array.from(document.querySelectorAll('div.a-IG[id]')).map(x=>x.id);" +
+                        " function pick(){ " +
+                        "  if(!guess) return null;" +
+                        "  for(var i=0;i<list.length;i++){ if(list[i].toLowerCase()===guess) return list[i]; }" +
+                        "  for(var i=0;i<list.length;i++){ if(list[i].toLowerCase().startsWith(guess)) return list[i]; }" +
+                        "  for(var i=0;i<list.length;i++){ if(list[i].toLowerCase().indexOf(guess)>-1) return list[i]; }" +
+                        "  return null;" +
+                        " }" +
+                        " return {picked: pick(), all:list};" +
+                        "}catch(e){return {picked:null, all:[]};}",
+                base
+        );
+
+        if (scan instanceof Map) {
+            Map<?, ?> m = (Map<?, ?>) scan;
+            Object picked = m.get("picked");
+            if (picked != null && !String.valueOf(picked).trim().isEmpty()) {
+                return String.valueOf(picked);
+            }
+            throw new Exception(
+                    "Unable to resolve IG root id from: '" + regionIdOrAnyId + "' (base='" + base + "'). IGs found: " + m.get("all")
+            );
+        }
+
+        throw new Exception("Unable to resolve IG root id from: " + regionIdOrAnyId);
+    }
+
+    private boolean apexRegionExists(String regionId) {
+        Object ok = ((JavascriptExecutor) webDriverProvider.get()).executeScript(
+                "try { return !!(window.apex && apex.region && apex.region(arguments[0])); } catch(e){ return false; }",
+                regionId
+        );
+        return Boolean.TRUE.equals(ok);
+    }
+
+    /**
+     * Ensure IG is in Edit mode (works for any id input).
+     */
+    private void ensureIGEditMode(String regionIdOrAnyId) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc = gridVcId(regionId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(35));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+
+        // If we can open any cell editor, we're editable
+        if (tryOpenAnyCellEditor(regionId, 2000)) {
+            log.info("[IG DEBUG] IG is editable without invoking IG edit action. region=" + regionId);
+            return;
+        }
+
+        // Try IG edit action if available
+        try {
+            clickIgAction(regionId, "edit");
+            waitForApexAjaxToFinish(driver);
+        } catch (Exception ignored) {}
+
+        if (tryOpenAnyCellEditor(regionId, 3000)) {
+            log.info("[IG DEBUG] IG became editable after invoking IG edit action. region=" + regionId);
+            return;
+        }
+
+        throw new Exception(
+                "Unable to enter IG edit mode (cannot open any cell editor). region=" + regionId +
+                        "\nActions state:\n" + dumpIgActionsState(regionId)
+        );
+    }
+
+
+    private boolean isIgSaveEnabled(String regionId) {
+        try {
+            Object enabled = ((JavascriptExecutor) webDriverProvider.get()).executeScript(
+                    "try{" +
+                            "var r=apex.region(arguments[0]); if(!r||!r.widget) return false;" +
+                            "var ig$=r.widget(); if(!ig$||!ig$.length||typeof ig$.interactiveGrid!=='function') return false;" +
+                            "var a=ig$.interactiveGrid('getActions'); if(!a) return false;" +
+                            "var s=a.lookup('save'); if(!s) return false;" +
+                            "return (s.disabled===false);" +
+                            "}catch(e){return false;}",
+                    regionId
+            );
+            return Boolean.TRUE.equals(enabled);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+    public void ensureIgEditModePublic(String regionIdOrAnyId) throws Exception {
+        ensureIGEditMode(regionIdOrAnyId);
+    }
+
+    private WebElement findIGRowByText(String regionIdOrAnyId, String rowText) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        By rowBy = By.xpath(
+                "//*[@id='" + gridVcId(regionId) + "']//tr[contains(@class,'a-GV-row')]" +
+                        "[.//td[contains(@class,'a-GV-cell')][normalize-space()=\"" + rowText + "\"]]"
+        );
+
+        WebElement row = wait.until(ExpectedConditions.presenceOfElementLocated(rowBy));
+        scrollTo(row);
+        wait.until(ExpectedConditions.visibilityOf(row));
+        return row;
+    }
+
+    // =====================================================================
+    // IG – Fill enabled editable cells with random numbers and COMMIT IG changes (fixed JS)
+    // =====================================================================
+    public void fillEnabledIgCellsWithRandomNumbersAndCommit(String anyId, int min, int max) {
+        if (min > max) throw new IllegalArgumentException("min must be <= max");
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String js =
+                "var anyId=arguments[0], min=arguments[1], max=arguments[2];" +
+                        "function randInt(a,b){return Math.floor(Math.random()*(b-a+1))+a;}" +
+
+                        "function resolveRoot(id){" +
+                        " if(!id) return null;" +
+                        " var el=document.getElementById(id);" +
+                        " if(!el && id.indexOf('_grid_vc')>-1) el=document.getElementById(id.replace('_grid_vc',''));" +
+                        " if(!el) el=document.getElementById(id + '_grid_vc');" +
+                        " if(el){ var ig=el.closest('div.a-IG'); if(ig && ig.id) return ig.id; }" +
+                        " // if id itself is IG root" +
+                        " var ig2=document.getElementById(id);" +
+                        " if(ig2 && ig2.classList && ig2.classList.contains('a-IG')) return id;" +
+                        " return id;" +
+                        "}" +
+
+                        "function getIg$(id){" +
+                        " var rootId=resolveRoot(id);" +
+                        " var ig$=null;" +
+                        " try{ var r=apex.region(rootId); if(r && r.widget) ig$=r.widget(); }catch(e){}" +
+                        " if(!ig$ || !ig$.length || typeof ig$.interactiveGrid!=='function'){ ig$=apex.jQuery('#'+rootId); }" +
+                        " if(ig$ && ig$.length && typeof ig$.interactiveGrid==='function') return ig$;" +
+                        " // last resort: climb from element" +
+                        " var el=document.getElementById(id) || document.getElementById(rootId);" +
+                        " if(el){ var igEl=el.closest('div.a-IG'); if(igEl && igEl.id){ ig$=apex.jQuery('#'+igEl.id); } }" +
+                        " return ig$;" +
+                        "}" +
+
+                        "var ig$=getIg$(anyId);" +
+                        "if(!ig$ || !ig$.length) throw 'IG root not found for: '+anyId;" +
+                        "if(typeof ig$.interactiveGrid!=='function') throw 'Not an IG widget. root='+ig$[0].id;" +
+
+                        "var actions=ig$.interactiveGrid('getActions');" +
+                        "try{ if(actions && actions.lookup('edit')) actions.invoke('edit'); }catch(e){}" +
+
+                        "var gridView=ig$.interactiveGrid('getViews','grid');" +
+                        "if(!gridView || !gridView.model) throw 'Grid view/model not found. root='+ig$[0].id;" +
+                        "var model=gridView.model;" +
+
+                        // FIX: columns must be retrieved from gridView.view$.grid('getColumns') when available
+                        "var cols=[];" +
+                        "try{ if(gridView.view$ && gridView.view$.grid) cols = gridView.view$.grid('getColumns') || []; }catch(e){ cols=[]; }" +
+                        "if(!cols.length){ try{ if(gridView.getColumns) cols = gridView.getColumns() || []; }catch(e){} }" +
+                        "if(!cols.length) throw 'No columns metadata found.';" +
+
+                        "function isSkipCol(c){" +
+                        " var t=(c.type||c.itemType||'').toString().toLowerCase();" +
+                        " var p=(c.property||c.name||c.id||'').toString().toLowerCase();" +
+                        " if(!p) return true;" +
+                        " if(t==='rowselect' || t==='actions') return true;" +
+                        " if(p.indexOf('rowselector')>-1) return true;" +
+                        " if(c.hidden===true) return true;" +
+                        " return false;" +
+                        "}" +
+                        "function looksLikeLov(c){" +
+                        " var t=(c.type||c.itemType||c.elementType||'').toString().toLowerCase();" +
+                        " var it=(c.itemType||'').toString().toLowerCase();" +
+                        " if(t.indexOf('select')>-1 || t.indexOf('lov')>-1 || t.indexOf('popup')>-1) return true;" +
+                        " if(it.indexOf('select')>-1 || it.indexOf('lov')>-1) return true;" +
+                        " return false;" +
+                        "}" +
+
+                        "var props=[];" +
+                        "for(var i=0;i<cols.length;i++){" +
+                        " var c=cols[i];" +
+                        " if(!c || isSkipCol(c)) continue;" +
+                        " if(looksLikeLov(c)) continue;" +
+                        " var prop=c.property||c.name||c.id;" +
+                        " if(prop) props.push(prop);" +
+                        "}" +
+
+                        "if(typeof model.forEach!=='function') throw 'Model.forEach not available';" +
+
+                        "var updated=0, skipped=0;" +
+                        "model.forEach(function(rec){" +
+                        " var md=null;" +
+                        " try{ if(typeof model.getRecordMetadata==='function') md=model.getRecordMetadata(rec); }catch(e){}" +
+                        " for(var j=0;j<props.length;j++){" +
+                        "  var p=props[j];" +
+                        "  try{" +
+                        "    if(md && md.fields && md.fields[p]){" +
+                        "      var f=md.fields[p];" +
+                        "      if(f.readonly===true || f.readOnly===true || f.disabled===true){ skipped++; continue; }" +
+                        "    }" +
+                        "    var cur=null;" +
+                        "    try{ cur=model.getValue(rec,p); }catch(e){}" +
+                        "    if(cur!==null && cur!==undefined && cur!==''){" +
+                        "      var s=cur.toString().replace(/,/g,'').trim();" +
+                        "      if(s!=='' && isNaN(Number(s))){ skipped++; continue; }" +
+                        "    }" +
+                        "    model.setValue(rec,p,randInt(min,max));" +
+                        "    updated++;" +
+                        "  }catch(e){ skipped++; }" +
+                        " }" +
+                        "});" +
+
+                        "if(updated>0){" +
+                        " try{ if(actions && actions.lookup('save')) actions.invoke('save'); }catch(e){}" +
+                        "}" +
+                        "return {root: ig$[0].id, props: props.length, updated: updated, skipped: skipped};";
+
+        Object result = ((JavascriptExecutor) driver).executeScript(js, anyId, min, max);
+        waitForApexAjaxToFinish(driver);
+
+        if (result instanceof Map) {
+            Map<?, ?> m = (Map<?, ?>) result;
+            int props = m.get("props") == null ? 0 : ((Number) m.get("props")).intValue();
+            int updated = m.get("updated") == null ? 0 : ((Number) m.get("updated")).intValue();
+
+            if (props == 0) {
+                throw new RuntimeException("IG found (" + m.get("root") + ") but no candidate columns found (props=0).");
+            }
+            if (updated == 0) {
+                throw new RuntimeException("IG found (" + m.get("root") + ") but no cells updated (updated=0).");
+            }
+        }
+    }
+
+    // =====================================================================
+    // IG – High-level helper: edit -> fill -> save (fixed)
+    // =====================================================================
+    public int fillCalcIgRandomAndSave(String regionIdOrAnyId, String firstRowText, int min, int max) throws Exception {
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        clickIgEdit(regionId);
+        int updated = setIGRandomNumbers_AllEnabledCells_SkipDDL_StartAfterSelector(regionId, firstRowText, min, max);
+        clickIgSave(regionId);
+
+        return updated;
+    }
+
+    // =====================================================================
+    // IG – Actions (Edit/Save) using APEX Actions first, then toolbar fallback (fixed)
+    // =====================================================================
+    private void clickIgAction(String regionIdOrAnyId, String actionName) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String resolved = resolveIgRegionId(regionIdOrAnyId);
+        String regionId = apexRegionIdForActions(resolved);
+        String actionKey = safeLower(actionName); // "edit" / "save"
+
+        // 1) APEX actions (best)
+        Object ok = ((JavascriptExecutor) driver).executeScript(
+                "try{" +
+                        "var id=arguments[0], actName=arguments[1];" +
+                        "if(!window.apex || !apex.region) return false;" +
+                        "var r=apex.region(id); if(!r || !r.widget) return false;" +
+                        "var ig$=r.widget(); if(!ig$ || !ig$.length || typeof ig$.interactiveGrid!=='function') return false;" +
+                        "var a=ig$.interactiveGrid('getActions'); if(!a) return false;" +
+                        "var act=a.lookup(actName); if(!act) return false;" +
+                        "a.invoke(actName);" +
+                        "return true;" +
+                        "}catch(e){return false;}",
+                regionId, actionKey
+        );
+
+        if (Boolean.TRUE.equals(ok)) {
+            waitForApexAjaxToFinish(driver);
+            return;
+        }
+
+        // 2) Toolbar fallback: find button inside IG root (do NOT rely on *_ig_toolbar_container)
+        WebElement igRoot = driver.findElement(By.id(regionId));
+
+        // APEX toolbars vary; search broadly inside root
+        List<WebElement> buttons = igRoot.findElements(By.cssSelector("button"));
+        WebElement target = null;
+
+        for (WebElement b : buttons) {
+            String title = safeLower(b.getAttribute("title"));
+            String txt = safeLower(b.getText());
+            String aria = safeLower(b.getAttribute("aria-label"));
+
+            if (actionKey.equals(title) || actionKey.equals(txt) || actionKey.equals(aria)) {
+                target = b;
+                break;
+            }
+
+            // some themes have "Save" in title but empty text
+            if ("save".equals(actionKey) && (title.contains("save") || aria.contains("save"))) {
+                target = b;
+                break;
+            }
+            if ("edit".equals(actionKey) && (title.contains("edit") || aria.contains("edit"))) {
+                target = b;
+                break;
+            }
+        }
+
+        if (target == null) {
+            Object allIgs = ((JavascriptExecutor) driver).executeScript(
+                    "try{return Array.from(document.querySelectorAll('div.a-IG[id]')).map(x=>x.id);}catch(e){return [];}"
+            );
+            throw new Exception(
+                    "IG action failed. resolvedRegionId=" + regionId +
+                            ", input=" + regionIdOrAnyId +
+                            ", action=" + actionName +
+                            ", IGsOnPage=" + String.valueOf(allIgs)
+            );
+        }
+
+        clickSafe(target);
+        waitForApexAjaxToFinish(driver);
+    }
+
+    public void clickIgEdit(String regionIdOrAnyId) throws Exception {
+        clickIgAction(regionIdOrAnyId, "edit");
+    }
+
+    public void clickIgSave(String regionIdOrAnyId) throws Exception {
+        clickIgAction(regionIdOrAnyId, "save");
+    }
+
+    // =====================================================================
+    // APEX waits (unchanged)
+    // =====================================================================
+    private void waitForApexReady(WebDriver driver) {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(d -> {
+            try {
+                Object ok = ((JavascriptExecutor) d).executeScript("return !!window.apex && !!apex.jQuery;");
+                return Boolean.TRUE.equals(ok);
+            } catch (Exception e) {
+                return false;
+            }
+        });
+    }
+
+    private void waitForApexAjaxToFinish(WebDriver driver) {
+        new WebDriverWait(driver, Duration.ofSeconds(35)).until(d -> {
+            try {
+                Object idle = ((JavascriptExecutor) d).executeScript(
+                        "var $=apex.jQuery;" +
+                                "var ajaxIdle=($.active===0);" +
+                                "var spinners=$('.u-Processing, .u-Processing--fixed, .a-LoadingIndicator').length;" +
+                                "return ajaxIdle && spinners===0;"
+                );
+                return Boolean.TRUE.equals(idle);
+            } catch (Exception e) {
+                return true;
+            }
+        });
+    }
+
+    // =====================================================================
+    // Low-level helpers
+    // =====================================================================
+    private void clickSafe(WebElement el) {
+        try {
+            el.click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) webDriverProvider.get()).executeScript("arguments[0].click();", el);
+        }
+    }
+
+    private void scrollTo(WebElement el) {
+        ((JavascriptExecutor) webDriverProvider.get())
+                .executeScript("arguments[0].scrollIntoView({block:'center', inline:'center'});", el);
+    }
+
+    private String safeText(WebElement el) {
+        try {
+            String t = el.getText();
+            return t == null ? "" : t.trim();
+        } catch (StaleElementReferenceException e) {
+            return "";
+        }
+    }
+
+    private String safeAttr(WebElement el, String attr) {
+        try {
+            return el.getAttribute(attr);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private String safeLower(String s) {
+        return s == null ? "" : s.trim().toLowerCase();
+    }
+
+    /**
+     * Normalize an incoming id to a root-like id (does NOT append anything).
+     * IMPORTANT: do NOT aggressively strip "_ig" because your IG region ids are like "calc_ig".
+     * Only strip APEX technical suffixes.
+     */
+    private String rootIgId(String anyId) {
+        if (anyId == null) return "";
+        String id = anyId.trim();
+
+        if (id.endsWith("_grid_vc")) id = id.substring(0, id.length() - "_grid_vc".length());
+        if (id.endsWith("_ig_toolbar_container")) id = id.substring(0, id.length() - "_ig_toolbar_container".length());
+
+        // do NOT strip "_ig" here, because IG root id can legitimately end with _ig (e.g., calc_ig)
+        return id;
+    }
+
+    private String gridVcId(String regionRootId) {
+        WebDriver driver = webDriverProvider.get();
+
+        String root = rootIgId(regionRootId);
+
+        String c1 = root.endsWith("_grid_vc") ? root : root + "_grid_vc";
+        if (!driver.findElements(By.id(c1)).isEmpty()) return c1;
+
+        if (root.endsWith("_ig")) {
+            String base = root.substring(0, root.length() - 3);
+            String c2 = base + "_grid_vc";
+            if (!driver.findElements(By.id(c2)).isEmpty()) return c2;
+        }
+
+        return c1;
+    }
+
+    private String getHeaderTextByLeafIndex(WebElement regionRoot, int leafIndex) {
+        try {
+            List<WebElement> ths = regionRoot.findElements(By.cssSelector("thead th"));
+            // build leaf headers: colspan == 1 and has text
+            java.util.ArrayList<WebElement> leaf = new java.util.ArrayList<>();
+            for (WebElement th : ths) {
+                String txt = safeText(th);
+                if (txt == null) txt = "";
+                String colspanStr = th.getAttribute("colspan");
+                int colspan = 1;
+                try { colspan = Integer.parseInt(colspanStr == null ? "1" : colspanStr); } catch (Exception ignored) {}
+                if (colspan > 1) continue;
+                if (txt.trim().isEmpty()) {
+                    String aria = th.getAttribute("aria-label");
+                    if (aria != null && !aria.trim().isEmpty()) txt = aria.trim();
+                }
+                if (!txt.trim().isEmpty()) leaf.add(th);
+            }
+            if (leafIndex >= 0 && leafIndex < leaf.size()) {
+                String t = safeText(leaf.get(leafIndex));
+                if (t == null || t.trim().isEmpty()) {
+                    String aria = leaf.get(leafIndex).getAttribute("aria-label");
+                    if (aria != null) return aria.trim();
+                }
+                return t == null ? "" : t.trim();
+            }
+        } catch (Exception ignored) {}
+        return "";
+    }
+
+    private String getRowLabel(WebElement row) {
+        try {
+            List<WebElement> tds = row.findElements(By.cssSelector("td[role='gridcell']"));
+            if (!tds.isEmpty()) return safeText(tds.get(0)).trim();
+        } catch (Exception ignored) {}
+        return "";
+    }
+
+    // =====================================================================
+// IG – UI cell editor setter (SCOPED to the given IG root)
+// This prevents editing the editor that belongs to the other IG on the page.
+// =====================================================================
+    private boolean trySetCellValueViaUi(WebElement igRoot, WebElement cell, String value, long timeoutMs) {
+        WebDriver driver = webDriverProvider.get();
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        java.util.function.LongConsumer tinyWait = ms -> {
+            try { Thread.sleep(ms); } catch (InterruptedException ignored) { Thread.currentThread().interrupt(); }
+        };
+
+        try {
+            scrollTo(cell);
+            clickSafe(cell);
+
+            try { cell.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+            tinyWait.accept(120);
+
+            try { cell.sendKeys(Keys.F2); } catch (Exception ignored) {}
+            tinyWait.accept(120);
+
+            By editorBy = By.cssSelector(
+                    "div.a-GV-columnItem input, div.a-GV-columnItem textarea, div.a-GV-columnItem select," +
+                            "td.is-active input, td.is-active textarea, td.is-active select," +
+                            "td.a-GV-cell.is-active input, td.a-GV-cell.is-active textarea, td.a-GV-cell.is-active select"
+            );
+
+            while (System.currentTimeMillis() < end) {
+
+                // IMPORTANT: only search editors inside THIS IG
+                List<WebElement> eds = igRoot.findElements(editorBy);
+
+                for (WebElement ed : eds) {
+                    if (!ed.isDisplayed()) continue;
+
+                    // Skip DDL
+                    String tag = ed.getTagName();
+                    if (tag != null && tag.equalsIgnoreCase("select")) return false;
+
+                    // Skip known LOV/DDL widgets (best-effort)
+                    String eCls = safeAttr(ed, "class");
+                    if (eCls != null) {
+                        String l = eCls.toLowerCase();
+                        if (l.contains("select") || l.contains("lov") || l.contains("popup")) return false;
+                    }
+
+                    if (ed.isEnabled()) {
+                        try { ed.sendKeys(Keys.chord(Keys.CONTROL, "a")); } catch (Exception ignored) {}
+                        tinyWait.accept(120);
+
+                        try { ed.sendKeys(Keys.DELETE); } catch (Exception ignored) {}
+                        tinyWait.accept(150);
+
+                        ed.sendKeys(value);
+                        tinyWait.accept(150);
+
+                        // Commit
+                        ed.sendKeys(Keys.TAB);
+                        tinyWait.accept(150);
+
+                        try { ed.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+                        tinyWait.accept(120);
+
+                        return true;
+                    }
+                }
+
+                tinyWait.accept(120);
+            }
+        } catch (Exception ignored) {
+        }
+
+        return false;
+    }
+
+
+
+    public String getIGCellText(
+            String regionIdOrAnyId,
+            String rowText,
+            String columnHeader
+    ) throws Exception {
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVcId(regionId))));
+
+        // Resolve column index (leaf header)
+        int colLeafIndex = resolveLeafHeaderIndex(regionId, columnHeader);
+        if (colLeafIndex < 0) {
+            throw new Exception(
+                    "Header not found: '" + columnHeader + "'\nAvailable headers:\n" + dumpHeaders(regionId)
+            );
+        }
+
+        // Find row by its first column text
+        WebElement row = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath(
+                        "//div[@id='" + gridVcId(regionId) + "']" +
+                                "//tr[@role='row' and .//td[normalize-space()=\"" + rowText + "\"]]"
+                )
+        ));
+
+        List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+        if (colLeafIndex >= cells.size()) {
+            throw new Exception(
+                    "Column index out of range. idx=" + colLeafIndex + ", cells=" + cells.size()
+            );
+        }
+
+        WebElement cell = cells.get(colLeafIndex);
+        scrollTo(cell);
+
+        return normalizeNumberString(safeText(cell));
+    }
+
+    // =====================================================================
+// IG – Fill ONLY the SECOND IG table (edit -> fill -> save)
+// (The first IG may exist on the page, but we ignore it completely.)
+// =====================================================================
+    public int fillSecondIgRandomAndSaveOnly(
+            String secondIgRegionIdOrAnyId,
+            String secondIgFirstRowText,
+            int min,
+            int max
+    ) throws Exception {
+
+        if (min > max) throw new Exception("min must be <= max");
+
+        String ig2 = resolveIgRegionId(secondIgRegionIdOrAnyId);
+
+        // Use the fixed edit mode enabler
+        ensureIGEditMode(ig2);
+
+        int updated2 = setIGRandomNumbers_AllEnabledCells_SkipDDL_StartAfterSelector(
+                ig2, secondIgFirstRowText, min, max
+        );
+
+        clickIgSave(ig2);
+
+        if (updated2 <= 0) {
+            throw new Exception("IG: No enabled non-DDL cells were updated. ig=" + ig2);
+        }
+
+        return updated2;
+    }
+
+    private String apexRegionIdForActions(String regionIdOrAnyId) {
+        String id = regionIdOrAnyId == null ? "" : regionIdOrAnyId.trim();
+        if (id.isEmpty()) return id;
+
+        // If apex.region(id) works, keep it
+        if (apexRegionExists(id)) return id;
+
+        // If the DOM id ends with _ig, try static id without it
+        if (id.endsWith("_ig")) {
+            String base = id.substring(0, id.length() - 3);
+            if (apexRegionExists(base)) return base;
+        }
+
+        return id;
+    }
+
+    private boolean tryOpenAnyCellEditor(String regionIdOrAnyId, long timeoutMs) {
+        WebDriver driver = webDriverProvider.get();
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        String regionId;
+        try {
+            regionId = resolveIgRegionId(regionIdOrAnyId);
+        } catch (Exception e) {
+            return false;
+        }
+
+        String gridVc = gridVcId(regionId);
+
+        By cellsBy = By.cssSelector("#" + gridVc + " td[role='gridcell']");
+
+        By editorBy = By.cssSelector(
+                "div.a-GV-columnItem input, div.a-GV-columnItem textarea, div.a-GV-columnItem select," +
+                        "td.is-active input, td.is-active textarea, td.is-active select," +
+                        "td.a-GV-cell.is-active input, td.a-GV-cell.is-active textarea, td.a-GV-cell.is-active select"
+        );
+
+        while (System.currentTimeMillis() < end) {
+            try {
+                List<WebElement> cells = driver.findElements(cellsBy);
+                for (WebElement cell : cells) {
+                    if (!cell.isDisplayed()) continue;
+
+                    String ro = safeAttr(cell, "aria-readonly");
+                    if ("true".equalsIgnoreCase(ro)) continue;
+
+                    scrollTo(cell);
+                    clickSafe(cell);
+
+                    try { cell.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+                    try { cell.sendKeys(Keys.F2); } catch (Exception ignored) {}
+
+                    // NOTE: global is OK here because we just need detection, not editing.
+                    // If you want fully scoped detection, pass igRoot similarly.
+                    List<WebElement> editors = driver.findElements(editorBy);
+                    for (WebElement ed : editors) {
+                        if (ed.isDisplayed() && ed.isEnabled()) {
+                            return true;
+                        }
+                    }
+                }
+            } catch (Exception ignored) {
+            }
+
+            try { Thread.sleep(150); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
+        }
+
+        return false;
+    }
+
+
+    private String dumpIgActionsState(String regionIdOrAnyId) {
+        try {
+            String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+            Object res = ((JavascriptExecutor) webDriverProvider.get()).executeScript(
+                    "try{" +
+                            "var id=arguments[0];" +
+                            "var out=[];" +
+                            "if(!window.apex||!apex.region) return 'No apex.region';" +
+                            "var r=apex.region(id); if(!r||!r.widget) return 'apex.region not found for '+id;" +
+                            "var ig$=r.widget(); if(!ig$||!ig$.length||typeof ig$.interactiveGrid!=='function') return 'Not an IG widget: '+id;" +
+                            "var a=ig$.interactiveGrid('getActions'); if(!a) return 'No actions';" +
+                            "function st(name){" +
+                            " var act=a.lookup(name);" +
+                            " if(!act) return name+':(missing)';" +
+                            " return name+': disabled='+(act.disabled===true)+'; hide='+(act.hide===true);" +
+                            "}" +
+                            "out.push(st('edit'));" +
+                            "out.push(st('save'));" +
+                            "out.push(st('selection-edit'));" +
+                            "out.push(st('row-add'));" +
+                            "out.push(st('row-delete'));" +
+                            "return out.join('\\n');" +
+                            "}catch(e){return 'ERR:'+e.message;}",
+                    regionId
+            );
+
+            return res == null ? "" : String.valueOf(res);
+        } catch (Exception e) {
+            return "ERR: " + e.getMessage();
+        }
+    }
+
+    private String resolveIgRegionIdByIndex(int oneBasedIndex) throws Exception {
+        if (oneBasedIndex < 1) throw new Exception("IG index must be >= 1");
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        Object id = ((JavascriptExecutor) driver).executeScript(
+                "try{" +
+                        "var n=parseInt(arguments[0],10);" +
+                        "var list=Array.from(document.querySelectorAll('div.a-IG[id]'))" +
+                        " .filter(function(x){" +
+                        "   var r=x.getBoundingClientRect();" +
+                        "   return r.width>0 && r.height>0;" + // visible
+                        " })" +
+                        " .map(function(x){return x.id;});" +
+                        "return (n>=1 && n<=list.length) ? list[n-1] : null;" +
+                        "}catch(e){return null;}",
+                oneBasedIndex
+        );
+
+        if (id == null || String.valueOf(id).trim().isEmpty()) {
+            Object all = ((JavascriptExecutor) driver).executeScript(
+                    "try{return Array.from(document.querySelectorAll('div.a-IG[id]')).map(x=>x.id);}catch(e){return [];}"
+            );
+            throw new Exception("Cannot resolve IG by index=" + oneBasedIndex + ". IGs found: " + String.valueOf(all));
+        }
+
+        return String.valueOf(id);
+    }
+
+    public int fillIgByIndexRandomAndSave(
+            int igIndexOneBased,
+            String firstRowText,
+            int min,
+            int max
+    ) throws Exception {
+
+        if (min > max) throw new Exception("min must be <= max");
+
+        // Resolve the correct IG root by position (2 = second IG)
+        String igId = resolveIgRegionIdByIndex(igIndexOneBased);
+
+        log.info("[IG DEBUG] Using IG index=" + igIndexOneBased + " resolvedId=" + igId);
+
+        // Ensure editable (your new cell-driven ensure method)
+        ensureIGEditMode(igId);
+
+        int updated = setIGRandomNumbers_AllEnabledCells_SkipDDL_StartAfterSelector(
+                igId, firstRowText, min, max
+        );
+
+        clickIgSave(igId);
+
+        if (updated <= 0) {
+            throw new Exception("No enabled non-DDL cells were updated. igIndex=" + igIndexOneBased + ", ig=" + igId);
+        }
+
+        return updated;
+    }
+
+    // =====================================================================
+// IG – Assertions: Local/Amount fillable + Foreign/Foreign Amount fillable
+// =====================================================================
+
+    // =====================================================================
+// IG – Assertions: cell is fillable (editor opens and is enabled)
+// =====================================================================
+
+    public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) throws Exception {
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        // Screen 1: "Local" under group "Amount"
+        // Screen 2: leaf header is "Amount"
+        String columnHeader = resolveFirstExistingLeafHeader(regionId, "Local", "Amount");
+
+        assertIgCellFillable_ByEditor(regionId, rowText, columnHeader);
+    }
+
+    public void assertIgForeignAmountFillable(String regionIdOrAnyId, String rowText) throws Exception {
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        // Screen 1: "Foreign" under group "Amount"
+        // Screen 2: "Foreign Amount"
+        String columnHeader = resolveFirstExistingLeafHeader(regionId, "Foreign", "Foreign Amount");
+
+        assertIgCellFillable_ByEditor(regionId, rowText, columnHeader);
+    }
+
+    private void assertIgCellFillable_ByEditor(String regionIdOrAnyId, String rowText, String columnHeader) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc = gridVcId(regionId);
+
+        // Ensure grid exists + edit mode
+        new WebDriverWait(driver, Duration.ofSeconds(25))
+                .until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+        ensureIGEditMode(regionId);
+
+        // Resolve column index
+        int colLeafIndex = resolveLeafHeaderIndex(regionId, columnHeader);
+        if (colLeafIndex < 0) {
+            throw new Exception("Header not found: '" + columnHeader + "'\nFound headers:\n" + dumpHeaders(regionId));
+        }
+
+        // Find row (your existing helper)
+        WebElement row = findIGRowByText(regionId, rowText);
+
+        List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+        if (colLeafIndex >= cells.size()) {
+            throw new Exception("Column index out of range. idx=" + colLeafIndex + ", cells=" + cells.size());
+        }
+
+        WebElement cell = cells.get(colLeafIndex);
+        scrollTo(cell);
+
+        // Fast fail if DOM says readonly
+        String ariaReadonly = safeAttr(cell, "aria-readonly");
+        if ("true".equalsIgnoreCase(ariaReadonly)) {
+            throw new Exception("Cell is read-only (aria-readonly=true). region=" + regionId +
+                    ", row='" + rowText + "', col='" + columnHeader + "'");
+        }
+        String cls = safeAttr(cell, "class");
+        if (cls != null && cls.toLowerCase().contains("is-readonly")) {
+            throw new Exception("Cell is read-only (class contains is-readonly). region=" + regionId +
+                    ", row='" + rowText + "', col='" + columnHeader + "'");
+        }
+
+        // Try to open editor (APEX IG)
+        clickSafe(cell);
+        try { cell.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+        try { cell.sendKeys(Keys.F2); } catch (Exception ignored) {}
+
+        WebElement igRoot = driver.findElement(By.id(regionId));
+
+        By editorBy = By.cssSelector(
+                "div.a-GV-columnItem input, div.a-GV-columnItem textarea," +
+                        "td.is-active input, td.is-active textarea," +
+                        "td.a-GV-cell.is-active input, td.a-GV-cell.is-active textarea"
+        );
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
+        WebElement editor = wait.until(d -> {
+            try {
+                List<WebElement> eds = igRoot.findElements(editorBy);
+                for (WebElement e : eds) {
+                    if (e.isDisplayed()) return e;
+                }
+            } catch (Exception ignored) {}
+            return null;
+        });
+
+        if (editor == null) {
+            throw new Exception("No editor opened for cell. region=" + regionId +
+                    ", row='" + rowText + "', col='" + columnHeader + "'");
+        }
+
+        if (!editor.isEnabled()) {
+            throw new Exception("Editor opened but is disabled (not fillable). region=" + regionId +
+                    ", row='" + rowText + "', col='" + columnHeader + "'");
+        }
+
+        // If you want, also verify it's not a LOV/select
+        String tag = editor.getTagName();
+        if (tag != null && tag.equalsIgnoreCase("select")) {
+            throw new Exception("Editor is a SELECT/DDL (not a free text/numeric fill). region=" + regionId +
+                    ", row='" + rowText + "', col='" + columnHeader + "'");
+        }
+
+        // Passed: editor exists + enabled
+        Assert.assertTrue(true);
+    }
+
+    private String resolveFirstExistingLeafHeader(String regionId, String... candidates) throws Exception {
+        for (String h : candidates) {
+            int idx = resolveLeafHeaderIndex(regionId, h);
+            if (idx >= 0) return h;
+        }
+        throw new Exception(
+                "None of the expected headers exist in IG. candidates=" + java.util.Arrays.toString(candidates) +
+                        "\nFound headers:\n" + dumpHeaders(regionId)
+        );
+    }
 
 }

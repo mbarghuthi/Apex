@@ -1,0 +1,16 @@
+<story path="stories/Quotation/TC_001_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_001_Apex Apex Test Case Navigate to Quotation Page">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;QuotationsSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;QuotationMenuSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;QuotationNavigationSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;QuotationsTitle&apos; equals &apos;Quotations&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

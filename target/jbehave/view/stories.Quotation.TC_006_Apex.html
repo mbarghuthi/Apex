@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>stories.Quotation.TC_006_Apex</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+<div class="story">
+<h1>&#65279;</h1>
+<div class="path">stories/Quotation/TC_006_Apex.story</div>
+<div class="scenario">
+<h2>Scenario: TC_006_Apex 001 Apex Test Case Marine - Marine Cargo - Cargo Policy (Saudi Riyals)</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">When  I click on 'QuotationCardDashboard'</div>
+<div class="step successful">And  Verify 'QuotationsTitle' equals 'Quotations' text</div>
+<div class="step successful">And  I click on 'JeddahClaimCenterCard'</div>
+<div class="step successful">And  I click on 'NewQuotationButton'</div>
+<div class="step successful">And  I click on 'MarineCard'</div>
+<div class="step successful">And  I click on 'MarineCargoCard'</div>
+<div class="step successful">And  I click on 'CargoPolicyCard'</div>
+<div class="step successful">And  Verify 'QutClassOfBusinessDisplay' equals '10 - Marine Cargo' text</div>
+<div class="step successful">And  Verify 'QutPolicyTypeDisplay' equals '10 - Cargo Policy' text</div>
+<div class="step ignorable">!-- Fill the mandatory Quotation Details</div>
+<div class="step successful">And  Select '1-Direct' value from 'QutSourceCombobox' dropdown list</div>
+<div class="step successful">And  Verify 'QutPaymentTermCombobox' contains '2-Account' text</div>
+<div class="step successful">And  Verify 'QutQuotDate' value equals sysdate</div>
+<div class="step successful">And  Verify 'QutQuotValidityDate' value equals sysdate plus '1' months minus one day</div>
+<div class="step successful">And  Set 'QutInsStDateInput' value to 'sysdateformatted'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I click on 'QutInsStDateInput'</div>
+<div class="step successful">And  I press Enter on 'QutInsStDateInput'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify 'QutInsEdDateInput' input is empty</div>
+<div class="step successful">And  I scroll to 'QutCalculationBasisCombobox'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Select '1 - Pro Rata' value from 'QutCalculationBasisCombobox' dropdown list</div>
+<div class="step successful">And  Select '1 - Saudi Riyals' value from 'QutCrCdCombobox' dropdown list</div>
+<div class="step successful">And  Verify 'QutUnitPriceVal' equals '1' text</div>
+<div class="step successful">And  I scroll to 'CreateButton'</div>
+<div class="step successful">And  I click on 'CreateButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I scroll to 'SuccessfullyAlert'</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Data Saved Successfully.' text</div>
+<div class="step successful">And  I get text from 'QutQuotNoCreateText' and save it as 'QuotationNo'</div>
+<div class="step successful">And  I click on 'NextButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- Fill in Quotation Value Types</div>
+<div class="step successful">And  I click on 'EditButtonQuotationValue'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify IG 'calc_ig' row '20 - LC invoice value' Local/Amount can be filled</div>
+<div class="step successful">And  I set IG 'calc_ig' from first row '20 - LC invoice value' to random numbers between '1' and '50' for all enabled cells excluding DDL</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I click on 'SaveButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I scroll to top of page</div>
+<div class="step successful">And  I click on 'NextButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- Fill in Quotation Client</div>
+<div class="step successful">And  Select '1093 - Staff / Ammar Ahmed Hamza Ghor' value from 'QurQutClientCombobox' dropdown list</div>
+<div class="step successful">And  Select '1093 - Staff / Ammar Ahmed Hamza Ghor' value from 'QurQutClientNoCombobox' dropdown list</div>
+<div class="step successful">And  I click on 'ApplyChangesButton'</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Data Updated Successfully.' text</div>
+<div class="step successful">And  I click on 'NextButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- Last Page</div>
+<div class="step successful">And  Select '1-AWS (Sea)' value from 'QutCoverGroupCombobox' dropdown list</div>
+<div class="step successful">And  Select '2 - Cheque' value from 'QutCollectionTypeCombobox' dropdown list</div>
+<div class="step successful">And  I scroll to end of page</div>
+<div class="step successful">And  I click on 'ApplyChangesButton'</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Data Updated Successfully.' text</div>
+<div class="step successful">And  Verify text of 'QutQuotNoFinalPageText' contains saved value 'QuotationNo'</div>
+<div class="step successful">And  I scroll to 'DeleteButton'</div>
+<div class="step successful">And  I click on 'DeleteButton'</div>
+<div class="step successful">And  I click on 'DeleteButtonPopup'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Quotation Deleted Successfully!' text</div>
+<div class="step ignorable">!-- Logout</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_006_Apex 002 Apex Test Case Marine - Marine Cargo - Cargo Policy (US Dollars)</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">When  I click on 'QuotationCardDashboard'</div>
+<div class="step successful">And  Verify 'QuotationsTitle' equals 'Quotations' text</div>
+<div class="step successful">And  I click on 'JeddahClaimCenterCard'</div>
+<div class="step successful">And  I click on 'NewQuotationButton'</div>
+<div class="step successful">And  I click on 'MarineCard'</div>
+<div class="step successful">And  I click on 'MarineCargoCard'</div>
+<div class="step successful">And  I click on 'CargoPolicyCard'</div>
+<div class="step successful">And  Verify 'QutClassOfBusinessDisplay' equals '10 - Marine Cargo' text</div>
+<div class="step successful">And  Verify 'QutPolicyTypeDisplay' equals '10 - Cargo Policy' text</div>
+<div class="step ignorable">!-- Fill the mandatory Quotation Details</div>
+<div class="step successful">And  Select '1-Direct' value from 'QutSourceCombobox' dropdown list</div>
+<div class="step successful">And  Verify 'QutPaymentTermCombobox' contains '2-Account' text</div>
+<div class="step successful">And  Verify 'QutQuotDate' value equals sysdate</div>
+<div class="step successful">And  Verify 'QutQuotValidityDate' value equals sysdate plus '1' months minus one day</div>
+<div class="step successful">And  Set 'QutInsStDateInput' value to 'sysdateformatted'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I click on 'QutInsStDateInput'</div>
+<div class="step successful">And  I press Enter on 'QutInsStDateInput'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify 'QutInsEdDateInput' input is empty</div>
+<div class="step successful">And  I scroll to 'QutCalculationBasisCombobox'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Select '1 - Pro Rata' value from 'QutCalculationBasisCombobox' dropdown list</div>
+<div class="step successful">And  Select '2 - US Dollars' value from 'QutCrCdCombobox' dropdown list</div>
+<div class="step successful">And  Verify 'QutUnitPriceVal' equals '3.75' text</div>
+<div class="step successful">And  I scroll to 'CreateButton'</div>
+<div class="step successful">And  I click on 'CreateButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I scroll to 'SuccessfullyAlert'</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Data Saved Successfully.' text</div>
+<div class="step successful">And  I get text from 'QutQuotNoCreateText' and save it as 'QuotationNo'</div>
+<div class="step successful">And  I click on 'NextButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- Fill in Quotation Value Types</div>
+<div class="step successful">And  I click on 'EditButtonQuotationValue'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify IG 'calc_ig' row '20 - LC invoice value' Foreign/Foreign Amount can be filled</div>
+<div class="step successful">And  I set IG 'calc_ig' from first row '20 - LC invoice value' to random numbers between '1' and '50' for all enabled cells excluding DDL</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I click on 'SaveButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I scroll to top of page</div>
+<div class="step successful">And  I click on 'NextButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- Fill in Quotation Client</div>
+<div class="step successful">And  Select '1093 - Staff / Ammar Ahmed Hamza Ghor' value from 'QurQutClientCombobox' dropdown list</div>
+<div class="step successful">And  Select '1093 - Staff / Ammar Ahmed Hamza Ghor' value from 'QurQutClientNoCombobox' dropdown list</div>
+<div class="step successful">And  I click on 'ApplyChangesButton'</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Data Updated Successfully.' text</div>
+<div class="step successful">And  I click on 'NextButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- Last Page</div>
+<div class="step successful">And  Select '1-AWS (Sea)' value from 'QutCoverGroupCombobox' dropdown list</div>
+<div class="step successful">And  Select '2 - Cheque' value from 'QutCollectionTypeCombobox' dropdown list</div>
+<div class="step successful">And  I scroll to end of page</div>
+<div class="step successful">And  I click on 'ApplyChangesButton'</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Data Updated Successfully.' text</div>
+<div class="step successful">And  Verify text of 'QutQuotNoFinalPageText' contains saved value 'QuotationNo'</div>
+<div class="step successful">And  I scroll to 'DeleteButton'</div>
+<div class="step successful">And  I click on 'DeleteButton'</div>
+<div class="step successful">And  I click on 'DeleteButtonPopup'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify 'SuccessfullyAlert' contains 'Quotation Deleted Successfully!' text</div>
+<div class="step ignorable">!-- Logout</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+</div>
+
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

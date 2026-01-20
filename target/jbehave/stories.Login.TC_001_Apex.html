@@ -1,0 +1,74 @@
+<div class="story">
+<h1>!--</h1>
+<div class="path">stories/Login/TC_001_Apex.story</div>
+<div class="scenario">
+<h2>Scenario: TC_001_Apex 001 Apex Test Case Login - Empty username and password</h2>
+<div class="step ignorable">!-- Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- When  Verify 'userName' input is empty</div>
+<div class="step ignorable">!-- And  Verify 'password' input is empty</div>
+<div class="step ignorable">!-- And  I click on 'loginButton'</div>
+<div class="step ignorable">!-- Then  Verify 'loginButton' is present
+
+
+!--</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_001_Apex 002 Apex Test Case Login - Valid username and Empty password</h2>
+<div class="step ignorable">!-- Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- When  Set 'userName' value to 'aman_opt'</div>
+<div class="step ignorable">!-- And  Verify 'password' input is empty</div>
+<div class="step ignorable">!-- And  I click on 'loginButton'</div>
+<div class="step ignorable">!-- Then  Verify 'loginAlert' contains 'Invalid Login Credentials' text</div>
+<div class="step ignorable">!-- And  Verify 'loginButton' is present
+
+
+!--</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_001_Apex 003 Apex Test Case Login - Empty username and Valid password</h2>
+<div class="step ignorable">!-- Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- When  Set 'password' value to 'aman_opt'</div>
+<div class="step ignorable">!-- And  Verify 'userName' input is empty</div>
+<div class="step ignorable">!-- And  I click on 'loginButton'</div>
+<div class="step ignorable">!-- !-- Then  Verify 'loginAlert' contains 'Invalid Login Credentials' text</div>
+<div class="step ignorable">!-- Then  Verify 'loginButton' is present
+
+
+!--</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_001_Apex 004 Apex Test Case Login - Invalid username and password</h2>
+<div class="step ignorable">!-- Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- When  I login as 'abc' with password 'abc'</div>
+<div class="step ignorable">!-- !-- Then  Verify 'loginAlert' contains 'Invalid Login Credentials' text</div>
+<div class="step ignorable">!-- Then  Verify 'loginButton' is present
+
+
+!--</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_001_Apex 005 Apex Test Case Login - Invalid username and Valid password</h2>
+<div class="step ignorable">!-- Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- When  I login as 'abc' with password 'aman_opt'</div>
+<div class="step ignorable">!-- !-- Then  Verify 'loginAlert' contains 'Invalid Login Credentials' text</div>
+<div class="step ignorable">!-- Then  Verify 'loginButton' is present
+
+
+!--</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_001_Apex 006 Apex Test Case Login - Valid username and Invalid password</h2>
+<div class="step ignorable">!-- Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- When  I login as 'aman_opt' with password 'abc'</div>
+<div class="step ignorable">!-- Then  Verify 'loginAlert' contains 'Invalid Login Credentials' text</div>
+<div class="step ignorable">!-- And  Verify 'loginButton' is present</div>
+<div class="step ignorable">!-- And  Verify 'userName' input is empty</div>
+<div class="step ignorable">!-- And  Verify 'password' input is empty</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_001_Apex 007 Apex Test Case Login - Valid username and password</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">When  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  Verify 'UserDDL' contains 'aman_opt' text</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>

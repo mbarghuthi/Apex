@@ -1,0 +1,65 @@
+<story path="stories/Login/TC_001_Apex.story" title="!--">
+<scenario keyword="Scenario:" title="TC_001_Apex 001 Apex Test Case Login - Empty username and password">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- When [Assertion] Verify &apos;userName&apos; input is empty</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;password&apos; input is empty</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;loginButton&apos;</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 002 Apex Test Case Login - Valid username and Empty password">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- When [Input] Set &apos;userName&apos; value to &apos;p:adminUsername&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;password&apos; input is empty</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;loginButton&apos;</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 003 Apex Test Case Login - Empty username and Valid password">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- When [Input] Set &apos;password&apos; value to &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;userName&apos; input is empty</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;loginButton&apos;</step>
+<step outcome="ignorable">!-- !-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 004 Apex Test Case Login - Invalid username and password">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- When [Input] I login as &apos;p:invalidUsername&apos; with password &apos;p:invalidPassword&apos;</step>
+<step outcome="ignorable">!-- !-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 005 Apex Test Case Login - Invalid username and Valid password">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- When [Input] I login as &apos;p:invalidUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- !-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 006 Apex Test Case Login - Valid username and Invalid password">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- When [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:invalidPassword&apos;</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;userName&apos; input is empty</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;password&apos; input is empty</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 007 Apex Test Case Login - Valid username and password">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">When [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserDDL&apos; contains &apos;p:adminUsername&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
