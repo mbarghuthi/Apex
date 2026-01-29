@@ -1,0 +1,55 @@
+<story path="stories/ControlAndMonitering/TC_005_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_005_Apex 001 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanControlSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;EffectiveDateGracePeriodSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;EffectiveDateGracePeriodTitle&apos; equals &apos;p:EffectiveDateGracePeriod&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;EffectiveDateGraceTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;EffectiveDateGracePeriodIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;DeptNoErrorMsg&apos; contains &apos;p:DepartmentNoEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ClassNoEDGPErrorMsg&apos; contains &apos;p:ClassNoEDGPEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;PolicyTypeEDGPErrorMsg&apos; contains &apos;p:PolicyTypeEDGPEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;FutureNoOfDaysErrorMsg&apos; contains &apos;p:FutureNoOfDaysEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Input] Set &apos;FutureNoOfDaysInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Input] Set &apos;BackdatedNoOfDaysInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;FutureNoOfDaysErrorMsg&apos; contains &apos;p:FutureNoOfDaysInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;BackdatedNoOfDaysErrorMsg&apos; contains &apos;p:BackdatedNoOfDaysInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;CancelButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;EffectiveDateGracePeriodIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeptNoCombobox&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:Motor&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;EffectiveDateGracePeriodIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ClassNoEDGPCombobox&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:MotorPrivate&apos; value from &apos;ClassNoEDGPPopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;EffectiveDateGracePeriodIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;PolicyTypeEDGPCombobox&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:Comprehensive&apos; value from &apos;PolicyTypeEDGPPopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;EffectiveDateGracePeriodIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;EndorsementTypeCombobox&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:Refund&apos; value from &apos;EndorsementTypePopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;EffectiveDateGracePeriodIframe&apos;</step>
+<step outcome="successful">And [Input] Set &apos;FutureNoOfDaysInput&apos; value to &apos;random2&apos;</step>
+<step outcome="successful">And [Input] Set &apos;BackdatedNoOfDaysInput&apos; value to &apos;random2&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CancelButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_005_Apex 002 Apex Test Case Control and Monitoring - Aman Control - Control Dates">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>

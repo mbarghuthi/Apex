@@ -1,0 +1,217 @@
+<story path="stories/ControlAndMonitering/TC_001_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_001_Apex 001 Apex Test Case Control and Monitoring - Aman Setup - Programs">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ProgramsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ProgramsTitle&apos; equals &apos;Programs&apos; text</step>
+<step outcome="successful">And [Input] Set &apos;SearchTreeInput&apos; value to &apos;Quotation&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify all results in tree &apos;ProgramsTree&apos; contain &apos;Quotation&apos;</step>
+<step outcome="successful">And [Action] I count results in tree &apos;ProgramsTree&apos; that contain &apos;Quotation&apos; and save it as &apos;QuotationCount&apos;</step>
+<step outcome="successful">And [Input] Clear &apos;SearchTreeInput&apos; field</step>
+<step outcome="successful">And [Input] I press Enter on &apos;SearchTreeInput&apos;</step>
+<step outcome="successful">And [Assertion] Verify tree &apos;ProgramsTree&apos; count for &apos;Quotation&apos; equals saved value &apos;QuotationCount&apos;</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify tree &apos;ProgramsTree&apos; is &apos;collapsed&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ExpandCollapseButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify tree &apos;ProgramsTree&apos; is &apos;expanded&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ExpandCollapseButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify tree &apos;ProgramsTree&apos; is &apos;collapsed&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 002 Apex Test Case Control and Monitoring - Aman Setup - System Code Ranks">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Input] I click on &apos;ControlAndMoniteringCardDashboard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SystemCodeRanksCardDashboard&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SystemCodeRanksMajorTitle&apos; equals &apos;p:SystemCodeRanksMajor&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;SystemCodeRanksMajorTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;SystemCodeRanksMajorButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;SystemCodeRanksMajorTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;SystemCodeRanksMajorTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;SystemCodeRanksMinorTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;SystemCodeRanksMinorButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;SystemCodeRanksMinorTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;SystemCodeRanksMinorTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 003 Apex Test Case Control and Monitoring - Aman Setup - Error Messages">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ErrorMessagesSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ErrorMessagesTitle&apos; equals &apos;p:ErrorMessages&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ErrorMessagesTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;ErrorMessagesAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;ErrorMessagesTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;ErrorMessagesTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;ErrorMessagesDetailsTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;ErrorMessagesDetailsAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;ErrorMessagesDetailsTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;ErrorMessagesDetailsTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 004 Apex Test Case Control and Monitoring - Aman Setup - Departments">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DepartmentsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;DepartmentsTitle&apos; equals &apos;p:Departments&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;DepartmentsTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ErrorMessagesAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;ErrorMessagesTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;ErrorMessagesTable&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;ClassesTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ErrorMessagesDetailsAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;ErrorMessagesDetailsTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;ErrorMessagesDetailsTable&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;PoliciesTable&apos; is visible</step>
+<step outcome="successful">And [Assertion] Verify &apos;RisksTable&apos; is visible</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 005 Apex Test Case Control and Monitoring - Aman Setup - Government Occupation">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;GovermentOccupationSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;GovernmentOccupationTitle&apos; equals &apos;p:GovernmentOccupation&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;GovernmentOccupationTable&apos; is visible</step>
+<step outcome="successful">And [Assertion] Verify &apos;MaleRadioButtons&apos; is selected</step>
+<step outcome="successful">And [Input] I click on &apos;GovernmentOccupationAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;GovernmentOccupationTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;GovernmentOccupationTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;GovernmentOccupationSaveButton&apos;</step>
+<step outcome="successful">And [Table] I save table snapshot from &apos;GovernmentOccupationTableValue&apos; in variable &apos;MaleSnap&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;FemaleRadioButtons&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;10&apos; sec</step>
+<step outcome="successful">And [Table] Verify table &apos;GovernmentOccupationTableValue&apos; snapshot differs from &apos;MaleSnap&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;FemaleRadioButtons&apos; is selected</step>
+<step outcome="successful">And [Input] I click on &apos;GovernmentOccupationAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;GovernmentOccupationTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;GovernmentOccupationTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;GovernmentOccupationSaveButton&apos;</step>
+<step outcome="successful">And [Table] I save table snapshot from &apos;GovernmentOccupationTableValue&apos; in variable &apos;FemaleSnap&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MaleRadioButtons&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;10&apos; sec</step>
+<step outcome="successful">And [Table] Verify table &apos;GovernmentOccupationTableValue&apos; snapshot differs from &apos;FemaleSnap&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 006 Apex Test Case Control and Monitoring - Aman Setup - Address Ordering">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AddressOrderingSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;AddressOrderingTitle&apos; equals &apos;p:AddressOrdering&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 007 Apex Test Case Control and Monitoring - Aman Setup - Black List">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;BlackListSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;BlackListTitle&apos; equals &apos;p:BlackList&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;BlackListTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;BlackListAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;BlackListTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;BlackListTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;BlackListDetTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;BlackListDetAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;BlackListDetTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="ignorable">!-- And [Javascript] I accept alert</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 008 Apex Test Case Control and Monitoring - Aman Setup - Domicile Locations">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DomicileLocationsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;DomicileLocationsTitle&apos; equals &apos;p:DomicileLocations&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;DomicileLocationsTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;DomicileLocationsAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;DomicileLocationsTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;DomicileLocationsTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 009 Apex Test Case Control and Monitoring - Aman Setup - System Owner Setup">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SystemOwnerSetupSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;GeneralInformationTab&apos; is selected</step>
+<step outcome="successful">And [Input] I click on &apos;SettingsTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;SettingsTab&apos; is selected</step>
+<step outcome="successful">And [Input] I click on &apos;ApplicationConfigurationTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;ApplicationConfigurationTab&apos; is selected</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

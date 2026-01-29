@@ -5,6 +5,7 @@ import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.web.selenium.WebDriverProvider;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -440,4 +441,170 @@ public class CustomSteps extends AbstractSteps {
 		customPage.assertIgForeignAmountFillable(igId, rowText);
 	}
 
+
+	@Given("[Assertion] Verify all results in tree '$treeId' contain '$text'")
+	@When("[Assertion] Verify all results in tree '$treeId' contain '$text'")
+	@Then("[Assertion] Verify all results in tree '$treeId' contain '$text'")
+	public void verify_all_tree_results_contain(@Named("treeId") String treeId,
+												@Named("text") String text) throws Exception {
+		customPage.assertProgramsTreeSearchResultsContain(treeId, text);
+	}
+
+	// ======================= CustomSteps.java =======================
+// Add this step (stores the count into stateManager)
+
+	@Given("[Action] I count results in tree '$treeId' that contain '$text' and save it as '$variableName'")
+	@When("[Action] I count results in tree '$treeId' that contain '$text' and save it as '$variableName'")
+	@Then("[Action] I count results in tree '$treeId' that contain '$text' and save it as '$variableName'")
+	public void count_tree_results_containing_and_save(
+			@Named("treeId") String treeId,
+			@Named("text") String text,
+			@Named("variableName") String variableName
+	) throws Exception {
+
+		int count = customPage.countTreeResultsContainingAndSave(treeId, text);
+
+		stateManager.put(variableName, String.valueOf(count));
+
+		System.out.println("Saved tree match count for '" + text + "' as " + count + " into variable: " + variableName);
+	}
+
+	@Given("[Assertion] Verify tree '$treeId' count for '$text' equals saved value '$variableName'")
+	@When("[Assertion] Verify tree '$treeId' count for '$text' equals saved value '$variableName'")
+	@Then("[Assertion] Verify tree '$treeId' count for '$text' equals saved value '$variableName'")
+	public void verify_tree_recount_equals_saved(
+			@Named("treeId") String treeId,
+			@Named("text") String text,
+			@Named("variableName") String variableName
+	) throws Exception {
+
+		Object savedObj = stateManager.get(variableName);
+		if (savedObj == null) {
+			throw new Exception("No saved value found in stateManager for variable: " + variableName);
+		}
+
+		int expectedCount = Integer.parseInt(savedObj.toString().trim());
+		int actualCount = customPage.recountTreeResultsContaining(treeId, text);
+
+		if (expectedCount != actualCount) {
+			throw new Exception(
+					"Tree count mismatch for '" + text + "'. " +
+							"Expected=" + expectedCount + ", Actual=" + actualCount
+			);
+		}
+
+		System.out.println(
+				"Tree count assertion passed for '" + text + "': " + actualCount
+		);
+	}
+
+
+	@Given("[Assertion] Verify tree '$treeId' is '$state'")
+	@When("[Assertion] Verify tree '$treeId' is '$state'")
+	@Then("[Assertion] Verify tree '$treeId' is '$state'")
+	public void verify_tree_expand_collapse_state(
+			@Named("treeId") String treeId,
+			@Named("state") String state
+	) throws Exception {
+		customPage.assertProgramsTreeIsExpandedOrCollapsed(treeId, state);
+	}
+
+	@Given("[Action] I ensure navbar is open using toggle '$toggle'")
+	@When("[Action] I ensure navbar is open using toggle '$toggle'")
+	@Then("[Action] I ensure navbar is open using toggle '$toggle'")
+	public void ensure_navbar_open(@Named("toggle") String toggle) throws Exception {
+		customPage.ensureNavBarOpen(toggle);
+	}
+
+	@Given("[Assertion] Verify IG '$igId' has an empty inserted row")
+	@When("[Assertion] Verify IG '$igId' has an empty inserted row")
+	@Then("[Assertion] Verify IG '$igId' has an empty inserted row")
+	public void verify_ig_has_empty_inserted_row(@Named("igId") String igId) throws Exception {
+		customPage.assertIgHasEmptyInsertedRow(igId);
+	}
+
+	@Given("[Assertion] Verify IG '$igId' has an empty inserted row at td indexes '$tdIndexes'")
+	@When("[Assertion] Verify IG '$igId' has an empty inserted row at td indexes '$tdIndexes'")
+	@Then("[Assertion] Verify IG '$igId' has an empty inserted row at td indexes '$tdIndexes'")
+	public void verify_ig_has_empty_inserted_row_td_indexes(
+			@Named("igId") String igId,
+			@Named("tdIndexes") String tdIndexes
+	) throws Exception {
+
+		// Example in story: "3,4" (Code, Description)
+		String[] parts = tdIndexes.split("\\s*,\\s*");
+		int[] idx = new int[parts.length];
+		for (int i = 0; i < parts.length; i++) {
+			idx[i] = Integer.parseInt(parts[i].trim());
+		}
+
+		customPage.assertIgHasEmptyInsertedRowForTdIndexes(igId, idx);
+	}
+
+	@Given("[Action] I delete the inserted row in IG '$igId'")
+	@When("[Action] I delete the inserted row in IG '$igId'")
+	@Then("[Action] I delete the inserted row in IG '$igId'")
+	public void delete_inserted_row_in_ig(@Named("igId") String igId) throws Exception {
+		customPage.deleteAnyInsertedRowInIg(igId);
+	}
+
+	@Given("[Action] I delete the inserted row from any visible IG")
+	@When("[Action] I delete the inserted row from any visible IG")
+	@Then("[Action] I delete the inserted row from any visible IG")
+	public void delete_inserted_row_any_visible_ig() throws Exception {
+		customPage.deleteInsertedRowFromAnyVisibleIg();
+	}
+
+	@Given("[Table] I save table snapshot from '$elementName' in variable '$variableName'")
+	@When("[Table] I save table snapshot from '$elementName' in variable '$variableName'")
+	@Then("[Table] I save table snapshot from '$elementName' in variable '$variableName'")
+	public void saveTableSnapshot(
+			@Named("elementName") String elementName,
+			@Named("variableName") String variableName
+	) throws Exception {
+		String snapshot = customPage.getNormalizedSnapshot(elementName);
+		stateManager.put(variableName, snapshot);
+	}
+
+	@Given("[Table] Verify table '$elementName' snapshot differs from '$variableName'")
+	@When("[Table] Verify table '$elementName' snapshot differs from '$variableName'")
+	@Then("[Table] Verify table '$elementName' snapshot differs from '$variableName'")
+	public void verifyTableSnapshotChanged(
+			@Named("elementName") String elementName,
+			@Named("variableName") String variableName
+	) throws Exception {
+
+		String oldSnap = (String) stateManager.get(variableName);
+		String newSnap = customPage.getNormalizedSnapshot(elementName);
+
+		System.out.println("OLD SNAPSHOT=[" + oldSnap + "]");
+		System.out.println("NEW SNAPSHOT=[" + newSnap + "]");
+
+		Assert.assertNotEquals(
+				"Table content did not change after filter action",
+				oldSnap,
+				newSnap
+		);
+	}
+
+	@Given("[Assertion] Verify all fields in '$containerElementName' are empty")
+	@When("[Assertion] Verify all fields in '$containerElementName' are empty")
+	@Then("[Assertion] Verify all fields in '$containerElementName' are empty")
+	public void verify_all_fields_empty_in_container(@Named("containerElementName") String containerElementName) throws Exception {
+		customPage.assertAllFieldsAreEmptyByElementName(containerElementName);
+	}
+
+	@Given("[Assertion] Verify '$elementName' is filled")
+	@When("[Assertion] Verify '$elementName' is filled")
+	@Then("[Assertion] Verify '$elementName' is filled")
+	public void verify_element_is_filled(@Named("elementName") String elementName) throws Exception {
+		customPage.assertFieldIsFilled(elementName);
+	}
+
+	@Given("[Assertion] Verify '$elementName' is not filled")
+	@When("[Assertion] Verify '$elementName' is not filled")
+	@Then("[Assertion] Verify '$elementName' is not filled")
+	public void verify_element_is_not_filled(@Named("elementName") String elementName) throws Exception {
+		customPage.assertFieldIsNotFilled(elementName);
+	}
 }

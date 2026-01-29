@@ -8,76 +8,97 @@
 <body>
  
 <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
-<story path="stories/Login/TC_001_Apex.story" title="!--">
+<story path="stories/Login/TC_001_Apex.story" title="">
 <scenario keyword="Scenario:" title="TC_001_Apex 001 Apex Test Case Login - Empty username and password">
-<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-<step outcome="ignorable">!-- When [Assertion] Verify &apos;userName&apos; input is empty</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;password&apos; input is empty</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;loginButton&apos;</step>
-<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
-
-
-!--</step>
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">When [Assertion] Verify &apos;userName&apos; input is empty</step>
+<step outcome="successful">And [Assertion] Verify &apos;password&apos; input is empty</step>
+<step outcome="successful">And [Input] I click on &apos;loginButton&apos;</step>
+<step outcome="successful">Then [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
 <scenario keyword="Scenario:" title="TC_001_Apex 002 Apex Test Case Login - Valid username and Empty password">
-<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-<step outcome="ignorable">!-- When [Input] Set &apos;userName&apos; value to &apos;p:adminUsername&apos;</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;password&apos; input is empty</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;loginButton&apos;</step>
-<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present
-
-
-!--</step>
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">When [Input] Set &apos;userName&apos; value to &apos;p:adminUsername&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;password&apos; input is empty</step>
+<step outcome="successful">And [Input] I click on &apos;loginButton&apos;</step>
+<step outcome="successful">Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
 <scenario keyword="Scenario:" title="TC_001_Apex 003 Apex Test Case Login - Empty username and Valid password">
-<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-<step outcome="ignorable">!-- When [Input] Set &apos;password&apos; value to &apos;p:password&apos;</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;userName&apos; input is empty</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;loginButton&apos;</step>
-<step outcome="ignorable">!-- !-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
-<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
-
-
-!--</step>
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">When [Input] Set &apos;password&apos; value to &apos;p:password&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;userName&apos; input is empty</step>
+<step outcome="successful">And [Input] I click on &apos;loginButton&apos;</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="successful">Then [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
 <scenario keyword="Scenario:" title="TC_001_Apex 004 Apex Test Case Login - Invalid username and password">
-<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-<step outcome="ignorable">!-- When [Input] I login as &apos;p:invalidUsername&apos; with password &apos;p:invalidPassword&apos;</step>
-<step outcome="ignorable">!-- !-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
-<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
-
-
-!--</step>
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">When [Input] I login as &apos;p:invalidUsername&apos; with password &apos;p:invalidPassword&apos;</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="successful">Then [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
 <scenario keyword="Scenario:" title="TC_001_Apex 005 Apex Test Case Login - Invalid username and Valid password">
-<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-<step outcome="ignorable">!-- When [Input] I login as &apos;p:invalidUsername&apos; with password &apos;p:password&apos;</step>
-<step outcome="ignorable">!-- !-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
-<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginButton&apos; is present
-
-
-!--</step>
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">When [Input] I login as &apos;p:invalidUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="successful">Then [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
 <scenario keyword="Scenario:" title="TC_001_Apex 006 Apex Test Case Login - Valid username and Invalid password">
-<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-<step outcome="ignorable">!-- When [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:invalidPassword&apos;</step>
-<step outcome="ignorable">!-- Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;userName&apos; input is empty</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;password&apos; input is empty</step>
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">When [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:invalidPassword&apos;</step>
+<step outcome="successful">Then [Assertion] Verify &apos;loginAlert&apos; contains &apos;p:InvalidLoginCredentials&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+<step outcome="successful">And [Assertion] Verify &apos;userName&apos; input is empty</step>
+<step outcome="successful">And [Assertion] Verify &apos;password&apos; input is empty</step>
 </scenario>
 <scenario keyword="Scenario:" title="TC_001_Apex 007 Apex Test Case Login - Valid username and password">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">When [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
-<step outcome="successful">And [Assertion] Verify &apos;userNameToolbar&apos; contains &apos;p:adminUsername&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserDDL&apos; contains &apos;p:adminUsername&apos; text</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">Then [Input] I click on &apos;userNameToolbar&apos;</step>
-<step outcome="failed" keyword="FAILED">And [Input] I click on &apos;LogoutButton&apos;<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.cssSelector: #menu_L120831929885889141_1i&apos; (tried for 30 second(s) with 500 milliseconds interval)</failure></step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="failed" keyword="FAILED">And [Input] I click on &apos;LogoutButton&apos;<failure>org.openqa.selenium.InvalidSelectorException: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14c09e85bf59e6d8302fcc192bfa05e0, findElement {using=css selector, value=//a[contains(@href,&apos;apex_authentication.logout&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\sjaber\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61712}, goog:processID: 41828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61712/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14c09e85bf59e6d8302fcc192bfa05e0</failure></step>
 <step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;loginButton&apos; is present</step>
-<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.cssSelector: #menu_L120831929885889141_1i&apos; (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+<failure>org.openqa.selenium.InvalidSelectorException: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14c09e85bf59e6d8302fcc192bfa05e0, findElement {using=css selector, value=//a[contains(@href,&apos;apex_authentication.logout&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\sjaber\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61712}, goog:processID: 41828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61712/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14c09e85bf59e6d8302fcc192bfa05e0
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
 	at com.automation.pages.AbstractPage.getElementWithWait(AbstractPage.java:43)
 	at com.automation.pages.CannedPage.click(CannedPage.java:323)
 	at com.automation.steps.CannedSteps.click(CannedSteps.java:395)

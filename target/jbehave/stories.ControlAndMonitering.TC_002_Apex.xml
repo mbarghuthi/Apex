@@ -1,0 +1,66 @@
+<story path="stories/ControlAndMonitering/TC_002_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_002_Apex 001 Apex Test Case Control and Monitoring - General Business Tariffs - Sum Insured Ranges">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;GeneralBusinessTariffsSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SumInsuredRangesSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SumInsuredRangesTitle&apos; equals &apos;p:SumInsuredRanges&apos; text</step>
+<step outcome="successful">And [Input] Select &apos;p:DepartmentWise&apos; value from &apos;ReportTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Motor&apos; value from &apos;ReportValueCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;SumInsuredRangesTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;SumInsuredRangesAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;SumInsuredRangesTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;SumInsuredRangesTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_002_Apex 002 Apex Test Case Control and Monitoring - General Business Tariffs - Short Period Tariff">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;GeneralBusinessTariffsSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ShortPeriodTariffSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ShortPeriodTariffTitle&apos; equals &apos;p:ShortPeriodTariff&apos; text</step>
+<step outcome="successful">And [Input] Select &apos;p:MotorPrivate&apos; value from &apos;ClassCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Comprehensive&apos; value from &apos;PolicyTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;ShortPeriodTariffTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;ShortPeriodTariffAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;ShortPeriodTariffTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;ShortPeriodTariffTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_002_Apex 003 Apex Test Case Control and Monitoring - General Business Tariffs - Pro-Rata Period Tariff">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;GeneralBusinessTariffsSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ProRataPeriodTariffSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ProRataPeriodTariffTitle&apos; equals &apos;p:ProRataPeriodTariff&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ProRataPeriodTariffTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;ProRataPeriodTariffAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;ProRataPeriodTariffTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;ProRataPeriodTariffTable&apos;</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

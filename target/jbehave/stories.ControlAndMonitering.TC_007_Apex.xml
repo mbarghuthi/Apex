@@ -1,0 +1,57 @@
+<story path="stories/ControlAndMonitering/TC_007_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_007_Apex 001 Apex Test Case Control and Monitoring - Workflow Integration - Map AMAN Fields with WF Attributes">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;WorkflowIntegrationSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MapAmanFieldsWithWFAttributesSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;MapAmanFieldsWithWFAttributesMasterTitle&apos; equals &apos;p:MapAmanFieldsWithWFAttributesMaster&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;MapAmanFieldsWithWFAttributesMasterTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;MapAmanFieldsWithWFAttributesMasterAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;MapAmanFieldsWithWFAttributesMasterTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;MapAmanFieldsWithWFAttributesMasterTable&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;MapAmanFieldsWithWFAttributesDetailsTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;MapAmanFieldsWithWFAttributesDetailsAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;MapAmanFieldsWithWFAttributesDetailsTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;MapAmanFieldsWithWFAttributesDetailsTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_007_Apex 002 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Build Queries">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;WorkflowIntegrationSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;WorkflowBuildQueriesSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;WorkflowBuildQueriesTitle&apos; equals &apos;p:WorkflowBuildQueries&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QueryTable&apos; is visible</step>
+<step outcome="successful">And [Assertion] Verify &apos;QueryColumnsTable&apos; is visible</step>
+<step outcome="successful">And [Assertion] Verify &apos;QueryConditionsTable&apos; is visible</step>
+<step outcome="successful">And [Assertion] Verify &apos;QueryJoinTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;QueryAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;QueryTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Input] I click on &apos;QueryColumnsAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;QueryColumnsTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Input] I click on &apos;QueryConditionsAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;QueryConditionsTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Input] I click on &apos;QueryJoinAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;QueryJoinTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;QueryJoinTable&apos;</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;QueryConditionsTable&apos;</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;QueryColumnsTable&apos;</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;QueryTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_007_Apex 003 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Services Setup">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>

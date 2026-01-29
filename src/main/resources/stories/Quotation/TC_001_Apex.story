@@ -3,7 +3,8 @@ Scenario:  TC_001_Apex Apex Test Case Navigate to Quotation Page
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
 And [Progress] I wait for '5' sec
-When [Input] I click on 'navControlButton'
+When [Action] I ensure navbar is open using toggle 'navControlButton'
+!-- When [Input] I click on 'navControlButton'
 And [Input] I click on 'QuotationsSideMenu'
 And [Input] I click on 'QuotationMenuSideMenu'
 And [Input] I click on 'QuotationNavigationSideMenu'

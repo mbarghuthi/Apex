@@ -1,0 +1,109 @@
+<story path="stories/ControlAndMonitering/TC_003_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_003_Apex 001 Apex Test Case Control and Monitoring - Master Files - Locations &amp; Branches">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MasterFilesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LocationsAndBranchesSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;LocationsAndBranchesTitle&apos; equals &apos;p:LocationsAndBranches&apos; text</step>
+<step outcome="successful">And [Input] Select &apos;p:SaudiArabia&apos; value from &apos;LocationCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;LocationsAndBranchesTable&apos; is visible</step>
+<step outcome="successful">And [Progress] I wait for &apos;10&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;LocationsAndBranchesAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;LocationsAndBranchesTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;LocationsAndBranchesTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_003_Apex 002 Apex Test Case Control and Monitoring - Master Files - Customers Receivable">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- !-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;MasterFilesSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;CustomersReceivableSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;ShortPeriodTariffTitle&apos; equals &apos;p:ShortPeriodTariff&apos; text</step>
+<step outcome="ignorable">!-- And [Input] Select &apos;p:MotorPrivate&apos; value from &apos;ClassCombobox&apos; dropdown list</step>
+<step outcome="ignorable">!-- And [Input] Select &apos;p:Comprehensive&apos; value from &apos;PolicyTypeCombobox&apos; dropdown list</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;ShortPeriodTariffTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ShortPeriodTariffAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;ShortPeriodTariffTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;ShortPeriodTariffTable&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="ignorable">!-- Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_003_Apex 003 Apex Test Case Control and Monitoring - Master Files - Payable Parties">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- !-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;MasterFilesSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;PayablePartiesSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;ProRataPeriodTariffTitle&apos; equals &apos;p:ProRataPeriodTariff&apos; text</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;ProRataPeriodTariffTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ProRataPeriodTariffAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;ProRataPeriodTariffTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- !-- And [Action] I delete the inserted row in IG &apos;ProRataPeriodTariffTable&apos;</step>
+<step outcome="ignorable">!-- And [Navigation] I reload page</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="ignorable">!-- Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_003_Apex 004 Apex Test Case Control and Monitoring - Master Files - Class-Subclass Linking">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MasterFilesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ClassSubclassLinkingSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ClassTitle&apos; equals &apos;p:Class&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ClassTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;ClassAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;ClassTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;ClassTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;SubClassTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;SubClassAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;SubClassTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;SubClassTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_003_Apex 005 Apex Test Case Control and Monitoring - Master Files - Customers Address Screen">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MasterFilesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CustomersAddressScreenSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;CustomerAddressTitle&apos; equals &apos;p:CustomerAddress&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;CustomerAddressTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;CustomerAddressAddRowButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify all fields in &apos;CustomerAddressRegionBody&apos; are empty</step>
+<step outcome="successful">And [Input] I click on &apos;CustomerAddressCancelButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

@@ -1,0 +1,364 @@
+<html>
+<head>
+<title>stories.ControlAndMonitering.TC_004_Apex</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+<story path="stories/ControlAndMonitering/TC_004_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_004_Apex 001 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users Definition">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersDefinitionSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UsersTitle&apos; equals &apos;p:Users&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;UsersDefinitionNewUserButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify all fields in &apos;UserDefinitionRegionBody&apos; are empty</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;EnUserNameErrorMsg&apos; contains &apos;p:EnUserNameEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserIdErrorMsg&apos; contains &apos;p:UserIdEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserTypeErrorMsg&apos; contains &apos;p:UserTypeEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserTypePortalErrorMsg&apos; contains &apos;p:UserTypePortalEmptyErrorMsg&apos; text</step>
+<step outcome="ignorable">!-- Fill all Fields in User Definition Invalid Values</step>
+<step outcome="successful">And [Input] Set &apos;EnUserNameInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Input] Set &apos;UserIdInput&apos; value to &apos;random2&apos;</step>
+<step outcome="successful">And [Input] Set &apos;ArUserNameInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserTypeAgentRadioLabel&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:InvalidUser&apos; value from &apos;UserTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;EnUserNameErrorMsg&apos; contains &apos;p:EnUserNameInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserIdErrorMsg&apos; contains &apos;p:UserIdInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ArUserNameErrorMsg&apos; contains &apos;p:ArUserNameInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserPasswordErrorMsg&apos; contains &apos;p:PasswordEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ConfirmPasswordErrorMsg&apos; contains &apos;p:ConfirmPasswordEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Input] Set &apos;UserPasswordInput&apos; value to &apos;@&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserPasswordErrorMsg&apos; contains &apos;p:PasswordInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Input] Set &apos;UserEmailInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserEmailErrorMsg&apos; contains &apos;p:UserEmailInvalidErrorMsg&apos; text</step>
+<step outcome="ignorable">!-- Fill all Fields in User Definition</step>
+<step outcome="successful">And [Input] Set &apos;EnUserNameInput&apos; value to &apos;randomen&apos;</step>
+<step outcome="successful">And [Action] I get value from &apos;EnUserNameInput&apos; and save it as &apos;EnUserName&apos;</step>
+<step outcome="successful">And [Input] Set &apos;UserIdInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Action] I get value from &apos;UserIdInput&apos; and save it as &apos;UserId&apos;</step>
+<step outcome="successful">And [Input] Set &apos;ArUserNameInput&apos; value to &apos;randomar&apos;</step>
+<step outcome="successful">And [Action] I get value from &apos;EnUserNameInput&apos; and save it as &apos;ArUserName&apos;</step>
+<step outcome="successful">And [Input] Set &apos;UserEmailInput&apos; value to &apos;statemanageremail:EnUserName&apos;</step>
+<step outcome="successful">And [Input] Set &apos;UserMobileInput&apos; value to &apos;random5&apos;</step>
+<step outcome="successful">And [Action] I get value from &apos;UserMobileInput&apos; and save it as &apos;UserMobile&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:AmmarAhmedHamzaGhurab&apos; value from &apos;UserManagerInput&apos; dropdown list</step>
+<step outcome="successful">And [Input] Set &apos;UserPasswordInput&apos; value to &apos;p:password&apos;</step>
+<step outcome="successful">And [Input] Set &apos;ConfirmPasswordInput&apos; value to &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- PasswordExpiryInput</step>
+<step outcome="successful">And [Assertion] Verify &apos;PasswordExpiryInput&apos; value equals sysdate plus &apos;1&apos; years</step>
+<step outcome="successful">And [Input] Select &apos;p:SaudiArabia&apos; value from &apos;UserDefaultBranchCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:KSAHeadOffice&apos; value from &apos;UserDefaultOfficeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:CentralOther&apos; value from &apos;UserDefaultRegionCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:KSAHeadOffice&apos; value from &apos;UserActualOfficeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Motor&apos; value from &apos;UserDeptNoCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:InvalidUser&apos; value from &apos;UserTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:NormalUser&apos; value from &apos;UserGroupCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Yes&apos; value from &apos;UserAuthorizedCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Both&apos; value from &apos;UserLanguageCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] I click on &apos;UserRoleIdButton&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:NormalUser&apos; value from &apos;UserRoleIdPopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="ignorable">!-- And [Input] Select &apos;p:WorkshopUser&apos; value from &apos;WorkshopTypesCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] I click on &apos;WorkshopTypesCombobox&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:WorkshopUser&apos; value from &apos;WorkshopTypesPopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:No&apos; value from &apos;WorkFlowCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:Broker&apos; value from &apos;SellerTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Set &apos;MenapayEmployeeNoInput&apos; value to &apos;random5&apos;</step>
+<step outcome="successful">And [Input] Set &apos;MappedDmsUserInput&apos; value to &apos;random5&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:Workshop&apos; value from &apos;ApplicationTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Set &apos;RemarksInput&apos; value to &apos;random&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserTypeAgentRadioLabel&apos;</step>
+<step outcome="ignorable">!-- UserCreatedDateInput</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserCreatedDateInput&apos; value equals sysdate</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] Set &apos;SearchFieldUserTable&apos; value to &apos;statemanager:EnUserName&apos;</step>
+<step outcome="ignorable">!-- And [Input] I press Enter on &apos;SearchFieldUserTable&apos;</step>
+<step outcome="ignorable">!-- After Create</step>
+<step outcome="ignorable">!-- And [Assertion] Verify Radio  &apos;UserTypeAgentRadio&apos; is clicked on</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 002 Apex Test Case Control and Monitoring - Users &amp; Authorities - Roles Definition">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;RolesDefinitionSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;RolesTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;RolesAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;RolesTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;RolesTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;RolesDetTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;RolesDetAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;RolesDetTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;RolesDetTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 003 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users&apos; Privileges On Locations &amp; Branches">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersPrivilegesOnLocationsAndBranchesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersDDL&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:AutouTestingAutomation&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;LocationTab&apos; is selected</step>
+<step outcome="successful">And [Assertion] Verify &apos;LocationTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;LocationAddRowButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;LocationTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;LocationTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserRoleTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;UserRoleAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;UserRoleTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;UserRoleTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 004 Apex Test Case Control and Monitoring - Users &amp; Authorities - User&apos;S Privileges On Group Programs Dept. Wise">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 005 Apex Test Case Control and Monitoring - Users &amp; Authorities - User&apos;S Privileges On Single Programs-List">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 006 Apex Test Case Control and Monitoring - Users &amp; Authorities - Change Password">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ChangePasswordSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ChangePasswordTitle&apos; equals &apos;p:ChangePassword&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserIdValue&apos; equals &apos;p:adminUsername&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserENameValue&apos; equals &apos;p:adminUsername&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;ChangePasswordApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ChangePasswordUserPasswordErrorMsg&apos; equals &apos;p:ChangePasswordPasswordEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ChangePasswordConfirmPasswordErrorMsg&apos; equals &apos;p:ChangePasswordConfirmPasswordEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] Set &apos;ChangePasswordUserPasswordInput&apos; value to &apos;@&apos;</step>
+<step outcome="successful">And [Input] Set &apos;ChangePasswordConfirmPasswordInput&apos; value to &apos;123&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ChangePasswordApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ChangePasswordUserPasswordErrorMsg&apos; equals &apos;p:ChangePasswordPasswordInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ChangePasswordConfirmPasswordErrorMsgPlaceHolder&apos; equals &apos;p:ChangePasswordConfirmPasswordInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] Set &apos;ChangePasswordUserPasswordInput&apos; value to &apos;ab&apos;</step>
+<step outcome="successful">And [Input] Set &apos;ChangePasswordConfirmPasswordInput&apos; value to &apos;123&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ChangePasswordApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ChangePasswordUserPasswordErrorMsg&apos; equals &apos;p:ChangePasswordPasswordInvalidErrorMsg2&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ChangePasswordConfirmPasswordErrorMsgPlaceHolder&apos; equals &apos;p:ChangePasswordConfirmPasswordInvalidErrorMsg&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] Set &apos;ChangePasswordUserPasswordInput&apos; value to &apos;p:password&apos;</step>
+<step outcome="successful">And [Input] Set &apos;ChangePasswordConfirmPasswordInput&apos; value to &apos;p:password&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ChangePasswordApplyChangesButton&apos;</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 007 Apex Test Case Control and Monitoring - Users &amp; Authorities - Authorized Buttons">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AuthorizedButtonsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;AuthorizedButtonsTitle&apos; equals &apos;p:AuthorizedButtons&apos; text</step>
+<step outcome="successful">And [Input] Select &apos;p:Home&apos; value from &apos;ProgramCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;AuthorizedButtonsTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;AuthorizedButtonsApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;AuthorizedButtonsTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;AuthorizedButtonsTable&apos;</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 008 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Endt Transactions">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserPrivilegesOnEndtTransactionsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserPrivilegesOnEndtTransactionsTitle&apos; equals &apos;p:UserPrivilegesOnEndtTransactions&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;UserNoCombobox&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:TestingAutomationId&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;2&apos; sec</step>
+<step outcome="ignorable">!-- And [Input] Select &apos;p:TestingAutomationId&apos; value from &apos;UserNoCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:MotorPrivate&apos; value from &apos;ClassNoCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;2&apos; sec</step>
+<step outcome="ignorable">!-- And [Input] Select &apos;p:Comprehensive&apos; value from &apos;TypeNoCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] I click on &apos;TypeNoCombobox&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:Comprehensive&apos; value from &apos;TypeNoPopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;2&apos; sec</step>
+<step outcome="successful">And [Input] Select &apos;p:Agent&apos; value from &apos;SourceCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;TransactionTypeTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;TransactionTypeAddRow&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;TransactionTypeTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 009 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Claim Payments">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserPrivilegesOnClaimPaymentsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserPrivilegesOnClaimPaymentsTitle&apos; equals &apos;p:UserPrivilegesOnClaimPayments&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;UserCombobox&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:TestingAutomationId&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;2&apos; sec</step>
+<step outcome="successful">And [Input] Select &apos;p:paymentEstimate&apos; value from &apos;AuthorityCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;UAPTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;UAPAddRow&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;UAPTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;UAPTable&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 010 Apex Test Case Control and Monitoring - Users &amp; Authorities - Password Policy Rules">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;PasswordPolicyRulesSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;PasswordPolicyRulesTitle&apos; equals &apos;p:PasswordPolicyRules&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 011 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Access Violations">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserAccessViolationsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserAccessViolationsTitle&apos; equals &apos;p:UserAccessViolations&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserAccessViolationsTable&apos; is visible</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessRadioButtons&apos; is selected</step>
+<step outcome="successful">And [Table] I save table snapshot from &apos;UserAccessViolationsTable&apos; in variable &apos;SuccessSnap&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ViolationRadioButtons&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;10&apos; sec</step>
+<step outcome="successful">And [Table] Verify table &apos;UserAccessViolationsTable&apos; snapshot differs from &apos;SuccessSnap&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ViolationRadioButtons&apos; is selected</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 012 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Quotation Posting">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserPrivilegesOnQuotationPostingSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserPrivilegeOnQuotationPostingTitle&apos; equals &apos;p:UserPrivilegeOnQuotationPosting&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;UserIdCombobox&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:autouId&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;UserQuotationPostingTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;UserQuotationPostingAddRow&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;UserQuotationPostingTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;UserQuotationPostingTable&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 013 Apex Test Case Control and Monitoring - Users &amp; Authorities - Link Region/City Screen">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LinkRegionCityScreenSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;LinkRegionCityScreenTitle&apos; equals &apos;p:LinkRegionCityScreen&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;RangesCombobox&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:CentralOther&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Assertion] Verify &apos;RangesTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;RangesAddRow&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;RangesTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Action] I delete the inserted row in IG &apos;RangesTable&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

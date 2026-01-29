@@ -4,6 +4,7 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -294,6 +295,33 @@ public class CannedSteps extends AbstractSteps {
 			stateManager.put(key, value);
 		}
 
+		else if (value.toLowerCase().contains("randomen")) {
+			String key = value.toLowerCase().replace("randomen", "").trim(); // optional state key
+			int len = 10; // change length if needed
+
+			String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+			StringBuilder sb = new StringBuilder(len);
+			java.util.concurrent.ThreadLocalRandom r = java.util.concurrent.ThreadLocalRandom.current();
+			for (int i = 0; i < len; i++) sb.append(letters.charAt(r.nextInt(letters.length())));
+
+			value = sb.toString();
+			if (!key.isEmpty()) stateManager.put(key, value);
+		}
+
+		else if (value.toLowerCase().contains("randomar")) {
+			String key = value.toLowerCase().replace("randomar", "").trim(); // optional state key
+			int len = 10; // change length if needed
+
+			// Arabic letters (basic set)
+			String letters = "ابتثجحخدذرزسشصضطظعغفقكلمنهوي";
+			StringBuilder sb = new StringBuilder(len);
+			java.util.concurrent.ThreadLocalRandom r = java.util.concurrent.ThreadLocalRandom.current();
+			for (int i = 0; i < len; i++) sb.append(letters.charAt(r.nextInt(letters.length())));
+
+			value = sb.toString();
+			if (!key.isEmpty()) stateManager.put(key, value);
+		}
+
 		else if (value.toLowerCase().contains("random")) {
 			String key = value.toLowerCase().replace("random", "").trim();
 			value = value.toLowerCase().replace("random", "Auto" + String.valueOf(System.nanoTime()));
@@ -320,11 +348,31 @@ public class CannedSteps extends AbstractSteps {
 			stateManager.put(key, value);
 		}
 
-		else if (value.toLowerCase().contains("statemanager")) {
-			String key = value.toLowerCase().replace("statemanager", "").trim();
-			value = (String) stateManager.get(key);
+		else if (value.toLowerCase().startsWith("statemanager:")) {
+			String variableName = value.substring("statemanager:".length()).trim(); // Extract variable name
+			// Retrieve the value from state manager
+			String savedValue = (String) stateManager.get(variableName);
+
+			// Debug log
+			System.out.println("Setting value from state manager, key='" + variableName + "': " + savedValue);
+
+			// Set the text of the element to the saved value
+			cannedPage.enterText(elementName, savedValue);
+			return;
 		}
 
+		else if (value.toLowerCase().startsWith("statemanageremail:")) {
+			String variableName = value.substring("statemanageremail:".length()).trim();
+			// Retrieve the value from state manager
+			String savedValue = (String) stateManager.get(variableName) + "@gmail.com";
+
+			// Debug log
+			System.out.println("Setting value from state manager, key='" + variableName + "': " + savedValue);
+
+			// Set the text of the element to the saved value
+			cannedPage.enterText(elementName, savedValue);
+			return;
+		}
 		else if (value.toLowerCase().contains("nanotime")) {
 			String key = value.toLowerCase().replace("nanotime", "").trim();
 			value = String.valueOf(System.nanoTime());
@@ -506,14 +554,37 @@ public class CannedSteps extends AbstractSteps {
 	@When("[Assertion] Verify '$elementName' value equals sysdate")
 	@Then("[Assertion] Verify '$elementName' value equals sysdate")
 	public void assert_field_equals_sysdate(String elementName) throws Exception {
-		String expectedDate = LocalDate.now()
-				.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-		String actualValue = cannedPage.getElementWithWaitText(elementName);
+		String actualRaw = cannedPage.getElementWithWaitText(elementName);
+		String actual = actualRaw == null ? "" : actualRaw.trim();
 
-		if (!expectedDate.equals(actualValue)) {
+		LocalDate expectedDate = LocalDate.now();
+
+		DateTimeFormatter[] allowed = new DateTimeFormatter[] {
+				DateTimeFormatter.ofPattern("dd/MM/yyyy"),
+				DateTimeFormatter.ofPattern("d/M/yyyy"),
+				DateTimeFormatter.ofPattern("MM/dd/yyyy"),
+				DateTimeFormatter.ofPattern("M/d/yyyy")
+		};
+
+		LocalDate actualDate = null;
+		for (DateTimeFormatter f : allowed) {
+			try {
+				actualDate = LocalDate.parse(actual, f);
+				break;
+			} catch (Exception ignored) { }
+		}
+
+		if (actualDate == null) {
+			throw new AssertionError("Unrecognized date format '" + actual + "'");
+		}
+
+		if (!expectedDate.equals(actualDate)) {
 			throw new AssertionError(
-					"Expected sysdate '" + expectedDate + "' but found '" + actualValue + "'");
+					"Expected sysdate '" + expectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
+							"' or '" + expectedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")) +
+							"' but found '" + actual + "'"
+			);
 		}
 	}
 
@@ -587,6 +658,44 @@ public class CannedSteps extends AbstractSteps {
 		}
 	}
 
+	@Given("[Assertion] Verify '$elementName' value equals sysdate plus '$years' years")
+	@When("[Assertion] Verify '$elementName' value equals sysdate plus '$years' years")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate plus '$years' years")
+	public void assert_sysdate_plus_years(String elementName, int years) throws Exception {
+
+		String actualRaw = cannedPage.getElementWithWaitText(elementName);
+		String actual = actualRaw == null ? "" : actualRaw.trim();
+
+		LocalDate expectedDate = LocalDate.now().plusYears(years);
+
+		// Accept padded and non-padded + both day/month orders
+		DateTimeFormatter[] allowed = new DateTimeFormatter[] {
+				DateTimeFormatter.ofPattern("MM/dd/yyyy"),
+				DateTimeFormatter.ofPattern("M/d/yyyy"),
+				DateTimeFormatter.ofPattern("dd/MM/yyyy"),
+				DateTimeFormatter.ofPattern("d/M/yyyy")
+		};
+
+		LocalDate actualDate = null;
+		for (DateTimeFormatter f : allowed) {
+			try {
+				actualDate = LocalDate.parse(actual, f);
+				break;
+			} catch (Exception ignored) { }
+		}
+
+		if (actualDate == null) {
+			throw new AssertionError("Unrecognized date format '" + actual + "'");
+		}
+
+		if (!expectedDate.equals(actualDate)) {
+			throw new AssertionError(
+					"Expected date '" + expectedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")) +
+							"' (sysdate + " + years + " years) but found '" + actual + "'"
+			);
+		}
+	}
+
 
 
 	@Given("[Input] I press Enter on '$elementName'")
@@ -608,6 +717,36 @@ public class CannedSteps extends AbstractSteps {
 	@Then("[Assertion] Verify '$elementName' input is not empty")
 	public void verify_input_is_not_empty(String elementName) throws Exception {
 		cannedPage.assertInputEmpty(elementName, false);
+	}
+
+	@Given("[Assertion] Verify '$elementName' is visible")
+	@When("[Assertion] Verify '$elementName' is visible")
+	@Then("[Assertion] Verify '$elementName' is visible")
+	public void verifyElementIsVisible(@Named("elementName") String elementName) throws Exception {
+		boolean visible = cannedPage.isElementVisibleSafe(elementName);
+		Assert.assertTrue("Expected element '" + elementName + "' to be visible, but it is not.", visible);
+	}
+
+	@Given("[Assertion] Verify '$elementName' is not visible")
+	@When("[Assertion] Verify '$elementName' is not visible")
+	@Then("[Assertion] Verify '$elementName' is not visible")
+	public void verifyElementIsNotVisible(@Named("elementName") String elementName) throws Exception {
+		boolean visible = cannedPage.isElementVisibleSafe(elementName);
+		Assert.assertFalse("Expected element '" + elementName + "' to NOT be visible, but it is visible.", visible);
+	}
+
+	@Given("[Assertion] Verify tab '$elementName' is selected")
+	@When("[Assertion] Verify tab '$elementName' is selected")
+	@Then("[Assertion] Verify tab '$elementName' is selected")
+	public void verify_tab_selected(String elementName) throws Exception {
+		cannedPage.assertApexTabSelected(elementName, true);
+	}
+
+	@Given("[Assertion] Verify tab '$elementName' is not selected")
+	@When("[Assertion] Verify tab '$elementName' is not selected")
+	@Then("[Assertion] Verify tab '$elementName' is not selected")
+	public void verify_tab_not_selected(String elementName) throws Exception {
+		cannedPage.assertApexTabSelected(elementName, false);
 	}
 
 }

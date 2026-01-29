@@ -26,8 +26,9 @@ public class AllStories extends JBehaveReportFormatter {
 //				String.format("stories/**/**/%s.story", STORY_NAME.trim()), "");
 // 				String.format("stories/Quotation/**/%s.story", STORY_NAME.trim()), "");
 
-				String.format("stories/Login/TC_001_Apex.story", STORY_NAME.trim()), "");
-//				String.format("stories/Quotation/TC_001_Apex.story", STORY_NAME.trim()), "");
+//				String.format("stories/Login/TC_001_Apex.story", STORY_NAME.trim()), "");
+//				String.format("stories/Quotation/TC_013_Apex.story", STORY_NAME.trim()), "");
+				String.format("stories/ControlAndMonitering/TC_004_Apex.story", STORY_NAME.trim()), "");
 //				String.format("stories/TC_001_Apex.story", STORY_NAME.trim()), "");
 
 	}

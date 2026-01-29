@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>stories.ControlAndMonitering.TC_005_Apex</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+<div class="story">
+<h1></h1>
+<div class="path">stories/ControlAndMonitering/TC_005_Apex.story</div>
+<div class="scenario">
+<h2>Scenario: TC_005_Apex 001 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- When  I click on 'navControlButton'</div>
+<div class="step successful">When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step successful">And  I click on 'ControlAndMoniteringSideMenu'</div>
+<div class="step successful">And  I click on 'AmanControlSideMenu'</div>
+<div class="step successful">And  I click on 'EffectiveDateGracePeriodSideMenu'</div>
+<div class="step successful">And  Verify 'EffectiveDateGracePeriodTitle' equals 'Effective Date Grace Period' text</div>
+<div class="step successful">And  Verify 'EffectiveDateGraceTable' is visible</div>
+<div class="step successful">And  I click on 'CreateButton'</div>
+<div class="step successful">And  I switch to iframe 'EffectiveDateGracePeriodIframe'</div>
+<div class="step successful">And  I click on 'CreateButton'</div>
+<div class="step successful">And  Verify 'DeptNoErrorMsg' contains 'Department must have some value.' text</div>
+<div class="step successful">And  Verify 'ClassNoEDGPErrorMsg' contains 'Class Of Business must have some value.' text</div>
+<div class="step successful">And  Verify 'PolicyTypeEDGPErrorMsg' contains 'Policy Type must have some value.' text</div>
+<div class="step successful">And  Verify 'FutureNoOfDaysErrorMsg' contains 'Future No Of Days must have some value.' text</div>
+<div class="step successful">And  Set 'FutureNoOfDaysInput' value to 'random'</div>
+<div class="step successful">And  Set 'BackdatedNoOfDaysInput' value to 'random'</div>
+<div class="step successful">And  I click on 'CreateButton'</div>
+<div class="step successful">And  Verify 'FutureNoOfDaysErrorMsg' contains 'Future No Of Days must be a valid number.' text</div>
+<div class="step successful">And  Verify 'BackdatedNoOfDaysErrorMsg' contains 'Backdated No Of Days must be a valid number.' text</div>
+<div class="step successful">And  I click on 'CancelButton'</div>
+<div class="step successful">And  I wait for '3' sec</div>
+<div class="step successful">And  I click on 'CreateButton'</div>
+<div class="step successful">And  I switch to iframe 'EffectiveDateGracePeriodIframe'</div>
+<div class="step successful">And  I click on 'DeptNoCombobox'</div>
+<div class="step successful">And  I switch back to main content</div>
+<div class="step successful">And  Select '1 - Motor' value from 'PopupLOVSearchBar' dropdown list</div>
+<div class="step successful">And  I switch to iframe 'EffectiveDateGracePeriodIframe'</div>
+<div class="step successful">And  I click on 'ClassNoEDGPCombobox'</div>
+<div class="step successful">And  I switch back to main content</div>
+<div class="step successful">And  Select '1 - Motor Private' value from 'ClassNoEDGPPopupLOVSearchBar' dropdown list</div>
+<div class="step successful">And  I switch to iframe 'EffectiveDateGracePeriodIframe'</div>
+<div class="step successful">And  I click on 'PolicyTypeEDGPCombobox'</div>
+<div class="step successful">And  I switch back to main content</div>
+<div class="step successful">And  Select '1 - Comprehensive' value from 'PolicyTypeEDGPPopupLOVSearchBar' dropdown list</div>
+<div class="step successful">And  I switch to iframe 'EffectiveDateGracePeriodIframe'</div>
+<div class="step successful">And  I click on 'EndorsementTypeCombobox'</div>
+<div class="step successful">And  I switch back to main content</div>
+<div class="step successful">And  Select '1 - Refund' value from 'EndorsementTypePopupLOVSearchBar' dropdown list</div>
+<div class="step successful">And  I switch to iframe 'EffectiveDateGracePeriodIframe'</div>
+<div class="step successful">And  Set 'FutureNoOfDaysInput' value to 'random2'</div>
+<div class="step successful">And  Set 'BackdatedNoOfDaysInput' value to 'random2'</div>
+<div class="step successful">And  I click on 'CancelButton'</div>
+<div class="step successful">And  I switch back to main content</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_005_Apex 002 Apex Test Case Control and Monitoring - Aman Control - Control Dates</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

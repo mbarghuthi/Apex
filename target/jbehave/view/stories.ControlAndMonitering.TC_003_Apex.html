@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>stories.ControlAndMonitering.TC_003_Apex</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+<div class="story">
+<h1></h1>
+<div class="path">stories/ControlAndMonitering/TC_003_Apex.story</div>
+<div class="scenario">
+<h2>Scenario: TC_003_Apex 001 Apex Test Case Control and Monitoring - Master Files - Locations &amp; Branches</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- When  I click on 'navControlButton'</div>
+<div class="step successful">When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step successful">And  I click on 'ControlAndMoniteringSideMenu'</div>
+<div class="step successful">And  I click on 'MasterFilesSideMenu'</div>
+<div class="step successful">And  I click on 'LocationsAndBranchesSideMenu'</div>
+<div class="step successful">And  Verify 'LocationsAndBranchesTitle' equals 'Locations and Branches' text</div>
+<div class="step successful">And  Select '1 - Saudi Arabia' value from 'LocationCombobox' dropdown list</div>
+<div class="step successful">And  Verify 'LocationsAndBranchesTable' is visible</div>
+<div class="step successful">And  I wait for '10' sec</div>
+<div class="step successful">And  I click on 'LocationsAndBranchesAddRowButton'</div>
+<div class="step successful">And  Verify IG 'LocationsAndBranchesTable' has an empty inserted row</div>
+<div class="step successful">And  I delete the inserted row in IG 'LocationsAndBranchesTable'</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_003_Apex 002 Apex Test Case Control and Monitoring - Master Files - Customers Receivable</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step ignorable">!-- And  I wait for '5' sec</div>
+<div class="step ignorable">!-- !-- When  I click on 'navControlButton'</div>
+<div class="step ignorable">!-- When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step ignorable">!-- And  I click on 'ControlAndMoniteringSideMenu'</div>
+<div class="step ignorable">!-- And  I click on 'MasterFilesSideMenu'</div>
+<div class="step ignorable">!-- And  I click on 'CustomersReceivableSideMenu'</div>
+<div class="step ignorable">!-- And  Verify 'ShortPeriodTariffTitle' equals 'Short Period Tariff' text</div>
+<div class="step ignorable">!-- And  Select '1 - Motor Private' value from 'ClassCombobox' dropdown list</div>
+<div class="step ignorable">!-- And  Select '1 - Comprehensive' value from 'PolicyTypeCombobox' dropdown list</div>
+<div class="step ignorable">!-- And  I wait for '3' sec</div>
+<div class="step ignorable">!-- And  Verify 'ShortPeriodTariffTable' is visible</div>
+<div class="step ignorable">!-- And  I click on 'ShortPeriodTariffAddRowButton'</div>
+<div class="step ignorable">!-- And  Verify IG 'ShortPeriodTariffTable' has an empty inserted row</div>
+<div class="step ignorable">!-- And  I delete the inserted row in IG 'ShortPeriodTariffTable'</div>
+<div class="step ignorable">!-- And  I wait for '7' sec</div>
+<div class="step ignorable">!-- Then  I click on 'UserDDL'</div>
+<div class="step ignorable">!-- And  I click on 'LogoutButton'</div>
+<div class="step ignorable">!-- And  Verify 'loginButton' is present</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_003_Apex 003 Apex Test Case Control and Monitoring - Master Files - Payable Parties</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step ignorable">!-- And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step ignorable">!-- And  I wait for '5' sec</div>
+<div class="step ignorable">!-- !-- When  I click on 'navControlButton'</div>
+<div class="step ignorable">!-- When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step ignorable">!-- And  I click on 'ControlAndMoniteringSideMenu'</div>
+<div class="step ignorable">!-- And  I click on 'MasterFilesSideMenu'</div>
+<div class="step ignorable">!-- And  I click on 'PayablePartiesSideMenu'</div>
+<div class="step ignorable">!-- And  Verify 'ProRataPeriodTariffTitle' equals 'Pro-Rata Period Tariff' text</div>
+<div class="step ignorable">!-- And  Verify 'ProRataPeriodTariffTable' is visible</div>
+<div class="step ignorable">!-- And  I click on 'ProRataPeriodTariffAddRowButton'</div>
+<div class="step ignorable">!-- And  Verify IG 'ProRataPeriodTariffTable' has an empty inserted row</div>
+<div class="step ignorable">!-- !-- And  I delete the inserted row in IG 'ProRataPeriodTariffTable'</div>
+<div class="step ignorable">!-- And  I reload page</div>
+<div class="step ignorable">!-- And  I wait for '7' sec</div>
+<div class="step ignorable">!-- Then  I click on 'UserDDL'</div>
+<div class="step ignorable">!-- And  I click on 'LogoutButton'</div>
+<div class="step ignorable">!-- And  Verify 'loginButton' is present</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_003_Apex 004 Apex Test Case Control and Monitoring - Master Files - Class-Subclass Linking</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- When  I click on 'navControlButton'</div>
+<div class="step successful">When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step successful">And  I click on 'ControlAndMoniteringSideMenu'</div>
+<div class="step successful">And  I click on 'MasterFilesSideMenu'</div>
+<div class="step successful">And  I click on 'ClassSubclassLinkingSideMenu'</div>
+<div class="step successful">And  Verify 'ClassTitle' equals 'Class' text</div>
+<div class="step successful">And  Verify 'ClassTable' is visible</div>
+<div class="step successful">And  I click on 'ClassAddRowButton'</div>
+<div class="step successful">And  Verify IG 'ClassTable' has an empty inserted row</div>
+<div class="step successful">And  I delete the inserted row in IG 'ClassTable'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify 'SubClassTable' is visible</div>
+<div class="step successful">And  I click on 'SubClassAddRowButton'</div>
+<div class="step successful">And  Verify IG 'SubClassTable' has an empty inserted row</div>
+<div class="step successful">And  I delete the inserted row in IG 'SubClassTable'</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_003_Apex 005 Apex Test Case Control and Monitoring - Master Files - Customers Address Screen</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- When  I click on 'navControlButton'</div>
+<div class="step successful">When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step successful">And  I click on 'ControlAndMoniteringSideMenu'</div>
+<div class="step successful">And  I click on 'MasterFilesSideMenu'</div>
+<div class="step successful">And  I click on 'CustomersAddressScreenSideMenu'</div>
+<div class="step successful">And  Verify 'CustomerAddressTitle' equals 'Customer Address' text</div>
+<div class="step successful">And  Verify 'CustomerAddressTable' is visible</div>
+<div class="step successful">And  I click on 'CustomerAddressAddRowButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  Verify all fields in 'CustomerAddressRegionBody' are empty</div>
+<div class="step successful">And  I click on 'CustomerAddressCancelButton'</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+</div>
+
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

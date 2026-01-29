@@ -7,14 +7,18 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @PageObject
 public class CustomPage extends AbstractPage<CustomPage> {
 
+    @Autowired
+    private CannedPage cannedPage;
     // -------------------------
     // Common actions
     // -------------------------
@@ -530,20 +534,17 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return (int) Math.floor(r * (maxInclusive - minInclusive + 1)) + minInclusive;
     }
 
-    // =====================================================================
-    // IG – CORE HELPERS (fixed)
-    // =====================================================================
-
-    /**
-     * Resolve to the REAL IG region static id (div.a-IG id).
-     * Accepts: calc_ig, calc, calc_grid_vc, element id inside IG, etc.
-     */
     private String resolveIgRegionId(String regionIdOrAnyId) throws Exception {
         WebDriver driver = webDriverProvider.get();
         waitForApexReady(driver);
 
         String raw = regionIdOrAnyId == null ? "" : regionIdOrAnyId.trim();
         if (raw.isEmpty()) throw new Exception("IG id is empty");
+
+        // -----------------------------------------------------------------
+        // NEW: if user passed a repository element name, convert to DOM id
+        // -----------------------------------------------------------------
+        raw = resolveDomIdFromRepositoryIfPossible(raw);
 
         // Fast path: if apex.region(raw) exists
         if (apexRegionExists(raw)) return raw;
@@ -552,12 +553,12 @@ public class CustomPage extends AbstractPage<CustomPage> {
         String base = rootIgId(raw);
 
         // Try common candidates as region static id
-        String[] candidates = new String[]{
+        String[] candidates = new String[] {
                 raw,
                 base,
                 raw.replace("_grid_vc", ""),
                 base.replace("_grid_vc", ""),
-                base.replace("_ig", ""),
+                base.replace("_ig", ""),     // allows apex static id without _ig
                 base + "_ig",
                 base + "_grid_vc"
         };
@@ -577,10 +578,9 @@ public class CustomPage extends AbstractPage<CustomPage> {
                 String igId = ig.getAttribute("id");
                 if (igId != null && !igId.trim().isEmpty()) {
                     if (apexRegionExists(igId)) return igId;
-                    return igId; // still best guess even if apex.region isn't accessible yet
+                    return igId;
                 }
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) {}
         }
 
         // Last resort: scan all IG roots and try to pick closest match
@@ -607,12 +607,30 @@ public class CustomPage extends AbstractPage<CustomPage> {
                 return String.valueOf(picked);
             }
             throw new Exception(
-                    "Unable to resolve IG root id from: '" + regionIdOrAnyId + "' (base='" + base + "'). IGs found: " + m.get("all")
+                    "Unable to resolve IG root id from: '" + regionIdOrAnyId + "' (resolvedRaw='" + raw + "', base='" + base + "'). IGs found: " + m.get("all")
             );
         }
 
         throw new Exception("Unable to resolve IG root id from: " + regionIdOrAnyId);
     }
+
+    private String resolveDomIdFromRepositoryIfPossible(String input) {
+        try {
+            if (cannedPage == null) return input;
+            WebElement el = cannedPage.getElementWithWait(cannedPage, input);
+            if (el == null) return input;
+
+            String id = el.getAttribute("id");
+            if (id != null && !id.trim().isEmpty()) {
+                log.info("[IG DEBUG] Resolved repository name '" + input + "' to DOM id '" + id + "'");
+                return id.trim();
+            }
+        } catch (Exception ignored) {
+            // not a repository element name
+        }
+        return input;
+    }
+
 
     private boolean apexRegionExists(String regionId) {
         Object ok = ((JavascriptExecutor) webDriverProvider.get()).executeScript(
@@ -677,7 +695,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         }
     }
 
-
     public void ensureIgEditModePublic(String regionIdOrAnyId) throws Exception {
         ensureIGEditMode(regionIdOrAnyId);
     }
@@ -698,9 +715,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return row;
     }
 
-    // =====================================================================
-    // IG – Fill enabled editable cells with random numbers and COMMIT IG changes (fixed JS)
-    // =====================================================================
     public void fillEnabledIgCellsWithRandomNumbersAndCommit(String anyId, int min, int max) {
         if (min > max) throw new IllegalArgumentException("min must be <= max");
 
@@ -825,9 +839,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         }
     }
 
-    // =====================================================================
-    // IG – High-level helper: edit -> fill -> save (fixed)
-    // =====================================================================
     public int fillCalcIgRandomAndSave(String regionIdOrAnyId, String firstRowText, int min, int max) throws Exception {
         String regionId = resolveIgRegionId(regionIdOrAnyId);
 
@@ -838,9 +849,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return updated;
     }
 
-    // =====================================================================
-    // IG – Actions (Edit/Save) using APEX Actions first, then toolbar fallback (fixed)
-    // =====================================================================
     private void clickIgAction(String regionIdOrAnyId, String actionName) throws Exception {
         WebDriver driver = webDriverProvider.get();
         waitForApexReady(driver);
@@ -921,9 +929,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         clickIgAction(regionIdOrAnyId, "save");
     }
 
-    // =====================================================================
-    // APEX waits (unchanged)
-    // =====================================================================
     private void waitForApexReady(WebDriver driver) {
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(d -> {
             try {
@@ -951,9 +956,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         });
     }
 
-    // =====================================================================
-    // Low-level helpers
-    // =====================================================================
     private void clickSafe(WebElement el) {
         try {
             el.click();
@@ -988,11 +990,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return s == null ? "" : s.trim().toLowerCase();
     }
 
-    /**
-     * Normalize an incoming id to a root-like id (does NOT append anything).
-     * IMPORTANT: do NOT aggressively strip "_ig" because your IG region ids are like "calc_ig".
-     * Only strip APEX technical suffixes.
-     */
     private String rootIgId(String anyId) {
         if (anyId == null) return "";
         String id = anyId.trim();
@@ -1059,10 +1056,7 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return "";
     }
 
-    // =====================================================================
-// IG – UI cell editor setter (SCOPED to the given IG root)
-// This prevents editing the editor that belongs to the other IG on the page.
-// =====================================================================
+
     private boolean trySetCellValueViaUi(WebElement igRoot, WebElement cell, String value, long timeoutMs) {
         WebDriver driver = webDriverProvider.get();
         long end = System.currentTimeMillis() + timeoutMs;
@@ -1135,8 +1129,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return false;
     }
 
-
-
     public String getIGCellText(
             String regionIdOrAnyId,
             String rowText,
@@ -1180,10 +1172,7 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return normalizeNumberString(safeText(cell));
     }
 
-    // =====================================================================
-// IG – Fill ONLY the SECOND IG table (edit -> fill -> save)
-// (The first IG may exist on the page, but we ignore it completely.)
-// =====================================================================
+
     public int fillSecondIgRandomAndSaveOnly(
             String secondIgRegionIdOrAnyId,
             String secondIgFirstRowText,
@@ -1375,13 +1364,6 @@ public class CustomPage extends AbstractPage<CustomPage> {
         return updated;
     }
 
-    // =====================================================================
-// IG – Assertions: Local/Amount fillable + Foreign/Foreign Amount fillable
-// =====================================================================
-
-    // =====================================================================
-// IG – Assertions: cell is fillable (editor opens and is enabled)
-// =====================================================================
 
     public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) throws Exception {
         String regionId = resolveIgRegionId(regionIdOrAnyId);
@@ -1498,6 +1480,759 @@ public class CustomPage extends AbstractPage<CustomPage> {
                 "None of the expected headers exist in IG. candidates=" + java.util.Arrays.toString(candidates) +
                         "\nFound headers:\n" + dumpHeaders(regionId)
         );
+    }
+
+
+    public void assertProgramsTreeSearchResultsContain(String searchInputElementNameOrId, String expectedText) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        String expected = expectedText == null ? "" : expectedText.trim();
+        if (expected.isEmpty()) {
+            throw new IllegalArgumentException("Expected text must not be empty.");
+        }
+
+        String anchor = searchInputElementNameOrId;
+        if ("ProgramsTree".equalsIgnoreCase(anchor)) {
+            anchor = "SearchTreeInput";
+        }
+
+        // Resolve search input
+        WebElement searchInput = resolveElementSmart(anchor, wait);
+        wait.until(ExpectedConditions.visibilityOf(searchInput));
+
+        // Small debounce for client-side filtering (APEX Tree search)
+        Thread.sleep(700);
+
+        // Find the visible tree (no waiting on refresh)
+        WebElement tree = driver.findElements(By.cssSelector(".a-TreeView"))
+                .stream()
+                .filter(WebElement::isDisplayed)
+                .findFirst()
+                .orElseThrow(() ->
+                        new AssertionError("No visible APEX Tree found after searching for '" + expected + "'")
+                );
+
+        String expectedLower = expected.toLowerCase();
+
+        // Prefer LEAF nodes only (ignore parents like Setup)
+        List<WebElement> leafLabels = tree.findElements(
+                By.cssSelector(".a-TreeView-node:not(.is-collapsible) .a-TreeView-label")
+        );
+
+        // If no leaf nodes, fallback to visible labels
+        List<WebElement> labelsToCheck = leafLabels.isEmpty()
+                ? tree.findElements(By.cssSelector(".a-TreeView-label"))
+                : leafLabels;
+
+        if (labelsToCheck.isEmpty()) {
+            throw new AssertionError("Tree has no visible results after searching for '" + expected + "'");
+        }
+
+        List<String> offenders = new ArrayList<>();
+
+        for (WebElement label : labelsToCheck) {
+            String text;
+            try {
+                text = label.getText() == null ? "" : label.getText().trim();
+            } catch (StaleElementReferenceException e) {
+                continue;
+            }
+
+            if (text.isEmpty()) continue;
+
+            if (!text.toLowerCase().contains(expectedLower)) {
+                offenders.add(text);
+            }
+        }
+
+        if (!offenders.isEmpty()) {
+            throw new AssertionError(
+                    "Some tree results do NOT contain '" + expected + "'. Offenders:\n- "
+                            + String.join("\n- ", offenders)
+            );
+        }
+
+        log.info("Asserted APEX tree results contain '" + expected + "'");
+    }
+
+    private WebElement resolveElementSmart(String elementNameOrLocator, WebDriverWait wait) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        String s = elementNameOrLocator == null ? "" : elementNameOrLocator.trim();
+        if (s.isEmpty()) throw new IllegalArgumentException("Element identifier is empty.");
+
+        // 1) Resolve using the SAME repository used by your Input steps (CannedPage)
+        try {
+            return cannedPage.getElementWithWait(cannedPage, s);
+        } catch (Exception ignored) { }
+
+        // 2) XPath
+        if (s.startsWith("//") || s.startsWith("(//")) {
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s)));
+        }
+
+        // 3) css=...
+        if (s.toLowerCase().startsWith("css=")) {
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(s.substring(4).trim())));
+        }
+
+        // 4) id=... / name=...
+        if (s.toLowerCase().startsWith("id=")) {
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.id(s.substring(3).trim())));
+        }
+        if (s.toLowerCase().startsWith("name=")) {
+            return wait.until(ExpectedConditions.presenceOfElementLocated(By.name(s.substring(5).trim())));
+        }
+
+        // 5) fallback tries
+        try { return wait.until(ExpectedConditions.presenceOfElementLocated(By.id(s))); } catch (Exception ignored) {}
+        try { return wait.until(ExpectedConditions.presenceOfElementLocated(By.name(s))); } catch (Exception ignored) {}
+        try { return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#" + s))); } catch (Exception ignored) {}
+
+        throw new Exception("Unable to resolve element: '" + elementNameOrLocator + "'");
+    }
+
+
+    public int countTreeResultsContainingAndSave(String searchInputElementNameOrId, String expectedText) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        String expected = expectedText == null ? "" : expectedText.trim();
+        if (expected.isEmpty()) throw new IllegalArgumentException("Expected text must not be empty.");
+
+        String anchor = searchInputElementNameOrId;
+        if ("ProgramsTree".equalsIgnoreCase(anchor)) anchor = "SearchTreeInput";
+
+        // Resolve search input (same repo as steps)
+        WebElement searchInput = resolveElementSmart(anchor, wait);
+        wait.until(ExpectedConditions.visibilityOf(searchInput));
+
+        // Debounce for APEX client filtering
+        Thread.sleep(700);
+
+        // Find visible APEX tree
+        WebElement tree = driver.findElements(By.cssSelector(".a-TreeView"))
+                .stream()
+                .filter(WebElement::isDisplayed)
+                .findFirst()
+                .orElseThrow(() ->
+                        new AssertionError("No visible APEX Tree found after searching for '" + expected + "'")
+                );
+
+        String expectedLower = expected.toLowerCase();
+
+        // Prefer LEAF nodes only
+        List<WebElement> leafLabels = tree.findElements(
+                By.cssSelector(".a-TreeView-node:not(.is-collapsible) .a-TreeView-label")
+        );
+
+        // Fallback to all labels
+        List<WebElement> labelsToCheck = leafLabels.isEmpty()
+                ? tree.findElements(By.cssSelector(".a-TreeView-label"))
+                : leafLabels;
+
+        if (labelsToCheck.isEmpty()) {
+            log.info("Tree has no visible results after searching for '" + expected + "'. count=0");
+            return 0;
+        }
+
+        int containsCount = 0;
+
+        for (WebElement label : labelsToCheck) {
+            String text;
+            try {
+                text = label.getText() == null ? "" : label.getText().trim();
+            } catch (StaleElementReferenceException e) {
+                continue;
+            }
+
+            if (text.isEmpty()) continue;
+
+            if (text.toLowerCase().contains(expectedLower)) {
+                containsCount++;
+            }
+        }
+
+        log.info(String.format("Tree results containing '%s': %d / %d",
+                expected, containsCount, labelsToCheck.size()));
+
+        return containsCount;
+    }
+
+
+    public int recountTreeResultsContaining(String searchInputElementNameOrId, String expectedText) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        String expected = expectedText == null ? "" : expectedText.trim();
+        if (expected.isEmpty()) throw new IllegalArgumentException("Expected text must not be empty.");
+
+        String anchor = searchInputElementNameOrId;
+        if ("ProgramsTree".equalsIgnoreCase(anchor)) anchor = "SearchTreeInput";
+
+        WebElement searchInput = resolveElementSmart(anchor, wait);
+        wait.until(ExpectedConditions.visibilityOf(searchInput));
+
+        // Client-side debounce (APEX Tree search)
+        Thread.sleep(700);
+
+        WebElement tree = driver.findElements(By.cssSelector(".a-TreeView"))
+                .stream()
+                .filter(WebElement::isDisplayed)
+                .findFirst()
+                .orElseThrow(() ->
+                        new AssertionError("No visible APEX Tree found while re-counting for '" + expected + "'")
+                );
+
+        String expectedLower = expected.toLowerCase();
+
+        // Prefer LEAF nodes
+        List<WebElement> leafLabels = tree.findElements(
+                By.cssSelector(".a-TreeView-node:not(.is-collapsible) .a-TreeView-label")
+        );
+
+        List<WebElement> labelsToCheck = leafLabels.isEmpty()
+                ? tree.findElements(By.cssSelector(".a-TreeView-label"))
+                : leafLabels;
+
+        int count = 0;
+
+        for (WebElement label : labelsToCheck) {
+            try {
+                String txt = label.getText();
+                if (txt != null && txt.toLowerCase().contains(expectedLower)) {
+                    count++;
+                }
+            } catch (StaleElementReferenceException ignored) {}
+        }
+
+        log.info("Re-counted tree results containing '" + expected + "': " + count);
+        return count;
+    }
+
+    public void assertProgramsTreeIsExpandedOrCollapsed(String treeIdOrAnyId, String expectedState) throws Exception {
+
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        String expected = expectedState == null ? "" : expectedState.trim().toLowerCase();
+        if (!"expanded".equals(expected) && !"collapsed".equals(expected)) {
+            throw new IllegalArgumentException("expectedState must be 'expanded' or 'collapsed'");
+        }
+
+        // Wait button exists
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("EXPAND_COLLAPSE")));
+
+        // Retry to avoid animation/race
+        String actual = null;
+        for (int i = 0; i < 5; i++) {
+            actual = getApexTreeExpandCollapseState(driver);
+            if (!"unknown".equals(actual)) break;
+            Thread.sleep(200);
+        }
+
+        if (!expected.equals(actual)) {
+            throw new AssertionError("APEX Tree state mismatch. Expected: " + expected + ", Actual: " + actual);
+        }
+
+        log.info("APEX Tree state verified: " + actual);
+    }
+
+    private String getApexTreeExpandCollapseState(WebDriver driver) {
+
+        WebElement btn = driver.findElement(By.id("EXPAND_COLLAPSE"));
+
+        // Find icon inside the button (APEX theme uses FontAwesome on span/i)
+        WebElement icon = null;
+        try {
+            icon = btn.findElement(By.cssSelector("span, i"));
+        } catch (Exception ignored) {}
+
+        String cls = icon != null ? icon.getAttribute("class") : btn.getAttribute("class");
+        cls = cls == null ? "" : cls.toLowerCase();
+
+        // Common APEX/FA patterns
+        boolean looksCollapsed = cls.contains("fa-plus") || cls.contains("plus");
+        boolean looksExpanded  = cls.contains("fa-minus") || cls.contains("minus");
+
+        if (looksExpanded && !looksCollapsed) return "expanded";
+        if (looksCollapsed && !looksExpanded) return "collapsed";
+
+        // Fallback (if theme doesn’t switch icons): use visible child groups
+        return detectByVisibleGroups(driver);
+    }
+
+    private String detectByVisibleGroups(WebDriver driver) {
+
+        WebElement tree = driver.findElements(By.cssSelector(".a-TreeView"))
+                .stream().filter(WebElement::isDisplayed).findFirst().orElse(null);
+
+        if (tree == null) return "unknown";
+
+        // In collapsed state, child groups are typically not visible
+        List<WebElement> groups = tree.findElements(By.cssSelector("ul[role='group']"));
+
+        boolean anyVisibleGroup = false;
+        for (WebElement g : groups) {
+            try {
+                if (g.isDisplayed() && g.getSize().getHeight() > 0) {
+                    anyVisibleGroup = true;
+                    break;
+                }
+            } catch (StaleElementReferenceException ignored) {}
+        }
+
+        return anyVisibleGroup ? "expanded" : "collapsed";
+    }
+
+    private WebElement resolveApexTreeRoot(String treeIdOrAnyId, WebDriverWait wait) {
+        WebDriver driver = webDriverProvider.get();
+
+        // If id provided and exists
+        if (treeIdOrAnyId != null && !treeIdOrAnyId.trim().isEmpty()) {
+            List<WebElement> byId = driver.findElements(By.id(treeIdOrAnyId));
+            if (!byId.isEmpty() && byId.get(0).isDisplayed()) {
+                return byId.get(0);
+            }
+        }
+
+        // Fallback: first visible APEX tree
+        return wait.until(d ->
+                d.findElements(By.cssSelector(".a-TreeView"))
+                        .stream()
+                        .filter(WebElement::isDisplayed)
+                        .findFirst()
+                        .orElse(null)
+        );
+    }
+
+    public void ensureNavBarOpen(String toggleElementNameOrId) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        // Resolve using your existing smart resolver (works with element repository OR raw locators)
+        WebElement toggle = resolveElementSmart(toggleElementNameOrId, wait);
+        wait.until(ExpectedConditions.visibilityOf(toggle));
+
+        String expanded = toggle.getAttribute("aria-expanded");
+
+        // If already open -> do nothing
+        if ("true".equalsIgnoreCase(expanded)) {
+            log.info("Navbar already open. aria-expanded=true | toggle=" + toggleElementNameOrId);
+            return;
+        }
+
+        // If closed -> click then wait until open
+        try {
+            clickSafe(toggle);
+        } catch (Exception e) {
+            // fallback JS click (clickSafe already does JS fallback, but keep safe)
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", toggle);
+        }
+
+        wait.until(d -> {
+            try {
+                WebElement t = resolveElementSmart(toggleElementNameOrId, new WebDriverWait(d, Duration.ofSeconds(2)));
+                String now = t.getAttribute("aria-expanded");
+                return "true".equalsIgnoreCase(now);
+            } catch (Exception ex) {
+                return false;
+            }
+        });
+
+        log.info("Navbar opened successfully. aria-expanded=true | toggle=" + toggleElementNameOrId);
+    }
+
+    public void assertIgHasEmptyInsertedRow(String regionIdOrAnyId) throws Exception {
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc   = gridVcId(regionId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        WebElement grid = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+
+        // Must exist: inserted row (new row)
+        List<WebElement> insertedRows = grid.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
+        if (insertedRows.isEmpty()) {
+            throw new Exception("No inserted row found in IG. Expected: tr.a-GV-row.is-inserted | IG=" + regionId);
+        }
+
+        // Take the last inserted row (usually the one just added)
+        WebElement row = insertedRows.get(insertedRows.size() - 1);
+        scrollTo(row);
+
+        // Count empty grid cells (ignore the selector/controls best-effort by focusing on td[role=gridcell])
+        List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+
+        int emptyCount = 0;
+        int total      = 0;
+
+        for (WebElement cell : cells) {
+            total++;
+            String txt = safeText(cell);
+            if (txt == null || txt.trim().isEmpty()) {
+                emptyCount++;
+            }
+        }
+
+        // If your row has defaults like "Choose Severity--" you still want "empty" for at least Code/Desc.
+        // Threshold: at least 2 empty cells (tune if needed).
+        if (emptyCount < 2) {
+            throw new Exception(
+                    "Inserted row exists but does NOT look empty. " +
+                            "emptyCells=" + emptyCount + "/" + total +
+                            " | IG=" + regionId +
+                            " | RowText=[" + safeText(row) + "]"
+            );
+        }
+
+        log.info("Inserted empty row verified. IG=" + regionId + " | emptyCells=" + emptyCount + "/" + total);
+    }
+
+    public void assertIgHasEmptyInsertedRowForTdIndexes(
+            String regionIdOrAnyId,
+            int... tdIndexes1Based
+    ) throws Exception {
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc   = gridVcId(regionId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        WebElement grid = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+
+        List<WebElement> insertedRows = grid.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
+        if (insertedRows.isEmpty()) {
+            throw new Exception("No inserted row found in IG. Expected: tr.a-GV-row.is-inserted | IG=" + regionId);
+        }
+
+        WebElement row = insertedRows.get(insertedRows.size() - 1);
+        scrollTo(row);
+
+        for (int tdIndex : tdIndexes1Based) {
+            if (tdIndex < 1) throw new Exception("td index must be >= 1");
+
+            WebElement td = row.findElement(By.cssSelector("td:nth-child(" + tdIndex + ")"));
+            String txt = safeText(td);
+
+            if (txt != null && !txt.trim().isEmpty()) {
+                throw new Exception(
+                        "Inserted row cell is NOT empty. " +
+                                "tdIndex=" + tdIndex +
+                                " | actual=[" + txt + "]" +
+                                " | IG=" + regionId
+                );
+            }
+        }
+
+        log.info("Inserted row verified empty for td indexes: " + java.util.Arrays.toString(tdIndexes1Based) + " | IG=" + regionId);
+    }
+
+    public void deleteAnyInsertedRowInIg(String regionIdOrAnyId) throws Exception {
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc   = gridVcId(regionId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        WebElement grid = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+
+        // Find any inserted row(s) inside THIS IG only
+        List<WebElement> insertedRows = grid.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
+        if (insertedRows.isEmpty()) {
+            // Some themes use role selector only
+            insertedRows = grid.findElements(By.cssSelector("tr[role='row'].is-inserted"));
+        }
+
+        if (insertedRows.isEmpty()) {
+            throw new Exception("No inserted row found to delete in IG. IG=" + regionId);
+        }
+
+        // Delete the most recent one (usually the last inserted)
+        WebElement row = insertedRows.get(insertedRows.size() - 1);
+        scrollTo(row);
+
+        // Your HTML shows: button[data-action='row-delete']
+        WebElement deleteBtn = row.findElement(By.cssSelector("button[data-action='row-delete']"));
+
+        clickSafe(deleteBtn);
+        waitForApexAjaxToFinish(driver);
+
+        // Wait until it disappears (row removed or no longer inserted)
+        wait.until(d -> {
+            WebElement g = d.findElement(By.id(gridVc));
+            return g.findElements(By.cssSelector("tr.a-GV-row.is-inserted")).isEmpty()
+                    && g.findElements(By.cssSelector("tr[role='row'].is-inserted")).isEmpty();
+        });
+
+        log.info("Deleted inserted row in IG=" + regionId);
+    }
+
+    public void deleteInsertedRowFromAnyVisibleIg() throws Exception {
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        List<WebElement> igRoots = driver.findElements(By.cssSelector("div.a-IG[id]"));
+        for (WebElement ig : igRoots) {
+            if (!ig.isDisplayed()) continue;
+
+            String igId = ig.getAttribute("id");
+            if (igId == null || igId.trim().isEmpty()) continue;
+
+            String gridVc = gridVcId(igId);
+            List<WebElement> grids = driver.findElements(By.id(gridVc));
+            if (grids.isEmpty()) continue;
+
+            WebElement grid = grids.get(0);
+            List<WebElement> insertedRows = grid.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
+            if (insertedRows.isEmpty()) insertedRows = grid.findElements(By.cssSelector("tr[role='row'].is-inserted"));
+
+            if (!insertedRows.isEmpty()) {
+                WebElement row = insertedRows.get(insertedRows.size() - 1);
+                scrollTo(row);
+
+                WebElement deleteBtn = row.findElement(By.cssSelector("button[data-action='row-delete']"));
+                clickSafe(deleteBtn);
+                waitForApexAjaxToFinish(driver);
+
+                // Verify removed
+                wait.until(d -> {
+                    WebElement g = d.findElement(By.id(gridVc));
+                    return g.findElements(By.cssSelector("tr.a-GV-row.is-inserted")).isEmpty()
+                            && g.findElements(By.cssSelector("tr[role='row'].is-inserted")).isEmpty();
+                });
+
+                log.info("Deleted inserted row from IG=" + igId);
+                return;
+            }
+        }
+
+        throw new Exception("No inserted row found in any visible IG on the page.");
+    }
+
+    public String getTextByLocator(String locatorType, String locatorValue) {
+        WebDriver driver = webDriverProvider.get();
+        WebElement el;
+
+        if ("css".equalsIgnoreCase(locatorType)) {
+            el = driver.findElement(By.cssSelector(locatorValue));
+        } else if ("xpath".equalsIgnoreCase(locatorType)) {
+            el = driver.findElement(By.xpath(locatorValue));
+        } else {
+            throw new IllegalArgumentException("Unsupported locatorType: use css or xpath");
+        }
+
+        return el.getText() == null ? "" : el.getText().trim();
+    }
+
+    public String waitUntilTextChanges(String locatorType, String locatorValue, String oldValue) {
+        WebDriver driver = webDriverProvider.get();
+
+        int timeoutSeconds = 30; // fixed default, no step parameter
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+
+        wait.until(d -> {
+            try {
+                String now = getTextByLocator(locatorType, locatorValue);
+                String old = oldValue == null ? "" : oldValue.trim();
+                return !now.equals(old);
+            } catch (StaleElementReferenceException | NoSuchElementException e) {
+                return false;
+            }
+        });
+
+        return getTextByLocator(locatorType, locatorValue);
+    }
+
+    public String getTextByElementNameOrLocator(String elementNameOrLocator) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement el = resolveElementSmart(elementNameOrLocator, wait);
+        wait.until(ExpectedConditions.visibilityOf(el));
+
+        String txt = el.getText();
+        return txt == null ? "" : txt.trim();
+    }
+
+    public String waitUntilTextChangesByElementNameOrLocator(String elementNameOrLocator, String oldValue) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        final String oldNorm = normalizeText(oldValue);
+
+        wait.until(d -> {
+            try {
+                String now = getTextByElementNameOrLocator(elementNameOrLocator);
+                String nowNorm = normalizeText(now);
+
+                if (nowNorm.isEmpty()) return false;                 // ignore transient empty
+                if (nowNorm.equalsIgnoreCase("loading")) return false; // optional
+                return !nowNorm.equals(oldNorm);
+            } catch (Exception e) {
+                return false;
+            }
+        });
+
+        return getTextByElementNameOrLocator(elementNameOrLocator);
+    }
+
+    private String normalizeText(String s) {
+        if (s == null) return "";
+        return s
+                .replace("\u00A0", " ")
+                .replace("\r\n", "\n")
+                .trim();
+    }
+
+    public String getNormalizedSnapshot(String elementName) throws Exception {
+        String txt = getTextByElementNameOrLocator(elementName);
+        if (txt == null) return "";
+        return txt
+                .replace("\u00A0", " ")
+                .replaceAll("\\s+", " ")
+                .trim();
+    }
+
+    public void assertAllFieldsAreEmptyByElementName(String containerElementName) throws Exception {
+
+        if (containerElementName == null || containerElementName.trim().isEmpty()) {
+            throw new IllegalArgumentException("containerElementName is empty");
+        }
+
+        WebDriver driver = webDriverProvider.get();
+
+        // IMPORTANT: resolve by repository from CannedPage (where your @FindBy usually lives)
+        WebElement container = cannedPage.getElementWithWait(cannedPage, containerElementName);
+
+        new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(ExpectedConditions.visibilityOf(container));
+
+        List<WebElement> fields = container.findElements(By.cssSelector("input, textarea, select"));
+
+        List<String> offenders = new ArrayList<>();
+
+        for (WebElement el : fields) {
+            if (el == null) continue;
+
+            try {
+                if (!el.isDisplayed()) continue;
+            } catch (StaleElementReferenceException e) {
+                continue;
+            }
+
+            String tag  = safeLower(el.getTagName());
+            String type = safeLower(safeAttr(el, "type"));
+            String id   = safeAttr(el, "id");
+            String name = safeAttr(el, "name");
+
+            if ("input".equals(tag) && "hidden".equals(type)) continue;
+
+            if ("input".equals(tag) && (type.equals("button") || type.equals("submit") || type.equals("reset") || type.equals("image")))
+                continue;
+
+            String label = buildFieldLabel(tag, type, id, name);
+
+            if ("input".equals(tag) && (type.equals("checkbox") || type.equals("radio"))) {
+                boolean selected = false;
+                try { selected = el.isSelected(); } catch (Exception ignored) {}
+                if (selected) offenders.add(label + " is selected");
+                continue;
+            }
+
+            if ("select".equals(tag)) {
+                String v = normalizeValue(safeAttr(el, "value"));
+                if (!v.isEmpty()) offenders.add(label + " has value='" + v + "'");
+                continue;
+            }
+
+            String v = normalizeValue(safeAttr(el, "value"));
+            if (!v.isEmpty()) offenders.add(label + " has value='" + v + "'");
+        }
+
+        if (!offenders.isEmpty()) {
+            throw new AssertionError(
+                    "Some fields are NOT empty inside container '" + containerElementName + "':\n- "
+                            + String.join("\n- ", offenders)
+            );
+        }
+
+        log.info("All fields are empty inside container: " + containerElementName);
+    }
+
+    private String buildFieldLabel(String tag, String type, String id, String name) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(tag);
+        if (type != null && !type.isEmpty()) sb.append("[type=").append(type).append("]");
+        if (id != null && !id.trim().isEmpty()) sb.append("#").append(id.trim());
+        else if (name != null && !name.trim().isEmpty()) sb.append("[name=").append(name.trim()).append("]");
+        return sb.toString();
+    }
+
+    public void assertFieldIsFilled(String elementNameOrLocator) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement el = resolveElementSmart(elementNameOrLocator, wait);
+        wait.until(ExpectedConditions.visibilityOf(el));
+
+        String tag = safeLower(el.getTagName());
+        String v = "";
+
+        // input-like elements
+        if ("input".equals(tag) || "textarea".equals(tag) || "select".equals(tag)) {
+            v = normalizeValue(safeAttr(el, "value"));
+        } else {
+            // display-only (like your screenshot)
+            v = normalizeValue(safeText(el));
+        }
+
+        if (v.isEmpty()) {
+            throw new AssertionError("Field is NOT filled: '" + elementNameOrLocator + "'");
+        }
+
+        log.info("Field is filled: '" + elementNameOrLocator + "' value=[" + v + "]");
+    }
+
+    private String normalizeValue(String v) {
+        if (v == null) return "";
+        return v.replace("\u00A0", " ").trim();
+    }
+
+    public void assertFieldIsNotFilled(String elementNameOrLocator) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement el = resolveElementSmart(elementNameOrLocator, wait);
+        wait.until(ExpectedConditions.visibilityOf(el));
+
+        String tag = safeLower(el.getTagName());
+        String v;
+
+        // input-like elements
+        if ("input".equals(tag) || "textarea".equals(tag) || "select".equals(tag)) {
+            v = normalizeValue(safeAttr(el, "value"));
+        } else {
+            // display-only elements (labels, td, div, etc.)
+            v = normalizeValue(safeText(el));
+        }
+
+        if (!v.isEmpty()) {
+            throw new AssertionError("Field IS filled but expected NOT filled: '" + elementNameOrLocator + "' value=[" + v + "]");
+        }
+
+        log.info("Field is NOT filled: '" + elementNameOrLocator + "'");
     }
 
 }
