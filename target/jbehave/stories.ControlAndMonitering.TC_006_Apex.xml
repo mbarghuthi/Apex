@@ -38,8 +38,22 @@
 <step outcome="successful">And [Input] Set &apos;SmtpPortInput&apos; value to &apos;random&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;SmtpPortErrorMsg&apos; contains &apos;p:SmtpPortInvalidErrorMsg&apos; text</step>
-<step outcome="successful">And [Input] I click on &apos;CancelButton&apos;</step>
+<step outcome="successful">And [Input] Set &apos;EmailSmtpInput&apos; value to &apos;randomen&apos;</step>
+<step outcome="successful">And [Action] I get value from &apos;EmailSmtpInput&apos; and save it as &apos;EmailSmtpText&apos;</step>
+<step outcome="successful">And [Input] Set &apos;SmtpPortInput&apos; value to &apos;random2&apos;</step>
+<step outcome="successful">And [Action] I get value from &apos;SmtpPortInput&apos; and save it as &apos;SmtpPortText&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
 <step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Set &apos;MailSetupTableSearch&apos; value to &apos;statemanager:EmailSmtpText&apos;</step>
+<step outcome="successful">And [Input] I press Enter on &apos;MailSetupTableSearch&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;MailSetupTableEdit&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;MailSetupIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButtonPopup&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
 <step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
@@ -72,3 +86,29 @@
 <step outcome="successful">And [Input] I click on &apos;SmsNotificationsSideMenu&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;SmsNotificationsTitle&apos; equals &apos;p:SmsNotifications&apos; text</step>
 <step outcome="successful">And [Assertion] Verify &apos;SmsNotificationTable&apos; is visible</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_006_Apex 005 Apex Test Case Control and Monitoring - Mail &amp; SMS - SMS GateWay Definition">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;MailAndSmsSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SmsGateWayDefinitionSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SmsGateWayDefinitionTitle&apos; equals &apos;p:SmsGateWayDefinition&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;SmsGateWayDefinitionTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;SmsGateWayDefinitionAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;SmsGateWayDefinitionTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;SmsGateWayDefinitionTable&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

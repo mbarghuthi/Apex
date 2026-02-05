@@ -1,0 +1,116 @@
+<story path="stories/FGA/TC_002_Apex.story" title="!--">
+<scenario keyword="Scenario:" title="TC_001_Apex 001 Apex Test Case FGA - Premium Tariffs Setup - FGA Rates Tariff">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- !-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;PremiumTariffsSetupSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesTariffSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;FGARatesTariffTitle&apos; equals &apos;p:FGARatesTariff&apos; text</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;FGARatesTariffTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesTariffAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;FGARatesTariffTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesTariffSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesTariffSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;OkButton&apos;</step>
+<step outcome="ignorable">!-- !-- And [Action] I delete the inserted row in IG &apos;FGARatesTariffTable&apos;</step>
+<step outcome="ignorable">!-- And [Navigation] I reload page</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="ignorable">!-- Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 002 Apex Test Case FGA - Premium Tariffs Setup - FGA Rates (Percentages &amp; Permils)">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- !-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;PremiumTariffsSetupSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesPercentagesPermilsSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;FGARatesPercentagesPermilsTitle&apos; equals &apos;p:FGARatesPercentagesPermils&apos; text</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;FGARatesPercentagesPermilsTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesPercentagesPermilsAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;FGARatesPercentagesPermilsTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesPercentagesPermilsSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGARatesPercentagesPermilsSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;OkButton&apos;</step>
+<step outcome="ignorable">!-- !-- And [Action] I delete the inserted row in IG &apos;FGARatesPercentagesPermilsTable&apos;</step>
+<step outcome="ignorable">!-- And [Navigation] I reload page</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="ignorable">!-- Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 003 Apex Test Case FGA - Premium Tariffs Setup - Short Period Tariff(FGA Enorsement)">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="ignorable">!-- And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- !-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;PremiumTariffsSetupSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ShortPeriodTariffFGAEndorsementSideMenu&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;ShortPeriodTariffFGAEndorsementTitle&apos; equals &apos;p:ShortPeriodTariffFGAEnorsement&apos; text</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;ShortPeriodTariffFGAEndorsementTable&apos; is visible</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ShortPeriodTariffFGAEndorsementAddRowButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;ShortPeriodTariffFGAEndorsementTable&apos; has an empty inserted row</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ShortPeriodTariffFGAEndorsementSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;ShortPeriodTariffFGAEndorsementSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;OkButton&apos;</step>
+<step outcome="ignorable">!-- !-- And [Action] I delete the inserted row in IG &apos;ShortPeriodTariffFGAEndorsementTable&apos;</step>
+<step outcome="ignorable">!-- And [Navigation] I reload page</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="ignorable">!-- Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present
+
+
+!--</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 004 Apex Test Case FGA - Premium Tariffs Setup - Fire Premium Setup">
+<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex 005 Apex Test Case FGA - Premium Tariffs Setup - Earthquake Rate">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;PremiumTariffsSetupSideMenu&apos;</step>
+<step outcome="ignorable">!-- Change</step>
+<step outcome="successful">And [Input] I click on &apos;EarthquakeRateSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;EarthquakeRateTitle&apos; equals &apos;p:EarthquakeRate&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;EarthquakeRateTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;EarthquakeRateAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;EarthquakeRateTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;EarthquakeRateSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;EarthquakeRateSaveButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;EarthquakeRateTable&apos;</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="ignorable">!-- Done</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

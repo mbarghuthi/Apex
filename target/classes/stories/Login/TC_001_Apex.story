@@ -33,6 +33,8 @@ Given [Navigation] I navigate to 'p:amanApex'
 When [Input] I login as 'p:invalidUsername' with password 'p:invalidPassword'
 !-- Then [Assertion] Verify 'loginAlert' contains 'p:InvalidLoginCredentials' text
 Then [Assertion] Verify 'loginButton' is present
+And [Assertion] Verify 'userName' input is empty
+And [Assertion] Verify 'password' input is empty
 
 
 Scenario:  TC_001_Apex 005 Apex Test Case Login - Invalid username and Valid password

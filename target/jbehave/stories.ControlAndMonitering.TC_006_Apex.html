@@ -42,8 +42,22 @@
 <div class="step successful">And  Set 'SmtpPortInput' value to 'random'</div>
 <div class="step successful">And  I click on 'CreateButton'</div>
 <div class="step successful">And  Verify 'SmtpPortErrorMsg' contains 'SMTP Port must be a valid number.' text</div>
-<div class="step successful">And  I click on 'CancelButton'</div>
+<div class="step successful">And  Set 'EmailSmtpInput' value to 'randomen'</div>
+<div class="step successful">And  I get value from 'EmailSmtpInput' and save it as 'EmailSmtpText'</div>
+<div class="step successful">And  Set 'SmtpPortInput' value to 'random2'</div>
+<div class="step successful">And  I get value from 'SmtpPortInput' and save it as 'SmtpPortText'</div>
+<div class="step successful">And  I click on 'CreateButton'</div>
+<div class="step successful">And  I wait for '3' sec</div>
 <div class="step successful">And  I switch back to main content</div>
+<div class="step successful">And  Set 'MailSetupTableSearch' value to 'statemanager:EmailSmtpText'</div>
+<div class="step successful">And  I press Enter on 'MailSetupTableSearch'</div>
+<div class="step successful">And  I wait for '3' sec</div>
+<div class="step successful">And  I click on 'MailSetupTableEdit'</div>
+<div class="step successful">And  I switch to iframe 'MailSetupIframe'</div>
+<div class="step successful">And  I click on 'DeleteButton'</div>
+<div class="step successful">And  I wait for '3' sec</div>
+<div class="step successful">And  I switch back to main content</div>
+<div class="step successful">And  I click on 'DeleteButtonPopup'</div>
 <div class="step successful">And  I wait for '7' sec</div>
 <div class="step successful">Then  I click on 'UserDDL'</div>
 <div class="step successful">And  I click on 'LogoutButton'</div>
@@ -78,3 +92,30 @@
 <div class="step successful">And  I click on 'SmsNotificationsSideMenu'</div>
 <div class="step successful">And  Verify 'SmsNotificationsTitle' equals 'SMS Notifications' text</div>
 <div class="step successful">And  Verify 'SmsNotificationTable' is visible</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+<div class="scenario">
+<h2>Scenario: TC_006_Apex 005 Apex Test Case Control and Monitoring - Mail &amp; SMS - SMS GateWay Definition</h2>
+<div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
+<div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step ignorable">!-- When  I click on 'navControlButton'</div>
+<div class="step successful">When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step successful">And  I click on 'ControlAndMoniteringSideMenu'</div>
+<div class="step successful">And  I click on 'MailAndSmsSideMenu'</div>
+<div class="step successful">And  I click on 'SmsGateWayDefinitionSideMenu'</div>
+<div class="step successful">And  Verify 'SmsGateWayDefinitionTitle' equals 'SMS GateWay Definition' text</div>
+<div class="step successful">And  Verify 'SmsGateWayDefinitionTable' is visible</div>
+<div class="step successful">And  I click on 'SmsGateWayDefinitionAddRowButton'</div>
+<div class="step successful">And  Verify IG 'SmsGateWayDefinitionTable' has an empty inserted row</div>
+<div class="step ignorable">!-- And  I wait for '3' sec</div>
+<div class="step ignorable">!-- And  I delete the inserted row in IG 'SmsGateWayDefinitionTable'</div>
+<div class="step successful">And  I wait for '7' sec</div>
+<div class="step successful">Then  I click on 'UserDDL'</div>
+<div class="step successful">And  I click on 'LogoutButton'</div>
+<div class="step successful">And  Verify 'loginButton' is present</div>
+</div>
+</div>

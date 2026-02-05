@@ -10,11 +10,17 @@ And [Input] I click on 'GeneralBusinessTariffsSideMenu'
 And [Input] I click on 'SumInsuredRangesSideMenu'
 And [Assertion] Verify 'SumInsuredRangesTitle' equals 'p:SumInsuredRanges' text
 And [Input] Select 'p:DepartmentWise' value from 'ReportTypeCombobox' dropdown list
+And [Progress] I wait for '3' sec
 And [Input] Select 'p:Motor' value from 'ReportValueCombobox' dropdown list
 And [Progress] I wait for '3' sec
 And [Assertion] Verify 'SumInsuredRangesTable' is visible
 And [Input] I click on 'SumInsuredRangesAddRowButton'
 And [Assertion] Verify IG 'SumInsuredRangesTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'SumInsuredRangesSaveButton'
+And [Input] I click on 'SumInsuredRangesSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'SumInsuredRangesTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
@@ -35,10 +41,15 @@ And [Input] I click on 'ShortPeriodTariffSideMenu'
 And [Assertion] Verify 'ShortPeriodTariffTitle' equals 'p:ShortPeriodTariff' text
 And [Input] Select 'p:MotorPrivate' value from 'ClassCombobox' dropdown list
 And [Input] Select 'p:Comprehensive' value from 'PolicyTypeCombobox' dropdown list
-And [Progress] I wait for '3' sec
+And [Progress] I wait for '10' sec
 And [Assertion] Verify 'ShortPeriodTariffTable' is visible
 And [Input] I click on 'ShortPeriodTariffAddRowButton'
 And [Assertion] Verify IG 'ShortPeriodTariffTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'ShortPeriodTariffSaveButton'
+And [Input] I click on 'ShortPeriodTariffSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'ShortPeriodTariffTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
@@ -60,6 +71,11 @@ And [Assertion] Verify 'ProRataPeriodTariffTitle' equals 'p:ProRataPeriodTariff'
 And [Assertion] Verify 'ProRataPeriodTariffTable' is visible
 And [Input] I click on 'ProRataPeriodTariffAddRowButton'
 And [Assertion] Verify IG 'ProRataPeriodTariffTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'ProRataPeriodTariffSaveButton'
+!-- And [Input] I click on 'ProRataPeriodTariffSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 !-- And [Action] I delete the inserted row in IG 'ProRataPeriodTariffTable'
 And [Navigation] I reload page
 And [Progress] I wait for '7' sec

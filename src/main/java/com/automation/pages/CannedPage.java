@@ -69,6 +69,12 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[@class='t-Icon icon-close']")
 	public WebElement CloseIconButton;
 
+	@FindBy(xpath = "//button[normalize-space()='OK']")
+	public WebElement OkButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Add a Customer']")
+	public WebElement AddACustomerButton;
+
 // ************************************************************ Elements **********************************************************************************************
 
 	@FindBy(css = "#t_Button_navControl")
@@ -80,6 +86,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//span[normalize-space()='Quotations']")
 	public WebElement QuotationsSideMenu;
+
+	@FindBy(xpath = "//span[normalize-space()='FGA']")
+	public WebElement FGASideMenu;
 
 // **************************** Side Menu SubMain (1) ****************************
 	@FindBy(xpath = "//span[normalize-space()='Quotation - Menu']")
@@ -105,6 +114,18 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//span[normalize-space()='Workflow Integration']")
 	public WebElement WorkflowIntegrationSideMenu;
+
+	@FindBy(xpath = "//span[normalize-space()='Codes Definition Linking Setup']")
+	public WebElement CodesDefinitionLinkingSetupSideMenu;
+
+	@FindBy(xpath = "//span[normalize-space()='Premium Tariffs Setup']")
+	public WebElement PremiumTariffsSetupSideMenu;
+
+	@FindBy(xpath = "//span[normalize-space()='Malpractice Setup']")
+	public WebElement MalpracticeSetupSideMenu;
+
+	@FindBy(xpath = "//span[normalize-space()='Travel Setup']")
+	public WebElement TravelSetupSideMenu;
 
 // **************************** Side Menu SubMain (2) ****************************
 	@FindBy(xpath = "//a[normalize-space()='Programs']")
@@ -236,6 +257,48 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//a[normalize-space()='Workflow Services Setup']")
 	public WebElement WorkflowServicesSetupSideMenu;
 
+	@FindBy(xpath = "//a[normalize-space()='FGA Address']")
+	public WebElement FGAAddressSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Household Contents Definition']")
+	public WebElement HouseholdContentsDefinitionSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='FGA Rates Tariff']")
+	public WebElement FGARatesTariffSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='FGA Rates (Percentages&Permils)']")
+	public WebElement FGARatesPercentagesPermilsSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Short Period Tariff (FGA Endorsement)']")
+	public WebElement ShortPeriodTariffFGAEndorsementSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Earthquake Rate']")
+	public WebElement EarthquakeRateSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Categories-Professions Definition']")
+	public WebElement CategoriesProfessionsDefinitionSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Coverage Limit AOO-AAA']")
+	public WebElement CoverageLimitAOO_AAASideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Malpractice Tariff Definition']")
+	public WebElement MalpracticeTariffDefinitionSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Malpractice Questions']")
+	public WebElement MalpracticeQuestionsSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='MMP Periods']")
+	public WebElement MMPPeriodsSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Travel Calculation Prices']")
+	public WebElement TravelCalculationPricesSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Travel Days']")
+	public WebElement TravelDaysSideMenu;
+
+	@FindBy(xpath = "//a[normalize-space()='Key Benefits']")
+	public WebElement KeyBenefitsSideMenu;
+
 // **************************** Card Dashboard ****************************
 	@FindBy(xpath = "//h3[normalize-space()='Quotations']")
 	public WebElement QuotationCardDashboard;
@@ -285,6 +348,12 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "(//h2[normalize-space()='Locations and Branches'])[1]")
 	public WebElement LocationsAndBranchesTitle;
+
+	@FindBy(xpath = "(//h2[normalize-space()='Customers Receivable'])[1]")
+	public WebElement CustomersReceivableTariffTitle;
+
+	@FindBy(xpath = "(//h2[normalize-space()='Payable Parties'])[1]")
+	public WebElement PayablePartiesTitle;
 
 	@FindBy(xpath = "(//h2[normalize-space()='Class'])[1]")
 	public WebElement ClassTitle;
@@ -360,6 +429,42 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "(//h2[normalize-space()='Workflow Services Setup'])[1]")
 	public WebElement WorkflowServicesSetupTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='FGA Address']")
+	public WebElement FGAAddressTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='FGA Rates Tariff']")
+	public WebElement FGARatesTariffTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='FGA Rates (Percentages & Permils)']")
+	public WebElement FGARatesPercentagesPermilsTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='Short Period Tariff(FGA Enorsement)']")
+	public WebElement ShortPeriodTariffFGAEndorsementTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='Earthquake Rate']")
+	public WebElement EarthquakeRateTitle;
+
+	@FindBy(xpath = "(//h2[normalize-space()='Coverage Limit AOO-AAA'])[1]")
+	public WebElement CoverageLimitAOO_AAATitle;
+
+	@FindBy(xpath = "(//h2[normalize-space()='Malpractice Tariff Definition'])[1]")
+	public WebElement MalpracticeTariffDefinitionTitle;
+
+	@FindBy(xpath = "(//h2[normalize-space()='Malpractice Questions'])[1]")
+	public WebElement MalpracticeQuestionsTitle;
+
+	@FindBy(xpath = "(//h2[normalize-space()='MMP Periods'])[1]")
+	public WebElement MMPPeriodsTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='Travel Calculation Prices']")
+	public WebElement TravelCalculationPricesTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='Travel Days']")
+	public WebElement TravelDaysTitle;
+
+	@FindBy(xpath = "//h1[normalize-space()='Key Benefits']")
+	public WebElement KeyBenefitsTitle;
 
 // **************************** General ****************************
 	@FindBy(xpath = "//h3[normalize-space()='4-Jeddah Claim Center']")
@@ -619,6 +724,24 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#EXPAND_COLLAPSE")
 	public WebElement ExpandCollapseButton;
 
+	@FindBy(xpath = "(//span[@role='treeitem'][normalize-space()='Quotations'])[3]")
+	public WebElement QuotationsChild;
+
+	@FindBy(css = "iframe[title='Program Details']")
+	public WebElement ProgramDetailsIframe;
+
+	@FindBy(css = "#P21_APP_ALIAS")
+	public WebElement ApplicationCombobox;
+
+	@FindBy(css = "#P21_STATUS")
+	public WebElement StatusCheckbox;
+
+	@FindBy(css = "#P21_DISPLAYED_ON_MENU")
+	public WebElement DisplayOnMenuCheckbox;
+
+	@FindBy(xpath = "(//button[@title='Close'])[2]")
+	public WebElement ProgramIframeCloseButton;
+
 	// ************************************************************ System Code Ranks Elements **********************************************************************************************
 	@FindBy(css = "#SCRM_IG_ig")
 	public WebElement SystemCodeRanksMajorTable;
@@ -627,10 +750,19 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	public WebElement SystemCodeRanksMinorTable;
 
 	@FindBy(xpath = "//div[@id='SCRM_IG_ig_toolbar']//span[@class='a-Button-label'][normalize-space()='Add Row']")
-	public WebElement SystemCodeRanksMajorButton;
+	public WebElement SystemCodeRanksMajorAddButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement SystemCodeRanksMajorSaveButton;
 
 	@FindBy(xpath = "//div[@id='SCRD_IG_ig_toolbar']//span[@class='a-Button-label'][normalize-space()='Add Row']")
-	public WebElement SystemCodeRanksMinorButton;
+	public WebElement SystemCodeRanksMinorAddButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[2]")
+	public WebElement SystemCodeRanksMinorSaveButton;
+
+	@FindBy(css = ".a-AlertMessage-body")
+	public WebElement AlertMsgBody;
 
 	// ************************************************************ Error Messages Elements **********************************************************************************************
 	@FindBy(css = "#EMM_IG_ig")
@@ -642,8 +774,14 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//div[@id='EMM_IG_ig_toolbar']//span[@class='a-Button-label'][normalize-space()='Add Row']")
 	public WebElement ErrorMessagesAddRowButton;
 
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement ErrorMessagesSaveButton;
+
 	@FindBy(xpath = "//div[@id='EMD_IG_ig_toolbar']//span[@class='a-Button-label'][normalize-space()='Add Row']")
 	public WebElement ErrorMessagesDetailsAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[2]")
+	public WebElement ErrorMessagesDetailsSaveButton;
 
 	// ************************************************************ Departments Elements **********************************************************************************************
 	@FindBy(css = "#dept_ig")
@@ -697,6 +835,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
 	public WebElement DomicileLocationsAddRowButton;
 
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement DomicileLocationsSaveButton;
+
 	// ************************************************************ System Owner Setup Elements **********************************************************************************************
 	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='General Information']")
 	public WebElement GeneralInformationTab;
@@ -706,6 +847,15 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Application Configuration']")
 	public WebElement ApplicationConfigurationTab;
+
+	@FindBy(css = "#myIG_ig")
+	public WebElement ApplicationConfigurationTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[2]")
+	public WebElement ApplicationConfigurationAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[2]")
+	public WebElement ApplicationConfigurationSaveButton;
 
 	// ************************************************************ Sum Insured Ranges Elements **********************************************************************************************
 	@FindBy(css = "#P13_REPORT_TYPE")
@@ -719,6 +869,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
 	public WebElement SumInsuredRangesAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement SumInsuredRangesSaveButton;
 
 
 	// ************************************************************ Short Period Tariff Elements **********************************************************************************************
@@ -734,6 +887,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
 	public WebElement ShortPeriodTariffAddRowButton;
 
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement ShortPeriodTariffSaveButton;
+
 	// ************************************************************ Pro-Rata Period Tariff Elements **********************************************************************************************
 
 	@FindBy(css = "#PRO_IG_ig")
@@ -741,6 +897,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
 	public WebElement ProRataPeriodTariffAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement ProRataPeriodTariffSaveButton;
 
 	// ************************************************************ Locations and Branches Elements **********************************************************************************************
 
@@ -753,6 +912,223 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
 	public WebElement LocationsAndBranchesAddRowButton;
 
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement LocationsAndBranchesSaveButton;
+
+
+	// ************************************************************ Customers Receivable Elements **********************************************************************************************
+
+	@FindBy(css = "#REC_IG_ig")
+	public WebElement CustomersReceivableTable;
+
+	@FindBy(xpath = "(//span[@class='t-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement CustomersReceivableSaveButton;
+
+	@FindBy(css = "#P5_LOCATION_error")
+	public WebElement LocationErrorMsg;
+
+	@FindBy(css = "#P5_BRANCH_error")
+	public WebElement BranchCRErrorMsg;
+
+	@FindBy(css = "#P5_CUST_TYPE_error")
+	public WebElement CustTypeErrorMsg;
+
+	@FindBy(css = "#P5_LNAME_error")
+	public WebElement NameEnglishErrorMsg;
+
+	@FindBy(css = "#P5_STATUS_error")
+	public WebElement CustStatusErrorMsg;
+
+	@FindBy(css = "#B157590256067599170")
+	public WebElement CustomerNameOpenPop;
+
+	@FindBy(css = "#P5_CUST_FLNAME")
+	public WebElement FirstNameEnInput;
+
+	@FindBy(css = "#P5_CUST_FLNAME_error")
+	public WebElement FirstNameEnErrorMsg;
+
+	@FindBy(css = "#P5_CUST_LLNAME")
+	public WebElement LastNameEnInput;
+
+	@FindBy(css = "#P5_CUST_LLNAME_error")
+	public WebElement LastNameEnErrorMsg;
+
+	@FindBy(css = "#P5_CUST_FANAME")
+	public WebElement FirstNameArInput;
+
+	@FindBy(css = "#P5_CUST_FANAME_error")
+	public WebElement FirstNameArErrorMsg;
+
+	@FindBy(css = "#P5_CUST_LANAME")
+	public WebElement LastNameArInput;
+
+	@FindBy(css = "#P5_CUST_LANAME_error")
+	public WebElement LastNameArErrorMsg;
+
+	@FindBy(css = "#P5_CUST_NO_OF_VISIT")
+	public WebElement NoOfVisitInput;
+
+	@FindBy(css = "#P5_CUST_NO_OF_VISIT_error")
+	public WebElement NoOfVisitErrorMsg;
+
+	@FindBy(css = "#P5_CUST_ANNUAL_INCOME")
+	public WebElement AnnualIncomeInput;
+
+	@FindBy(css = "#P5_CUST_ANNUAL_INCOME_error")
+	public WebElement AnnualIncomeErrorMsg;
+
+	@FindBy(xpath = "(//button[@title='Close'])[2]")
+	public WebElement CustomerNameCloseButton;
+
+	@FindBy(css = "#BRANCHES_ID_ig")
+	public WebElement BranchesCRTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
+	public WebElement BranchesCRAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement BranchesCRSaveButton;
+
+	@FindBy(xpath = "//button[contains(text(),'OK')]")
+	public WebElement CROkButton;
+
+	@FindBy(css = "#R155352297762300556_ig")
+	public WebElement CompanySizeCRTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[2]")
+	public WebElement CompanySizeCRAddRowButton;
+
+
+	// ************************************************************ Payable Parties Elements **********************************************************************************************
+
+	@FindBy(css = "#PAY_IG_ig")
+	public WebElement PayablePartiesTable;
+
+	@FindBy(xpath = "(//span[@class='t-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement PayablePartiesSaveButton;
+
+	@FindBy(css = "#P4_ACCOUNT_NO")
+	public WebElement AccountNoInput;
+
+	@FindBy(css = "#P4_ACCOUNT_NO_error")
+	public WebElement AccountNoErrorMsg;
+
+	@FindBy(css = "#P4_LOCATION_error")
+	public WebElement LocationPPErrorMsg;
+
+	@FindBy(css = "#P4_BRANCH_error")
+	public WebElement BranchPPErrorMsg;
+
+	@FindBy(css = "#P4_CLASS_error")
+	public WebElement ClassErrorMsg;
+
+	@FindBy(css = "#P4_CUSTOMER_TYPE_error")
+	public WebElement CustomerTypeErrorMsg;
+
+	@FindBy(css = "#CUSTOMER_LNAME_error")
+	public WebElement CustomerNameErrorMsg;
+
+	@FindBy(css = "#P4_CUST_STATUS_error")
+	public WebElement CustStatusPPErrorMsg;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Customer Details']")
+	public WebElement CustomerDetailsTab;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Customer Details 2']")
+	public WebElement CustomerDetails2Tab;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Address']")
+	public WebElement AddressTab;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Branches']")
+	public WebElement BranchesTab;
+
+	@FindBy(css = "#R150268016748535085_ig")
+	public WebElement BranchesTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
+	public WebElement BranchesAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement BranchesSaveButton;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Periods']")
+	public WebElement PeriodsTab;
+
+	@FindBy(css = "#R154338093266095678_ig")
+	public WebElement PeriodsTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[2]")
+	public WebElement PeriodsAddRowButton;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Commission']")
+	public WebElement CommissionTab;
+
+	@FindBy(css = "#R155877906567342590_ig")
+	public WebElement CommissionTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[3]")
+	public WebElement CommissionAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[3]")
+	public WebElement CommissionSaveButton;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Company Size']")
+	public WebElement CompanySizeTab;
+
+	@FindBy(css = "#R158009214115732960_ig")
+	public WebElement CompanySizeTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[4]")
+	public WebElement CompanySizeAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='t-Button-label'][normalize-space()='Cancel'])[1]")
+	public WebElement PPCancelButton;
+
+	@FindBy(xpath = "//button[contains(text(),'OK')]")
+	public WebElement PPOkButton;
+
+	@FindBy(css = "#B156489195266333089")
+	public WebElement CustomerNamePPOpenPop;
+
+	@FindBy(css = "#P4_ENAEM1")
+	public WebElement FirstNameEnPPInput;
+
+	@FindBy(css = "#P4_ENAEM1_error")
+	public WebElement FirstNameEnPPErrorMsg;
+
+	@FindBy(css = "#P4_ENAEM4")
+	public WebElement LastNameEnPPInput;
+
+	@FindBy(css = "#P4_ENAEM4_error")
+	public WebElement LastNameEnPPErrorMsg;
+
+	@FindBy(css = "#P4_ANAEM1")
+	public WebElement FirstNameArPPInput;
+
+	@FindBy(css = "#P4_ANAEM1_error")
+	public WebElement FirstNameArPPErrorMsg;
+
+	@FindBy(css = "#P4_ANAEM4")
+	public WebElement LastNameArPPInput;
+
+	@FindBy(css = "#P4_ANAEM4_error")
+	public WebElement LastNameArPPErrorMsg;
+
+	@FindBy(css = "#P4_CUST_CREDIT_LIMIT")
+	public WebElement CreditLimitInput;
+
+	@FindBy(css = "#P4_CUST_CREDIT_LIMIT_error")
+	public WebElement CreditLimitErrorMsg;
+
+	@FindBy(css = "#P4_CUST_CREDIT_AMOUNT")
+	public WebElement CreditAmountInput;
+
+	@FindBy(css = "#P4_CUST_CREDIT_AMOUNT_error")
+	public WebElement CreditAmountErrorMsg;
+
+
 	// ************************************************************ Class-Subclass Linking Elements **********************************************************************************************
 
 	@FindBy(css = "#RCLASS_ig")
@@ -761,11 +1137,17 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
 	public WebElement ClassAddRowButton;
 
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement ClassSaveButton;
+
 	@FindBy(css = "#SC_IG_ig")
 	public WebElement SubClassTable;
 
 	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[2]")
 	public WebElement SubClassAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[2]")
+	public WebElement SubClassSaveButton;
 
 	// ************************************************************ Customers Address Screen Elements **********************************************************************************************
 
@@ -778,6 +1160,32 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#R217780171403918608 .t-Region-body")
 	public WebElement CustomerAddressRegionBody;
 
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement CustomerAddressSaveButton;
+
+	@FindBy(css = "#P25_GEN_POL_BRANCH_error")
+	public WebElement LocationCAErrorMsg;
+
+	@FindBy(css = "#P25_GEN_POL_OFFICE_error")
+	public WebElement OfficeErrorMsg;
+
+	@FindBy(css = "#P25_GEN_ENDT_NO_error")
+	public WebElement EndtNoErrorMsg;
+
+	@FindBy(css = "#P25_GEN_ENDT_YEAR_error")
+	public WebElement EndtYearErrorMsg;
+
+	@FindBy(css = "#P25_GEN_ENDT_TYPE_error")
+	public WebElement EndtTypeErrorMsg;
+
+	@FindBy(css = "#P25_GEN_DEPT_NO_error")
+	public WebElement DepartmentCAErrorMsg;
+
+	@FindBy(css = "#P25_GEN_CLASS_OF_BUSINESS_error")
+	public WebElement COBErrorMsg;
+
+	@FindBy(css = "#P25_GEN_SOURCE_error")
+	public WebElement SourceErrorMsg;
 
 	// ************************************************************ Users Definition Elements **********************************************************************************************
 
@@ -916,6 +1324,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#USER_IG")
 	public WebElement UserTable;
 
+	@FindBy(xpath = "//div[@id='USER_IG']//table[contains(@class,'a-GV-table')]//tbody//tr[1]//td[1]//a")
+	public WebElement UserNo;
+
 	// ************************************************************ Roles Definition Elements **********************************************************************************************
 
 	@FindBy(css = "#ROLES_ig")
@@ -924,11 +1335,17 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
 	public WebElement RolesAddRowButton;
 
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement RolesSaveButton;
+
 	@FindBy(css = "#roleDet_ig")
 	public WebElement RolesDetTable;
 
 	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[2]")
 	public WebElement RolesDetAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[2]")
+	public WebElement RolesDetSaveButton;
 
 	// ************************************************************ Users' Privileges On Locations & Branches Elements **********************************************************************************************
 
@@ -944,11 +1361,17 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "(//span[contains(@class,'a-Button-label')][normalize-space()='Add Row'])[1]")
 	public WebElement LocationAddRowButton;
 
-	@FindBy(css = "#loc_ig_grid_vc")
+	@FindBy(xpath = "(//span[contains(@class,'a-Button-label')][normalize-space()='Save'])[1]")
+	public WebElement LocationSaveButton;
+
+	@FindBy(css = "#UR_IG_ig")
 	public WebElement UserRoleTable;
 
 	@FindBy(xpath = "(//span[contains(@class,'a-Button-label')][normalize-space()='Add Row'])[2]")
 	public WebElement UserRoleAddRowButton;
+
+	@FindBy(xpath = "(//span[contains(@class,'a-Button-label')][normalize-space()='Save'])[2]")
+	public WebElement UserRoleSaveButton;
 
 
 	// ************************************************************ Change Password Elements **********************************************************************************************
@@ -1012,6 +1435,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "(//button[@data-action='selection-add-row'])[1]")
 	public WebElement TransactionTypeAddRow;
 
+	@FindBy(xpath = "(//span[normalize-space()='Save'])[1]")
+	public WebElement TransactionTypeSaveButton;
+
 
 	// ************************************************************ User Privileges On Claim Payments  Elements **********************************************************************************************
 
@@ -1021,11 +1447,17 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#P54_AUTHORITY")
 	public WebElement AuthorityCombobox;
 
+	@FindBy(css = "#P54_USER_ID_DISPLAY")
+	public WebElement UserIdText;
+
 	@FindBy(css = "#UAP_ID_ig")
 	public WebElement UAPTable;
 
 	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
 	public WebElement UAPAddRow;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement UAPSaveButton;
 
 
 	// ************************************************************ User Access Violations Elements **********************************************************************************************
@@ -1045,11 +1477,17 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#P30_USER_ID")
 	public WebElement UserIdCombobox;
 
+	@FindBy(css = "#P30_USER_NAME_DISPLAY")
+	public WebElement UserNameText;
+
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
 	public WebElement UserQuotationPostingAddRow;
 
 	@FindBy(css = "#UQP_ID_ig")
 	public WebElement UserQuotationPostingTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement UserQuotationPostingSaveButton;
 
 
 	// ************************************************************ Link Region/City Screen Elements **********************************************************************************************
@@ -1178,6 +1616,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
 	public WebElement CommissionDefinitionAddRowButton;
 
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement CommissionDefinitionSaveButton;
+
 
 	// ************************************************************ Import From Excel Advanced Elements **********************************************************************************************
 
@@ -1237,6 +1678,22 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#P49_XMR_NO_OF_COLUMNS_error")
 	public WebElement NoOfColumnsEDErrorMsg;
 
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Columns']")
+	public WebElement ColumnsTab;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
+	public WebElement ColumnsAddRowButton;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
+	public WebElement ColumnsSaveButton;
+
+	@FindBy(xpath = "//a[contains(@class,'a-RDS-link') and @role='tab' and normalize-space()='Constraints']")
+	public WebElement ConstraintsTab;
+
+	@FindBy(css = "#R143514321170915059_ig")
+	public WebElement ConstraintsTable;
+
+
 
 	// ************************************************************ Mail And SMS Notification Configuration Elements **********************************************************************************************
 
@@ -1266,6 +1723,12 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(css = "#P42_MAIL_PORT_error")
 	public WebElement SmtpPortErrorMsg;
+
+	@FindBy(css = "#MAIL_IG_ig_toolbar_search_field")
+	public WebElement MailSetupTableSearch;
+
+	@FindBy(xpath = "//td[@role='gridcell']//a")
+	public WebElement MailSetupTableEdit;
 
 
 	// ************************************************************ Mail and SMS Notifications Elements **********************************************************************************************
@@ -1384,6 +1847,186 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#P61_WAS_PASSWORD_error")
 	public WebElement PasswordWSSErrorMsg;
 
+
+
+	// ************************************************************ FGA Address Elements **********************************************************************************************
+
+	@FindBy(css = "#R18543027120721613_ig")
+	public WebElement FGAAddressTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement FGAAddressAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement FGAAddressSaveButton;
+
+
+	// ************************************************************ Household Contents Definition Elements **********************************************************************************************
+
+	@FindBy(css = "#R37774520111007016_ig")
+	public WebElement HouseholdContentsDefinitionTable;
+
+	@FindBy(css = "#P40_SYS_MINOR")
+	public WebElement SysMinorCombobox;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement HouseholdContentsDefinitionAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement HouseholdContentsDefinitionSaveButton;
+
+
+	// ************************************************************ FGA Rates Tariff Elements **********************************************************************************************
+
+	@FindBy(css = "#R17804292463202872_ig")
+	public WebElement FGARatesTariffTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement FGARatesTariffAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement FGARatesTariffSaveButton;
+
+
+	// ************************************************************ FGA Rates (Percentages&Permils) Elements **********************************************************************************************
+
+	@FindBy(css = "#R17863871779784685_ig")
+	public WebElement FGARatesPercentagesPermilsTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement FGARatesPercentagesPermilsAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement FGARatesPercentagesPermilsSaveButton;
+
+
+	// ************************************************************ Short Period Tariff(FGA Enorsement) Elements **********************************************************************************************
+
+	@FindBy(css = "#R17905022704003627_ig")
+	public WebElement ShortPeriodTariffFGAEndorsementTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement ShortPeriodTariffFGAEndorsementAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement ShortPeriodTariffFGAEndorsementSaveButton;
+
+
+	// ************************************************************ Earthquake Rate Elements **********************************************************************************************
+
+	@FindBy(css = "#R17888510743906786_ig")
+	public WebElement EarthquakeRateTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement EarthquakeRateAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement EarthquakeRateSaveButton;
+
+
+	// ************************************************************ Earthquake Rate Elements **********************************************************************************************
+
+	@FindBy(xpath = "//span[normalize-space()='Categories']")
+	public WebElement CategoriesTab;
+
+	@FindBy(css = "#AutoSr_3_ig")
+	public WebElement CategoriesTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
+	public WebElement CategoriesAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Professions']")
+	public WebElement ProfessionsTab;
+
+	@FindBy(css = "#AutoSr_14_ig")
+	public WebElement ProfessionsTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[2]")
+	public WebElement ProfessionsAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Linking']")
+	public WebElement LinkingTab;
+
+	@FindBy(css = "#AutoSr_23_ig")
+	public WebElement LinkingTable;
+
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[3]")
+	public WebElement LinkingAddRowButton;
+
+
+	// ************************************************************ Coverage Limit AOO-AAA Elements **********************************************************************************************
+
+	@FindBy(css = "#R9967642300309719_ig")
+	public WebElement CoverageLimitAOO_AAATable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement CoverageLimitAOO_AAAAddRowButton;
+
+
+	// ************************************************************ Malpractice Tariff Definition Elements **********************************************************************************************
+
+	@FindBy(css = "#R9978972625330558_ig")
+	public WebElement MalpracticeTariffDefinitionTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement MalpracticeTariffDefinitionAddRowButton;
+
+
+	// ************************************************************ Malpractice Questions Elements **********************************************************************************************
+
+	@FindBy(css = "#R9995699698371782_ig")
+	public WebElement MalpracticeQuestionsTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement MalpracticeQuestionsAddRowButton;
+
+
+	// ************************************************************ MMP Periods Elements **********************************************************************************************
+
+	@FindBy(css = "#MMP_IG_ig")
+	public WebElement MMPPeriodsTable;
+
+	@FindBy(xpath = "(//button[@data-action='selection-add-row'])[1]")
+	public WebElement MMPPeriodsAddRowButton;
+
+	@FindBy(css = "#P15_TYPE")
+	public WebElement MMPPeriodsCombobox;
+
+
+	// ************************************************************ Travel Calculation Prices Elements **********************************************************************************************
+
+	@FindBy(css = "#R8157961904845469_ig")
+	public WebElement TravelCalculationPricesTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement TravelCalculationPricesAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement TravelCalculationPricesSaveButton;
+
+
+	// ************************************************************ Travel Days Elements **********************************************************************************************
+
+	@FindBy(css = "#R13129382496504989_ig")
+	public WebElement TravelDaysTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement TravelDaysAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement TravelDaysSaveButton;
+
+
+	// ************************************************************ Key Benefits Elements **********************************************************************************************
+
+	@FindBy(css = "#R14520613656192732_ig")
+	public WebElement KeyBenefitsTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement KeyBenefitsAddRowButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement KeyBenefitsSaveButton;
 
 
 	// ************************************************************************************************************************************************************************************
@@ -1563,6 +2206,17 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
 
 	}
+
+	public void wait_Element_Appear(String elementName) throws Exception {
+		WebDriverWait wait = new WebDriverWait(webDriverProvider.get(), Duration.ofSeconds(30));
+
+		// Option 1 (recommended): wait until element is visible (present + displayed)
+		WebElement el = wait.until(ExpectedConditions.visibilityOf(getElement(this, elementName)));
+		if (el == null) {
+			throw new Exception("Element '" + elementName + "' did not appear (not visible) within timeout.");
+		}
+	}
+
 
 	public void navigate(String direction) {
 		if (direction.equals("back")) {
@@ -2035,4 +2689,75 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 		log.info("Tab '" + elementName + "' selected=" + isSelected);
 	}
+
+	public String getSelectedDropdownValue(String elementName) throws Exception {
+		WebElement el = getElementWithWait(this, elementName);
+
+		// 1) If it's a real <select>
+		try {
+			Select select = new Select(el);
+			return select.getFirstSelectedOption().getText().trim();
+		} catch (UnexpectedTagNameException ignored) {
+			// not a <select>
+		}
+
+		// 2) If it's an input-based LOV/combobox
+		String tag = el.getTagName() == null ? "" : el.getTagName().toLowerCase();
+		if ("input".equals(tag) || "textarea".equals(tag)) {
+			String v = el.getAttribute("value");
+			return v == null ? "" : v.trim();
+		}
+
+		// 3) Fallback for other types
+		String t = el.getText();
+		return t == null ? "" : t.trim();
+	}
+
+	public void assertSelectedDropdownValueEquals(String elementName, String expectedText) throws Exception {
+		String actual = getSelectedDropdownValue(elementName);
+
+		if (actual == null) actual = "";
+		if (expectedText == null) expectedText = "";
+
+		if (!actual.equalsIgnoreCase(expectedText.trim())) {
+			throw new AssertionError("Dropdown '" + elementName + "' expected selected value '"
+					+ expectedText + "' but found '" + actual + "'");
+		}
+
+		log.info("Assert dropdown '" + elementName + "' selected='" + actual + "'");
+	}
+
+	/**
+	 * For APEX Popup LOVs: also assert the RETURN value stored in the hidden item.
+	 * Example: P61_WAS_API_STATUS -> hidden is usually P61_WAS_API_STATUS_HIDDEN
+	 */
+	public String getApexLovReturnValue(String lovElementName) throws Exception {
+		WebElement lov = getElementWithWait(this, lovElementName);
+
+		String id = lov.getAttribute("id");
+		if (id == null || id.trim().isEmpty()) {
+			throw new Exception("LOV '" + lovElementName + "' has no id attribute to resolve *_HIDDEN item.");
+		}
+
+		String hiddenId = id + "_HIDDEN";
+		WebElement hidden = webDriverProvider.get().findElement(By.id(hiddenId));
+
+		String v = hidden.getAttribute("value");
+		return v == null ? "" : v.trim();
+	}
+
+	public void assertApexLovReturnValueEquals(String lovElementName, String expectedReturnValue) throws Exception {
+		String actual = getApexLovReturnValue(lovElementName);
+
+		if (actual == null) actual = "";
+		if (expectedReturnValue == null) expectedReturnValue = "";
+
+		if (!actual.equals(expectedReturnValue.trim())) {
+			throw new AssertionError("APEX LOV '" + lovElementName + "' expected RETURN value '"
+					+ expectedReturnValue + "' but found '" + actual + "'");
+		}
+
+		log.info("Assert APEX LOV '" + lovElementName + "' returnValue='" + actual + "'");
+	}
+
 }

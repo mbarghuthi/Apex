@@ -40,8 +40,22 @@ And [Assertion] Verify 'SmtpPortErrorMsg' contains 'p:SmtpPortEmptyErrorMsg' tex
 And [Input] Set 'SmtpPortInput' value to 'random'
 And [Input] I click on 'CreateButton'
 And [Assertion] Verify 'SmtpPortErrorMsg' contains 'p:SmtpPortInvalidErrorMsg' text
-And [Input] I click on 'CancelButton'
+And [Input] Set 'EmailSmtpInput' value to 'randomen'
+And [Action] I get value from 'EmailSmtpInput' and save it as 'EmailSmtpText'
+And [Input] Set 'SmtpPortInput' value to 'random2'
+And [Action] I get value from 'SmtpPortInput' and save it as 'SmtpPortText'
+And [Input] I click on 'CreateButton'
+And [Progress] I wait for '3' sec
 And [Javascript] I switch back to main content
+And [Input] Set 'MailSetupTableSearch' value to 'statemanager:EmailSmtpText'
+And [Input] I press Enter on 'MailSetupTableSearch'
+And [Progress] I wait for '3' sec
+And [Input] I click on 'MailSetupTableEdit'
+And [Javascript] I switch to iframe 'MailSetupIframe'
+And [Input] I click on 'DeleteButton'
+And [Progress] I wait for '3' sec
+And [Javascript] I switch back to main content
+And [Input] I click on 'DeleteButtonPopup'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'

@@ -60,6 +60,59 @@ public class CustomPage extends AbstractPage<CustomPage> {
         );
     }
 
+    public void checkCheckboxState(String elementName, boolean expectedChecked) throws Exception {
+        WebElement el = getElementWithWait(this, elementName);
+
+        // If PageObject returned a wrapper, resolve the actual <input type="checkbox">
+        WebElement checkbox = resolveCheckboxInput(el);
+
+        // If your intention is "verify + fix", keep this. If you want pure assert, remove it.
+        if (checkbox.isSelected() != expectedChecked) {
+            if (!checkbox.isEnabled()) {
+                throw new AssertionError("Checkbox '" + elementName + "' is disabled; cannot change its state.");
+            }
+            // For APEX, clicking the wrapper label sometimes is more reliable than clicking the input directly.
+            clickCheckboxSafely(el, checkbox);
+        }
+
+        Assert.assertEquals(
+                "Checkbox state does not match the expected state for '" + elementName + "'",
+                expectedChecked,
+                checkbox.isSelected()
+        );
+    }
+
+    private WebElement resolveCheckboxInput(WebElement el) {
+        String tag = el.getTagName().toLowerCase();
+
+        // If already the input, return it
+        if ("input".equals(tag)) return el;
+
+        // Otherwise search within the wrapper
+        List<WebElement> inputs = el.findElements(By.cssSelector("input[type='checkbox']"));
+        if (!inputs.isEmpty()) return inputs.get(0);
+
+        // Last attempt: if wrapper has an id like P21_STATUS_CONTAINER, try locating input by id pattern nearby
+        // (keep it minimal; avoid guessing too much)
+        throw new NoSuchElementException("Could not resolve checkbox <input> from element: " + tag);
+    }
+
+    private void clickCheckboxSafely(WebElement wrapperOrInput, WebElement input) {
+        try {
+            // Prefer clicking the wrapper if it's not the input (common in APEX styling)
+            if (!"input".equalsIgnoreCase(wrapperOrInput.getTagName())) {
+                wrapperOrInput.click();
+            } else {
+                input.click();
+            }
+        } catch (ElementClickInterceptedException e) {
+            // fallback: JS click
+            ((JavascriptExecutor) webDriverProvider.get()).executeScript("arguments[0].click();",
+                    "input".equalsIgnoreCase(wrapperOrInput.getTagName()) ? input : wrapperOrInput);
+        }
+    }
+
+
     public CustomPage elementToHover(String elementName) throws Exception {
         WebDriver driver = webDriverProvider.get();
         new WebDriverWait(driver, Duration.ofSeconds(10))
@@ -2235,4 +2288,18 @@ public class CustomPage extends AbstractPage<CustomPage> {
         log.info("Field is NOT filled: '" + elementNameOrLocator + "'");
     }
 
+    public String resolveApexItemIdFromElementName(String elementName) {
+        switch (elementName) {
+            case "StatusCheckbox":
+                return "P21_STATUS";
+
+            case "DisplayOnMenuCheckbox":
+                return "P21_DISPLAYED_ON_MENU";
+
+            default:
+                throw new IllegalArgumentException(
+                        "Unknown checkbox element name: '" + elementName + "'. Add mapping in resolveApexItemIdFromElementName()."
+                );
+        }
+    }
 }

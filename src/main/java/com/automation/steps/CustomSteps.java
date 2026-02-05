@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -607,4 +608,26 @@ public class CustomSteps extends AbstractSteps {
 	public void verify_element_is_not_filled(@Named("elementName") String elementName) throws Exception {
 		customPage.assertFieldIsNotFilled(elementName);
 	}
+
+	@Given("[Assertion] Verify APEX checkbox '$elementName' is checked")
+	@When("[Assertion] Verify APEX checkbox '$elementName' is checked")
+	@Then("[Assertion] Verify APEX checkbox '$elementName' is checked")
+	public void assert_apex_checkbox_checked_by_element_name(String elementName) {
+		elementName = elementName.trim();
+
+		String itemId = customPage.resolveApexItemIdFromElementName(elementName); // e.g. StatusCheckbox -> P21_STATUS
+
+		WebDriver driver = webDriverProvider.get();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		By checkedLocator = By.cssSelector(
+				"#" + itemId + "_CONTAINER input[type='checkbox']:checked, " +
+						"input#" + itemId + ":checked, " +
+						"input[id^='" + itemId + "_']:checked"
+		);
+
+		WebElement checked = wait.until(ExpectedConditions.presenceOfElementLocated(checkedLocator));
+		Assert.assertNotNull("Checkbox '" + elementName + "' (" + itemId + ") is not checked", checked);
+	}
+
 }

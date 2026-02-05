@@ -40,14 +40,14 @@ And [Action] I get value from 'EnUserNameInput' and save it as 'EnUserName'
 And [Input] Set 'UserIdInput' value to 'random'
 And [Action] I get value from 'UserIdInput' and save it as 'UserId'
 And [Input] Set 'ArUserNameInput' value to 'randomar'
-And [Action] I get value from 'EnUserNameInput' and save it as 'ArUserName'
+And [Action] I get value from 'ArUserNameInput' and save it as 'ArUserName'
 And [Input] Set 'UserEmailInput' value to 'statemanageremail:EnUserName'
+And [Action] I get value from 'UserEmailInput' and save it as 'UserEmail'
 And [Input] Set 'UserMobileInput' value to 'random5'
 And [Action] I get value from 'UserMobileInput' and save it as 'UserMobile'
 And [Input] Select 'p:AmmarAhmedHamzaGhurab' value from 'UserManagerInput' dropdown list
 And [Input] Set 'UserPasswordInput' value to 'p:password'
 And [Input] Set 'ConfirmPasswordInput' value to 'p:password'
-!-- PasswordExpiryInput
 And [Assertion] Verify 'PasswordExpiryInput' value equals sysdate plus '1' years
 And [Input] Select 'p:SaudiArabia' value from 'UserDefaultBranchCombobox' dropdown list
 And [Input] Select 'p:KSAHeadOffice' value from 'UserDefaultOfficeCombobox' dropdown list
@@ -63,6 +63,7 @@ And [Input] Select 'p:NormalUser' value from 'UserRoleIdPopupLOVSearchBar' dropd
 !-- And [Input] Select 'p:WorkshopUser' value from 'WorkshopTypesCombobox' dropdown list
 And [Input] I click on 'WorkshopTypesCombobox'
 And [Input] Select 'p:WorkshopUser' value from 'WorkshopTypesPopupLOVSearchBar' dropdown list
+And [Progress] I wait for '3' sec
 And [Input] Select 'p:No' value from 'WorkFlowCombobox' dropdown list
 And [Input] Select 'p:Broker' value from 'SellerTypeCombobox' dropdown list
 And [Input] Set 'MenapayEmployeeNoInput' value to 'random5'
@@ -70,13 +71,18 @@ And [Input] Set 'MappedDmsUserInput' value to 'random5'
 And [Input] Select 'p:Workshop' value from 'ApplicationTypeCombobox' dropdown list
 And [Input] Set 'RemarksInput' value to 'random'
 And [Input] I click on 'UserTypeAgentRadioLabel'
-!-- UserCreatedDateInput
 And [Assertion] Verify 'UserCreatedDateInput' value equals sysdate
-!-- And [Input] I click on 'CreateButton'
-!-- And [Input] Set 'SearchFieldUserTable' value to 'statemanager:EnUserName'
-!-- And [Input] I press Enter on 'SearchFieldUserTable'
-!-- After Create
-!-- And [Assertion] Verify Radio  'UserTypeAgentRadio' is clicked on
+And [Input] I click on 'CreateButton'
+And [Input] Set 'SearchFieldUserTable' value to 'statemanager:EnUserName'
+And [Input] I press Enter on 'SearchFieldUserTable'
+And [Progress] I wait for '3' sec
+And [Input] I click on 'UserNo'
+And [Assertion] Verify 'EnUserNameInput' contains 'statemanager:EnUserName' text
+And [Assertion] Verify 'UserIdInput' contains 'statemanager:UserId' text
+And [Assertion] Verify 'UserEmailInput' contains 'statemanager:UserEmail' text
+And [Assertion] Verify 'UserMobileInput' contains 'statemanager:UserMobile' text
+And [Assertion] Verify 'ArUserNameInput' contains 'statemanager:ArUserName' text
+And [Input] I click on 'CancelButton'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
@@ -96,11 +102,22 @@ And [Input] I click on 'RolesDefinitionSideMenu'
 And [Assertion] Verify 'RolesTable' is visible
 And [Input] I click on 'RolesAddRowButton'
 And [Assertion] Verify IG 'RolesTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'RolesSaveButton'
+!-- And [Input] I click on 'RolesSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'RolesTable'
+And [Navigation] I reload page
 And [Progress] I wait for '3' sec
 And [Assertion] Verify 'RolesDetTable' is visible
 And [Input] I click on 'RolesDetAddRowButton'
 And [Assertion] Verify IG 'RolesDetTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'RolesDetSaveButton'
+!-- And [Input] I click on 'RolesDetSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'RolesDetTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
@@ -125,11 +142,21 @@ And [Assertion] Verify 'LocationTable' is visible
 And [Input] I click on 'LocationAddRowButton'
 And [Progress] I wait for '3' sec
 And [Assertion] Verify IG 'LocationTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'LocationSaveButton'
+!-- And [Input] I click on 'LocationSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'LocationTable'
 And [Progress] I wait for '5' sec
 And [Assertion] Verify 'UserRoleTable' is visible
-!-- And [Input] I click on 'UserRoleAddRowButton'
-!-- And [Assertion] Verify IG 'UserRoleTable' has an empty inserted row
+And [Input] I click on 'UserRoleAddRowButton'
+And [Assertion] Verify IG 'UserRoleTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'UserRoleSaveButton'
+!-- And [Input] I click on 'LocationSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 !-- And [Action] I delete the inserted row in IG 'UserRoleTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
@@ -179,6 +206,14 @@ And [Progress] I wait for '5' sec
 And [Input] Set 'ChangePasswordUserPasswordInput' value to 'p:password'
 And [Input] Set 'ChangePasswordConfirmPasswordInput' value to 'p:password'
 And [Input] I click on 'ChangePasswordApplyChangesButton'
+And [Progress] I wait for '7' sec
+And [Input] I click on 'UserDDL'
+And [Input] I click on 'LogoutButton'
+And [Assertion] Verify 'loginButton' is present
+And [Progress] I wait for '3' sec
+And [Input] I login as 'p:adminUsername' with password 'p:password'
+And [Assertion] Verify 'UserDDL' contains 'p:adminUsername' text
+And [Progress] I wait for '3' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
@@ -200,6 +235,7 @@ And [Assertion] Verify 'AuthorizedButtonsTable' is visible
 And [Input] I click on 'AuthorizedButtonsApplyChangesButton'
 And [Assertion] Verify IG 'AuthorizedButtonsTable' has an empty inserted row
 And [Action] I delete the inserted row in IG 'AuthorizedButtonsTable'
+And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
@@ -230,6 +266,11 @@ And [Input] Select 'p:Agent' value from 'SourceCombobox' dropdown list
 And [Assertion] Verify 'TransactionTypeTable' is visible
 And [Input] I click on 'TransactionTypeAddRow'
 And [Assertion] Verify IG 'TransactionTypeTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'TransactionTypeSaveButton'
+!-- And [Input] I click on 'TransactionTypeSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
@@ -251,9 +292,13 @@ And [Input] I click on 'UserCombobox'
 And [Input] Select 'p:TestingAutomationId' value from 'PopupLOVSearchBar' dropdown list
 And [Progress] I wait for '2' sec
 And [Input] Select 'p:paymentEstimate' value from 'AuthorityCombobox' dropdown list
+And [Progress] I wait 'UserIdText' To be appear
 And [Assertion] Verify 'UAPTable' is visible
 And [Input] I click on 'UAPAddRow'
 And [Assertion] Verify IG 'UAPTable' has an empty inserted row
+And [Input] I click on 'UAPSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'UAPTable'
 And [Input] I click on 'SaveButton'
 And [Progress] I wait for '7' sec
@@ -316,9 +361,15 @@ And [Input] I click on 'UserPrivilegesOnQuotationPostingSideMenu'
 And [Assertion] Verify 'UserPrivilegeOnQuotationPostingTitle' equals 'p:UserPrivilegeOnQuotationPosting' text
 And [Input] I click on 'UserIdCombobox'
 And [Input] Select 'p:autouId' value from 'PopupLOVSearchBar' dropdown list
+And [Progress] I wait 'UserNameText' To be appear
 And [Assertion] Verify 'UserQuotationPostingTable' is visible
 And [Input] I click on 'UserQuotationPostingAddRow'
 And [Assertion] Verify IG 'UserQuotationPostingTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'UserQuotationPostingSaveButton'
+!-- And [Input] I click on 'UserQuotationPostingSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'UserQuotationPostingTable'
 And [Input] I click on 'SaveButton'
 And [Progress] I wait for '7' sec

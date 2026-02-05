@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.automation.pages.CannedPage;
 
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -168,11 +169,54 @@ public class CannedSteps extends AbstractSteps {
 		cannedPage.checkElementText(elementName, value, false);
 	}
 
+	private String resolveValue(String value) {
+		if (value == null) return "";
+
+		// Fix common Arabic mojibake (UTF-8 bytes interpreted as ISO-8859-1/Windows-1252)
+		java.util.function.Function<String, String> fixMojibake = (s) -> {
+			if (s == null) return "";
+			// Heuristic markers often seen in corrupted UTF-8 Arabic strings
+			if (s.contains("Ø") || s.contains("Ù") || s.contains("Ã") || s.contains("Â")) {
+				return new String(s.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+			}
+			return s;
+		};
+
+		String v = value.trim();
+		String lower = v.toLowerCase();
+
+		if (lower.startsWith("statemanageremail:")) {
+			String key = v.substring("statemanageremail:".length()).trim();
+			Object saved = stateManager.get(key);
+			String s = (saved == null ? "" : String.valueOf(saved));
+			return fixMojibake.apply(s) + "@gmail.com";
+		}
+
+		if (lower.startsWith("statemanager:")) {
+			String key = v.substring("statemanager:".length()).trim();
+			Object saved = stateManager.get(key);
+			String s = (saved == null ? "" : String.valueOf(saved));
+			return fixMojibake.apply(s);
+		}
+
+		// keep your existing "p:" convention if you want it for assertions too
+		if (lower.startsWith("p:")) {
+			String key = v.substring(2).trim();
+			Object saved = stateManager.get(key);
+			String s = (saved == null ? "" : String.valueOf(saved));
+			return fixMojibake.apply(s);
+		}
+
+		// IMPORTANT: also fix plain strings (because PropertyParameterConverter may already return mojibake)
+		return fixMojibake.apply(v);
+	}
+
 	// step to check element partial text
 	@Given("[Assertion] Verify '$elementName' contains '$value' text")
 	@When("[Assertion] Verify '$elementName' contains '$value' text")
 	@Then("[Assertion] Verify '$elementName' contains '$value' text")
 	public void check_element_partial_text(String elementName, String value) throws Exception {
+		value = resolveValue(value);
 		cannedPage.checkElementpartialText(elementName, value, true);
 	}
 
@@ -181,6 +225,7 @@ public class CannedSteps extends AbstractSteps {
 	@When("[Assertion] Verify '$elementName' not contains '$value' text")
 	@Then("[Assertion] Verify '$elementName' not contains '$value' text")
 	public void check_element_should_not_have_partial_text(String elementName, String value) throws Exception {
+		value = resolveValue(value);
 		cannedPage.checkElementpartialText(elementName, value, false);
 	}
 
@@ -490,6 +535,14 @@ public class CannedSteps extends AbstractSteps {
 		cannedPage.wait_Element_Disappear(elementName);
 	}
 
+	// wait element to be appear
+	@Given("[Progress] I wait '$elementName' To be appear")
+	@When("[Progress] I wait '$elementName' To be appear")
+	@Then("[Progress] I wait '$elementName' To be appear")
+	public void waitElementAppear(String elementName) throws Exception {
+		cannedPage.wait_Element_Appear(elementName);
+	}
+
 	//Step to handle java script
 	@Given("[Javascript] I accept alert")
 	@When("[Javascript] I accept alert")
@@ -567,25 +620,32 @@ public class CannedSteps extends AbstractSteps {
 				DateTimeFormatter.ofPattern("M/d/yyyy")
 		};
 
-		LocalDate actualDate = null;
+		java.util.LinkedHashSet<LocalDate> candidates = new java.util.LinkedHashSet<>();
+
 		for (DateTimeFormatter f : allowed) {
 			try {
-				actualDate = LocalDate.parse(actual, f);
-				break;
+				candidates.add(LocalDate.parse(actual, f));
 			} catch (Exception ignored) { }
 		}
 
-		if (actualDate == null) {
+		if (candidates.isEmpty()) {
 			throw new AssertionError("Unrecognized date format '" + actual + "'");
 		}
 
-		if (!expectedDate.equals(actualDate)) {
-			throw new AssertionError(
-					"Expected sysdate '" + expectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
-							"' or '" + expectedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")) +
-							"' but found '" + actual + "'"
-			);
+		// PASS if any valid interpretation matches sysdate
+		if (candidates.contains(expectedDate)) {
+			return;
 		}
+
+		DateTimeFormatter ddMMyyyy = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter MMddyyyy = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
+		throw new AssertionError(
+				"Expected sysdate '" + expectedDate.format(ddMMyyyy) +
+						"' or '" + expectedDate.format(MMddyyyy) +
+						"' but found '" + actual +
+						"'. Parsed candidates: " + candidates
+		);
 	}
 
 	@Given("[Assertion] Verify '$elementName' value equals sysdate with format '$pattern'")
@@ -747,6 +807,34 @@ public class CannedSteps extends AbstractSteps {
 	@Then("[Assertion] Verify tab '$elementName' is not selected")
 	public void verify_tab_not_selected(String elementName) throws Exception {
 		cannedPage.assertApexTabSelected(elementName, false);
+	}
+
+	@Given("[Assertion] Verify '$elementName' selected value equals '$expected'")
+	@When("[Assertion] Verify '$elementName' selected value equals '$expected'")
+	@Then("[Assertion] Verify '$elementName' selected value equals '$expected'")
+	public void assert_dropdown_selected_value_equals(String elementName, String expected) throws Exception {
+		// support p: keys if you use them
+		if (expected != null && expected.toLowerCase().startsWith("p:")) {
+			String key = expected.substring(2).trim();
+			Object v = stateManager.get(key);
+			expected = v == null ? "" : String.valueOf(v);
+		}
+
+		cannedPage.assertSelectedDropdownValueEquals(elementName, expected);
+	}
+
+	@Given("[Assertion] Verify '$elementName' LOV return value equals '$expectedReturn'")
+	@When("[Assertion] Verify '$elementName' LOV return value equals '$expectedReturn'")
+	@Then("[Assertion] Verify '$elementName' LOV return value equals '$expectedReturn'")
+	public void assert_lov_return_value_equals(String elementName, String expectedReturn) throws Exception {
+		// support p: keys if you use them
+		if (expectedReturn != null && expectedReturn.toLowerCase().startsWith("p:")) {
+			String key = expectedReturn.substring(2).trim();
+			Object v = stateManager.get(key);
+			expectedReturn = v == null ? "" : String.valueOf(v);
+		}
+
+		cannedPage.assertApexLovReturnValueEquals(elementName, expectedReturn);
 	}
 
 }

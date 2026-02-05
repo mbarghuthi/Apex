@@ -1,0 +1,69 @@
+<story path="stories/FGA/TC_004_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_004_Apex 001 Apex Test Case FGA - Travel Setup - Travel Calculation Prices">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TravelSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;TravelCalculationPricesTitle&apos; equals &apos;p:TravelCalculationPrices&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;TravelCalculationPricesTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;TravelCalculationPricesTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesSaveButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 002 Apex Test Case FGA - Travel Setup - Travel Days">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TravelSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TravelDaysSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;TravelDaysTitle&apos; equals &apos;p:TravelDays&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;TravelDaysTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;TravelDaysAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;TravelDaysTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_004_Apex 003 Apex Test Case FGA - Travel Setup - Key Benefits">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TravelSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;KeyBenefitsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;KeyBenefitsTitle&apos; equals &apos;p:KeyBenefits&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;KeyBenefitsTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;KeyBenefitsAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;KeyBenefitsTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;KeyBenefitsSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;KeyBenefitsSaveButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+</story>

@@ -21,6 +21,16 @@ And [Assertion] Verify tree 'ProgramsTree' is 'collapsed'
 And [Input] I click on 'ExpandCollapseButton'
 And [Progress] I wait for '3' sec
 And [Assertion] Verify tree 'ProgramsTree' is 'expanded'
+And [Input] I click on 'QuotationsChild'
+And [Javascript] I switch to iframe 'ProgramDetailsIframe'
+And [Assertion] Verify 'ApplicationCombobox' selected value equals 'Quotation'
+And [Javascript] I switch back to main content
+And [Javascript] I switch to iframe 'ProgramDetailsIframe'
+And [Assertion] Verify APEX checkbox 'StatusCheckbox' is checked
+And [Assertion] Verify APEX checkbox 'DisplayOnMenuCheckbox' is checked
+And [Javascript] I switch back to main content
+And [Input] I click on 'ProgramIframeCloseButton'
+And [Javascript] I switch back to main content
 And [Input] I click on 'ExpandCollapseButton'
 And [Progress] I wait for '3' sec
 And [Assertion] Verify tree 'ProgramsTree' is 'collapsed'
@@ -39,13 +49,23 @@ When [Input] I click on 'ControlAndMoniteringCardDashboard'
 And [Input] I click on 'SystemCodeRanksCardDashboard'
 And [Assertion] Verify 'SystemCodeRanksMajorTitle' equals 'p:SystemCodeRanksMajor' text
 And [Assertion] Verify 'SystemCodeRanksMajorTable' is visible
-And [Input] I click on 'SystemCodeRanksMajorButton'
+And [Input] I click on 'SystemCodeRanksMajorAddButton'
 And [Assertion] Verify IG 'SystemCodeRanksMajorTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'SystemCodeRanksMajorSaveButton'
+And [Input] I click on 'SystemCodeRanksMajorSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'SystemCodeRanksMajorTable'
 And [Progress] I wait for '5' sec
 And [Assertion] Verify 'SystemCodeRanksMinorTable' is visible
-And [Input] I click on 'SystemCodeRanksMinorButton'
+And [Input] I click on 'SystemCodeRanksMinorAddButton'
 And [Assertion] Verify IG 'SystemCodeRanksMinorTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'SystemCodeRanksMinorSaveButton'
+And [Input] I click on 'SystemCodeRanksMinorSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'SystemCodeRanksMinorTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
@@ -67,11 +87,21 @@ And [Assertion] Verify 'ErrorMessagesTitle' equals 'p:ErrorMessages' text
 And [Assertion] Verify 'ErrorMessagesTable' is visible
 And [Input] I click on 'ErrorMessagesAddRowButton'
 And [Assertion] Verify IG 'ErrorMessagesTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'ErrorMessagesSaveButton'
+And [Input] I click on 'ErrorMessagesSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'ErrorMessagesTable'
 And [Progress] I wait for '5' sec
 And [Assertion] Verify 'ErrorMessagesDetailsTable' is visible
 And [Input] I click on 'ErrorMessagesDetailsAddRowButton'
 And [Assertion] Verify IG 'ErrorMessagesDetailsTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'ErrorMessagesDetailsSaveButton'
+And [Input] I click on 'ErrorMessagesDetailsSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'ErrorMessagesDetailsTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
@@ -156,7 +186,6 @@ And [Input] I click on 'ControlAndMoniteringSideMenu'
 And [Input] I click on 'AmanSetupSideMenu'
 And [Input] I click on 'AddressOrderingSideMenu'
 And [Assertion] Verify 'AddressOrderingTitle' equals 'p:AddressOrdering' text
-
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
@@ -204,6 +233,11 @@ And [Assertion] Verify 'DomicileLocationsTitle' equals 'p:DomicileLocations' tex
 And [Assertion] Verify 'DomicileLocationsTable' is visible
 And [Input] I click on 'DomicileLocationsAddRowButton'
 And [Assertion] Verify IG 'DomicileLocationsTable' has an empty inserted row
+And [Progress] I wait for '5' sec
+And [Input] I click on 'DomicileLocationsSaveButton'
+And [Input] I click on 'DomicileLocationsSaveButton'
+And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
+And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'DomicileLocationsTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
@@ -225,6 +259,16 @@ And [Input] I click on 'SettingsTab'
 And [Assertion] Verify tab 'SettingsTab' is selected
 And [Input] I click on 'ApplicationConfigurationTab'
 And [Assertion] Verify tab 'ApplicationConfigurationTab' is selected
+!-- table-add save delete
+And [Assertion] Verify 'ApplicationConfigurationTable' is visible
+And [Input] I click on 'ApplicationConfigurationAddRowButton'
+And [Assertion] Verify IG 'ApplicationConfigurationTable' has an empty inserted row
+!-- And [Progress] I wait for '5' sec
+!-- And [Input] I click on 'ApplicationConfigurationSaveButton'
+!-- And [Input] I click on 'ApplicationConfigurationSaveButton'
+!-- And [Assertion] Verify 'AlertMsgBody' contains 'p:ThereAreUnsavedChangesDoYouWantToContinue' text
+!-- And [Input] I click on 'OkButton'
+And [Action] I delete the inserted row in IG 'ApplicationConfigurationTable'
 And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
