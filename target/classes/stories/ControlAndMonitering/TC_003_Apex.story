@@ -128,8 +128,27 @@ And [Assertion] Verify 'FirstNameEnPPErrorMsg' contains 'p:FirstNameEnEmptyError
 And [Assertion] Verify 'LastNameEnPPErrorMsg' contains 'p:LastNameEnEmptyErrorMsg' text
 And [Assertion] Verify 'FirstNameArPPErrorMsg' contains 'p:FirstNameArEmptyErrorMsg' text
 And [Assertion] Verify 'LastNameArPPErrorMsg' contains 'p:LastNameArEmptyErrorMsg' text
+And [Input] Set 'FirstNameEnPPInput' value to 'random2'
+And [Assertion] Verify 'FirstNameEnPPInput' input is empty
+And [Input] Set 'LastNameEnPPInput' value to 'random2'
+And [Assertion] Verify 'LastNameEnPPInput' input is empty
+And [Input] Set 'FirstNameArPPInput' value to 'random2'
+And [Assertion] Verify 'FirstNameArPPInput' input is empty
+And [Input] Set 'LastNameArPPInput' value to 'random2'
+And [Assertion] Verify 'LastNameArPPInput' input is empty
 And [Input] I click on 'CustomerNameCloseButton'
+And [Input] Set 'AccountNoInput' value to 'randomen'
+And [Input] I click on 'PayablePartiesSaveButton'
+And [Assertion] Verify 'AccountNoErrorMsg' contains 'p:AccountNoInvalidErrorMsg' text
 And [Assertion] Verify tab 'CustomerDetailsTab' is selected
+And [Input] Set 'CreditLimitInput' value to 'randomen'
+And [Input] Set 'CreditAmountInput' value to 'randomen'
+And [Navigation] I scroll to top of page
+And [Input] I click on 'PayablePartiesSaveButton'
+And [Navigation] I scroll to 'CreditLimitErrorMsg'
+And [Assertion] Verify 'CreditLimitErrorMsg' contains 'p:CreditLimitInvalidErrorMsg' text
+And [Assertion] Verify 'CreditAmountErrorMsg' contains 'p:CreditAmountInvalidErrorMsg' text
+And [Navigation] I scroll to top of page
 And [Input] I click on 'CustomerDetails2Tab'
 And [Assertion] Verify tab 'CustomerDetails2Tab' is selected
 And [Input] I click on 'AddressTab'

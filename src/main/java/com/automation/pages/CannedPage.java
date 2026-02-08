@@ -81,6 +81,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	public WebElement navControlButton;
 
 // **************************** Side Menu Main ****************************
+	@FindBy(xpath = "//a[normalize-space()='Home']")
+	public WebElement HomeSideMenu;
+
 	@FindBy(xpath = "//span[normalize-space()='Control and Monitering']")
 	public WebElement ControlAndMoniteringSideMenu;
 
@@ -300,6 +303,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	public WebElement KeyBenefitsSideMenu;
 
 // **************************** Card Dashboard ****************************
+	@FindBy(xpath = "//span[normalize-space()='Dashboard']")
+	public WebElement DashboardButton;
+
 	@FindBy(xpath = "//h3[normalize-space()='Quotations']")
 	public WebElement QuotationCardDashboard;
 
@@ -308,6 +314,21 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//h3[normalize-space()='System Code Ranks']")
 	public WebElement SystemCodeRanksCardDashboard;
+
+	@FindBy(xpath = "//h3[normalize-space()='General']")
+	public WebElement GeneralCardDashboard;
+
+	@FindBy(xpath = "//h3[normalize-space()='Motor']")
+	public WebElement MotorCardDashboard;
+
+	@FindBy(xpath = "//h3[normalize-space()='FGA']")
+	public WebElement FGACardDashboard;
+
+	@FindBy(xpath = "//h3[normalize-space()='Accounting']")
+	public WebElement AccountingCardDashboard;
+
+	@FindBy(xpath = "//h3[normalize-space()='Re-insurance']")
+	public WebElement ReInsuranceCardDashboard;
 
 // **************************** Module Title ****************************
 	@FindBy(xpath = "//h2[normalize-space()='Quotations']")
@@ -465,6 +486,18 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//h1[normalize-space()='Key Benefits']")
 	public WebElement KeyBenefitsTitle;
+
+	@FindBy(xpath = "(//h1[normalize-space()='Motor'])[1]")
+	public WebElement MotorTitle;
+
+	@FindBy(xpath = "(//h1[normalize-space()='FGA'])[1]")
+	public WebElement FGATitle;
+
+	@FindBy(xpath = "(//h1[normalize-space()='Accounting'])[1]")
+	public WebElement AccountingTitle;
+
+	@FindBy(xpath = "(//h1[normalize-space()='Re-Insurance'])[1]")
+	public WebElement ReInsuranceTitle;
 
 // **************************** General ****************************
 	@FindBy(xpath = "//h3[normalize-space()='4-Jeddah Claim Center']")
