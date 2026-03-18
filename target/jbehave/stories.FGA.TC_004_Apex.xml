@@ -1,5 +1,5 @@
 <story path="stories/FGA/TC_004_Apex.story" title="">
-<scenario keyword="Scenario:" title="TC_004_Apex 001 Apex Test Case FGA - Travel Setup - Travel Calculation Prices">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S1 Apex Test Case FGA - Travel Setup - Travel Calculation Prices">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -13,8 +13,9 @@
 <step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;TravelCalculationPricesTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesSaveButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;TravelCalculationPricesSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;TravelCalculationPricesSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TravelCalculationPricesSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Navigation] I reload page</step>
@@ -23,7 +24,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 002 Apex Test Case FGA - Travel Setup - Travel Days">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S2 Apex Test Case FGA - Travel Setup - Travel Days">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -42,7 +43,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 003 Apex Test Case FGA - Travel Setup - Key Benefits">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S3 Apex Test Case FGA - Travel Setup - Key Benefits">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -56,8 +57,9 @@
 <step outcome="successful">And [Input] I click on &apos;KeyBenefitsAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;KeyBenefitsTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;KeyBenefitsSaveButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;KeyBenefitsSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;KeyBenefitsSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;KeyBenefitsSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;KeyBenefitsSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Navigation] I reload page</step>

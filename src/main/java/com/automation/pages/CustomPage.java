@@ -1,6 +1,7 @@
 package com.automation.pages;
 
 import com.automation.configuration.pageobjects.PageObject;
+import com.automation.steps.CannedSteps;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -10,7 +11,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -755,14 +759,15 @@ public class CustomPage extends AbstractPage<CustomPage> {
     private WebElement findIGRowByText(String regionIdOrAnyId, String rowText) throws Exception {
         WebDriver driver = webDriverProvider.get();
         String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc   = gridVcId(regionId);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        By rowBy = By.xpath(
-                "//*[@id='" + gridVcId(regionId) + "']//tr[contains(@class,'a-GV-row')]" +
-                        "[.//td[contains(@class,'a-GV-cell')][normalize-space()=\"" + rowText + "\"]]"
-        );
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
 
-        WebElement row = wait.until(ExpectedConditions.presenceOfElementLocated(rowBy));
+        WebElement row = wait.until(ExpectedConditions.presenceOfElementLocated(
+                igRowByText(gridVc, rowText)
+        ));
+
         scrollTo(row);
         wait.until(ExpectedConditions.visibilityOf(row));
         return row;
@@ -1012,9 +1017,11 @@ public class CustomPage extends AbstractPage<CustomPage> {
     private void clickSafe(WebElement el) {
         try {
             el.click();
-        } catch (Exception e) {
-            ((JavascriptExecutor) webDriverProvider.get()).executeScript("arguments[0].click();", el);
-        }
+        } catch (ElementClickInterceptedException e) {
+            try {
+                ((JavascriptExecutor) webDriverProvider.get()).executeScript("arguments[0].click();", el);
+            } catch (Exception ignored) {}
+        } catch (Exception ignored) {}
     }
 
     private void scrollTo(WebElement el) {
@@ -1418,14 +1425,110 @@ public class CustomPage extends AbstractPage<CustomPage> {
     }
 
 
-    public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) throws Exception {
+//    public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) throws Exception {
+//        String regionId = resolveIgRegionId(regionIdOrAnyId);
+//
+//        // Screen 1: "Local" under group "Amount"
+//        // Screen 2: leaf header is "Amount"
+//        String columnHeader = resolveFirstExistingLeafHeader(regionId, "Local", "Amount");
+//
+//        assertIgCellFillable_ByEditor(regionId, rowText, columnHeader);
+//    }
+public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) throws Exception {
+    String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+    // Select the row FIRST (radio selector) to ensure we validate the selected row only
+    selectIgRowByRowText(regionId, rowText);
+
+    // In this IG the leaf header is usually "Local Amount" (not "Local" or "Amount")
+    String columnHeader = resolveFirstExistingLeafHeader(
+            regionId,
+            "Local Amount",
+            "Local",
+            "Amount"
+    );
+
+    // Assert only LOCAL/AMOUNT is fillable (do not touch Prem No)
+    assertIgCellFillable_ByEditor(regionId, rowText, columnHeader);
+}
+    private void selectIgRowByRowText(String regionIdOrAnyId, String rowText) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
         String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc   = gridVcId(regionId);
 
-        // Screen 1: "Local" under group "Amount"
-        // Screen 2: leaf header is "Amount"
-        String columnHeader = resolveFirstExistingLeafHeader(regionId, "Local", "Amount");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
 
-        assertIgCellFillable_ByEditor(regionId, rowText, columnHeader);
+        WebElement row = wait.until(ExpectedConditions.presenceOfElementLocated(
+                igRowByText(gridVc, rowText)
+        ));
+        scrollTo(row);
+
+        List<WebElement> selectors = row.findElements(By.cssSelector(
+                "td.a-GV-rowSelector input, td.a-GV-rowSelector button," +
+                        "td[role='rowheader'] input, td[role='rowheader'] button"
+        ));
+
+        if (selectors.isEmpty()) {
+            clickSafe(row);
+        } else {
+            WebElement sel = selectors.get(0);
+            if ("input".equalsIgnoreCase(sel.getTagName())) {
+                String type = safeLower(sel.getAttribute("type"));
+                if (("radio".equals(type) || "checkbox".equals(type))) {
+                    if (!sel.isSelected()) clickSafe(sel);
+                } else {
+                    clickSafe(sel);
+                }
+            } else {
+                clickSafe(sel);
+            }
+        }
+
+        wait.until(d -> {
+            try {
+                String cls = row.getAttribute("class");
+                return cls != null && cls.toLowerCase().contains("is-selected");
+            } catch (StaleElementReferenceException e) {
+                return true;
+            }
+        });
+    }
+    private String xpathLiteral(String s) {
+        if (s == null) return "''";
+        if (!s.contains("'")) return "'" + s + "'";
+        if (!s.contains("\"")) return "\"" + s + "\"";
+        // Contains both quotes -> concat('a', "'", 'b', '"', 'c')
+        StringBuilder sb = new StringBuilder("concat(");
+        char[] arr = s.toCharArray();
+        for (int i = 0; i < arr.length; i++) {
+            String part;
+            if (arr[i] == '\'') part = "\"'\"";
+            else if (arr[i] == '\"') part = "'\"'";
+            else part = "'" + arr[i] + "'";
+            sb.append(part);
+            if (i < arr.length - 1) sb.append(",");
+        }
+        sb.append(")");
+        return sb.toString();
+    }
+    private By igRowByText(String gridVc, String rowText) {
+        String t = xpathLiteral(rowText.trim());
+
+        // Match text anywhere inside ANY gridcell (td or its children), not only td direct text.
+        String xp =
+                "//div[@id=" + xpathLiteral(gridVc) + "]" +
+                        "//tr[@role='row' and contains(@class,'a-GV-row')]" +
+                        "[" +
+                        "  .//td[@role='gridcell']//*[normalize-space(.)=" + t + "]" +
+                        "  or .//td[@role='gridcell'][normalize-space(.)=" + t + "]" +
+                        "  or .//td[contains(@class,'a-GV-cell')]//*[normalize-space(.)=" + t + "]" +
+                        "  or .//td[contains(@class,'a-GV-cell')][normalize-space(.)=" + t + "]" +
+                        "]";
+
+        return By.xpath(xp);
     }
 
     public void assertIgForeignAmountFillable(String regionIdOrAnyId, String rowText) throws Exception {
@@ -2301,5 +2404,819 @@ public class CustomPage extends AbstractPage<CustomPage> {
                         "Unknown checkbox element name: '" + elementName + "'. Add mapping in resolveApexItemIdFromElementName()."
                 );
         }
+    }
+
+
+    public int fillIgRandomComboDateNumberAndSave(String regionIdOrAnyId) throws Exception {
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+
+        ensureIGEditMode(regionId);
+
+        int updated = fillIgRandomComboDateNumber(regionId);
+
+        // robust save (JS action -> toolbar click -> Ctrl+S) + wait until saved
+        clickIgSaveSmart(regionId);
+
+        return updated;
+    }
+    public int fillIgRandomComboDateNumber(String regionIdOrAnyId) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc   = gridVcId(regionId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+
+        // Region + grid must be visible (not only present)
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(regionId)));
+        WebElement region = driver.findElement(By.id(regionId));
+        scrollToSafe(region);
+        wait.until(ExpectedConditions.visibilityOf(region));
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+        WebElement grid = driver.findElement(By.id(gridVc));
+        scrollToSafe(grid);
+        wait.until(ExpectedConditions.visibilityOf(grid));
+
+        By rowsBy = By.cssSelector("#" + cssEscape(gridVc) + " tr.a-GV-row[role='row'], #"
+                + cssEscape(gridVc) + " tr[role='row'].a-GV-row");
+        wait.until(d -> !d.findElements(rowsBy).isEmpty());
+
+        // Try to give the grid focus (important when IG is inside tabs/DA refresh)
+        try {
+            WebElement firstRow = getRowByIndex(gridVc, 0);
+            List<WebElement> cs = firstRow.findElements(By.cssSelector("td[role='gridcell']"));
+            if (!cs.isEmpty()) {
+                scrollToSafe(cs.get(0));
+                clickSafe(cs.get(0));
+                sleepSilently(120);
+            }
+        } catch (Exception ignored) {}
+
+        int updated = 0;
+        boolean anyEditorOpened = false;
+
+        int rowCount = driver.findElements(rowsBy).size();
+        for (int r = 0; r < rowCount; r++) {
+
+            WebElement row = getRowByIndex(gridVc, r);
+            scrollToSafe(row);
+
+            List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+            for (int c = 0; c < cells.size(); c++) {
+
+                // Re-fetch stale-safe
+                WebElement freshRow = getRowByIndex(gridVc, r);
+                List<WebElement> freshCells = freshRow.findElements(By.cssSelector("td[role='gridcell']"));
+                if (c >= freshCells.size()) continue;
+
+                WebElement cell = freshCells.get(c);
+                scrollToSafe(cell);
+
+                String beforeCellText = safeText(cell);
+                if (beforeCellText == null) beforeCellText = "";
+                beforeCellText = beforeCellText.trim();
+
+                // Open editor
+                if (!openIgCellEditorSafeByIndex(gridVc, r, c, 1500)) {
+                    continue;
+                }
+
+                WebElement editor = findVisibleEditorInGrid(gridVc, 1200);
+                if (editor == null) {
+                    pressEscapeSafe();
+                    continue;
+                }
+                anyEditorOpened = true;
+
+                String beforeEditorVal = safeAttr(editor, "value");
+                if (beforeEditorVal == null) beforeEditorVal = "";
+                beforeEditorVal = beforeEditorVal.trim();
+
+                // Fill and capture what we intended to set
+                String newValue = tryFillComboReturnValue(driver, cell, editor);
+                if (newValue == null) newValue = tryFillDateReturnValue(editor);
+                if (newValue == null) newValue = tryFillNumberReturnValue(editor, 1, 99);
+
+                if (newValue == null || newValue.trim().isEmpty()) {
+                    pressEscapeSafe();
+                    continue;
+                }
+
+                commitEditorAndWait(gridVc, editor);
+
+                // Re-read the cell text after commit
+                WebElement rowNow = getRowByIndex(gridVc, r);
+                List<WebElement> cellsNow = rowNow.findElements(By.cssSelector("td[role='gridcell']"));
+                if (c >= cellsNow.size()) continue;
+
+                String afterCellText = safeText(cellsNow.get(c));
+                if (afterCellText == null) afterCellText = "";
+                afterCellText = afterCellText.trim();
+
+                boolean changed = !afterCellText.equals(beforeCellText)
+                        || afterCellText.toLowerCase().contains(newValue.trim().toLowerCase());
+
+                if (changed) {
+                    updated++;
+                }
+            }
+        }
+
+        // If IG exists but we never managed to open any editor, it’s usually tab/readonly/overlay
+        if (!anyEditorOpened) {
+            throw new Exception("IG '" + regionIdOrAnyId + "' is visible but no cell editor could be opened. " +
+                    "Likely causes: IG in inactive tab/collapsed region, read-only columns, or APEX overlay/DA refresh.");
+        }
+
+        return updated;
+    }
+    private boolean openIgCellEditor(WebElement cell, long timeoutMs) {
+        long end = System.currentTimeMillis() + timeoutMs;
+        try {
+            scrollTo(cell);
+            clickSafe(cell);
+
+            try { cell.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+            try { cell.sendKeys(Keys.F2); } catch (Exception ignored) {}
+
+            while (System.currentTimeMillis() < end) {
+                String cls = safeAttr(cell, "class");
+                if (cls != null && cls.toLowerCase().contains("is-active")) return true;
+                Thread.sleep(80);
+            }
+        } catch (Exception ignored) { }
+        return false; // IMPORTANT
+    }
+    private WebElement findVisibleEditorInsideIg(WebElement igRoot, long timeoutMs) {
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        By editorBy = By.cssSelector(
+                "div.a-GV-columnItem input, div.a-GV-columnItem textarea, div.a-GV-columnItem select," +
+                        "td.is-active input, td.is-active textarea, td.is-active select," +
+                        "td.a-GV-cell.is-active input, td.a-GV-cell.is-active textarea, td.a-GV-cell.is-active select"
+        );
+
+        while (System.currentTimeMillis() < end) {
+            try {
+                List<WebElement> eds = igRoot.findElements(editorBy);
+                for (WebElement e : eds) {
+                    if (e.isDisplayed()) return e;
+                }
+            } catch (Exception ignored) {}
+            try { Thread.sleep(80); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
+        }
+        return null;
+    }
+    private boolean tryFillNumberIfPresent(WebElement editor, int minInclusive, int maxInclusive) {
+        try {
+            if (!editor.isEnabled()) return false;
+
+            String tag = safeLower(editor.getTagName());
+            if (!"input".equals(tag) && !"textarea".equals(tag)) return false;
+
+            // Skip if looks like LOV/Combo
+            if (looksLikeComboEditor(editor)) return false;
+
+            int rnd = randomBetween(minInclusive, maxInclusive);
+            clearAndType(editor, String.valueOf(rnd));
+            return true;
+
+        } catch (Exception ignored) {}
+        return false;
+    }
+    private boolean tryFillDateIfPresent(WebElement editor) {
+        try {
+            if (!editor.isEnabled()) return false;
+
+            String tag = safeLower(editor.getTagName());
+            if (!"input".equals(tag) && !"textarea".equals(tag)) return false;
+
+            if (looksLikeComboEditor(editor)) return false;
+
+            String type = safeLower(safeAttr(editor, "type"));
+            String cls  = safeLower(safeAttr(editor, "class"));
+            String ph   = safeLower(safeAttr(editor, "placeholder"));
+            String aria = safeLower(safeAttr(editor, "aria-label"));
+
+            boolean looksDate =
+                    "date".equals(type)
+                            || (cls != null && (cls.contains("date") || cls.contains("datepicker")))
+                            || (ph != null && (ph.contains("dd") && ph.contains("mm") && ph.contains("yyyy")))
+                            || (aria != null && aria.contains("date"));
+
+            if (!looksDate) return false;
+
+            LocalDate d = LocalDate.now().plusDays(randomBetween(0, 30));
+
+            String[] candidates = new String[] {
+                    d.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                    d.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")),
+                    d.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))
+            };
+
+            for (String val : candidates) {
+                clearAndType(editor, val);
+
+                // do NOT call commitEditor() here; caller will commit once
+                // just validate by waiting idle and checking value
+                waitForApexIdle();
+                sleepSilently(120);
+
+                String after = safeAttr(editor, "value");
+                if (after != null && !after.trim().isEmpty()) return true;
+            }
+
+            return false;
+
+        } catch (Exception ignored) {}
+        return false;
+    }
+    private boolean tryFillComboIfPresent(WebDriver driver, WebElement cell, WebElement editor) {
+        try {
+            if (!editor.isEnabled()) return false;
+
+            String tag = safeLower(editor.getTagName());
+
+            // <select>
+            if ("select".equals(tag)) {
+                return pickRandomOptionFromSelect(editor);
+            }
+
+            // LOV/Combobox input
+            if (!looksLikeComboEditor(editor)) return false;
+
+            openComboDropdownGlobal(cell, editor);
+
+            WebElement option = findRandomVisibleLovOptionGlobal(driver, 1800);
+            if (option == null) {
+                pressEscapeSafe();
+                return false;
+            }
+
+            clickSafe(option);
+            return true;
+
+        } catch (Exception ignored) {}
+        return false;
+    }
+    private boolean looksLikeComboEditor(WebElement editor) {
+        String cls  = safeLower(safeAttr(editor, "class"));
+        String role = safeLower(safeAttr(editor, "role"));
+        String ariaHasPopup = safeLower(safeAttr(editor, "aria-haspopup"));
+        String ariaAuto = safeLower(safeAttr(editor, "aria-autocomplete"));
+
+        if (cls != null && (cls.contains("popup") || cls.contains("lov") || cls.contains("combobox") || cls.contains("select")))
+            return true;
+        if ("combobox".equals(role)) return true;
+        if ("listbox".equals(ariaHasPopup) || "true".equals(ariaHasPopup)) return true;
+        if (ariaAuto != null && !ariaAuto.isEmpty() && !"none".equals(ariaAuto)) return true;
+
+        return false;
+    }
+    private boolean pickRandomOptionFromSelect(WebElement selectEl) {
+        try {
+            List<WebElement> opts = selectEl.findElements(By.cssSelector("option"));
+            List<WebElement> valid = new ArrayList<>();
+
+            for (WebElement o : opts) {
+                String v = safeAttr(o, "value");
+                String t = safeText(o);
+
+                if ((v == null || v.trim().isEmpty()) && (t == null || t.trim().isEmpty())) continue;
+
+                String low = (t == null ? "" : t.trim().toLowerCase());
+                if (low.contains("select") || low.contains("choose")) continue;
+
+                valid.add(o);
+            }
+
+            if (valid.isEmpty()) return false;
+
+            WebElement pick = valid.get(randomBetween(0, valid.size() - 1));
+            clickSafe(selectEl);
+            pick.click();
+            return true;
+
+        } catch (Exception ignored) {}
+        return false;
+    }
+    private void clearAndType(WebElement editor, String value) {
+        try { editor.sendKeys(Keys.chord(Keys.CONTROL, "a")); } catch (Exception ignored) {}
+        try { editor.sendKeys(Keys.DELETE); } catch (Exception ignored) {}
+        editor.sendKeys(value);
+    }
+    private void pressEscapeSafe() {
+        try { webDriverProvider.get().switchTo().activeElement().sendKeys(Keys.ESCAPE); }
+        catch (Exception ignored) {}
+    }
+    private void clickIgSaveSmart(String regionId) throws Exception {
+        WebDriver driver = webDriverProvider.get();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        // 1) Try IG-level save inside the IG region
+        try {
+            WebElement region = driver.findElement(By.id(regionId));
+
+            List<By> igSaveCandidates = Arrays.asList(
+                    By.cssSelector("button[data-action='save'], a[data-action='save']"),
+                    By.cssSelector("button[title='Save'], button[aria-label='Save'], a[title='Save'], a[aria-label='Save']"),
+                    By.xpath(".//button[normalize-space()='Save' or normalize-space()='SAVE']")
+            );
+
+            for (By by : igSaveCandidates) {
+                List<WebElement> els = region.findElements(by);
+                for (WebElement el : els) {
+                    if (el.isDisplayed() && el.isEnabled()) {
+                        scrollToSafe(el);
+                        clickSafe(el);
+                        waitForApexReady(driver);
+                        waitIgNoPendingChanges(gridVcId(regionId));
+                        return;
+                    }
+                }
+            }
+        } catch (Exception ignored) {
+            // fall through
+        }
+
+        // 2) Page-level Save
+        List<By> pageSaveCandidates = Arrays.asList(
+                By.xpath("//button[.//span[normalize-space()='Save'] or normalize-space()='Save']"),
+                By.cssSelector("button[aria-label='Save'], button[title='Save']"),
+                By.cssSelector("button mat-icon, button i")
+        );
+
+        for (By by : pageSaveCandidates) {
+            List<WebElement> els = driver.findElements(by);
+            for (WebElement el : els) {
+                WebElement btn = el;
+
+                if (!"button".equalsIgnoreCase(el.getTagName())) {
+                    try { btn = el.findElement(By.xpath("./ancestor::button[1]")); }
+                    catch (Exception ex) { continue; }
+                }
+
+                if (btn.isDisplayed() && btn.isEnabled()) {
+                    scrollToSafe(btn);
+                    clickSafe(btn);
+                    waitForApexReady(driver);
+                    waitIgNoPendingChanges(gridVcId(regionId));
+                    return;
+                }
+            }
+        }
+
+        log.info("No IG Save or Page Save button found; continuing without clicking Save. regionId=" + regionId);
+    }
+    private boolean isInViewport(WebElement el) {
+        WebDriver driver = webDriverProvider.get();
+        return (Boolean) ((JavascriptExecutor) driver).executeScript(
+                "const r=arguments[0].getBoundingClientRect();" +
+                        "return r.top>=0 && r.left>=0 && r.bottom<=(window.innerHeight||document.documentElement.clientHeight)" +
+                        " && r.right<=(window.innerWidth||document.documentElement.clientWidth);",
+                el
+        );
+    }
+    private void scrollToSafe(WebElement el) {
+        WebDriver driver = webDriverProvider.get();
+        try {
+            ((JavascriptExecutor) driver).executeScript(
+                    "arguments[0].scrollIntoView({block:'center', inline:'center'});", el
+            );
+        } catch (Exception ignored) {}
+    }
+    private void waitForApexIdle() {
+        WebDriver driver = webDriverProvider.get();
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
+            boolean hasSpinner =
+                    !d.findElements(By.cssSelector(".u-Processing, .u-Processing-spinner, #apex_wait_overlay")).isEmpty();
+            return !hasSpinner;
+        });
+    }
+    private WebElement getRowByIndex(String gridVc, int rowIndex) {
+        WebDriver driver = webDriverProvider.get();
+        By rowsBy = By.cssSelector("#" + cssEscape(gridVc) + " tr.a-GV-row[role='row'], #" +
+                cssEscape(gridVc) + " tr[role='row'].a-GV-row");
+        List<WebElement> rows = driver.findElements(rowsBy);
+        if (rowIndex < 0 || rowIndex >= rows.size()) {
+            throw new RuntimeException("Row index out of range: " + rowIndex + " for grid " + gridVc + " (rows=" + rows.size() + ")");
+        }
+        return rows.get(rowIndex);
+    }
+    private String cssEscape(String id) {
+        return id.replace("\\", "\\\\").replace(":", "\\:").replace(".", "\\.");
+    }
+    private void sleepSilently(long ms) {
+        try { Thread.sleep(ms); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+    }
+    private WebElement findVisibleEditorInGrid(String gridVc, long timeoutMs) {
+        WebDriver driver = webDriverProvider.get();
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        By editorBy = By.cssSelector(
+                // editor inside active cell (best case)
+                "#" + cssEscape(gridVc) + " td.a-GV-cell.is-active input, " +
+                        "#" + cssEscape(gridVc) + " td.a-GV-cell.is-active textarea, " +
+                        "#" + cssEscape(gridVc) + " td.a-GV-cell.is-active select, " +
+                        "#" + cssEscape(gridVc) + " td[role='gridcell'].is-active input, " +
+                        "#" + cssEscape(gridVc) + " td[role='gridcell'].is-active textarea, " +
+                        "#" + cssEscape(gridVc) + " td[role='gridcell'].is-active select, " +
+                        // columnItem editor (often outside the cell but inside the same grid region container)
+                        "div.a-GV-columnItem input, div.a-GV-columnItem textarea, div.a-GV-columnItem select"
+        );
+
+        while (System.currentTimeMillis() < end) {
+            try {
+                List<WebElement> eds = driver.findElements(editorBy);
+                for (WebElement e : eds) {
+                    if (!e.isDisplayed()) continue;
+
+                    // Ensure this editor belongs to THIS grid:
+                    // walk up to the closest IG/grid container and confirm it contains gridVc
+                    boolean sameGrid = (Boolean) ((JavascriptExecutor) driver).executeScript(
+                            "const el = arguments[0];" +
+                                    "const gridId = arguments[1];" +
+                                    "const grid = document.getElementById(gridId);" +
+                                    "if (!grid) return false;" +
+                                    // in-cell editor
+                                    "if (grid.contains(el)) return true;" +
+                                    // columnItem editor: must belong to same .a-GV container as this grid
+                                    "const gv = grid.closest('.a-GV');" +
+                                    "if (!gv) return false;" +
+                                    "return gv.contains(el);",
+                            e, gridVc
+                    );
+
+                    if (sameGrid) return e;
+                }
+            } catch (Exception ignored) { }
+
+            sleepSilently(80);
+        }
+        return null;
+    }
+    private void commitEditorAndWait(String gridVc, WebElement editor) {
+        WebDriver driver = webDriverProvider.get();
+
+        // 1) Best-effort commits
+        try { editor.sendKeys(Keys.TAB); } catch (Exception ignored) {}
+        sleepSilently(120);
+
+        if (isEditingInsideGrid(gridVc)) {
+            // 2) Close dropdown/LOV if still open
+            try { driver.switchTo().activeElement().sendKeys(Keys.ESCAPE); } catch (Exception ignored) {}
+            sleepSilently(80);
+        }
+
+        if (isEditingInsideGrid(gridVc)) {
+            // 3) Hard blur + click outside IG
+            try { ((JavascriptExecutor) driver).executeScript("document.activeElement && document.activeElement.blur();"); }
+            catch (Exception ignored) {}
+
+            // Click an area outside the grid (region header / body)
+            try {
+                WebElement grid = driver.findElement(By.id(gridVc));
+                WebElement gv = grid.findElement(By.xpath("./ancestor::*[contains(@class,'a-GV')][1]"));
+                scrollToSafe(gv);
+                clickSafe(gv); // click container
+            } catch (Exception ignored) {
+                try { ((JavascriptExecutor) driver).executeScript("document.body && document.body.click();"); }
+                catch (Exception ignored2) {}
+            }
+            sleepSilently(150);
+        }
+
+        // 4) Wait until NOT editing (use improved detector)
+        new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(d -> !isEditingInsideGrid(gridVc));
+
+        // 5) Settle
+        waitForApexIdle();
+    }
+    private void waitIgNoPendingChanges(String gridVc) {
+        WebDriver driver = webDriverProvider.get();
+        By changedRows = By.cssSelector("#" + cssEscape(gridVc) + " tr.is-changed, #" +
+                cssEscape(gridVc) + " tr.a-GV-row.is-changed");
+
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(d -> d.findElements(changedRows).isEmpty());
+        } catch (Exception ignored) {
+            // Do not fail here; some pages keep is-changed until refresh
+        }
+
+        waitForApexIdle();
+    }
+    private boolean openIgCellEditorSafeByIndex(String gridVc, int rowIndex, int cellIndex, long timeoutMs) {
+        WebDriver driver = webDriverProvider.get();
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        while (System.currentTimeMillis() < end) {
+            try {
+                WebElement row = getRowByIndex(gridVc, rowIndex);
+                List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+                if (cellIndex < 0 || cellIndex >= cells.size()) return false;
+
+                WebElement cell = cells.get(cellIndex);
+                scrollToSafe(cell);
+                clickSafe(cell);
+
+                // attempt enter edit mode
+                try { driver.switchTo().activeElement().sendKeys(Keys.F2); } catch (Exception ignored) {}
+                try { driver.switchTo().activeElement().sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+                try { driver.switchTo().activeElement().sendKeys(Keys.F2); } catch (Exception ignored) {}
+
+                // confirm editor exists in this grid
+                WebElement ed = findVisibleEditorInGrid(gridVc, 350);
+                if (ed != null && ed.isEnabled()) return true;
+
+            } catch (StaleElementReferenceException sere) {
+                // retry
+            } catch (Exception ignored) {
+                // retry
+            }
+
+            sleepSilently(80);
+        }
+
+        return false;
+    }
+    private void openComboDropdownGlobal(WebElement cell, WebElement editor) {
+        try {
+            // try LOV/search button inside cell
+            List<WebElement> btns = cell.findElements(By.cssSelector("button, a"));
+            for (WebElement b : btns) {
+                String t = safeLower(b.getAttribute("title"));
+                String a = safeLower(b.getAttribute("aria-label"));
+                String c = safeLower(b.getAttribute("class"));
+
+                if ((t != null && (t.contains("search") || t.contains("select") || t.contains("lov"))) ||
+                        (a != null && (a.contains("search") || a.contains("select") || a.contains("lov"))) ||
+                        (c != null && (c.contains("popup") || c.contains("lov")))) {
+                    clickSafe(b);
+                    return;
+                }
+            }
+
+            // fallback keyboard
+            try { editor.sendKeys(Keys.chord(Keys.ALT, Keys.ARROW_DOWN)); } catch (Exception ignored) {}
+            try { editor.sendKeys(Keys.ARROW_DOWN); } catch (Exception ignored) {}
+
+        } catch (Exception ignored) {}
+    }
+    private WebElement findRandomVisibleLovOptionGlobal(WebDriver driver, long timeoutMs) {
+        long end = System.currentTimeMillis() + timeoutMs;
+
+        By optionsBy = By.cssSelector(
+                "[role='listbox'] [role='option'], " +
+                        ".a-PopupLOV-results li, " +
+                        ".a-IconList-item, " +
+                        ".ui-menu-item, " +
+                        ".a-ListView-item"
+        );
+
+        while (System.currentTimeMillis() < end) {
+            try {
+                List<WebElement> opts = driver.findElements(optionsBy);
+
+                List<WebElement> visible = new ArrayList<>();
+                for (WebElement o : opts) {
+                    if (!o.isDisplayed()) continue;
+
+                    String txt = safeText(o);
+                    if (txt == null) txt = "";
+                    String t = txt.trim().toLowerCase();
+
+                    if (t.isEmpty()) continue;
+                    if (t.contains("no data")) continue;
+                    if (t.contains("لا يوجد")) continue;
+                    if (t.contains("select")) continue;
+                    if (t.contains("choose")) continue;
+
+                    visible.add(o);
+                }
+
+                if (!visible.isEmpty()) {
+                    return visible.get(randomBetween(0, visible.size() - 1));
+                }
+            } catch (Exception ignored) {}
+
+            sleepSilently(100);
+        }
+
+        return null;
+    }
+    private boolean isEditingInsideGrid(String gridVc) {
+        WebDriver driver = webDriverProvider.get();
+        try {
+            return (Boolean) ((JavascriptExecutor) driver).executeScript(
+                    "const grid = document.getElementById(arguments[0]);" +
+                            "if (!grid) return false;" +
+                            "const gv = grid.closest('.a-GV');" +
+                            "if (!gv) return false;" +
+
+                            // 1) If APEX columnItem editor is visible for THIS grid, we're editing
+                            "const colItem = gv.querySelector('.a-GV-columnItem');" +
+                            "if (colItem) {" +
+                            "  const cs = window.getComputedStyle(colItem);" +
+                            "  const r = colItem.getBoundingClientRect();" +
+                            "  const vis = cs && cs.display !== 'none' && cs.visibility !== 'hidden' && (r.width || r.height);" +
+                            "  if (vis) return true;" +
+                            "}" +
+
+                            // 2) If there is a visible input/select/textarea inside an active cell for THIS grid
+                            "const activeCell = gv.querySelector('td.a-GV-cell.is-active, td[role=\"gridcell\"].is-active');" +
+                            "if (activeCell) {" +
+                            "  const ed = activeCell.querySelector('input,textarea,select');" +
+                            "  if (ed) {" +
+                            "    const cs2 = window.getComputedStyle(ed);" +
+                            "    const r2 = ed.getBoundingClientRect();" +
+                            "    const vis2 = cs2 && cs2.display !== 'none' && cs2.visibility !== 'hidden' && (r2.width || r2.height);" +
+                            "    if (vis2) return true;" +
+                            "  }" +
+                            "}" +
+
+                            // 3) Fallback: activeElement is an editor belonging to same .a-GV
+                            "const ae = document.activeElement;" +
+                            "if (!ae) return false;" +
+                            "const tag = (ae.tagName || '').toUpperCase();" +
+                            "if (tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') return false;" +
+                            "return gv.contains(ae);" ,
+                    gridVc
+            );
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    private String tryFillNumberReturnValue(WebElement editor, int minInclusive, int maxInclusive) {
+        try {
+            if (!editor.isEnabled()) return null;
+
+            String tag = safeLower(editor.getTagName());
+            if (!"input".equals(tag) && !"textarea".equals(tag)) return null;
+            if (looksLikeComboEditor(editor)) return null;
+
+            int rnd = randomBetween(minInclusive, maxInclusive);
+            String v = String.valueOf(rnd);
+            clearAndType(editor, v);
+            return v;
+        } catch (Exception ignored) {}
+        return null;
+    }
+    private String tryFillDateReturnValue(WebElement editor) {
+        try {
+            if (!editor.isEnabled()) return null;
+
+            String tag = safeLower(editor.getTagName());
+            if (!"input".equals(tag) && !"textarea".equals(tag)) return null;
+            if (looksLikeComboEditor(editor)) return null;
+
+            String type = safeLower(safeAttr(editor, "type"));
+            String cls  = safeLower(safeAttr(editor, "class"));
+            String ph   = safeLower(safeAttr(editor, "placeholder"));
+            String aria = safeLower(safeAttr(editor, "aria-label"));
+
+            boolean looksDate =
+                    "date".equals(type)
+                            || (cls != null && (cls.contains("date") || cls.contains("datepicker")))
+                            || (ph != null && (ph.contains("dd") && ph.contains("mm") && ph.contains("yyyy")))
+                            || (aria != null && aria.contains("date"));
+
+            if (!looksDate) return null;
+
+            LocalDate d = LocalDate.now().plusDays(randomBetween(0, 30));
+            String v = d.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+            clearAndType(editor, v);
+            return v;
+
+        } catch (Exception ignored) {}
+        return null;
+    }
+    private String tryFillComboReturnValue(WebDriver driver, WebElement cell, WebElement editor) {
+        try {
+            if (!editor.isEnabled()) return null;
+
+            String tag = safeLower(editor.getTagName());
+
+            if ("select".equals(tag)) {
+                List<WebElement> opts = editor.findElements(By.cssSelector("option"));
+                List<WebElement> valid = new ArrayList<>();
+                for (WebElement o : opts) {
+                    String t = safeText(o);
+                    if (t == null) t = "";
+                    String low = t.trim().toLowerCase();
+                    if (low.isEmpty()) continue;
+                    if (low.contains("select") || low.contains("choose")) continue;
+                    valid.add(o);
+                }
+                if (valid.isEmpty()) return null;
+
+                WebElement pick = valid.get(randomBetween(0, valid.size() - 1));
+                String chosenText = safeText(pick);
+                if (chosenText == null) chosenText = "";
+                clickSafe(editor);
+                pick.click();
+                return chosenText.trim();
+            }
+
+            if (!looksLikeComboEditor(editor)) return null;
+
+            openComboDropdownGlobal(cell, editor);
+
+            WebElement option = findRandomVisibleLovOptionGlobal(driver, 1800);
+            if (option == null) {
+                pressEscapeSafe();
+                return null;
+            }
+
+            String chosenText = safeText(option);
+            if (chosenText == null) chosenText = "";
+            clickSafe(option);
+            return chosenText.trim();
+
+        } catch (Exception ignored) {}
+        return null;
+    }
+
+    public void assertIgCellFilledAndReadOnly(String regionIdOrAnyId, String rowText, String columnHeader, boolean rejectZero) throws Exception {
+
+        WebDriver driver = webDriverProvider.get();
+        waitForApexReady(driver);
+
+        String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridVc   = gridVcId(regionId);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+
+        // Select row first (your existing method)
+        selectIgRowByRowText(regionId, rowText);
+
+        // Resolve column index (leaf header)
+        int colLeafIndex = resolveLeafHeaderIndex(regionId, columnHeader);
+        if (colLeafIndex < 0) {
+            throw new Exception("Header not found: '" + columnHeader + "'\nFound headers:\n" + dumpHeaders(regionId));
+        }
+
+        // Find row + cell
+        WebElement row = findIGRowByText(regionId, rowText);
+
+        List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+        if (colLeafIndex >= cells.size()) {
+            throw new Exception("Column index out of range. idx=" + colLeafIndex + ", cells=" + cells.size());
+        }
+
+        WebElement cell = cells.get(colLeafIndex);
+        scrollTo(cell);
+
+        // --------------------------
+        // 1) Assert FILLED
+        // --------------------------
+        String val = normalizeNumberString(safeText(cell));
+        if (val == null) val = "";
+        val = val.trim();
+
+        if (val.isEmpty()) {
+            throw new Exception("IG cell is empty. region=" + regionId + ", row='" + rowText + "', col='" + columnHeader + "'");
+        }
+
+        if (rejectZero) {
+            String norm = val.replace(",", "").trim();
+            if (norm.equals("0") || norm.equals("0.0") || norm.equals("0.00")) {
+                throw new Exception("IG cell is zero. region=" + regionId + ", row='" + rowText + "', col='" + columnHeader + "', value='" + val + "'");
+            }
+        }
+
+        // --------------------------
+        // 2) Assert READ-ONLY
+        // --------------------------
+        // Fast pass: DOM readonly markers
+        String ariaReadonly = safeAttr(cell, "aria-readonly");
+        String cls = safeAttr(cell, "class");
+
+        if ("true".equalsIgnoreCase(ariaReadonly)) return;
+        if (cls != null && cls.toLowerCase().contains("is-readonly")) return;
+
+        // Try to open editor WITHOUT forcing IG edit mode (because this cell must be read-only)
+        WebElement igRoot = driver.findElement(By.id(regionId));
+
+        clickSafe(cell);
+        try { cell.sendKeys(Keys.F2); } catch (Exception ignored) {}
+        try { cell.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+
+        WebElement editor = findVisibleEditorInsideIg(igRoot, 800);
+
+        // If an enabled editor appears -> cell is editable => FAIL
+        if (editor != null && editor.isDisplayed() && editor.isEnabled()) {
+            pressEscapeSafe();
+            throw new Exception("IG cell is editable but expected read-only. region=" + regionId
+                    + ", row='" + rowText + "', col='" + columnHeader + "', value='" + val + "'");
+        }
+
+        // If no editor appears, it is effectively read-only => PASS
+        pressEscapeSafe();
     }
 }

@@ -1,5 +1,5 @@
 <story path="stories/FGA/TC_003_Apex.story" title="">
-<scenario keyword="Scenario:" title="TC_003_Apex 001 Apex Test Case FGA - Malpractice Setup - Categories-Professions Definition">
+<scenario keyword="Scenario:" title="TC_003_Apex TC3S1 Apex Test Case FGA - Malpractice Setup - Categories-Professions Definition">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -32,7 +32,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_003_Apex 002 Apex Test Case FGA - Malpractice Setup - Coverage Limit AOO-AAA">
+<scenario keyword="Scenario:" title="TC_003_Apex TC3S2 Apex Test Case FGA - Malpractice Setup - Coverage Limit AOO-AAA">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -51,7 +51,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_003_Apex 003 Apex Test Case FGA - Malpractice Setup - Malpractice Tariff Definition">
+<scenario keyword="Scenario:" title="TC_003_Apex TC3S3 Apex Test Case FGA - Malpractice Setup - Malpractice Tariff Definition">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -70,7 +70,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_003_Apex 004 Apex Test Case FGA - Malpractice Setup - Malpractice Questions">
+<scenario keyword="Scenario:" title="TC_003_Apex TC3S4 Apex Test Case FGA - Malpractice Setup - Malpractice Questions">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -89,7 +89,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_003_Apex 005 Apex Test Case FGA - Malpractice Setup - MMP Periods">
+<scenario keyword="Scenario:" title="TC_003_Apex TC3S5 Apex Test Case FGA - Malpractice Setup - MMP Periods">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>

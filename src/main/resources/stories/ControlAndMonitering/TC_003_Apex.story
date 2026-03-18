@@ -1,4 +1,4 @@
-Scenario:  TC_003_Apex 001 Apex Test Case Control and Monitoring - Master Files - Locations & Branches
+Scenario:  TC_003_Apex TC3S1 Apex Test Case Control and Monitoring - Master Files - Locations & Branches
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -15,8 +15,7 @@ And [Progress] I wait for '10' sec
 And [Input] I click on 'LocationsAndBranchesAddRowButton'
 And [Assertion] Verify IG 'LocationsAndBranchesTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'LocationsAndBranchesSaveButton'
-And [Input] I click on 'LocationsAndBranchesSaveButton'
+And [Input] I click on 'LocationsAndBranchesSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'LocationsAndBranchesTable'
@@ -26,7 +25,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 002 Apex Test Case Control and Monitoring - Master Files - Customers Receivable
+Scenario:  TC_003_Apex TC3S2 Apex Test Case Control and Monitoring - Master Files - Customers Receivable
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -82,8 +81,7 @@ And [Navigation] I scroll to 'BranchesCRAddRowButton'
 And [Input] I click on 'BranchesCRAddRowButton'
 !-- And [Assertion] Verify IG 'BranchesCRTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'BranchesCRSaveButton'
-And [Input] I click on 'BranchesCRSaveButton'
+And [Input] I click on 'BranchesCRSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'CROkButton'
 And [Action] I delete the inserted row in IG 'BranchesCRTable'
@@ -102,7 +100,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 003 Apex Test Case Control and Monitoring - Master Files - Payable Parties
+Scenario:  TC_003_Apex TC3S3 Apex Test Case Control and Monitoring - Master Files - Payable Parties
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -160,8 +158,7 @@ And [Navigation] I scroll to 'BranchesAddRowButton'
 And [Input] I click on 'BranchesAddRowButton'
 And [Assertion] Verify IG 'BranchesTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'BranchesSaveButton'
-And [Input] I click on 'BranchesSaveButton'
+And [Input] I click on 'BranchesSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'PPOkButton'
 And [Navigation] I reload page
@@ -179,8 +176,7 @@ And [Navigation] I scroll to 'CommissionAddRowButton'
 And [Input] I click on 'CommissionAddRowButton'
 And [Assertion] Verify IG 'CommissionTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'CommissionSaveButton'
-And [Input] I click on 'CommissionSaveButton'
+And [Input] I click on 'CommissionSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'PPOkButton'
 And [Action] I delete the inserted row in IG 'CommissionTable'
@@ -198,7 +194,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 004 Apex Test Case Control and Monitoring - Master Files - Class-Subclass Linking
+Scenario:  TC_003_Apex TC3S4 Apex Test Case Control and Monitoring - Master Files - Class-Subclass Linking
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -213,8 +209,7 @@ And [Assertion] Verify 'ClassTable' is visible
 And [Input] I click on 'ClassAddRowButton'
 And [Assertion] Verify IG 'ClassTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'ClassSaveButton'
-And [Input] I click on 'ClassSaveButton'
+And [Input] I click on 'ClassSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'ClassTable'
@@ -223,8 +218,7 @@ And [Assertion] Verify 'SubClassTable' is visible
 And [Input] I click on 'SubClassAddRowButton'
 And [Assertion] Verify IG 'SubClassTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'SubClassSaveButton'
-And [Input] I click on 'SubClassSaveButton'
+And [Input] I click on 'SubClassSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'SubClassTable'
@@ -234,7 +228,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 005 Apex Test Case Control and Monitoring - Master Files - Customers Address Screen
+Scenario:  TC_003_Apex TC3S5 Apex Test Case Control and Monitoring - Master Files - Customers Address Screen
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'

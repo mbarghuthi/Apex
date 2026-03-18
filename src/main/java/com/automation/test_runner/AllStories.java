@@ -24,12 +24,16 @@ public class AllStories extends JBehaveReportFormatter {
 	public List<String> storyPaths() {
 		return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()),
 //				String.format("stories/**/**/%s.story", STORY_NAME.trim()), "");
-// 				String.format("stories/ControlAndMonitering/**/%s.story", STORY_NAME.trim()), "");
+ 				String.format("stories/ControlAndMonitering/**/%s.story", STORY_NAME.trim()), "");
+//				String.format("stories/FGA/**/%s.story", STORY_NAME.trim()), "");
+// 				String.format("stories/Login/**/%s.story", STORY_NAME.trim()), "");
+// 				String.format("stories/Quotation/**/%s.story", STORY_NAME.trim()), "");
+
 
 //				String.format("stories/TC_001_ApexTest.story", STORY_NAME.trim()), "");
-				String.format("stories/Login/TC_002_Apex.story", STORY_NAME.trim()), "");
-//				String.format("stories/Quotation/TC_013_Apex.story", STORY_NAME.trim()), "");
-//				String.format("stories/ControlAndMonitering/TC_003_Apex.story", STORY_NAME.trim()), "");
+//				String.format("stories/Login/TC_002_Apex.story", STORY_NAME.trim()), "");
+//				String.format("stories/Quotation/TC_002_Apex.story", STORY_NAME.trim()), "");
+//				String.format("stories/ControlAndMonitering/TC_004_Apex.story", STORY_NAME.trim()), "");
 //				String.format("stories/FGA/TC_004_Apex.story", STORY_NAME.trim()), "");
 
 	}

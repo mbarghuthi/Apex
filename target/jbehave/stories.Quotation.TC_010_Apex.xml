@@ -1,32 +1,51 @@
 <story path="stories/Quotation/TC_010_Apex.story" title="">
-<scenario keyword="Scenario:" title="TC_010_Apex 001 Apex Test Case Marine - Marine Hull - Liability (Saudi Riyals)">
+<scenario keyword="Scenario:" title="TC_010_Apex TC10S1 Apex Test Case Marine - Marine Hull - Liability (Saudi Riyals)">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">When [Input] I click on &apos;QuotationCardDashboard&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;QuotationsTitle&apos; equals &apos;Quotations&apos; text</step>
-<step outcome="successful">And [Input] I click on &apos;JeddahClaimCenterCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SPWaziriyahMrorrCard&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;NewQuotationButton&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;MarineCard&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;MarineHullCard&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;LiabilityCard&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutClassOfBusinessDisplay&apos; equals &apos;p:MarineHull&apos; text</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutPolicyTypeDisplay&apos; equals &apos;p:Liability&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutStatusDisplay&apos; equals &apos;p:Draft&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutValidityStatusDisplay&apos; equals &apos;p:Valid&apos; text</step>
 <step outcome="ignorable">!-- Fill the mandatory Quotation Details</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;MainTab&apos; is selected</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ErrorAlert&apos; is enable</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutSourceErrorMsg&apos; contains &apos;p:QutSourceEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsStDateErrorMsg&apos; contains &apos;p:QutInsStDateEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateErrorMsg&apos; contains &apos;p:QutInsEdDateEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Input] I click on &apos;CalculationsTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;CalculationsTab&apos; is selected</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutCalculationBasisErrorMsg&apos; contains &apos;p:QutCalculationBasisEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutCrCdErrorMsg&apos; contains &apos;p:QutCrCdEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotNoCreateText&apos; input is empty</step>
+<step outcome="successful">And [Input] I click on &apos;MainTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;MainTab&apos; is selected</step>
 <step outcome="successful">And [Input] Select &apos;p:Direct&apos; value from &apos;QutSourceCombobox&apos; dropdown list</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutPaymentTermCombobox&apos; contains &apos;p:Account&apos; text</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutQuotDate&apos; value equals sysdate</step>
-<step outcome="successful">And [Assertion] Verify &apos;QutQuotValidityDate&apos; value equals sysdate plus &apos;1&apos; months minus one day</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotValidityDate&apos; value equals sysdate plus &apos;0&apos; months plus &apos;30&apos; day</step>
 <step outcome="successful">And [Input] Set &apos;QutInsStDateInput&apos; value to &apos;sysdateformatted&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Input] I click on &apos;QutInsStDateInput&apos;</step>
 <step outcome="successful">And [Input] I press Enter on &apos;QutInsStDateInput&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateInput&apos; input is empty</step>
-<step outcome="successful">And [Navigation] I scroll to &apos;QutCalculationBasisCombobox&apos;</step>
-<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;QutInsEdDateInput&apos; value equals sysdate plus &apos;1&apos; years minus one day</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateInput&apos; value equals sysdate</step>
+<step outcome="successful">And [Input] I click on &apos;CalculationsTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;CalculationsTab&apos; is selected</step>
 <step outcome="successful">And [Input] Select &apos;p:ProRata&apos; value from &apos;QutCalculationBasisCombobox&apos; dropdown list</step>
 <step outcome="successful">And [Input] Select &apos;p:SaudiRiyals&apos; value from &apos;QutCrCdCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutUnitPriceVal&apos; equals &apos;1&apos; text</step>
 <step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
@@ -48,92 +67,153 @@
 <step outcome="successful">And [Javascript] I switch back to main content</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
-<step outcome="successful">And [Navigation] I scroll to &apos;EditButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;EditButton&apos;</step>
-<step outcome="failed" keyword="FAILED">And [Assertion] Verify IG &apos;RiskCalculation_ig&apos; row &apos;1 - SI&apos; Local/Amount can be filled<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id=&apos;RiskCalculation_ig_grid_vc&apos;]//tr[contains(@class,&apos;a-GV-row&apos;)][.//td[contains(@class,&apos;a-GV-cell&apos;)][normalize-space()=&quot;1 - SI&quot;]] (tried for 20 second(s) with 500 milliseconds interval)</failure></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I set SECOND IG &apos;RiskCalculation_ig&apos; from first row &apos;17 - Marine Sum Insured&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;SaveButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Navigation] I scroll to top of page</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;NextButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="ignorable">!-- Fill in Quotation Value Types</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;EditButtonQuotationValue&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify IG &apos;calc_ig&apos; row &apos;10 - Stamp Fees&apos; Local/Amount can be filled</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I set IG &apos;calc_ig&apos; from first row &apos;26 - Overage Premium&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;SaveButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Navigation] I scroll to top of page</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;NextButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="ignorable">!-- Fill in Quotation Client</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientCombobox&apos; dropdown list</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientNoCombobox&apos; dropdown list</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;NextButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="ignorable">!-- Last Page</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] Select &apos;p:AWSSea&apos; value from &apos;QutCoverGroupCombobox&apos; dropdown list</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] Select &apos;p:Cheque&apos; value from &apos;QutCollectionTypeCombobox&apos; dropdown list</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Navigation] I scroll to end of page</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify text of &apos;QutQuotNoFinalPageText&apos; contains saved value &apos;QuotationNo&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Navigation] I scroll to &apos;DeleteButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;DeleteButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;DeleteButtonPopup&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:QuotationDeletedSuccessfully&apos; text</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;RiskCalculationButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;RiskCalculationButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;RiskCalculationIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;RiskCalculationEditButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;RISK_CALC_REGION_ig&apos; row &apos;17 - Marine Sum Insured&apos; Local/Amount can be filled</step>
+<step outcome="successful">And [Input] I set SECOND IG &apos;RISK_CALC_REGION_ig&apos; from first row &apos;17 - Marine Sum Insured&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;RiskCalculationSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;CloseButtonFromPopup&apos;</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;EditButtonQuotationValue&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;calc_ig&apos; row &apos;26 - Overage Premium&apos; Local/Amount can be filled</step>
+<step outcome="successful">And [Input] I set IG &apos;calc_ig&apos; from first row &apos;26 - Overage Premium&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
+<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Fill in All Quotation Details</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;QutQuotNoAllQuotationDetails&apos; contains saved value &apos;QuotationNo&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:Cheque&apos; value from &apos;QutCollectionTypeCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CustomerInfoButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CustomerInfoButton&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:ClientName&apos; value from &apos;QurQutClientCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:ClientName&apos; value from &apos;QurQutClientNoCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Risk Quotation Button</step>
+<step outcome="successful">And [Navigation] I scroll to end of page</step>
+<step outcome="successful">And [Input] I click on &apos;RiskQuotationButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;RiskTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;RiskDetailsBackButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Covers Button</step>
+<step outcome="successful">And [Input] I click on &apos;CoversButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;CoversIframe&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;CoversTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;CoverDeleteFirstRow&apos; if present</step>
+<step outcome="successful">And [Input] I click on &apos;CoversSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversAddRow&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversSerialRow&apos;</step>
+<step outcome="successful">And [Input] Set &apos;CoversSerialRow&apos; value to &apos;1&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CategoryRow&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversCategoryComboboxRow&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:ConditionsClauses&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;CoversIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversRow&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversComboboxRow&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:InstituteLocationClauseCL&apos; value from &apos;CoversPopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;CoversIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;PremRow&apos;</step>
+<step outcome="successful">And [Input] Set &apos;CoversRateRow&apos; value to &apos;1&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversSaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] I click on &apos;CloseButtonFromPopup&apos;</step>
+<step outcome="ignorable">!-- REI Plan</step>
+<step outcome="successful">And [Input] I click on &apos;REIPlanButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ReInsurancePlansIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;REIPlanSaveButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ReinsurancePlanErrorMsg&apos; contains &apos;p:ReinsurancePlanEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ReiMethodErrorMsg&apos; contains &apos;p:ReiMethodEmptyErrorMsg&apos; text</step>
+<step outcome="ignorable">!-- And [Input] Select &apos;$optionValue&apos; value from &apos;ReinsurancePlanCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:PolicyWise&apos; value from &apos;ReiMethodCombobox&apos; dropdown list</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;REIPlanSaveButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] I click on &apos;CloseButtonFromPopup&apos;</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;DeleteButtonPopup&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:QuotationDeletedSuccessfully&apos; text</step>
+<step outcome="successful">And [Input] Set &apos;SearchQuotationInput&apos; value to &apos;p:Cancelled&apos;</step>
+<step outcome="successful">And [Input] I press Enter on &apos;SearchQuotationInput&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;QuotationNumberTable&apos;</step>
+<step outcome="successful">And [Input] Set &apos;QuotationNumberSearch&apos; value to &apos;statemanager:QuotationNo&apos;</step>
+<step outcome="successful">And [Input] I press Enter on &apos;QuotationNumberSearch&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Input] I click on &apos;EditQuotationImg&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;StatusAllQuotationDetails&apos; equals saved value &apos;p:Cancelled&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;ValidityStatusAllQuotationDetails&apos; equals saved value &apos;p:Invalid&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;QutQuotNoAllQuotationDetails&apos; equals saved value &apos;statemanager:QuotationNo&apos;</step>
 <step outcome="ignorable">!-- Logout</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Progress] I wait for &apos;7&apos; sec</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then [Input] I click on &apos;UserDDL&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Input] I click on &apos;LogoutButton&apos;</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And [Assertion] Verify &apos;loginButton&apos; is present</step>
-<failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id=&apos;RiskCalculation_ig_grid_vc&apos;]//tr[contains(@class,&apos;a-GV-row&apos;)][.//td[contains(@class,&apos;a-GV-cell&apos;)][normalize-space()=&quot;1 - SI&quot;]] (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.automation.pages.CustomPage.findIGRowByText(CustomPage.java:695)
-	at com.automation.pages.CustomPage.assertIgCellFillable_ByEditor(CustomPage.java:1425)
-	at com.automation.pages.CustomPage.assertIgLocalAmountFillable(CustomPage.java:1393)
-	at com.automation.steps.CustomSteps.verify_ig_local_amount_fillable(CustomSteps.java:430)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.jbehave.core.steps.StepCreator$ParametrisedStep.perform(StepCreator.java:599)
-	at org.jbehave.core.embedder.PerformableTree$FineSoFar.run(PerformableTree.java:340)
-...</failure>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_010_Apex 002 Apex Test Case Marine - Marine Hull - Liability (US Dollars)">
+<scenario keyword="Scenario:" title="TC_010_Apex TC10S2 Apex Test Case Marine - Marine Hull - Liability (US Dollars)">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">When [Input] I click on &apos;QuotationCardDashboard&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;QuotationsTitle&apos; equals &apos;Quotations&apos; text</step>
-<step outcome="successful">And [Input] I click on &apos;JeddahClaimCenterCard&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SPWaziriyahMrorrCard&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;NewQuotationButton&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;MarineCard&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;MarineHullCard&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;LiabilityCard&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutClassOfBusinessDisplay&apos; equals &apos;p:MarineHull&apos; text</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutPolicyTypeDisplay&apos; equals &apos;p:Liability&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutStatusDisplay&apos; equals &apos;p:Draft&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutValidityStatusDisplay&apos; equals &apos;p:Valid&apos; text</step>
 <step outcome="ignorable">!-- Fill the mandatory Quotation Details</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;MainTab&apos; is selected</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ErrorAlert&apos; is enable</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutSourceErrorMsg&apos; contains &apos;p:QutSourceEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsStDateErrorMsg&apos; contains &apos;p:QutInsStDateEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateErrorMsg&apos; contains &apos;p:QutInsEdDateEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Navigation] I scroll to top of page</step>
+<step outcome="successful">And [Input] I click on &apos;CalculationsTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;CalculationsTab&apos; is selected</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutCalculationBasisErrorMsg&apos; contains &apos;p:QutCalculationBasisEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutCrCdErrorMsg&apos; contains &apos;p:QutCrCdEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotNoCreateText&apos; input is empty</step>
+<step outcome="successful">And [Input] I click on &apos;MainTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;MainTab&apos; is selected</step>
 <step outcome="successful">And [Input] Select &apos;p:Direct&apos; value from &apos;QutSourceCombobox&apos; dropdown list</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutPaymentTermCombobox&apos; contains &apos;p:Account&apos; text</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutQuotDate&apos; value equals sysdate</step>
-<step outcome="successful">And [Assertion] Verify &apos;QutQuotValidityDate&apos; value equals sysdate plus &apos;1&apos; months minus one day</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutQuotValidityDate&apos; value equals sysdate plus &apos;0&apos; months plus &apos;30&apos; day</step>
 <step outcome="successful">And [Input] Set &apos;QutInsStDateInput&apos; value to &apos;sysdateformatted&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Input] I click on &apos;QutInsStDateInput&apos;</step>
 <step outcome="successful">And [Input] I press Enter on &apos;QutInsStDateInput&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateInput&apos; input is empty</step>
-<step outcome="successful">And [Navigation] I scroll to &apos;QutCalculationBasisCombobox&apos;</step>
-<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- And [Assertion] Verify &apos;QutInsEdDateInput&apos; value equals sysdate plus &apos;1&apos; years minus one day</step>
+<step outcome="successful">And [Assertion] Verify &apos;QutInsEdDateInput&apos; value equals sysdate</step>
+<step outcome="successful">And [Input] I click on &apos;CalculationsTab&apos;</step>
+<step outcome="successful">And [Assertion] Verify tab &apos;CalculationsTab&apos; is selected</step>
 <step outcome="successful">And [Input] Select &apos;p:ProRata&apos; value from &apos;QutCalculationBasisCombobox&apos; dropdown list</step>
 <step outcome="successful">And [Input] Select &apos;p:USDollars&apos; value from &apos;QutCrCdCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
 <step outcome="successful">And [Assertion] Verify &apos;QutUnitPriceVal&apos; equals &apos;3.75&apos; text</step>
 <step outcome="successful">And [Navigation] I scroll to &apos;CreateButton&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;CreateButton&apos;</step>
@@ -155,17 +235,21 @@
 <step outcome="successful">And [Javascript] I switch back to main content</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
-<step outcome="successful">And [Navigation] I scroll to &apos;EditButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;EditButton&apos;</step>
-<step outcome="successful">And [Assertion] Verify IG &apos;RiskCalculation_ig&apos; row &apos;17 - Marine Sum Insured&apos; Foreign/Foreign Amount can be filled</step>
-<step outcome="successful">And [Input] I set SECOND IG &apos;RiskCalculation_ig&apos; from first row &apos;17 - Marine Sum Insured&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
+<step outcome="ignorable">!-- Fill in Quotation Value Types</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;RiskCalculationButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;RiskCalculationButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;RiskCalculationIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;RiskCalculationEditButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;RISK_CALC_REGION_ig&apos; row &apos;17 - Marine Sum Insured&apos; Foreign/Foreign Amount can be filled</step>
+<step outcome="successful">And [Input] I set SECOND IG &apos;RISK_CALC_REGION_ig&apos; from first row &apos;17 - Marine Sum Insured&apos; to random numbers between &apos;1&apos; and &apos;50&apos; for all enabled cells excluding DDL</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;SaveButton&apos;</step>
-<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;RiskCalculationSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;CloseButtonFromPopup&apos;</step>
 <step outcome="successful">And [Navigation] I scroll to top of page</step>
 <step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="ignorable">!-- Fill in Quotation Value Types</step>
 <step outcome="successful">And [Input] I click on &apos;EditButtonQuotationValue&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;calc_ig&apos; row &apos;26 - Overage Premium&apos; Foreign/Foreign Amount can be filled</step>
@@ -176,25 +260,75 @@
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="ignorable">!-- Fill in Quotation Client</step>
-<step outcome="successful">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientCombobox&apos; dropdown list</step>
-<step outcome="successful">And [Input] Select &apos;p:StaffAmmarAhmedHamzaGhor&apos; value from &apos;QurQutClientNoCombobox&apos; dropdown list</step>
-<step outcome="successful">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
-<step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
-<step outcome="successful">And [Input] I click on &apos;NextButton&apos;</step>
-<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="ignorable">!-- Last Page</step>
-<step outcome="successful">And [Input] Select &apos;p:AWSSea&apos; value from &apos;QutCoverGroupCombobox&apos; dropdown list</step>
+<step outcome="ignorable">!-- Fill in All Quotation Details</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;QutQuotNoAllQuotationDetails&apos; contains saved value &apos;QuotationNo&apos;</step>
 <step outcome="successful">And [Input] Select &apos;p:Cheque&apos; value from &apos;QutCollectionTypeCombobox&apos; dropdown list</step>
-<step outcome="successful">And [Navigation] I scroll to end of page</step>
+<step outcome="successful">And [Navigation] I scroll to &apos;CustomerInfoButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CustomerInfoButton&apos;</step>
+<step outcome="successful">And [Input] Select &apos;p:ClientName&apos; value from &apos;QurQutClientCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:ClientName&apos; value from &apos;QurQutClientNoCombobox&apos; dropdown list</step>
 <step outcome="successful">And [Input] I click on &apos;ApplyChangesButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:DataUpdatedSuccessfully&apos; text</step>
-<step outcome="successful">And [Assertion] Verify text of &apos;QutQuotNoFinalPageText&apos; contains saved value &apos;QuotationNo&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Risk Quotation Button</step>
+<step outcome="successful">And [Navigation] I scroll to end of page</step>
+<step outcome="successful">And [Input] I click on &apos;RiskQuotationButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;RiskTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;RiskDetailsBackButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- Covers Button</step>
+<step outcome="successful">And [Input] I click on &apos;CoversButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;CoversIframe&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;CoversTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;CoverDeleteFirstRow&apos; if present</step>
+<step outcome="successful">And [Input] I click on &apos;CoversSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversAddRow&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversSerialRow&apos;</step>
+<step outcome="successful">And [Input] Set &apos;CoversSerialRow&apos; value to &apos;1&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CategoryRow&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversCategoryComboboxRow&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:ConditionsClauses&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;CoversIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversRow&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversComboboxRow&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] Select &apos;p:InstituteLocationClauseCL&apos; value from &apos;CoversPopupLOVSearchBar&apos; dropdown list</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;CoversIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;PremRow&apos;</step>
+<step outcome="successful">And [Input] Set &apos;CoversRateRow&apos; value to &apos;1&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CoversSaveButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] I click on &apos;CloseButtonFromPopup&apos;</step>
+<step outcome="ignorable">!-- REI Plan</step>
+<step outcome="successful">And [Input] I click on &apos;REIPlanButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch to iframe &apos;ReInsurancePlansIframe&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;REIPlanSaveButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ReinsurancePlanErrorMsg&apos; contains &apos;p:ReinsurancePlanEmptyErrorMsg&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;ReiMethodErrorMsg&apos; contains &apos;p:ReiMethodEmptyErrorMsg&apos; text</step>
+<step outcome="ignorable">!-- And [Input] Select &apos;$optionValue&apos; value from &apos;ReinsurancePlanCombobox&apos; dropdown list</step>
+<step outcome="successful">And [Input] Select &apos;p:PolicyWise&apos; value from &apos;ReiMethodCombobox&apos; dropdown list</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;REIPlanSaveButton&apos;</step>
+<step outcome="successful">And [Javascript] I switch back to main content</step>
+<step outcome="successful">And [Input] I click on &apos;CloseButtonFromPopup&apos;</step>
 <step outcome="successful">And [Navigation] I scroll to &apos;DeleteButton&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;DeleteButton&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;DeleteButtonPopup&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Assertion] Verify &apos;SuccessfullyAlert&apos; contains &apos;p:QuotationDeletedSuccessfully&apos; text</step>
+<step outcome="successful">And [Input] Set &apos;SearchQuotationInput&apos; value to &apos;p:Cancelled&apos;</step>
+<step outcome="successful">And [Input] I press Enter on &apos;SearchQuotationInput&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;QuotationNumberTable&apos;</step>
+<step outcome="successful">And [Input] Set &apos;QuotationNumberSearch&apos; value to &apos;statemanager:QuotationNo&apos;</step>
+<step outcome="successful">And [Input] I press Enter on &apos;QuotationNumberSearch&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Input] I click on &apos;EditQuotationImg&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;StatusAllQuotationDetails&apos; equals saved value &apos;p:Cancelled&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;ValidityStatusAllQuotationDetails&apos; equals saved value &apos;p:Invalid&apos;</step>
+<step outcome="successful">And [Assertion] Verify text of &apos;QutQuotNoAllQuotationDetails&apos; equals saved value &apos;statemanager:QuotationNo&apos;</step>
 <step outcome="ignorable">!-- Logout</step>
 <step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
 <step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>

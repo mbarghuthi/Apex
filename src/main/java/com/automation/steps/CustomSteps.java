@@ -59,23 +59,59 @@ public class CustomSteps extends AbstractSteps {
 	}
 
 	// Step to assert saved text value
+//	@Given("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
+//	@When("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
+//	@Then("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
+//	public void assertElementTextEqualsSavedValue(@Named("elementName") String elementName,
+//												  @Named("variableName") String variableName) throws Exception {
+//		String expectedValue = (String) stateManager.get(variableName);
+//		String actualValue   = cannedPage.getElementWithWaitText(elementName);
+//
+//		System.out.println("Expected value (from stateManager, key='" + variableName + "'): " + expectedValue);
+//		System.out.println("Actual value (from element '" + elementName + "'): " + actualValue);
+//
+//		if (expectedValue == null) {
+//			throw new Exception("Assertion failed: no value found in stateManager for key '" + variableName + "'");
+//		}
+//
+//		expectedValue = expectedValue.trim();
+//		actualValue   = actualValue != null ? actualValue.trim() : "";
+//
+//		if (!expectedValue.equals(actualValue)) {
+//			throw new Exception("Assertion failed: expected '" + expectedValue + "', but was '" + actualValue + "'");
+//		}
+//	}
 	@Given("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
 	@When("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
 	@Then("[Assertion] Verify text of '$elementName' equals saved value '$variableName'")
 	public void assertElementTextEqualsSavedValue(@Named("elementName") String elementName,
 												  @Named("variableName") String variableName) throws Exception {
-		String expectedValue = (String) stateManager.get(variableName);
-		String actualValue   = cannedPage.getElementWithWaitText(elementName);
 
-		System.out.println("Expected value (from stateManager, key='" + variableName + "'): " + expectedValue);
-		System.out.println("Actual value (from element '" + elementName + "'): " + actualValue);
+		String actualValue = cannedPage.getElementWithWaitText(elementName);
+		actualValue = actualValue != null ? actualValue.trim() : "";
 
-		if (expectedValue == null) {
-			throw new Exception("Assertion failed: no value found in stateManager for key '" + variableName + "'");
+		String expectedValue;
+
+		// Read from StateManager ONLY when explicitly requested
+		if (variableName != null && variableName.trim().toLowerCase().startsWith("statemanager:")) {
+			String key = variableName.trim().substring("statemanager:".length()).trim();
+			expectedValue = (String) stateManager.get(key);
+
+			System.out.println("Expected value (from stateManager, key='" + key + "'): " + expectedValue);
+			System.out.println("Actual value (from element '" + elementName + "'): " + actualValue);
+
+			if (expectedValue == null) {
+				throw new Exception("Assertion failed: no value found in stateManager for key '" + key + "'");
+			}
+
+			expectedValue = expectedValue.trim();
+		} else {
+			// Otherwise treat it as literal expected text (NOT a stateManager key)
+			expectedValue = variableName != null ? variableName.trim() : "";
+
+			System.out.println("Expected value (literal): " + expectedValue);
+			System.out.println("Actual value (from element '" + elementName + "'): " + actualValue);
 		}
-
-		expectedValue = expectedValue.trim();
-		actualValue   = actualValue != null ? actualValue.trim() : "";
 
 		if (!expectedValue.equals(actualValue)) {
 			throw new Exception("Assertion failed: expected '" + expectedValue + "', but was '" + actualValue + "'");
@@ -630,4 +666,22 @@ public class CustomSteps extends AbstractSteps {
 		Assert.assertNotNull("Checkbox '" + elementName + "' (" + itemId + ") is not checked", checked);
 	}
 
+	@Given("[Input] I fill IG '$igId' with random values (combo/date/number) and save")
+	@When("[Input] I fill IG '$igId' with random values (combo/date/number) and save")
+	@Then("[Input] I fill IG '$igId' with random values (combo/date/number) and save")
+	public void fill_ig_random_combo_date_number_and_save(@Named("igId") String igId) throws Exception {
+		int updated = customPage.fillIgRandomComboDateNumberAndSave(igId);
+		if (updated <= 0) throw new Exception("No cells were updated in IG: " + igId);
+	}
+
+	@Given("[Assertion] Verify IG '$igId' row '$rowText' column '$columnHeader' is filled and read-only")
+	@When("[Assertion] Verify IG '$igId' row '$rowText' column '$columnHeader' is filled and read-only")
+	@Then("[Assertion] Verify IG '$igId' row '$rowText' column '$columnHeader' is filled and read-only")
+	public void verify_ig_cell_filled_and_read_only(
+			@Named("igId") String igId,
+			@Named("rowText") String rowText,
+			@Named("columnHeader") String columnHeader
+	) throws Exception {
+		customPage.assertIgCellFilledAndReadOnly(igId, rowText, columnHeader, true); // true => reject 0 as "filled"
+	}
 }

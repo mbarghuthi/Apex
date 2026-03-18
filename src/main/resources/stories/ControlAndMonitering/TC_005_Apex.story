@@ -1,4 +1,4 @@
-Scenario:  TC_005_Apex 001 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period
+Scenario:  TC_005_Apex TC5S1 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -52,7 +52,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_005_Apex 002 Apex Test Case Control and Monitoring - Aman Control - Control Dates
+Scenario:  TC_005_Apex TC5S2 Apex Test Case Control and Monitoring - Aman Control - Control Dates
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -108,7 +108,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_005_Apex 003 Apex Test Case Control and Monitoring - Aman Control - Control Dates (Groups)
+Scenario:  TC_005_Apex TC5S3 Apex Test Case Control and Monitoring - Aman Control - Control Dates (Groups)
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -125,7 +125,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_005_Apex 004 Apex Test Case Control and Monitoring - Aman Control - Commision Definition
+Scenario:  TC_005_Apex TC5S4 Apex Test Case Control and Monitoring - Aman Control - Commision Definition
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -140,8 +140,7 @@ And [Assertion] Verify 'CommissionDefinitionTable' is visible
 And [Input] I click on 'CommissionDefinitionAddRowButton'
 And [Assertion] Verify IG 'CommissionDefinitionTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'CommissionDefinitionSaveButton'
-And [Input] I click on 'CommissionDefinitionSaveButton'
+And [Input] I click on 'CommissionDefinitionSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'CommissionDefinitionTable'
@@ -151,7 +150,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_005_Apex 005 Apex Test Case Control and Monitoring - Aman Control - Import From Excel Advanced
+Scenario:  TC_005_Apex TC5S5 Apex Test Case Control and Monitoring - Aman Control - Import From Excel Advanced
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -185,7 +184,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_005_Apex 006 Apex Test Case Control and Monitoring - Aman Control - Excel Defintion
+Scenario:  TC_005_Apex TC5S6 Apex Test Case Control and Monitoring - Aman Control - Excel Defintion
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -214,9 +213,7 @@ And [Navigation] I scroll to 'ColumnsAddRowButton'
 And [Input] I click on 'ColumnsAddRowButton'
 And [Assertion] Verify IG 'ColumnsTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'ColumnsSaveButton'
-And [Progress] I wait for '3' sec
-!-- And [Input] I click on 'ColumnsSaveButton'
+And [Input] I click on 'ColumnsSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Navigation] I reload page

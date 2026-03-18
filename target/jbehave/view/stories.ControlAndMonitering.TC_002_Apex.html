@@ -10,7 +10,7 @@
 <h1></h1>
 <div class="path">stories/ControlAndMonitering/TC_002_Apex.story</div>
 <div class="scenario">
-<h2>Scenario: TC_002_Apex 001 Apex Test Case Control and Monitoring - General Business Tariffs - Sum Insured Ranges</h2>
+<h2>Scenario: TC_002_Apex TC2S1 Apex Test Case Control and Monitoring - General Business Tariffs - Sum Insured Ranges</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -28,8 +28,7 @@
 <div class="step successful">And  I click on 'SumInsuredRangesAddRowButton'</div>
 <div class="step successful">And  Verify IG 'SumInsuredRangesTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'SumInsuredRangesSaveButton'</div>
-<div class="step successful">And  I click on 'SumInsuredRangesSaveButton'</div>
+<div class="step successful">And  I click on 'SumInsuredRangesSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I delete the inserted row in IG 'SumInsuredRangesTable'</div>
@@ -39,7 +38,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_002_Apex 002 Apex Test Case Control and Monitoring - General Business Tariffs - Short Period Tariff</h2>
+<h2>Scenario: TC_002_Apex TC2S2 Apex Test Case Control and Monitoring - General Business Tariffs - Short Period Tariff</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -56,8 +55,7 @@
 <div class="step successful">And  I click on 'ShortPeriodTariffAddRowButton'</div>
 <div class="step successful">And  Verify IG 'ShortPeriodTariffTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'ShortPeriodTariffSaveButton'</div>
-<div class="step successful">And  I click on 'ShortPeriodTariffSaveButton'</div>
+<div class="step successful">And  I click on 'ShortPeriodTariffSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I delete the inserted row in IG 'ShortPeriodTariffTable'</div>
@@ -67,7 +65,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_002_Apex 003 Apex Test Case Control and Monitoring - General Business Tariffs - Pro-Rata Period Tariff</h2>
+<h2>Scenario: TC_002_Apex TC2S3 Apex Test Case Control and Monitoring - General Business Tariffs - Pro-Rata Period Tariff</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -81,8 +79,7 @@
 <div class="step successful">And  I click on 'ProRataPeriodTariffAddRowButton'</div>
 <div class="step successful">And  Verify IG 'ProRataPeriodTariffTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'ProRataPeriodTariffSaveButton'</div>
-<div class="step ignorable">!-- And  I click on 'ProRataPeriodTariffSaveButton'</div>
+<div class="step successful">And  I click on 'ProRataPeriodTariffSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step ignorable">!-- And  I delete the inserted row in IG 'ProRataPeriodTariffTable'</div>

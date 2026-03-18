@@ -1,5 +1,5 @@
 <story path="stories/ControlAndMonitering/TC_002_Apex.story" title="">
-<scenario keyword="Scenario:" title="TC_002_Apex 001 Apex Test Case Control and Monitoring - General Business Tariffs - Sum Insured Ranges">
+<scenario keyword="Scenario:" title="TC_002_Apex TC2S1 Apex Test Case Control and Monitoring - General Business Tariffs - Sum Insured Ranges">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -17,8 +17,7 @@
 <step outcome="successful">And [Input] I click on &apos;SumInsuredRangesAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;SumInsuredRangesTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;SumInsuredRangesSaveButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;SumInsuredRangesSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;SumInsuredRangesSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;SumInsuredRangesTable&apos;</step>
@@ -27,7 +26,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_002_Apex 002 Apex Test Case Control and Monitoring - General Business Tariffs - Short Period Tariff">
+<scenario keyword="Scenario:" title="TC_002_Apex TC2S2 Apex Test Case Control and Monitoring - General Business Tariffs - Short Period Tariff">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -44,8 +43,7 @@
 <step outcome="successful">And [Input] I click on &apos;ShortPeriodTariffAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;ShortPeriodTariffTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;ShortPeriodTariffSaveButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;ShortPeriodTariffSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ShortPeriodTariffSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;ShortPeriodTariffTable&apos;</step>
@@ -54,7 +52,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_002_Apex 003 Apex Test Case Control and Monitoring - General Business Tariffs - Pro-Rata Period Tariff">
+<scenario keyword="Scenario:" title="TC_002_Apex TC2S3 Apex Test Case Control and Monitoring - General Business Tariffs - Pro-Rata Period Tariff">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -68,8 +66,7 @@
 <step outcome="successful">And [Input] I click on &apos;ProRataPeriodTariffAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;ProRataPeriodTariffTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;ProRataPeriodTariffSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;ProRataPeriodTariffSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ProRataPeriodTariffSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;ProRataPeriodTariffTable&apos;</step>

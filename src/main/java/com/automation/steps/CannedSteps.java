@@ -5,7 +5,6 @@ import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,10 +13,6 @@ import com.automation.pages.CannedPage;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 
 @Component
@@ -676,16 +671,16 @@ public class CannedSteps extends AbstractSteps {
 		}
 	}
 
-	@Given("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus one day")
-	@When("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus one day")
-	@Then("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus one day")
-	public void assert_sysdate_plus_months_minus_one_day(String elementName, int months) throws Exception {
+	@Given("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months plus '$days' day")
+	@When("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months plus '$days' day")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months plus '$days' day")
+	public void assert_sysdate_plus_months_plus_days(String elementName, int months, int days) throws Exception {
 
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 		String expected = LocalDate.now()
 				.plusMonths(months)
-				.minusDays(1)
+				.plusDays(days)
 				.format(formatter);
 
 		String actual = cannedPage.getElementWithWaitText(elementName);
@@ -693,7 +688,49 @@ public class CannedSteps extends AbstractSteps {
 		if (!expected.equals(actual)) {
 			throw new AssertionError(
 					"Expected date '" + expected + "' (sysdate + " + months +
-							" months - 1 day) but found '" + actual + "'");
+							" months " + months + "days) but found '" + actual + "'");
+		}
+	}
+
+	@Given("[Assertion] Verify '$elementName' value equals sysdate minus '$months' months minus '$days' day")
+	@When("[Assertion] Verify '$elementName' value equals sysdate minus '$months' months minus '$days' day")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate minus '$months' months minus '$days' day")
+	public void assert_sysdate_minus_months_minus_days(String elementName, int months, int days) throws Exception {
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		String expected = LocalDate.now()
+				.minusMonths(months)
+				.minusDays(days)
+				.format(formatter);
+
+		String actual = cannedPage.getElementWithWaitText(elementName);
+
+		if (!expected.equals(actual)) {
+			throw new AssertionError(
+					"Expected date '" + expected + "' (sysdate - " + months +
+							" months - " + days + " days) but found '" + actual + "'");
+		}
+	}
+
+	@Given("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus '$days' day")
+	@When("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus '$days' day")
+	@Then("[Assertion] Verify '$elementName' value equals sysdate plus '$months' months minus '$days' day")
+	public void assert_sysdate_plus_months_minus_days(String elementName, int months, int days) throws Exception {
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		String expected = LocalDate.now()
+				.plusMonths(months)
+				.minusDays(days)
+				.format(formatter);
+
+		String actual = cannedPage.getElementWithWaitText(elementName);
+
+		if (!expected.equals(actual)) {
+			throw new AssertionError(
+					"Expected date '" + expected + "' (sysdate - " + months +
+							" months - " + days + " days) but found '" + actual + "'");
 		}
 	}
 
@@ -837,4 +874,10 @@ public class CannedSteps extends AbstractSteps {
 		cannedPage.assertApexLovReturnValueEquals(elementName, expectedReturn);
 	}
 
+	@Given("[Input] I click on '$elementName' and if '$popupElementName' not appear reclick")
+	@When("[Input] I click on '$elementName' and if '$popupElementName' not appear reclick")
+	@Then("[Input] I click on '$elementName' and if '$popupElementName' not appear reclick")
+	public void click_and_reclick_if_popup_not_appear(String elementName, String popupElementName) throws Exception {
+		cannedPage.clickUntilPopupAppears(elementName, popupElementName);
+	}
 }

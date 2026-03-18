@@ -1,4 +1,4 @@
-Scenario:  TC_002_Apex 001 Apex Test Case Control and Monitoring - General Business Tariffs - Sum Insured Ranges
+Scenario:  TC_002_Apex TC2S1 Apex Test Case Control and Monitoring - General Business Tariffs - Sum Insured Ranges
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -17,8 +17,7 @@ And [Assertion] Verify 'SumInsuredRangesTable' is visible
 And [Input] I click on 'SumInsuredRangesAddRowButton'
 And [Assertion] Verify IG 'SumInsuredRangesTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'SumInsuredRangesSaveButton'
-And [Input] I click on 'SumInsuredRangesSaveButton'
+And [Input] I click on 'SumInsuredRangesSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'SumInsuredRangesTable'
@@ -28,7 +27,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_002_Apex 002 Apex Test Case Control and Monitoring - General Business Tariffs - Short Period Tariff
+Scenario:  TC_002_Apex TC2S2 Apex Test Case Control and Monitoring - General Business Tariffs - Short Period Tariff
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -46,8 +45,7 @@ And [Assertion] Verify 'ShortPeriodTariffTable' is visible
 And [Input] I click on 'ShortPeriodTariffAddRowButton'
 And [Assertion] Verify IG 'ShortPeriodTariffTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'ShortPeriodTariffSaveButton'
-And [Input] I click on 'ShortPeriodTariffSaveButton'
+And [Input] I click on 'ShortPeriodTariffSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'ShortPeriodTariffTable'
@@ -57,7 +55,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_002_Apex 003 Apex Test Case Control and Monitoring - General Business Tariffs - Pro-Rata Period Tariff
+Scenario:  TC_002_Apex TC2S3 Apex Test Case Control and Monitoring - General Business Tariffs - Pro-Rata Period Tariff
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -72,8 +70,7 @@ And [Assertion] Verify 'ProRataPeriodTariffTable' is visible
 And [Input] I click on 'ProRataPeriodTariffAddRowButton'
 And [Assertion] Verify IG 'ProRataPeriodTariffTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'ProRataPeriodTariffSaveButton'
-!-- And [Input] I click on 'ProRataPeriodTariffSaveButton'
+And [Input] I click on 'ProRataPeriodTariffSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 !-- And [Action] I delete the inserted row in IG 'ProRataPeriodTariffTable'

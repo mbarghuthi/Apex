@@ -1,4 +1,4 @@
-Scenario:  TC_004_Apex 001 Apex Test Case FGA - Travel Setup - Travel Calculation Prices
+Scenario:  TC_004_Apex TC4S1 Apex Test Case FGA - Travel Setup - Travel Calculation Prices
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -13,8 +13,7 @@ And [Assertion] Verify 'TravelCalculationPricesTable' is visible
 And [Input] I click on 'TravelCalculationPricesAddRowButton'
 And [Assertion] Verify IG 'TravelCalculationPricesTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'TravelCalculationPricesSaveButton'
-And [Input] I click on 'TravelCalculationPricesSaveButton'
+And [Input] I click on 'TravelCalculationPricesSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Navigation] I reload page
@@ -24,7 +23,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 002 Apex Test Case FGA - Travel Setup - Travel Days
+Scenario:  TC_004_Apex TC4S2 Apex Test Case FGA - Travel Setup - Travel Days
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -45,7 +44,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 003 Apex Test Case FGA - Travel Setup - Key Benefits
+Scenario:  TC_004_Apex TC4S3 Apex Test Case FGA - Travel Setup - Key Benefits
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -60,8 +59,7 @@ And [Assertion] Verify 'KeyBenefitsTable' is visible
 And [Input] I click on 'KeyBenefitsAddRowButton'
 And [Assertion] Verify IG 'KeyBenefitsTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'KeyBenefitsSaveButton'
-And [Input] I click on 'KeyBenefitsSaveButton'
+And [Input] I click on 'KeyBenefitsSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Navigation] I reload page

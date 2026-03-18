@@ -10,11 +10,12 @@
 <h1></h1>
 <div class="path">stories/Quotation/TC_001_Apex.story</div>
 <div class="scenario">
-<h2>Scenario: TC_001_Apex Apex Test Case Navigate to Quotation Page</h2>
+<h2>Scenario: TC_001_Apex TC1S1 Apex Test Case Navigate to Quotation Page</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">When  I click on 'navControlButton'</div>
+<div class="step successful">When  I ensure navbar is open using toggle 'navControlButton'</div>
+<div class="step ignorable">!-- When  I click on 'navControlButton'</div>
 <div class="step successful">And  I click on 'QuotationsSideMenu'</div>
 <div class="step successful">And  I click on 'QuotationMenuSideMenu'</div>
 <div class="step successful">And  I click on 'QuotationNavigationSideMenu'</div>

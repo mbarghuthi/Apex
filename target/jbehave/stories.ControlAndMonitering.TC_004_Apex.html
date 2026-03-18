@@ -2,7 +2,7 @@
 <h1></h1>
 <div class="path">stories/ControlAndMonitering/TC_004_Apex.story</div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 001 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users Definition</h2>
+<h2>Scenario: TC_004_Apex TC4S1 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users Definition</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -92,7 +92,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 002 Apex Test Case Control and Monitoring - Users &amp; Authorities - Roles Definition</h2>
+<h2>Scenario: TC_004_Apex TC4S2 Apex Test Case Control and Monitoring - Users &amp; Authorities - Roles Definition</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -105,8 +105,7 @@
 <div class="step successful">And  I click on 'RolesAddRowButton'</div>
 <div class="step successful">And  Verify IG 'RolesTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'RolesSaveButton'</div>
-<div class="step ignorable">!-- And  I click on 'RolesSaveButton'</div>
+<div class="step successful">And  I click on 'RolesSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I delete the inserted row in IG 'RolesTable'</div>
@@ -116,8 +115,7 @@
 <div class="step successful">And  I click on 'RolesDetAddRowButton'</div>
 <div class="step successful">And  Verify IG 'RolesDetTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'RolesDetSaveButton'</div>
-<div class="step ignorable">!-- And  I click on 'RolesDetSaveButton'</div>
+<div class="step successful">And  I click on 'RolesDetSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I delete the inserted row in IG 'RolesDetTable'</div>
@@ -127,7 +125,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 003 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users' Privileges On Locations &amp; Branches</h2>
+<h2>Scenario: TC_004_Apex TC4S3 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users' Privileges On Locations &amp; Branches</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -137,15 +135,16 @@
 <div class="step successful">And  I click on 'UsersAndAuthoritiesSideMenu'</div>
 <div class="step successful">And  I click on 'UsersPrivilegesOnLocationsAndBranchesSideMenu'</div>
 <div class="step successful">And  I click on 'UsersDDL'</div>
+<div class="step successful">And  I wait for '3' sec</div>
 <div class="step successful">And  Select 'autou - Testing Automation' value from 'PopupLOVSearchBar' dropdown list</div>
 <div class="step successful">And  Verify tab 'LocationTab' is selected</div>
 <div class="step successful">And  Verify 'LocationTable' is visible</div>
 <div class="step successful">And  I click on 'LocationAddRowButton'</div>
 <div class="step successful">And  I wait for '3' sec</div>
+<div class="step successful">And  I scroll to end of page</div>
 <div class="step successful">And  Verify IG 'LocationTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'LocationSaveButton'</div>
-<div class="step ignorable">!-- And  I click on 'LocationSaveButton'</div>
+<div class="step successful">And  I click on 'LocationSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I delete the inserted row in IG 'LocationTable'</div>
@@ -154,8 +153,7 @@
 <div class="step successful">And  I click on 'UserRoleAddRowButton'</div>
 <div class="step successful">And  Verify IG 'UserRoleTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'UserRoleSaveButton'</div>
-<div class="step ignorable">!-- And  I click on 'LocationSaveButton'</div>
+<div class="step successful">And  I click on 'UserRoleSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step ignorable">!-- And  I delete the inserted row in IG 'UserRoleTable'</div>
@@ -165,15 +163,15 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 004 Apex Test Case Control and Monitoring - Users &amp; Authorities - User'S Privileges On Group Programs Dept. Wise</h2>
+<h2>Scenario: TC_004_Apex TC4S4 Apex Test Case Control and Monitoring - Users &amp; Authorities - User'S Privileges On Group Programs Dept. Wise</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 005 Apex Test Case Control and Monitoring - Users &amp; Authorities - User'S Privileges On Single Programs-List</h2>
+<h2>Scenario: TC_004_Apex TC4S5 Apex Test Case Control and Monitoring - Users &amp; Authorities - User'S Privileges On Single Programs-List</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 006 Apex Test Case Control and Monitoring - Users &amp; Authorities - Change Password</h2>
+<h2>Scenario: TC_004_Apex TC4S6 Apex Test Case Control and Monitoring - Users &amp; Authorities - Change Password</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -192,6 +190,7 @@
 <div class="step successful">And  Set 'ChangePasswordUserPasswordInput' value to '@'</div>
 <div class="step successful">And  Set 'ChangePasswordConfirmPasswordInput' value to '123'</div>
 <div class="step successful">And  I click on 'ChangePasswordApplyChangesButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
 <div class="step successful">And  Verify 'ChangePasswordUserPasswordErrorMsg' equals 'Password Must Start with A Character [A - Z]' text</div>
 <div class="step successful">And  Verify 'ChangePasswordConfirmPasswordErrorMsgPlaceHolder' equals 'Passwords are not compatible!' text</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -217,7 +216,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 007 Apex Test Case Control and Monitoring - Users &amp; Authorities - Authorized Buttons</h2>
+<h2>Scenario: TC_004_Apex TC4S7 Apex Test Case Control and Monitoring - Users &amp; Authorities - Authorized Buttons</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -229,7 +228,8 @@
 <div class="step successful">And  Verify 'AuthorizedButtonsTitle' equals 'Authorized Buttons' text</div>
 <div class="step successful">And  Select '1 - Home' value from 'ProgramCombobox' dropdown list</div>
 <div class="step successful">And  Verify 'AuthorizedButtonsTable' is visible</div>
-<div class="step successful">And  I click on 'AuthorizedButtonsApplyChangesButton'</div>
+<div class="step successful">And  I wait for '5' sec</div>
+<div class="step successful">And  I click on 'AuthorizedButtonsAddRowButton'</div>
 <div class="step successful">And  Verify IG 'AuthorizedButtonsTable' has an empty inserted row</div>
 <div class="step successful">And  I delete the inserted row in IG 'AuthorizedButtonsTable'</div>
 <div class="step successful">And  I wait for '7' sec</div>
@@ -238,7 +238,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 008 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Endt Transactions</h2>
+<h2>Scenario: TC_004_Apex TC4S8 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Endt Transactions</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -263,8 +263,7 @@
 <div class="step successful">And  I click on 'TransactionTypeAddRow'</div>
 <div class="step successful">And  Verify IG 'TransactionTypeTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'TransactionTypeSaveButton'</div>
-<div class="step ignorable">!-- And  I click on 'TransactionTypeSaveButton'</div>
+<div class="step successful">And  I click on 'TransactionTypeSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I wait for '7' sec</div>
@@ -273,7 +272,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 009 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Claim Payments</h2>
+<h2>Scenario: TC_004_Apex TC4S9 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Claim Payments</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -302,7 +301,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 010 Apex Test Case Control and Monitoring - Users &amp; Authorities - Password Policy Rules</h2>
+<h2>Scenario: TC_004_Apex TC4S10 Apex Test Case Control and Monitoring - Users &amp; Authorities - Password Policy Rules</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -318,7 +317,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 011 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Access Violations</h2>
+<h2>Scenario: TC_004_Apex TC4S11 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Access Violations</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -341,7 +340,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 012 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Quotation Posting</h2>
+<h2>Scenario: TC_004_Apex TC4S12 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Quotation Posting</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -358,8 +357,7 @@
 <div class="step successful">And  I click on 'UserQuotationPostingAddRow'</div>
 <div class="step successful">And  Verify IG 'UserQuotationPostingTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'UserQuotationPostingSaveButton'</div>
-<div class="step ignorable">!-- And  I click on 'UserQuotationPostingSaveButton'</div>
+<div class="step successful">And  I click on 'UserQuotationPostingSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I delete the inserted row in IG 'UserQuotationPostingTable'</div>
@@ -370,7 +368,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 013 Apex Test Case Control and Monitoring - Users &amp; Authorities - Link Region/City Screen</h2>
+<h2>Scenario: TC_004_Apex TC4S13 Apex Test Case Control and Monitoring - Users &amp; Authorities - Link Region/City Screen</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -383,6 +381,7 @@
 <div class="step successful">And  I click on 'RangesCombobox'</div>
 <div class="step successful">And  Select '1 - Central-Other' value from 'PopupLOVSearchBar' dropdown list</div>
 <div class="step successful">And  Verify 'RangesTable' is visible</div>
+<div class="step successful">And  I wait for '5' sec</div>
 <div class="step successful">And  I click on 'RangesAddRow'</div>
 <div class="step successful">And  Verify IG 'RangesTable' has an empty inserted row</div>
 <div class="step successful">And  I delete the inserted row in IG 'RangesTable'</div>

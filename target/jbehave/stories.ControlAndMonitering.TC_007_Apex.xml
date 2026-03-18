@@ -1,5 +1,5 @@
 <story path="stories/ControlAndMonitering/TC_007_Apex.story" title="">
-<scenario keyword="Scenario:" title="TC_007_Apex 001 Apex Test Case Control and Monitoring - Workflow Integration - Map AMAN Fields with WF Attributes">
+<scenario keyword="Scenario:" title="TC_007_Apex TC7S1 Apex Test Case Control and Monitoring - Workflow Integration - Map AMAN Fields with WF Attributes">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -12,7 +12,7 @@
 <step outcome="successful">And [Assertion] Verify &apos;MapAmanFieldsWithWFAttributesMasterTable&apos; is visible</step>
 <step outcome="successful">And [Input] I click on &apos;MapAmanFieldsWithWFAttributesMasterAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;MapAmanFieldsWithWFAttributesMasterTable&apos; has an empty inserted row</step>
-<step outcome="successful">And [Action] I delete the inserted row in IG &apos;MapAmanFieldsWithWFAttributesMasterTable&apos;</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;MapAmanFieldsWithWFAttributesMasterTable&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;MapAmanFieldsWithWFAttributesDetailsTable&apos; is visible</step>
 <step outcome="successful">And [Input] I click on &apos;MapAmanFieldsWithWFAttributesDetailsAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;MapAmanFieldsWithWFAttributesDetailsTable&apos; has an empty inserted row</step>
@@ -22,7 +22,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_007_Apex 002 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Build Queries">
+<scenario keyword="Scenario:" title="TC_007_Apex TC7S2 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Build Queries">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -53,7 +53,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_007_Apex 003 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Services Setup">
+<scenario keyword="Scenario:" title="TC_007_Apex TC7S3 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Services Setup">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>

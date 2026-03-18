@@ -1,4 +1,4 @@
-Scenario:  TC_001_Apex 001 Apex Test Case Control and Monitoring - Aman Setup - Programs
+Scenario:  TC_001_Apex TC1S1 Apex Test Case Control and Monitoring - Aman Setup - Programs
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -40,7 +40,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_001_Apex 002 Apex Test Case Control and Monitoring - Aman Setup - System Code Ranks
+Scenario:  TC_001_Apex TC1S2 Apex Test Case Control and Monitoring - Aman Setup - System Code Ranks
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -52,8 +52,7 @@ And [Assertion] Verify 'SystemCodeRanksMajorTable' is visible
 And [Input] I click on 'SystemCodeRanksMajorAddButton'
 And [Assertion] Verify IG 'SystemCodeRanksMajorTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'SystemCodeRanksMajorSaveButton'
-And [Input] I click on 'SystemCodeRanksMajorSaveButton'
+And [Input] I click on 'SystemCodeRanksMajorSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'SystemCodeRanksMajorTable'
@@ -62,8 +61,7 @@ And [Assertion] Verify 'SystemCodeRanksMinorTable' is visible
 And [Input] I click on 'SystemCodeRanksMinorAddButton'
 And [Assertion] Verify IG 'SystemCodeRanksMinorTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'SystemCodeRanksMinorSaveButton'
-And [Input] I click on 'SystemCodeRanksMinorSaveButton'
+And [Input] I click on 'SystemCodeRanksMinorSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'SystemCodeRanksMinorTable'
@@ -73,7 +71,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_001_Apex 003 Apex Test Case Control and Monitoring - Aman Setup - Error Messages
+Scenario:  TC_001_Apex TC1S3 Apex Test Case Control and Monitoring - Aman Setup - Error Messages
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -88,18 +86,17 @@ And [Assertion] Verify 'ErrorMessagesTable' is visible
 And [Input] I click on 'ErrorMessagesAddRowButton'
 And [Assertion] Verify IG 'ErrorMessagesTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'ErrorMessagesSaveButton'
-And [Input] I click on 'ErrorMessagesSaveButton'
+And [Input] I click on 'ErrorMessagesSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
-And [Action] I delete the inserted row in IG 'ErrorMessagesTable'
+!-- And [Action] I delete the inserted row in IG 'ErrorMessagesTable'
+And [Navigation] I reload page
 And [Progress] I wait for '5' sec
 And [Assertion] Verify 'ErrorMessagesDetailsTable' is visible
 And [Input] I click on 'ErrorMessagesDetailsAddRowButton'
 And [Assertion] Verify IG 'ErrorMessagesDetailsTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'ErrorMessagesDetailsSaveButton'
-And [Input] I click on 'ErrorMessagesDetailsSaveButton'
+And [Input] I click on 'ErrorMessagesDetailsSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'ErrorMessagesDetailsTable'
@@ -109,7 +106,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_001_Apex 004 Apex Test Case Control and Monitoring - Aman Setup - Departments
+Scenario:  TC_001_Apex TC1S4 Apex Test Case Control and Monitoring - Aman Setup - Departments
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -137,7 +134,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_001_Apex 005 Apex Test Case Control and Monitoring - Aman Setup - Government Occupation
+Scenario:  TC_001_Apex TC1S5 Apex Test Case Control and Monitoring - Aman Setup - Government Occupation
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -175,7 +172,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_001_Apex 006 Apex Test Case Control and Monitoring - Aman Setup - Address Ordering
+Scenario:  TC_001_Apex TC1S6 Apex Test Case Control and Monitoring - Aman Setup - Address Ordering
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -192,7 +189,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_001_Apex 007 Apex Test Case Control and Monitoring - Aman Setup - Black List
+Scenario:  TC_001_Apex TC1S7 Apex Test Case Control and Monitoring - Aman Setup - Black List
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -219,7 +216,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_001_Apex 008 Apex Test Case Control and Monitoring - Aman Setup - Domicile Locations
+Scenario:  TC_001_Apex TC1S8 Apex Test Case Control and Monitoring - Aman Setup - Domicile Locations
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -234,8 +231,7 @@ And [Assertion] Verify 'DomicileLocationsTable' is visible
 And [Input] I click on 'DomicileLocationsAddRowButton'
 And [Assertion] Verify IG 'DomicileLocationsTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'DomicileLocationsSaveButton'
-And [Input] I click on 'DomicileLocationsSaveButton'
+And [Input] I click on 'DomicileLocationsSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'DomicileLocationsTable'
@@ -244,7 +240,7 @@ Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
-Scenario:  TC_001_Apex 009 Apex Test Case Control and Monitoring - Aman Setup - System Owner Setup
+Scenario:  TC_001_Apex TC1S9 Apex Test Case Control and Monitoring - Aman Setup - System Owner Setup
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'

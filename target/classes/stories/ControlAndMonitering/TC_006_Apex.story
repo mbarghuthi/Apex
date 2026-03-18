@@ -1,4 +1,4 @@
-Scenario:  TC_006_Apex 001 Apex Test Case Control and Monitoring - Mail & SMS - Mail and SMS Notification Configuration
+Scenario:  TC_006_Apex TC6S1 Apex Test Case Control and Monitoring - Mail & SMS - Mail and SMS Notification Configuration
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -19,7 +19,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_006_Apex 002 Apex Test Case Control and Monitoring - Mail & SMS - Mail Setup
+Scenario:  TC_006_Apex TC6S2 Apex Test Case Control and Monitoring - Mail & SMS - Mail Setup
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -62,7 +62,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_006_Apex 003 Apex Test Case Control and Monitoring - Mail & SMS - Mail & SMS Notifications
+Scenario:  TC_006_Apex TC6S3 Apex Test Case Control and Monitoring - Mail & SMS - Mail & SMS Notifications
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -80,7 +80,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_006_Apex 004 Apex Test Case Control and Monitoring - Mail & SMS - SMS Notifications
+Scenario:  TC_006_Apex TC6S4 Apex Test Case Control and Monitoring - Mail & SMS - SMS Notifications
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -98,7 +98,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_006_Apex 005 Apex Test Case Control and Monitoring - Mail & SMS - SMS GateWay Definition
+Scenario:  TC_006_Apex TC6S5 Apex Test Case Control and Monitoring - Mail & SMS - SMS GateWay Definition
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'

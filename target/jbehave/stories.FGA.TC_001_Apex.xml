@@ -1,30 +1,31 @@
-<story path="stories/FGA/TC_001_Apex.story" title="!--">
-<scenario keyword="Scenario:" title="TC_001_Apex 001 Apex Test Case FGA - Codes Definition Linking Setup - FGA Address">
-<step outcome="ignorable">!-- Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-<step outcome="ignorable">!-- And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
-<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="ignorable">!-- !-- When [Input] I click on &apos;navControlButton&apos;</step>
-<step outcome="ignorable">!-- When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;FGASideMenu&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;CodesDefinitionLinkingSetupSideMenu&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;FGAAddressSideMenu&apos;</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;FGAAddressTitle&apos; equals &apos;p:FGAAddress&apos; text</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;FGAAddressTable&apos; is visible</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;FGAAddressAddRowButton&apos;</step>
-<step outcome="ignorable">!-- And [Assertion] Verify IG &apos;FGAAddressTable&apos; has an empty inserted row</step>
-<step outcome="ignorable">!-- And [Progress] I wait for &apos;5&apos; sec</step>
+<story path="stories/FGA/TC_001_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_001_Apex TC1S1 Apex Test Case FGA - Codes Definition Linking Setup - FGA Address">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;FGASideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CodesDefinitionLinkingSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;FGAAddressSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;FGAAddressTitle&apos; equals &apos;p:FGAAddress&apos; text</step>
+<step outcome="successful">And [Assertion] Verify &apos;FGAAddressTable&apos; is visible</step>
+<step outcome="successful">And [Input] I click on &apos;FGAAddressAddRowButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify IG &apos;FGAAddressTable&apos; has an empty inserted row</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="ignorable">!-- And [Input] I click on &apos;FGAAddressSaveButton&apos;</step>
 <step outcome="ignorable">!-- And [Input] I click on &apos;FGAAddressSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;OkButton&apos;</step>
-<step outcome="ignorable">!-- !-- And [Action] I delete the inserted row in IG &apos;FGAAddressTable&apos;</step>
-<step outcome="ignorable">!-- And [Navigation] I reload page</step>
-<step outcome="ignorable">!-- And [Progress] I wait for &apos;7&apos; sec</step>
-<step outcome="ignorable">!-- Then [Input] I click on &apos;UserDDL&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;LogoutButton&apos;</step>
-<step outcome="ignorable">!-- And [Assertion] Verify &apos;loginButton&apos; is present</step>
+<step outcome="successful">And [Input] I click on &apos;FGAAddressSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
+<step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
+<step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
+<step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;FGAAddressTable&apos;</step>
+<step outcome="successful">And [Navigation] I reload page</step>
+<step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
+<step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_001_Apex 002 Apex Test Case FGA - Codes Definition Linking Setup - Household Contents Definition">
+<scenario keyword="Scenario:" title="TC_001_Apex TC1S2 Apex Test Case FGA - Codes Definition Linking Setup - Household Contents Definition">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -33,23 +34,25 @@
 <step outcome="successful">And [Input] I click on &apos;FGASideMenu&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;CodesDefinitionLinkingSetupSideMenu&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;HouseholdContentsDefinitionSideMenu&apos;</step>
-<step outcome="ignorable">!-- Change</step>
 <step outcome="successful">And [Input] Select &apos;p:Buildings&apos; value from &apos;SysMinorCombobox&apos; dropdown list</step>
 <step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
 <step outcome="successful">And [Assertion] Verify &apos;HouseholdContentsDefinitionTable&apos; is visible</step>
 <step outcome="successful">And [Input] I click on &apos;HouseholdContentsDefinitionAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;HouseholdContentsDefinitionTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;HouseholdContentsDefinitionSaveButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;HouseholdContentsDefinitionSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;HouseholdContentsDefinitionSaveButton&apos;</step>
+<step outcome="ignorable">!-- And [Input] I click on &apos;HouseholdContentsDefinitionSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;HouseholdContentsDefinitionSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;HouseholdContentsDefinitionTable&apos;</step>
 <step outcome="successful">And [Navigation] I reload page</step>
-<step outcome="ignorable">!-- Done</step>
 <step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
 <step outcome="successful">Then [Input] I click on &apos;UserDDL&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
+</scenario>
+<scenario keyword="Scenario:" title="TC_001_Apex TC1S3 Apex Test Case FGA - Codes Definition Linking Setup - FGA Cover Groups Definition">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 </scenario>
 </story>

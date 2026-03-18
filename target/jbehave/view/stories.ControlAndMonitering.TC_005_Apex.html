@@ -10,7 +10,7 @@
 <h1></h1>
 <div class="path">stories/ControlAndMonitering/TC_005_Apex.story</div>
 <div class="scenario">
-<h2>Scenario: TC_005_Apex 001 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period</h2>
+<h2>Scenario: TC_005_Apex TC5S1 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -63,7 +63,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_005_Apex 002 Apex Test Case Control and Monitoring - Aman Control - Control Dates</h2>
+<h2>Scenario: TC_005_Apex TC5S2 Apex Test Case Control and Monitoring - Aman Control - Control Dates</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -118,7 +118,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_005_Apex 003 Apex Test Case Control and Monitoring - Aman Control - Control Dates (Groups)</h2>
+<h2>Scenario: TC_005_Apex TC5S3 Apex Test Case Control and Monitoring - Aman Control - Control Dates (Groups)</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -134,7 +134,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_005_Apex 004 Apex Test Case Control and Monitoring - Aman Control - Commision Definition</h2>
+<h2>Scenario: TC_005_Apex TC5S4 Apex Test Case Control and Monitoring - Aman Control - Commision Definition</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -148,8 +148,7 @@
 <div class="step successful">And  I click on 'CommissionDefinitionAddRowButton'</div>
 <div class="step successful">And  Verify IG 'CommissionDefinitionTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'CommissionDefinitionSaveButton'</div>
-<div class="step successful">And  I click on 'CommissionDefinitionSaveButton'</div>
+<div class="step successful">And  I click on 'CommissionDefinitionSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I delete the inserted row in IG 'CommissionDefinitionTable'</div>
@@ -159,7 +158,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_005_Apex 005 Apex Test Case Control and Monitoring - Aman Control - Import From Excel Advanced</h2>
+<h2>Scenario: TC_005_Apex TC5S5 Apex Test Case Control and Monitoring - Aman Control - Import From Excel Advanced</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -192,7 +191,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_005_Apex 006 Apex Test Case Control and Monitoring - Aman Control - Excel Defintion</h2>
+<h2>Scenario: TC_005_Apex TC5S6 Apex Test Case Control and Monitoring - Aman Control - Excel Defintion</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -220,9 +219,7 @@
 <div class="step successful">And  I click on 'ColumnsAddRowButton'</div>
 <div class="step successful">And  Verify IG 'ColumnsTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'ColumnsSaveButton'</div>
-<div class="step successful">And  I wait for '3' sec</div>
-<div class="step ignorable">!-- And  I click on 'ColumnsSaveButton'</div>
+<div class="step successful">And  I click on 'ColumnsSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I reload page</div>

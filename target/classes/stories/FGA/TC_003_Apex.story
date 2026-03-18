@@ -1,4 +1,4 @@
-Scenario:  TC_003_Apex 001 Apex Test Case FGA - Malpractice Setup - Categories-Professions Definition
+Scenario:  TC_003_Apex TC3S1 Apex Test Case FGA - Malpractice Setup - Categories-Professions Definition
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -33,7 +33,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 002 Apex Test Case FGA - Malpractice Setup - Coverage Limit AOO-AAA
+Scenario:  TC_003_Apex TC3S2 Apex Test Case FGA - Malpractice Setup - Coverage Limit AOO-AAA
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -54,7 +54,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 003 Apex Test Case FGA - Malpractice Setup - Malpractice Tariff Definition
+Scenario:  TC_003_Apex TC3S3 Apex Test Case FGA - Malpractice Setup - Malpractice Tariff Definition
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -75,7 +75,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 004 Apex Test Case FGA - Malpractice Setup - Malpractice Questions
+Scenario:  TC_003_Apex TC3S4 Apex Test Case FGA - Malpractice Setup - Malpractice Questions
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -96,7 +96,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_003_Apex 005 Apex Test Case FGA - Malpractice Setup - MMP Periods
+Scenario:  TC_003_Apex TC3S5 Apex Test Case FGA - Malpractice Setup - MMP Periods
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'

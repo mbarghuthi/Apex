@@ -1,9 +1,12 @@
 package com.automation.pages;
 
+import java.nio.charset.StandardCharsets;
+import java.text.Normalizer;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -45,8 +48,11 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[normalize-space()='Cancel']")
 	public WebElement CancelButton;
 
-	@FindBy(css = "h2[role='alert']")
+	@FindBy(css = "div[role='alert']")
 	public WebElement SuccessfullyAlert;
+
+	@FindBy(css = "div[role='alert']")
+	public WebElement ErrorAlert;
 
 	@FindBy(xpath = "//span[normalize-space()='Next']")
 	public WebElement NextButton;
@@ -72,8 +78,20 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//button[normalize-space()='OK']")
 	public WebElement OkButton;
 
+	@FindBy(css = "div[class='ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog--apex t-Dialog-page--standard ui-draggable'] button[title='Close']")
+	public WebElement CloseButtonFromPopup;
+
 	@FindBy(xpath = "//span[normalize-space()='Add a Customer']")
 	public WebElement AddACustomerButton;
+
+	@FindBy(css = ".a-AlertMessage-body")
+	public WebElement AlertMsgBody;
+
+	@FindBy(xpath = "//button[contains(text(),'Cancel')]")
+	public WebElement CancelAlertButton;
+
+	@FindBy(css = "div[role='alertdialog']")
+	public WebElement AlertDialog;
 
 // ************************************************************ Elements **********************************************************************************************
 
@@ -502,9 +520,23 @@ public class CannedPage extends AbstractPage<CannedPage> {
 // **************************** General ****************************
 	@FindBy(xpath = "//h3[normalize-space()='4-Jeddah Claim Center']")
 	public WebElement JeddahClaimCenterCard;
+	@FindBy(xpath = "//h3[normalize-space()='24-SP Waziriyah Mrorr']")
+	public WebElement SPWaziriyahMrorrCard;
 
 	@FindBy(css = "#OFF_QUT_IG_ig_toolbar_btn-add_off_qut")
 	public WebElement NewQuotationButton;
+
+	@FindBy(css = "#OFF_QUT_IG_ig_toolbar_search_field")
+	public WebElement SearchQuotationInput;
+
+	@FindBy(css = "#C156602956249693875_HDR")
+	public WebElement QuotationNumberTable;
+
+	@FindBy(css = "#OFF_QUT_IG_ig_column_header_search")
+	public WebElement QuotationNumberSearch;
+
+	@FindBy(xpath = "(//img[@class='apex-edit-pencil'])[1]")
+	public WebElement EditQuotationImg;
 
 	@FindBy(xpath = "//h3[normalize-space()='Motor']")
 	public WebElement MotorCard;
@@ -547,6 +579,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#OFF_QUT_IG_ig_toolbar_2i")
 	public WebElement FilterButton;
 
+	@FindBy(css = "#OFF_QUT_IG_ig_FD_TYPE")
+	public WebElement TypeFilterDDL;
+
 	@FindBy(css = "#OFF_QUT_IG_ig_FD_COLUMN")
 	public WebElement ColumnFilterDDL;
 
@@ -571,7 +606,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "td[role='gridcell'] img[class='apex-edit-pencil-alt']")
 	public WebElement EditPinButton;
 
-	@FindBy(css = "tr[class='a-GV-row is-readonly is-selected'] img[class='apex-edit-pencil-alt']")
+	@FindBy(xpath = "(//td[@role='gridcell'])[1]")
 	public WebElement EditPinButtonMultiRows;
 
 
@@ -586,10 +621,10 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "button[title='Remove Filter']")
 	public WebElement RemoveFilterButton;
 
-	@FindBy(css = "tbody tr:nth-child(1) td:nth-child(3)")
+	@FindBy(css = "tbody tr:nth-child(1) td:nth-child(2)")
 	public WebElement FirstClassOfBusInTable;
 
-	@FindBy(css = "tbody tr:nth-child(1) td:nth-child(10)")
+	@FindBy(css = "tbody tr:nth-child(1) td:nth-child(8)")
 	public WebElement FirstIssueDateInTable;
 
 // ************************************************************ Quotation Details Elements **********************************************************************************************
@@ -600,8 +635,26 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#P101_QUT_POLICY_TYPE_DISPLAY")
 	public WebElement QutPolicyTypeDisplay;
 
+	@FindBy(css = "#P101_QUT_QUOT_STATUS_DISPLAY")
+	public WebElement QutStatusDisplay;
+
+	@FindBy(css = "#P101_QUT_VALID_STATUS_DISPLAY")
+	public WebElement QutValidityStatusDisplay;
+
+	@FindBy(xpath = "//span[normalize-space()='Main']")
+	public WebElement MainTab;
+
+	@FindBy(xpath = "//span[normalize-space()='Motor Information']")
+	public WebElement MotorInformationTab;
+
+	@FindBy(xpath = "//span[normalize-space()='Calculations']")
+	public WebElement CalculationsTab;
+
 	@FindBy(css = "#P101_QUT_SOURCE")
 	public WebElement QutSourceCombobox;
+
+	@FindBy(css = "#P101_QUT_SOURCE_error")
+	public WebElement QutSourceErrorMsg;
 
 	@FindBy(css = "#P101_QUT_PAYMENT_TERM")
 	public WebElement QutPaymentTermCombobox;
@@ -615,17 +668,32 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#P101_QUT_INS_ST_DT_input")
 	public WebElement QutInsStDateInput;
 
+	@FindBy(css = "#P101_QUT_INS_ST_DT_error")
+	public WebElement QutInsStDateErrorMsg;
+
 	@FindBy(css = "#P101_QUT_INS_ED_DT_input")
 	public WebElement QutInsEdDateInput;
+
+	@FindBy(css = "#P101_QUT_INS_ED_DT_error")
+	public WebElement QutInsEdDateErrorMsg;
 
 	@FindBy(css = "#P101_QUT_AWARDED_TO")
 	public WebElement QutAwardedToInput;
 
+	@FindBy(css = "#P101_QUT_AWARDED_TO_error")
+	public WebElement QutAwardedToErrorMsg;
+
 	@FindBy(css = "#P101_QUT_CALCULATION_BASIS")
 	public WebElement QutCalculationBasisCombobox;
 
+	@FindBy(css = "#P101_QUT_CALCULATION_BASIS_error")
+	public WebElement QutCalculationBasisErrorMsg;
+
 	@FindBy(css = "#P101_QUT_CR_CD")
 	public WebElement QutCrCdCombobox;
+
+	@FindBy(css = "#P101_QUT_CR_CD_error")
+	public WebElement QutCrCdErrorMsg;
 
 	@FindBy(css = "#P101_QUT_BUSINESS_TYPE")
 	public WebElement QutBusinessTypeCombobox;
@@ -638,29 +706,68 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 
 	// ************************************************************ Risk Details Elements **********************************************************************************************
-	@FindBy(css = "#P43_QUR_VEHICLE_MAKE")
+	@FindBy(css = "#RisksQuery_ig")
+	public WebElement RiskTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Risk']")
+	public WebElement RiskButton;
+
+	@FindBy(css = "iframe[title='Motor Risk']")
+	public WebElement MotorRiskIframe;
+
+	@FindBy(css = "#P102_QUR_VEHICLE_MAKE")
 	public WebElement QurVehicleMakeCombobox;
 
-	@FindBy(css = "#P43_QUR_VEHICLE_MODEL")
+	@FindBy(css = "#P102_QUR_VEHICLE_MAKE_error")
+	public WebElement QurVehicleMakeErrorMsg;
+
+	@FindBy(css = "#P102_QUR_VEHICLE_MODEL")
 	public WebElement QurVehicleModelCombobox;
 
-	@FindBy(css = "#P43_QUR_YEAR_OF_MAKE")
-	public WebElement QurYearOfMakeCombobox;
+	@FindBy(css = "#P102_QUR_VEHICLE_MODEL_error")
+	public WebElement QurVehicleModelErrorMsg;
 
-	@FindBy(css = "#P43_QUR_CHASSIS_NO")
-	public WebElement QurChassisNoCombobox;
+	@FindBy(css = "div[id='PopupLov_102_P102_QUR_VEHICLE_MODEL_dlg'] input[aria-label='Search']")
+	public WebElement QurVehicleModelPopupLOVSearchBar;
 
-	@FindBy(css = "#P43_QUR_REGISTRATION_NO")
-	public WebElement QurRegistrationNoCombobox;
+	@FindBy(css = "#P102_QUR_YEAR_OF_MAKE_PICKER")
+	public WebElement QurYearOfMakeInput;
 
-	@FindBy(css = "#P43_QUR_PLATE_COLOR")
-	public WebElement QurPlateColorCombobox;
+	@FindBy(css = "#P102_QUR_YEAR_OF_MAKE_PICKER_error")
+	public WebElement QurYearOfMakeErrorMsg;
 
-	@FindBy(css = "#P43_QUR_TYPE_OF_BODY")
+	@FindBy(css = ".datepicker--button")
+	public WebElement QurYearOfMakeTodayButton;
+
+	@FindBy(css = "#P102_QUR_CHASSIS_NO")
+	public WebElement QurChassisNoInput;
+
+	@FindBy(css = "#P102_QUR_CHASSIS_NO_error")
+	public WebElement QurChassisNoErrorMsg;
+
+	@FindBy(css = "#P102_QUR_REGISTRATION_NO")
+	public WebElement QurRegistrationNoInput;
+
+	@FindBy(css = "#P102_QUR_REGISTRATION_NO_error")
+	public WebElement QurRegistrationNoErrorMsg;
+
+	@FindBy(css = "#P102_QUR_TYPE_OF_BODY")
 	public WebElement QurTypeOfBodyCombobox;
 
-	@FindBy(css = "#P43_QUR_VEHICLE_COLOR")
+	@FindBy(css = "#P102_QUR_TYPE_OF_BODY_error")
+	public WebElement QurTypeOfBodyErrorMsg;
+
+	@FindBy(css = "div[id='PopupLov_102_P102_QUR_TYPE_OF_BODY_dlg'] input[aria-label='Search']")
+	public WebElement QurTypeOfBodyPopupLOVSearchBar;
+
+	@FindBy(css = "#P102_QUR_VEHICLE_COLOR")
 	public WebElement QurVehicleColorCombobox;
+
+	@FindBy(css = "#P102_QUR_VEHICLE_COLOR_error")
+	public WebElement QurVehicleColorErrorMsg;
+
+	@FindBy(css = "div[id='PopupLov_102_P102_QUR_VEHICLE_COLOR_dlg'] input[aria-label='Search']")
+	public WebElement QurVehicleColorPopupLOVSearchBar;
 
 	@FindBy(xpath = "//span[normalize-space()='Add New Risk']")
 	public WebElement AddNewRiskButton;
@@ -673,14 +780,58 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "//span[normalize-space()='Apply Changes']")
 	public WebElement ApplyChangesButtonIframe;
 
+	@FindBy(xpath = "//span[normalize-space()='Back']")
+	public WebElement RiskDetailsBackButton;
+
+	@FindBy(xpath = "(//span[@class='t-Button-label'][normalize-space()='Cancel'])[1]")
+	public WebElement RiskDetailsCancelButton;
+
+	@FindBy(css = "td[role='gridcell'] a[title='Covers']")
+	public WebElement VehicleDetailsButton;
+
+	@FindBy(css = "#P49_PREM_DET")
+	public WebElement VehiclePremiumDetailsDDL;
+
+	@FindBy(xpath = "//td[@role='gridcell']//span[@class='fa fa-user-man']")
+	public WebElement DriverDetailsButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Show All']")
+	public WebElement ShowAllTab;
+
+	@FindBy(xpath = "//span[normalize-space()='Personal Information']")
+	public WebElement PersonalInformationTab;
+
+	@FindBy(xpath = "(//h2[normalize-space()='Personal Information'])[1]")
+	public WebElement PersonalInformationHeader;
+
+	@FindBy(xpath = "//span[normalize-space()='Contacting & Address Details']")
+	public WebElement ContactingAndAddressDetailsTab;
+
+	@FindBy(xpath = "(//h2[normalize-space()='Contacting & Address Details'])[1]")
+	public WebElement ContactingAndAddressDetailsHeader;
+
+	@FindBy(xpath = "//span[normalize-space()='license Information']")
+	public WebElement licenseInformationTab;
+
+	@FindBy(xpath = "(//h2[normalize-space()='license Information'])[1]")
+	public WebElement licenseInformationHeader;
+
+	@FindBy(xpath = "//span[normalize-space()='Other Information']")
+	public WebElement OtherInformationTab;
+
+	@FindBy(xpath = "(//span[normalize-space()='Other Information'])[1]")
+	public WebElement OtherInformationHeader;
 
 // ************************************************************ Risk Value Types Elements **********************************************************************************************
 
-	@FindBy(css = ".a-GV-cell.u-tC.a-GV-frozen.a-GV-frozen--start5.is-changed")
+	@FindBy(css = "#RISK_CALC_REGION_ig")
 	public WebElement RiskCalculationIg;
 
 	@FindBy(css = "#RiskCalculation_ig_toolbar_m3")
 	public WebElement EditButton;
+
+	@FindBy(xpath = "(//button[@title='Close'])[2]")
+	public WebElement RiskCalculationPopupCloseButton;
 
 	@FindBy(css = "td[class='a-GV-cell u-tC a-GV-frozen a-GV-frozen--start5']")
 	public WebElement SIAmountCell;
@@ -690,6 +841,19 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(css = "button[title='Ctrl+Alt+S']")
 	public WebElement ApplyButton;
+
+	@FindBy(xpath= "(//span[@class='fa fa-calculator'])[1]")
+	public WebElement RiskCalculationButton;
+
+	@FindBy(xpath= "//div[@id='apex_dialog_1']//iframe")
+	public WebElement RiskCalculationIframe;
+
+	@FindBy(css= "#RISK_CALC_REGION_ig_toolbar_m1")
+	public WebElement RiskCalculationEditButton;
+
+	@FindBy(css= "button[title='Ctrl+Alt+S'] span[class='a-Button-label']")
+	public WebElement RiskCalculationSaveButton;
+
 
 
 	// ************************************************************ Quotation Value Types **********************************************************************************************
@@ -703,10 +867,13 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	public WebElement CalculationsIGRegion;
 
 	// ************************************************************ Quotation Client **********************************************************************************************
-	@FindBy(css = "#P96_QUT_CLIENT")
+	@FindBy(xpath = "//button[normalize-space()='Customer Info']")
+	public WebElement CustomerInfoButton;
+
+	@FindBy(css = "#P107_QUT_CLIENT")
 	public WebElement QurQutClientCombobox;
 
-	@FindBy(css = "#P96_QUT_CUST_NO")
+	@FindBy(css = "#P107_QUT_CUST_NO")
 	public WebElement QurQutClientNoCombobox;
 
 	@FindBy(css = "#P107_QUT_COVER_GROUP")
@@ -715,24 +882,148 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#P107_QUT_COLLECTION_TYPE")
 	public WebElement QutCollectionTypeCombobox;
 
+	@FindBy(xpath = "//span[normalize-space()='Risk Quotation']")
+	public WebElement RiskQuotationButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Beneficiary']")
+	public WebElement BeneficiaryButton;
+
+	@FindBy(css = "iframe[title='Beneficiary']")
+	public WebElement BeneficiaryIframe;
+
+	@FindBy(css = "#BEN_IG_ig")
+	public WebElement BeneficiaryTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement BeneficiaryAddRow;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement BeneficiarySaveButton;
+
+	@FindBy(xpath = "(//button[@title='Close'])[4]")
+	public WebElement BeneficiaryIframeCloseButton;
+
+//	@FindBy(xpath = "(//td[@role='gridcell'])[2]")
+//	public WebElement BeneficiarySerialRow;
+
+	@FindBy(css = "#C172506164779732682")
+	public WebElement BeneficiarySerialRow;
+
+	@FindBy(xpath = "(//td[@role='gridcell'])[3]")
+	public WebElement BeneficiaryRow;
+	@FindBy(css = "#C172506035280732681")
+	public WebElement BeneficiaryComboboxRow;
+
+	@FindBy(xpath = "(//td[@role='gridcell'])[5]")
+	public WebElement IdNumberRow;
+	@FindBy(css = "#C172953920768030151")
+	public WebElement BeneficiaryIdNumberRow;
+
+	@FindBy(xpath = "(//td[@role='gridcell'])[6]")
+	public WebElement NationalityRow;
+	@FindBy(css = "#C172954022461030152")
+	public WebElement BeneficiaryNationalityRow;
+	@FindBy(css = "#PopupLov_31_C172954022461030152_dlg input[aria-label='Search']")
+	public WebElement BeneficiaryNationalityPopupLOVSearchBar;
+
+	@FindBy(xpath = "(//td[@role='gridcell'])[7]")
+	public WebElement ClassificationRow;
+	@FindBy(css = "#C172954130845030153")
+	public WebElement BeneficiaryClassificationRow;
+
+	@FindBy(xpath = "//span[normalize-space()='Covers']")
+	public WebElement CoversButton;
+
+	@FindBy(css = "iframe[title='Covers']")
+	public WebElement CoversIframe;
+
+	@FindBy(css = "#COVER_IG_ig")
+	public WebElement CoversTable;
+
+	@FindBy(xpath = "//span[normalize-space()='Add Row']")
+	public WebElement CoversAddRow;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement CoversSaveButton;
+
+	@FindBy(css = "#C189816328888441255")
+	public WebElement CoversSerialRow;
+
+	@FindBy(css = "td[role='gridcell'] span[class='fa fa-trash-o']")
+	public WebElement CoverDeleteFirstRow;
+
+	@FindBy(xpath = "(//td[@role='gridcell'])[4]")
+	public WebElement CategoryRow;
+	@FindBy(css = "#C189854306393441270")
+	public WebElement CoversCategoryComboboxRow;
+
+	@FindBy(xpath = "(//td[@role='gridcell'])[5]")
+	public WebElement CoversRow;
+	@FindBy(css = "#C189819317048441256")
+	public WebElement CoversComboboxRow;
+	@FindBy(css = "#PopupLov_73_C189819317048441256_dlg input[aria-label='Search']")
+	public WebElement CoversPopupLOVSearchBar;
+
+	@FindBy(xpath = "(//td[@role='gridcell'])[6]")
+	public WebElement PremRow;
+	@FindBy(css = "#C189825355209441259")
+	public WebElement CoversPremRow;
+	@FindBy(css = "#C189823349800441258")
+	public WebElement CoversRateRow;
+
+	@FindBy(xpath = "//span[normalize-space()='REI Plan']")
+	public WebElement REIPlanButton;
+
+	@FindBy(css = "iframe[title='ReInsurance Plans']")
+	public WebElement ReInsurancePlansIframe;
+
+	@FindBy(css = "#P13_INS_PLN")
+	public WebElement ReinsurancePlanCombobox;
+
+	@FindBy(css = "#P13_INS_PLN_error")
+	public WebElement ReinsurancePlanErrorMsg;
+
+	@FindBy(css = "#P13_REI_METHOD")
+	public WebElement ReiMethodCombobox;
+
+	@FindBy(css = "#P13_REI_METHOD_error")
+	public WebElement ReiMethodErrorMsg;
+
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	public WebElement REIPlanSaveButton;
+
+	@FindBy(css = "#P107_QUT_QUOT_STATUS_DISPLAY")
+	public WebElement StatusAllQuotationDetails;
+
+	@FindBy(css = "#P107_QUT_VALID_STATUS_DISPLAY")
+	public WebElement ValidityStatusAllQuotationDetails;
 
 	@FindBy(css = "#P107_QUT_QUOT_NO_DISPLAY")
-	public WebElement QutQuotNoFinalPageText;
+	public WebElement QutQuotNoAllQuotationDetails;
+
+	@FindBy(xpath = "//button[normalize-space()='Calculations']")
+	public WebElement CalculationsButton;
 
 	// ************************************************************ Items Details Elements **********************************************************************************************
 	@FindBy(xpath = "//span[normalize-space()='Add New Item']")
 	public WebElement AddNewItemButton;
 
-	@FindBy(css = "iframe[title='Fire Risk Items UpdatingApp']")
-	public WebElement FireRiskItemsUpdatingAppIframe;
+	@FindBy(css = "iframe[title='Fire Risk Items']")
+	public WebElement FireRiskItemsIframe;
 	@FindBy(css = "#P90_RIQ_ITEM_CODE")
 	public WebElement RiqItemCodeCombobox;
 	@FindBy(xpath = "//span[normalize-space()='Save']")
 	public WebElement RiqSaveButtonIframe;
 
 	// ************************************************************ Item Value Types Elements **********************************************************************************************
-	@FindBy(css = "#item_c_ig_toolbar_m5")
-	public WebElement ItemValueTypesEditButton;
+	@FindBy(css = "#item_c_ig_toolbar_m1")
+	public WebElement ItemCalculationEditButton;
+
+	@FindBy(xpath= "//div[@id='apex_dialog_1']//iframe")
+	public WebElement ItemCalculationIframe;
+
+	@FindBy(xpath = "(//span[@class='fa fa-calculator'])[3]")
+	public WebElement ItemCalculationButton;
 
 	// ************************************************************ End of Quotation Elements **********************************************************************************************
 
@@ -741,6 +1032,33 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	@FindBy(xpath = "//span[normalize-space()='Copy Quotation']")
 	public WebElement CopyQuotationButton;
+
+	@FindBy(xpath = "//button[contains(text(),'Copy Quotation')]")
+	public WebElement CopyQuotationConfirmationButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Issue Quotation']")
+	public WebElement IssueQuotationButton;
+
+	@FindBy(xpath = "//button[contains(text(),'Issue Quotation')]")
+	public WebElement IssueQuotationConfirmationButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Reject Quotation']")
+	public WebElement RejectQuotationButton;
+
+	@FindBy(xpath = "//button[contains(text(),'Reject Quotation')]")
+	public WebElement RejectQuotationConfirmationButton;
+
+	@FindBy(css = "#P107_QUT_REJECT_DESC")
+	public WebElement RejectDescriptionQuotationInput;
+
+	@FindBy(xpath = "//span[normalize-space()='Reject']")
+	public WebElement RejectButton;
+
+	@FindBy(xpath = "//span[normalize-space()='Convert to Policy']")
+	public WebElement ConvertToPolicyButton;
+
+	@FindBy(xpath = "//button[contains(text(),'Convert to Policy')]")
+	public WebElement ConvertToPolicyConfirmationButton;
 
 // ************************************************************ Quotation Revisions Elements **********************************************************************************************
 
@@ -794,8 +1112,6 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[2]")
 	public WebElement SystemCodeRanksMinorSaveButton;
 
-	@FindBy(css = ".a-AlertMessage-body")
-	public WebElement AlertMsgBody;
 
 	// ************************************************************ Error Messages Elements **********************************************************************************************
 	@FindBy(css = "#EMM_IG_ig")
@@ -1365,7 +1681,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#ROLES_ig")
 	public WebElement RolesTable;
 
-	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[1]")
+	@FindBy(xpath = "//div[@id='ROLES_ig_toolbar']//span[@class='a-Button-label'][normalize-space()='Add Row']")
 	public WebElement RolesAddRowButton;
 
 	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Save'])[1]")
@@ -1400,10 +1716,10 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	@FindBy(css = "#UR_IG_ig")
 	public WebElement UserRoleTable;
 
-	@FindBy(xpath = "(//span[contains(@class,'a-Button-label')][normalize-space()='Add Row'])[2]")
+	@FindBy(xpath = "(//span[@class='a-Button-label'][normalize-space()='Add Row'])[2]")
 	public WebElement UserRoleAddRowButton;
 
-	@FindBy(xpath = "(//span[contains(@class,'a-Button-label')][normalize-space()='Save'])[2]")
+	@FindBy(xpath = "//div[@id='UR_IG_ig_toolbar']//span[@class='a-Button-label'][normalize-space()='Save']")
 	public WebElement UserRoleSaveButton;
 
 
@@ -1443,7 +1759,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	public WebElement AuthorizedButtonsTable;
 
 	@FindBy(xpath = "//span[normalize-space()='Add Row']")
-	public WebElement AuthorizedButtonsApplyChangesButton;
+	public WebElement AuthorizedButtonsAddRowButton;
 
 	// ************************************************************ User Privileges On Endt Transactions Elements **********************************************************************************************
 
@@ -2431,6 +2747,9 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		WebElement dropdown = getElementWithWait(this, dropDownListName);
 		WebDriver driver = webDriverProvider.get();
 
+		// Always fix/normalize incoming value (p:ClientName etc.)
+		optionValue = fixMojibakeIfNeeded(optionValue);
+
 		// 1) Try plain <select>
 		try {
 			Select select = new Select(dropdown);
@@ -2441,7 +2760,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 			// not a <select>, fall through
 		}
 
-		// 2) Generic LOV search <input>
+		// 2) Input-based APEX LOV / combobox
 		if (!"input".equalsIgnoreCase(dropdown.getTagName())) {
 			throw new Exception("Element '" + dropDownListName + "' is neither a <select> nor an <input>.");
 		}
@@ -2453,14 +2772,12 @@ public class CannedPage extends AbstractPage<CannedPage> {
 			// read-only inputs – ignore
 		}
 
-		// type the visible text (already resolved from p:NationalResident, etc.)
 		dropdown.sendKeys(optionValue);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-		// 2a) GENERIC: click any visible LOV Search button (if this LOV uses one)
-		List<WebElement> searchButtons = driver.findElements(
-				By.cssSelector("button.a-PopupLOV-doSearch"));
+		// 2a) Click visible LOV Search button (if exists)
+		List<WebElement> searchButtons = driver.findElements(By.cssSelector("button.a-PopupLOV-doSearch"));
 		for (WebElement btn : searchButtons) {
 			if (btn.isDisplayed() && btn.isEnabled()) {
 				btn.click();
@@ -2468,7 +2785,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 			}
 		}
 
-		// 2b) GENERIC: wait until at least one visible <li> exists inside any ul.a-IconList
+		// 2b) Wait until at least one visible option exists
 		By optionsLocator = By.cssSelector("ul.a-IconList li");
 
 		List<WebElement> visibleOptions = wait.until(d -> {
@@ -2480,23 +2797,55 @@ public class CannedPage extends AbstractPage<CannedPage> {
 						visible.add(e);
 					}
 				} catch (StaleElementReferenceException ignored) {
-					// element was refreshed; ignore and let the wait retry
+					// refreshed; ignore and let wait retry
 				}
 			}
 			return visible.isEmpty() ? null : visible;
 		});
 
-		// 2c) Click the option whose text equals optionValue
+		// 2c) Match with normalization (handles Arabic/newlines/spaces)
+		String expected = normalizeLovText(optionValue);
+
+		// exact match
 		for (WebElement opt : visibleOptions) {
-			String text = opt.getText().trim();
-			if (text.equals(optionValue)) {
+			String actual = normalizeLovText(opt.getText());
+			if (actual.equals(expected)) {
 				opt.click();
 				log.info("Selected '" + optionValue + "' from LOV '" + dropDownListName + "'");
 				return;
 			}
 		}
 
+		// fallback: contains match
+		for (WebElement opt : visibleOptions) {
+			String actual = normalizeLovText(opt.getText());
+			if (actual.contains(expected) || expected.contains(actual)) {
+				opt.click();
+				log.info("Selected (contains) '" + optionValue + "' from LOV '" + dropDownListName + "'");
+				return;
+			}
+		}
+
 		throw new Exception("Option '" + optionValue + "' not found in LOV for '" + dropDownListName + "'.");
+	}
+
+	private static final Pattern WS = Pattern.compile("\\s+");
+	private String normalizeLovText(String s) {
+		if (s == null) return "";
+		s = fixMojibakeIfNeeded(s);
+		s = Normalizer.normalize(s, Normalizer.Form.NFC);
+		s = WS.matcher(s).replaceAll(" ").trim(); // collapse spaces + remove newlines
+		return s;
+	}
+	private String fixMojibakeIfNeeded(String s) {
+		if (s == null) return null;
+
+		// Typical Arabic mojibake markers when UTF-8 text is read as ISO-8859-1/Windows-1252
+		boolean looksBroken = s.contains("Ø") || s.contains("Ù") || s.contains("Ã") || s.contains("Â");
+		if (!looksBroken) return s;
+
+		// Convert "wrongly-decoded" string back to bytes and decode properly as UTF-8
+		return new String(s.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 	}
 
 	public void selectFromDropdown(String elementName, String valueToSelect) throws Exception {
@@ -2793,4 +3142,71 @@ public class CannedPage extends AbstractPage<CannedPage> {
 		log.info("Assert APEX LOV '" + lovElementName + "' returnValue='" + actual + "'");
 	}
 
+	public boolean clickUntilPopupAppears(String clickElementName, String popupElementName) throws Exception {
+		WebDriver driver = webDriverProvider.get();
+		WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(3));
+
+		int maxAttempts = 2;
+
+		for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+
+			// 1) If popup is already visible, stop immediately
+			if (isElementDisplayedSafe(popupElementName)) {
+				log.info("Popup '" + popupElementName + "' is already visible before clicking '" + clickElementName + "'");
+				return true;
+			}
+
+			try {
+				WebElement clickElement = getElementWithWait(this, clickElementName);
+
+				((JavascriptExecutor) driver).executeScript(
+						"arguments[0].scrollIntoView({block:'center'});", clickElement);
+
+				shortWait.until(ExpectedConditions.elementToBeClickable(clickElement)).click();
+				log.info("Clicked on '" + clickElementName + "', attempt " + attempt);
+
+				// 2) Wait briefly for popup after click
+				if (waitForPopupVisible(popupElementName, 3)) {
+					log.info("Popup '" + popupElementName + "' appeared after click on '" + clickElementName + "'");
+					return true;
+				}
+
+				log.info("Popup '" + popupElementName + "' did not appear after attempt " + attempt);
+
+			} catch (StaleElementReferenceException | ElementClickInterceptedException e) {
+				log.info("Retry click due to transient issue on '" + clickElementName + "': " + e.getMessage());
+
+				// 3) If click was intercepted, popup may already be open
+				if (isElementDisplayedSafe(popupElementName)) {
+					log.info("Popup '" + popupElementName + "' is visible after intercepted click on '" + clickElementName + "'");
+					return true;
+				}
+			}
+		}
+
+		// final check before fail
+		if (isElementDisplayedSafe(popupElementName)) {
+			log.info("Popup '" + popupElementName + "' became visible after retries");
+			return true;
+		}
+
+		throw new Exception("Popup '" + popupElementName + "' did not appear after clicking '" + clickElementName + "'");
+	}
+	private boolean waitForPopupVisible(String popupElementName, int seconds) {
+		try {
+			WebDriver driver = webDriverProvider.get();
+			new WebDriverWait(driver, Duration.ofSeconds(seconds)).until(d -> isElementDisplayedSafe(popupElementName));
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
+	private boolean isElementDisplayedSafe(String elementName) {
+		try {
+			WebElement element = getElement(this, elementName);
+			return element != null && element.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }

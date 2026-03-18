@@ -1,4 +1,4 @@
-Scenario:  TC_007_Apex 001 Apex Test Case Control and Monitoring - Workflow Integration - Map AMAN Fields with WF Attributes
+Scenario:  TC_007_Apex TC7S1 Apex Test Case Control and Monitoring - Workflow Integration - Map AMAN Fields with WF Attributes
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -12,7 +12,7 @@ And [Assertion] Verify 'MapAmanFieldsWithWFAttributesMasterTitle' equals 'p:MapA
 And [Assertion] Verify 'MapAmanFieldsWithWFAttributesMasterTable' is visible
 And [Input] I click on 'MapAmanFieldsWithWFAttributesMasterAddRowButton'
 And [Assertion] Verify IG 'MapAmanFieldsWithWFAttributesMasterTable' has an empty inserted row
-And [Action] I delete the inserted row in IG 'MapAmanFieldsWithWFAttributesMasterTable'
+!-- And [Action] I delete the inserted row in IG 'MapAmanFieldsWithWFAttributesMasterTable'
 And [Assertion] Verify 'MapAmanFieldsWithWFAttributesDetailsTable' is visible
 And [Input] I click on 'MapAmanFieldsWithWFAttributesDetailsAddRowButton'
 And [Assertion] Verify IG 'MapAmanFieldsWithWFAttributesDetailsTable' has an empty inserted row
@@ -23,7 +23,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_007_Apex 002 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Build Queries
+Scenario:  TC_007_Apex TC7S2 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Build Queries
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -56,7 +56,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_007_Apex 003 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Services Setup
+Scenario:  TC_007_Apex TC7S3 Apex Test Case Control and Monitoring - Workflow Integration - Workflow Services Setup
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'

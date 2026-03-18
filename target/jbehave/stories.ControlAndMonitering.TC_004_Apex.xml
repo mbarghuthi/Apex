@@ -1,5 +1,5 @@
 <story path="stories/ControlAndMonitering/TC_004_Apex.story" title="">
-<scenario keyword="Scenario:" title="TC_004_Apex 001 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users Definition">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S1 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users Definition">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -88,7 +88,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 002 Apex Test Case Control and Monitoring - Users &amp; Authorities - Roles Definition">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S2 Apex Test Case Control and Monitoring - Users &amp; Authorities - Roles Definition">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -101,8 +101,7 @@
 <step outcome="successful">And [Input] I click on &apos;RolesAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;RolesTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;RolesSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;RolesSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;RolesSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;RolesTable&apos;</step>
@@ -112,8 +111,7 @@
 <step outcome="successful">And [Input] I click on &apos;RolesDetAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;RolesDetTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;RolesDetSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;RolesDetSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;RolesDetSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;RolesDetTable&apos;</step>
@@ -122,7 +120,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 003 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users&apos; Privileges On Locations &amp; Branches">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S3 Apex Test Case Control and Monitoring - Users &amp; Authorities - Users&apos; Privileges On Locations &amp; Branches">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -132,15 +130,16 @@
 <step outcome="successful">And [Input] I click on &apos;UsersAndAuthoritiesSideMenu&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;UsersPrivilegesOnLocationsAndBranchesSideMenu&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;UsersDDL&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
 <step outcome="successful">And [Input] Select &apos;p:AutouTestingAutomation&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
 <step outcome="successful">And [Assertion] Verify tab &apos;LocationTab&apos; is selected</step>
 <step outcome="successful">And [Assertion] Verify &apos;LocationTable&apos; is visible</step>
 <step outcome="successful">And [Input] I click on &apos;LocationAddRowButton&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
+<step outcome="successful">And [Navigation] I scroll to end of page</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;LocationTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;LocationSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;LocationSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;LocationSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;LocationTable&apos;</step>
@@ -149,8 +148,7 @@
 <step outcome="successful">And [Input] I click on &apos;UserRoleAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;UserRoleTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;UserRoleSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;LocationSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserRoleSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="ignorable">!-- And [Action] I delete the inserted row in IG &apos;UserRoleTable&apos;</step>
@@ -159,13 +157,13 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 004 Apex Test Case Control and Monitoring - Users &amp; Authorities - User&apos;S Privileges On Group Programs Dept. Wise">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S4 Apex Test Case Control and Monitoring - Users &amp; Authorities - User&apos;S Privileges On Group Programs Dept. Wise">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 005 Apex Test Case Control and Monitoring - Users &amp; Authorities - User&apos;S Privileges On Single Programs-List">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S5 Apex Test Case Control and Monitoring - Users &amp; Authorities - User&apos;S Privileges On Single Programs-List">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 006 Apex Test Case Control and Monitoring - Users &amp; Authorities - Change Password">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S6 Apex Test Case Control and Monitoring - Users &amp; Authorities - Change Password">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -184,6 +182,7 @@
 <step outcome="successful">And [Input] Set &apos;ChangePasswordUserPasswordInput&apos; value to &apos;@&apos;</step>
 <step outcome="successful">And [Input] Set &apos;ChangePasswordConfirmPasswordInput&apos; value to &apos;123&apos;</step>
 <step outcome="successful">And [Input] I click on &apos;ChangePasswordApplyChangesButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Assertion] Verify &apos;ChangePasswordUserPasswordErrorMsg&apos; equals &apos;p:ChangePasswordPasswordInvalidErrorMsg&apos; text</step>
 <step outcome="successful">And [Assertion] Verify &apos;ChangePasswordConfirmPasswordErrorMsgPlaceHolder&apos; equals &apos;p:ChangePasswordConfirmPasswordInvalidErrorMsg&apos; text</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -208,7 +207,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 007 Apex Test Case Control and Monitoring - Users &amp; Authorities - Authorized Buttons">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S7 Apex Test Case Control and Monitoring - Users &amp; Authorities - Authorized Buttons">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -220,7 +219,8 @@
 <step outcome="successful">And [Assertion] Verify &apos;AuthorizedButtonsTitle&apos; equals &apos;p:AuthorizedButtons&apos; text</step>
 <step outcome="successful">And [Input] Select &apos;p:Home&apos; value from &apos;ProgramCombobox&apos; dropdown list</step>
 <step outcome="successful">And [Assertion] Verify &apos;AuthorizedButtonsTable&apos; is visible</step>
-<step outcome="successful">And [Input] I click on &apos;AuthorizedButtonsApplyChangesButton&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="successful">And [Input] I click on &apos;AuthorizedButtonsAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;AuthorizedButtonsTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;AuthorizedButtonsTable&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
@@ -228,7 +228,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 008 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Endt Transactions">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S8 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Endt Transactions">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -253,8 +253,7 @@
 <step outcome="successful">And [Input] I click on &apos;TransactionTypeAddRow&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;TransactionTypeTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;TransactionTypeSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;TransactionTypeSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;TransactionTypeSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;7&apos; sec</step>
@@ -262,7 +261,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 009 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Claim Payments">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S9 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Claim Payments">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -290,7 +289,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 010 Apex Test Case Control and Monitoring - Users &amp; Authorities - Password Policy Rules">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S10 Apex Test Case Control and Monitoring - Users &amp; Authorities - Password Policy Rules">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -305,7 +304,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 011 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Access Violations">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S11 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Access Violations">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -327,7 +326,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 012 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Quotation Posting">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S12 Apex Test Case Control and Monitoring - Users &amp; Authorities - User Privileges On Quotation Posting">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -344,8 +343,7 @@
 <step outcome="successful">And [Input] I click on &apos;UserQuotationPostingAddRow&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;UserQuotationPostingTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;UserQuotationPostingSaveButton&apos;</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;UserQuotationPostingSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;UserQuotationPostingSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;UserQuotationPostingTable&apos;</step>
@@ -355,7 +353,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_004_Apex 013 Apex Test Case Control and Monitoring - Users &amp; Authorities - Link Region/City Screen">
+<scenario keyword="Scenario:" title="TC_004_Apex TC4S13 Apex Test Case Control and Monitoring - Users &amp; Authorities - Link Region/City Screen">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -368,6 +366,7 @@
 <step outcome="successful">And [Input] I click on &apos;RangesCombobox&apos;</step>
 <step outcome="successful">And [Input] Select &apos;p:CentralOther&apos; value from &apos;PopupLOVSearchBar&apos; dropdown list</step>
 <step outcome="successful">And [Assertion] Verify &apos;RangesTable&apos; is visible</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
 <step outcome="successful">And [Input] I click on &apos;RangesAddRow&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;RangesTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;RangesTable&apos;</step>

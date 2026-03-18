@@ -1,4 +1,4 @@
-Scenario:  TC_001_Apex Apex Test Case Navigate to Quotation Page
+Scenario:  TC_001_Apex TC1S1 Apex Test Case Navigate to Quotation Page
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'

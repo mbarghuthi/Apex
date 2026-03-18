@@ -9,7 +9,7 @@
  
 <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
 <story path="stories/ControlAndMonitering/TC_005_Apex.story" title="">
-<scenario keyword="Scenario:" title="TC_005_Apex 001 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period">
+<scenario keyword="Scenario:" title="TC_005_Apex TC5S1 Apex Test Case Control and Monitoring - Aman Control - Effective Date Grace Period">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -61,7 +61,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_005_Apex 002 Apex Test Case Control and Monitoring - Aman Control - Control Dates">
+<scenario keyword="Scenario:" title="TC_005_Apex TC5S2 Apex Test Case Control and Monitoring - Aman Control - Control Dates">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -115,7 +115,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_005_Apex 003 Apex Test Case Control and Monitoring - Aman Control - Control Dates (Groups)">
+<scenario keyword="Scenario:" title="TC_005_Apex TC5S3 Apex Test Case Control and Monitoring - Aman Control - Control Dates (Groups)">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -130,7 +130,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_005_Apex 004 Apex Test Case Control and Monitoring - Aman Control - Commision Definition">
+<scenario keyword="Scenario:" title="TC_005_Apex TC5S4 Apex Test Case Control and Monitoring - Aman Control - Commision Definition">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -144,8 +144,7 @@
 <step outcome="successful">And [Input] I click on &apos;CommissionDefinitionAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;CommissionDefinitionTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;CommissionDefinitionSaveButton&apos;</step>
-<step outcome="successful">And [Input] I click on &apos;CommissionDefinitionSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;CommissionDefinitionSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Action] I delete the inserted row in IG &apos;CommissionDefinitionTable&apos;</step>
@@ -154,7 +153,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_005_Apex 005 Apex Test Case Control and Monitoring - Aman Control - Import From Excel Advanced">
+<scenario keyword="Scenario:" title="TC_005_Apex TC5S5 Apex Test Case Control and Monitoring - Aman Control - Import From Excel Advanced">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -186,7 +185,7 @@
 <step outcome="successful">And [Input] I click on &apos;LogoutButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify &apos;loginButton&apos; is present</step>
 </scenario>
-<scenario keyword="Scenario:" title="TC_005_Apex 006 Apex Test Case Control and Monitoring - Aman Control - Excel Defintion">
+<scenario keyword="Scenario:" title="TC_005_Apex TC5S6 Apex Test Case Control and Monitoring - Aman Control - Excel Defintion">
 <step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
 <step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
@@ -214,9 +213,7 @@
 <step outcome="successful">And [Input] I click on &apos;ColumnsAddRowButton&apos;</step>
 <step outcome="successful">And [Assertion] Verify IG &apos;ColumnsTable&apos; has an empty inserted row</step>
 <step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
-<step outcome="successful">And [Input] I click on &apos;ColumnsSaveButton&apos;</step>
-<step outcome="successful">And [Progress] I wait for &apos;3&apos; sec</step>
-<step outcome="ignorable">!-- And [Input] I click on &apos;ColumnsSaveButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ColumnsSaveButton&apos; and if &apos;AlertDialog&apos; not appear reclick</step>
 <step outcome="successful">And [Assertion] Verify &apos;AlertMsgBody&apos; contains &apos;p:CorrectErrorsBeforeSaving&apos; text</step>
 <step outcome="successful">And [Input] I click on &apos;OkButton&apos;</step>
 <step outcome="successful">And [Navigation] I reload page</step>

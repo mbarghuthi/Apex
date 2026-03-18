@@ -10,7 +10,7 @@
 <h1></h1>
 <div class="path">stories/FGA/TC_004_Apex.story</div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 001 Apex Test Case FGA - Travel Setup - Travel Calculation Prices</h2>
+<h2>Scenario: TC_004_Apex TC4S1 Apex Test Case FGA - Travel Setup - Travel Calculation Prices</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -24,8 +24,9 @@
 <div class="step successful">And  I click on 'TravelCalculationPricesAddRowButton'</div>
 <div class="step successful">And  Verify IG 'TravelCalculationPricesTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'TravelCalculationPricesSaveButton'</div>
-<div class="step successful">And  I click on 'TravelCalculationPricesSaveButton'</div>
+<div class="step ignorable">!-- And  I click on 'TravelCalculationPricesSaveButton'</div>
+<div class="step ignorable">!-- And  I click on 'TravelCalculationPricesSaveButton'</div>
+<div class="step successful">And  I click on 'TravelCalculationPricesSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I reload page</div>
@@ -35,7 +36,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 002 Apex Test Case FGA - Travel Setup - Travel Days</h2>
+<h2>Scenario: TC_004_Apex TC4S2 Apex Test Case FGA - Travel Setup - Travel Days</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -55,7 +56,7 @@
 <div class="step successful">And  Verify 'loginButton' is present</div>
 </div>
 <div class="scenario">
-<h2>Scenario: TC_004_Apex 003 Apex Test Case FGA - Travel Setup - Key Benefits</h2>
+<h2>Scenario: TC_004_Apex TC4S3 Apex Test Case FGA - Travel Setup - Key Benefits</h2>
 <div class="step successful">Given  I navigate to 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login'</div>
 <div class="step successful">And  I login as 'aman_opt' with password 'aman_opt'</div>
 <div class="step successful">And  I wait for '5' sec</div>
@@ -69,8 +70,9 @@
 <div class="step successful">And  I click on 'KeyBenefitsAddRowButton'</div>
 <div class="step successful">And  Verify IG 'KeyBenefitsTable' has an empty inserted row</div>
 <div class="step successful">And  I wait for '5' sec</div>
-<div class="step successful">And  I click on 'KeyBenefitsSaveButton'</div>
-<div class="step successful">And  I click on 'KeyBenefitsSaveButton'</div>
+<div class="step ignorable">!-- And  I click on 'KeyBenefitsSaveButton'</div>
+<div class="step ignorable">!-- And  I click on 'KeyBenefitsSaveButton'</div>
+<div class="step successful">And  I click on 'KeyBenefitsSaveButton' and if 'AlertDialog' not appear reclick</div>
 <div class="step successful">And  Verify 'AlertMsgBody' contains 'Correct errors before saving.' text</div>
 <div class="step successful">And  I click on 'OkButton'</div>
 <div class="step successful">And  I reload page</div>

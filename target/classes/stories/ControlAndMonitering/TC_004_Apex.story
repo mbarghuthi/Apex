@@ -1,4 +1,4 @@
-Scenario:  TC_004_Apex 001 Apex Test Case Control and Monitoring - Users & Authorities - Users Definition
+Scenario:  TC_004_Apex TC4S1 Apex Test Case Control and Monitoring - Users & Authorities - Users Definition
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -89,7 +89,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 002 Apex Test Case Control and Monitoring - Users & Authorities - Roles Definition
+Scenario:  TC_004_Apex TC4S2 Apex Test Case Control and Monitoring - Users & Authorities - Roles Definition
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -103,8 +103,7 @@ And [Assertion] Verify 'RolesTable' is visible
 And [Input] I click on 'RolesAddRowButton'
 And [Assertion] Verify IG 'RolesTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'RolesSaveButton'
-!-- And [Input] I click on 'RolesSaveButton'
+And [Input] I click on 'RolesSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'RolesTable'
@@ -114,8 +113,7 @@ And [Assertion] Verify 'RolesDetTable' is visible
 And [Input] I click on 'RolesDetAddRowButton'
 And [Assertion] Verify IG 'RolesDetTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'RolesDetSaveButton'
-!-- And [Input] I click on 'RolesDetSaveButton'
+And [Input] I click on 'RolesDetSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'RolesDetTable'
@@ -125,7 +123,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 003 Apex Test Case Control and Monitoring - Users & Authorities - Users' Privileges On Locations & Branches
+Scenario:  TC_004_Apex TC4S3 Apex Test Case Control and Monitoring - Users & Authorities - Users' Privileges On Locations & Branches
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -136,15 +134,16 @@ And [Input] I click on 'ControlAndMoniteringSideMenu'
 And [Input] I click on 'UsersAndAuthoritiesSideMenu'
 And [Input] I click on 'UsersPrivilegesOnLocationsAndBranchesSideMenu'
 And [Input] I click on 'UsersDDL'
+And [Progress] I wait for '3' sec
 And [Input] Select 'p:AutouTestingAutomation' value from 'PopupLOVSearchBar' dropdown list
 And [Assertion] Verify tab 'LocationTab' is selected
 And [Assertion] Verify 'LocationTable' is visible
 And [Input] I click on 'LocationAddRowButton'
 And [Progress] I wait for '3' sec
+And [Navigation] I scroll to end of page
 And [Assertion] Verify IG 'LocationTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'LocationSaveButton'
-!-- And [Input] I click on 'LocationSaveButton'
+And [Input] I click on 'LocationSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'LocationTable'
@@ -153,8 +152,7 @@ And [Assertion] Verify 'UserRoleTable' is visible
 And [Input] I click on 'UserRoleAddRowButton'
 And [Assertion] Verify IG 'UserRoleTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'UserRoleSaveButton'
-!-- And [Input] I click on 'LocationSaveButton'
+And [Input] I click on 'UserRoleSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 !-- And [Action] I delete the inserted row in IG 'UserRoleTable'
@@ -164,17 +162,17 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 004 Apex Test Case Control and Monitoring - Users & Authorities - User'S Privileges On Group Programs Dept. Wise
+Scenario:  TC_004_Apex TC4S4 Apex Test Case Control and Monitoring - Users & Authorities - User'S Privileges On Group Programs Dept. Wise
 
 Given [Navigation] I navigate to 'p:amanApex'
 
 
-Scenario:  TC_004_Apex 005 Apex Test Case Control and Monitoring - Users & Authorities - User'S Privileges On Single Programs-List
+Scenario:  TC_004_Apex TC4S5 Apex Test Case Control and Monitoring - Users & Authorities - User'S Privileges On Single Programs-List
 
 Given [Navigation] I navigate to 'p:amanApex'
 
 
-Scenario:  TC_004_Apex 006 Apex Test Case Control and Monitoring - Users & Authorities - Change Password
+Scenario:  TC_004_Apex TC4S6 Apex Test Case Control and Monitoring - Users & Authorities - Change Password
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -194,6 +192,7 @@ And [Progress] I wait for '5' sec
 And [Input] Set 'ChangePasswordUserPasswordInput' value to '@'
 And [Input] Set 'ChangePasswordConfirmPasswordInput' value to '123'
 And [Input] I click on 'ChangePasswordApplyChangesButton'
+And [Progress] I wait for '5' sec
 And [Assertion] Verify 'ChangePasswordUserPasswordErrorMsg' equals 'p:ChangePasswordPasswordInvalidErrorMsg' text
 And [Assertion] Verify 'ChangePasswordConfirmPasswordErrorMsgPlaceHolder' equals 'p:ChangePasswordConfirmPasswordInvalidErrorMsg' text
 And [Progress] I wait for '5' sec
@@ -219,7 +218,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 007 Apex Test Case Control and Monitoring - Users & Authorities - Authorized Buttons
+Scenario:  TC_004_Apex TC4S7 Apex Test Case Control and Monitoring - Users & Authorities - Authorized Buttons
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -232,7 +231,8 @@ And [Input] I click on 'AuthorizedButtonsSideMenu'
 And [Assertion] Verify 'AuthorizedButtonsTitle' equals 'p:AuthorizedButtons' text
 And [Input] Select 'p:Home' value from 'ProgramCombobox' dropdown list
 And [Assertion] Verify 'AuthorizedButtonsTable' is visible
-And [Input] I click on 'AuthorizedButtonsApplyChangesButton'
+And [Progress] I wait for '5' sec
+And [Input] I click on 'AuthorizedButtonsAddRowButton'
 And [Assertion] Verify IG 'AuthorizedButtonsTable' has an empty inserted row
 And [Action] I delete the inserted row in IG 'AuthorizedButtonsTable'
 And [Progress] I wait for '7' sec
@@ -241,7 +241,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 008 Apex Test Case Control and Monitoring - Users & Authorities - User Privileges On Endt Transactions
+Scenario:  TC_004_Apex TC4S8 Apex Test Case Control and Monitoring - Users & Authorities - User Privileges On Endt Transactions
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -267,8 +267,7 @@ And [Assertion] Verify 'TransactionTypeTable' is visible
 And [Input] I click on 'TransactionTypeAddRow'
 And [Assertion] Verify IG 'TransactionTypeTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'TransactionTypeSaveButton'
-!-- And [Input] I click on 'TransactionTypeSaveButton'
+And [Input] I click on 'TransactionTypeSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Progress] I wait for '7' sec
@@ -277,7 +276,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 009 Apex Test Case Control and Monitoring - Users & Authorities - User Privileges On Claim Payments
+Scenario:  TC_004_Apex TC4S9 Apex Test Case Control and Monitoring - Users & Authorities - User Privileges On Claim Payments
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -307,7 +306,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 010 Apex Test Case Control and Monitoring - Users & Authorities - Password Policy Rules
+Scenario:  TC_004_Apex TC4S10 Apex Test Case Control and Monitoring - Users & Authorities - Password Policy Rules
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -324,7 +323,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 011 Apex Test Case Control and Monitoring - Users & Authorities - User Access Violations
+Scenario:  TC_004_Apex TC4S11 Apex Test Case Control and Monitoring - Users & Authorities - User Access Violations
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -348,7 +347,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 012 Apex Test Case Control and Monitoring - Users & Authorities - User Privileges On Quotation Posting
+Scenario:  TC_004_Apex TC4S12 Apex Test Case Control and Monitoring - Users & Authorities - User Privileges On Quotation Posting
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -366,8 +365,7 @@ And [Assertion] Verify 'UserQuotationPostingTable' is visible
 And [Input] I click on 'UserQuotationPostingAddRow'
 And [Assertion] Verify IG 'UserQuotationPostingTable' has an empty inserted row
 And [Progress] I wait for '5' sec
-And [Input] I click on 'UserQuotationPostingSaveButton'
-!-- And [Input] I click on 'UserQuotationPostingSaveButton'
+And [Input] I click on 'UserQuotationPostingSaveButton' and if 'AlertDialog' not appear reclick
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text
 And [Input] I click on 'OkButton'
 And [Action] I delete the inserted row in IG 'UserQuotationPostingTable'
@@ -378,7 +376,7 @@ And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present
 
 
-Scenario:  TC_004_Apex 013 Apex Test Case Control and Monitoring - Users & Authorities - Link Region/City Screen
+Scenario:  TC_004_Apex TC4S13 Apex Test Case Control and Monitoring - Users & Authorities - Link Region/City Screen
 
 Given [Navigation] I navigate to 'p:amanApex'
 And [Input] I login as 'p:adminUsername' with password 'p:password'
@@ -392,6 +390,7 @@ And [Assertion] Verify 'LinkRegionCityScreenTitle' equals 'p:LinkRegionCityScree
 And [Input] I click on 'RangesCombobox'
 And [Input] Select 'p:CentralOther' value from 'PopupLOVSearchBar' dropdown list
 And [Assertion] Verify 'RangesTable' is visible
+And [Progress] I wait for '5' sec
 And [Input] I click on 'RangesAddRow'
 And [Assertion] Verify IG 'RangesTable' has an empty inserted row
 And [Action] I delete the inserted row in IG 'RangesTable'
