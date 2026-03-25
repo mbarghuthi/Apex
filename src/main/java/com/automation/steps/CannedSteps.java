@@ -880,4 +880,13 @@ public class CannedSteps extends AbstractSteps {
 	public void click_and_reclick_if_popup_not_appear(String elementName, String popupElementName) throws Exception {
 		cannedPage.clickUntilPopupAppears(elementName, popupElementName);
 	}
+
+	@Given("[Input] I click on '$elementName' if present")
+	@When("[Input] I click on '$elementName' if present")
+	@Then("[Input] I click on '$elementName' if present")
+	public void click_if_present(String elementName) throws Exception {
+		boolean clicked = cannedPage.clickIfPresent(elementName);
+		// 2 seconds timeout
+		System.out.println("clickIfPresent('" + elementName + "') => " + clicked);
+	}
 }

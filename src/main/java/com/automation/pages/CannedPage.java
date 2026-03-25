@@ -3209,4 +3209,29 @@ public class CannedPage extends AbstractPage<CannedPage> {
 			return false;
 		}
 	}
+
+	public boolean clickIfPresent(String elementName) {
+		WebDriver driver = webDriverProvider.get();
+		try {
+			// Use your framework wait/resolver
+			WebElement el = getElementWithWait(this, elementName);
+			if (el == null) return false;
+			// If element exists but not visible/enabled -> skip
+			if (!el.isDisplayed() || !el.isEnabled()) return false;
+			// Reuse your framework click (keeps your scrolling/JS/iframe logic if implemented there)
+			click(elementName);
+			return true;
+		} catch (TimeoutException | NoSuchElementException | StaleElementReferenceException e) {
+			return false;
+			// not present -> skip }
+		} catch (ElementClickInterceptedException e) {
+				// optional fallback if your click() doesn't already handle it
+				try { WebElement el = getElementWithWait(this, elementName);
+					if (el == null) return false;
+					((JavascriptExecutor) driver).executeScript("arguments[0].click();", el);
+					return true;
+				} catch (Exception ex) {
+					return false;
+				}
+		} catch (Exception e) { return false; } }
 }

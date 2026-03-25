@@ -2587,51 +2587,7 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
         return false;
     }
     private boolean tryFillDateIfPresent(WebElement editor) {
-        try {
-            if (!editor.isEnabled()) return false;
-
-            String tag = safeLower(editor.getTagName());
-            if (!"input".equals(tag) && !"textarea".equals(tag)) return false;
-
-            if (looksLikeComboEditor(editor)) return false;
-
-            String type = safeLower(safeAttr(editor, "type"));
-            String cls  = safeLower(safeAttr(editor, "class"));
-            String ph   = safeLower(safeAttr(editor, "placeholder"));
-            String aria = safeLower(safeAttr(editor, "aria-label"));
-
-            boolean looksDate =
-                    "date".equals(type)
-                            || (cls != null && (cls.contains("date") || cls.contains("datepicker")))
-                            || (ph != null && (ph.contains("dd") && ph.contains("mm") && ph.contains("yyyy")))
-                            || (aria != null && aria.contains("date"));
-
-            if (!looksDate) return false;
-
-            LocalDate d = LocalDate.now().plusDays(randomBetween(0, 30));
-
-            String[] candidates = new String[] {
-                    d.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                    d.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")),
-                    d.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))
-            };
-
-            for (String val : candidates) {
-                clearAndType(editor, val);
-
-                // do NOT call commitEditor() here; caller will commit once
-                // just validate by waiting idle and checking value
-                waitForApexIdle();
-                sleepSilently(120);
-
-                String after = safeAttr(editor, "value");
-                if (after != null && !after.trim().isEmpty()) return true;
-            }
-
-            return false;
-
-        } catch (Exception ignored) {}
-        return false;
+        return tryFillDateReturnValue(editor) != null;
     }
     private boolean tryFillComboIfPresent(WebDriver driver, WebElement cell, WebElement editor) {
         try {
@@ -2860,39 +2816,58 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
     private void commitEditorAndWait(String gridVc, WebElement editor) {
         WebDriver driver = webDriverProvider.get();
 
-        // 1) Best-effort commits
-        try { editor.sendKeys(Keys.TAB); } catch (Exception ignored) {}
-        sleepSilently(120);
+        boolean isDateEditor = false;
+        try {
+            String type = safeLower(safeAttr(editor, "type"));
+            String cls  = safeLower(safeAttr(editor, "class"));
+            String ph   = safeLower(safeAttr(editor, "placeholder"));
+            String aria = safeLower(safeAttr(editor, "aria-label"));
+
+            isDateEditor =
+                    "date".equals(type)
+                            || (cls != null && (cls.contains("date") || cls.contains("datepicker")))
+                            || (ph != null && (ph.contains("dd") && ph.contains("mm") && ph.contains("yyyy")))
+                            || (aria != null && aria.contains("date"));
+        } catch (Exception ignored) {}
+
+        // For normal editors, TAB may be OK
+        if (!isDateEditor) {
+            try { editor.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+            sleepSilently(120);
+        } else {
+            // For date editor, avoid TAB because last column creates a new row
+            try { editor.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+            sleepSilently(120);
+        }
 
         if (isEditingInsideGrid(gridVc)) {
-            // 2) Close dropdown/LOV if still open
             try { driver.switchTo().activeElement().sendKeys(Keys.ESCAPE); } catch (Exception ignored) {}
             sleepSilently(80);
         }
 
         if (isEditingInsideGrid(gridVc)) {
-            // 3) Hard blur + click outside IG
-            try { ((JavascriptExecutor) driver).executeScript("document.activeElement && document.activeElement.blur();"); }
-            catch (Exception ignored) {}
+            try {
+                ((JavascriptExecutor) driver).executeScript(
+                        "document.activeElement && document.activeElement.blur();");
+            } catch (Exception ignored) {}
 
-            // Click an area outside the grid (region header / body)
             try {
                 WebElement grid = driver.findElement(By.id(gridVc));
                 WebElement gv = grid.findElement(By.xpath("./ancestor::*[contains(@class,'a-GV')][1]"));
                 scrollToSafe(gv);
-                clickSafe(gv); // click container
+                clickSafe(gv);
             } catch (Exception ignored) {
-                try { ((JavascriptExecutor) driver).executeScript("document.body && document.body.click();"); }
-                catch (Exception ignored2) {}
+                try {
+                    ((JavascriptExecutor) driver).executeScript("document.body && document.body.click();");
+                } catch (Exception ignored2) {}
             }
+
             sleepSilently(150);
         }
 
-        // 4) Wait until NOT editing (use improved detector)
         new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(d -> !isEditingInsideGrid(gridVc));
 
-        // 5) Settle
         waitForApexIdle();
     }
     private void waitIgNoPendingChanges(String gridVc) {
@@ -3067,11 +3042,12 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
     }
     private String tryFillDateReturnValue(WebElement editor) {
         try {
+            WebDriver driver = webDriverProvider.get();
+
             if (!editor.isEnabled()) return null;
 
             String tag = safeLower(editor.getTagName());
             if (!"input".equals(tag) && !"textarea".equals(tag)) return null;
-            if (looksLikeComboEditor(editor)) return null;
 
             String type = safeLower(safeAttr(editor, "type"));
             String cls  = safeLower(safeAttr(editor, "class"));
@@ -3084,15 +3060,55 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
                             || (ph != null && (ph.contains("dd") && ph.contains("mm") && ph.contains("yyyy")))
                             || (aria != null && aria.contains("date"));
 
+            boolean isComboLike = looksLikeComboEditor(editor);
+
+            if (!looksDate && isComboLike) return null;
             if (!looksDate) return null;
 
-            LocalDate d = LocalDate.now().plusDays(randomBetween(0, 30));
-            String v = d.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate today = LocalDate.now();
+            String expectedValue = today.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-            clearAndType(editor, v);
-            return v;
+            clickSafe(editor);
+            sleepSilently(200);
+
+            // Click Today button
+            if (clickVisibleTodayButton()) {
+                // IMPORTANT: do not TAB here
+                try { editor.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+                sleepSilently(120);
+
+                try {
+                    ((JavascriptExecutor) driver).executeScript(
+                            "document.activeElement && document.activeElement.blur();");
+                } catch (Exception ignored) {}
+
+                sleepSilently(120);
+                waitForApexIdle();
+                return expectedValue;
+            }
+
+            // fallback typing today's date
+            clearAndType(editor, expectedValue);
+
+            // IMPORTANT: do not TAB here either
+            try { editor.sendKeys(Keys.ENTER); } catch (Exception ignored) {}
+            sleepSilently(120);
+
+            try {
+                ((JavascriptExecutor) driver).executeScript(
+                        "document.activeElement && document.activeElement.blur();");
+            } catch (Exception ignored) {}
+
+            sleepSilently(120);
+            waitForApexIdle();
+
+            String after = safeAttr(editor, "value");
+            if (after != null && !after.trim().isEmpty()) {
+                return expectedValue;
+            }
 
         } catch (Exception ignored) {}
+
         return null;
     }
     private String tryFillComboReturnValue(WebDriver driver, WebElement cell, WebElement editor) {
@@ -3139,6 +3155,34 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
 
         } catch (Exception ignored) {}
         return null;
+    }
+    private boolean clickVisibleTodayButton() {
+        try {
+            WebDriver driver = webDriverProvider.get();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+
+            By todayBtnBy = By.xpath("//button[@type='button'][normalize-space()='Today']");
+
+            WebElement todayBtn = wait.until(d -> {
+                List<WebElement> buttons = d.findElements(todayBtnBy);
+                for (WebElement b : buttons) {
+                    try {
+                        if (b.isDisplayed() && b.isEnabled()) return b;
+                    } catch (Exception ignored) {}
+                }
+                return null;
+            });
+
+            if (todayBtn != null) {
+                scrollToSafe(todayBtn);
+                clickSafe(todayBtn);
+                sleepSilently(250);
+                waitForApexIdle();
+                return true;
+            }
+        } catch (Exception ignored) {}
+
+        return false;
     }
 
     public void assertIgCellFilledAndReadOnly(String regionIdOrAnyId, String rowText, String columnHeader, boolean rejectZero) throws Exception {
