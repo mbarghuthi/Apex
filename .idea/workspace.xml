@@ -5,238 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="provided full story with some updates">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/stories/TC_002_ApexTest.story" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/configuration/AbstractStoryConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/configuration/AbstractStoryConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/jbehave/ConsoleLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/jbehave/ConsoleLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/pages/CustomPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/pages/CustomPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/test_runner/AllStories.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/test-data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/test-data.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/ControlAndMonitering/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/ControlAndMonitering/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/ControlAndMonitering/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/ControlAndMonitering/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/ControlAndMonitering/TC_005_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/ControlAndMonitering/TC_006_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/ControlAndMonitering/TC_007_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/FGA/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/FGA/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/FGA/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/FGA/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Login/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Login/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_005_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_006_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_007_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_008_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_009_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_010_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_011_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_012_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/Quotation/TC_013_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stories/TC_001_ApexTest.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Web-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/AbstractStoryConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/AbstractStoryConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ConsoleLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ConsoleLogger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/PropertyParameterConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/PropertyParameterConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/PropertyConverterHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/PropertyConverterHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/pages/CustomPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/pages/CustomPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/test_runner/AllStories.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/test-data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/test-data.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/ControlAndMonitering/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/ControlAndMonitering/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/ControlAndMonitering/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/ControlAndMonitering/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/ControlAndMonitering/TC_005_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/ControlAndMonitering/TC_006_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/ControlAndMonitering/TC_007_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/FGA/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/FGA/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/FGA/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/FGA/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Login/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Login/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_005_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_006_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_007_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_008_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_009_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_010_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_011_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_012_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/Quotation/TC_013_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stories/TC_001_ApexTest.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/AfterStories.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/AfterStories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/AfterStories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/AfterStories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_001_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_001_ApexPre.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_001_ApexPre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_002_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_003_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_004_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_005_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_005_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_006_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_006_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_007_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.ControlAndMonitering.TC_007_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_001_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_002_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_003_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.FGA.TC_004_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Login.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Login.TC_001_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Login.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Login.TC_002_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_001_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_002_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_003_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_004_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_005_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_005_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_006_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_006_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_007_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_007_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_008_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_008_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_009_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_009_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_010_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_010_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_011_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_011_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_012_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_012_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_013_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.Quotation.TC_013_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_001_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_001_ApexTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_001_ApexTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_001_ApexTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/stories.TC_001_ApexTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_002_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_002_Apex2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_002_Apex2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_003_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_004_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_005_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_005_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_006_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_006_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_007_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_007_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_008_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_008_Apex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/storyDurations.props" beforeDir="false" afterPath="$PROJECT_DIR$/target/jbehave/storyDurations.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/AfterStories.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/AfterStories.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/BeforeStories.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/BeforeStories.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/reports.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_001_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_001_ApexPre.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_001_ApexPre.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_002_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_003_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_004_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_005_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_005_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_006_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_006_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_007_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.ControlAndMonitering.TC_007_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_001_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_002_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_003_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.FGA.TC_004_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Login.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Login.TC_001_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Login.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Login.TC_002_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_001_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_002_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_003_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_004_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_005_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_005_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_006_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_006_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_007_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_007_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_008_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_008_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_009_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_009_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_010_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_010_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_011_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_011_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_012_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_012_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_013_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.Quotation.TC_013_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_001_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_001_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_001_ApexTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_001_ApexTest.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_Apex2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_002_Apex2.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_003_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_003_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_004_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_005_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_006_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_007_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_007_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_008_Apex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/view/stories.TC_008_Apex.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,23 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "JUnit.AllStories.executor": "Run",
-    "JUnit.AllStoriesTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "D:/Automation Quality Projects/Apex-evaluation/src/test/java/com/automation/test_runner",
-    "last_opened_file_path": "D:/Automation Quality Projects/Apex-evaluation/src/test/resources/stories",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4448276",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.AllStories.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AllStoriesTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/Automation Quality Projects/Apex-evaluation/src/test/java/com/automation/test_runner&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Automation Quality Projects/Apex-evaluation/src/test/resources/stories&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4448276&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Automation Quality Projects\Apex-evaluation\src\test\resources\stories" />
