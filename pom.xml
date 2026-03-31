@@ -17,17 +17,32 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<selenium.version>4.10.0</selenium.version>
-		<cglib.version>3.2.8</cglib.version>
+		<org.slf4j.version>1.7.36</org.slf4j.version>
+		<cglib.version>3.3.0</cglib.version>
 		<spring.version>3.1.1.RELEASE</spring.version>
 		<extent.version>2.41.2</extent.version>
 		<testng.version>7.8.0</testng.version>
 		<javax.mail.version>1.6.2</javax.mail.version>
-		<spring.core.version>5.3.21</spring.core.version>
-		<spring.context.version>5.3.21</spring.context.version>
-		<spring.beans.version>5.3.21</spring.beans.version>
+		<spring.core.version>7.0.6</spring.core.version>
+		<spring.context.version>7.0.6</spring.context.version>
+		<spring.beans.version>7.0.6</spring.beans.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-reload4j</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.13</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
 		<dependency>
@@ -164,6 +179,15 @@
 				<version>3.0.0-M5</version>
 				<configuration>
 					<argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>

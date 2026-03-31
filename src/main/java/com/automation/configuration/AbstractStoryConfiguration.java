@@ -3,7 +3,6 @@ package com.automation.configuration;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.embedder.Embedder;
-import org.jbehave.core.embedder.StoryControls;
 import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.reporters.Format;
 import org.jbehave.core.reporters.StoryReporter;
@@ -12,6 +11,7 @@ import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.ParameterControls;
 import org.jbehave.core.steps.ParameterConverters;
 import org.jbehave.core.steps.spring.SpringStepsFactory;
+import org.jbehave.core.embedder.StoryControls;
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.springframework.context.ApplicationContext;
 
@@ -28,80 +28,34 @@ public abstract class AbstractStoryConfiguration extends JUnitStories {
 
     protected AbstractStoryConfiguration() {
         context = getAnnotatedApplicationContext();
-
         Embedder embedder = configuredEmbedder();
+
         String DEFAULT_STORY_TIMEOUT_SECS = "7200";
+
         embedder.embedderControls()
-        		.doIgnoreFailureInStories(true)
-        		// added by me 
-		        //.doIgnoreFailureInStories(true)
-        		.doIgnoreFailureInStories(true)
+                .doIgnoreFailureInStories(false)
                 .useStoryTimeouts(DEFAULT_STORY_TIMEOUT_SECS)
                 .doFailOnStoryTimeout(false)
-                .doGenerateViewAfterStories(true)
+                .doGenerateViewAfterStories(false)
                 .doIgnoreFailureInView(false)
                 .doVerboseFailures(true);
-        
-		        /*.doBatch(false)
-		 		.doGenerateViewAfterStories(true)
-		 		.doIgnoreFailureInStories(false)
-		 		.doIgnoreFailureInView(false)
-		 		.doSkip(false)
-		 		.doVerboseFailures(false)
-		 		.doVerboseFiltering(false)
-		 		.useStoryTimeoutInSecs(300)
-		 		.useThreads(1)*/
     }
 
     @Override
     public Configuration configuration() {
+
         StoryReporterBuilder reporterBuilder = new StoryReporterBuilder()
-        		.withFormats(storyFormat())
-                .withFailureTraceCompression(true)
-                .withReporters(getReporters())
-                // added by me 
-                //.withFailureTrace(true)
-                //.withFailureTraceCompression(true)
+                .withFormats(storyFormat())
                 .withFailureTrace(true)
-                .withFailureTraceCompression(true);
+                .withFailureTraceCompression(true)
+                .withReporters(getReporters());
 
-
-        return new MostUsefulConfiguration()
-        		.useStoryReporterBuilder(reporterBuilder)
-                .useStoryControls(new StoryControls()
-                .doResetStateBeforeScenario(true))
-                .useParameterControls(new ParameterControls()
-                .useDelimiterNamedParameters(true))
+        Configuration config = new MostUsefulConfiguration()
+                .useStoryReporterBuilder(reporterBuilder)
+                .useStoryControls(new StoryControls().doResetStateBeforeScenario(true))
+                .useParameterControls(new ParameterControls().useDelimiterNamedParameters(true))
                 .useParameterConverters(getConverters());
-        
-
-		/*		// configuration.doDryRun(false); "no dry run" is implicit by using
-				// default StoryControls
-		 
-				// configuration.useDefaultStoryReporter(new ConsoleOutput());
-				// deprecated -- rather use StoryReportBuilder
-		 
-				.useFailureStrategy(new RethrowingFailure())
-				.useKeywords(new LocalizedKeywords(Locale.ENGLISH))
-				.usePathCalculator(new AbsolutePathCalculator())
-				.useParameterControls(new ParameterControls())
-				.useParameterConverters(new ParameterConverters())
-				.useParanamer(new NullParanamer())
-				.usePendingStepStrategy(new PassingUponPendingStep())
-				.useStepCollector(new MarkUnmatchedStepsAsPending())
-				.useStepdocReporter(new PrintStreamStepdocReporter())
-				.useStepFinder(new StepFinder())
-				.useStepMonitor(new SilentStepMonitor())
-				.useStepPatternParser(new RegexPrefixCapturingPatternParser())
-				.useStoryControls(new StoryControls())
-				.useStoryLoader(new LoadFromClasspath())
-				.useStoryParser(new RegexStoryParser(configuration.keywords()))
-				.useStoryPathResolver(new UnderscoredCamelCaseResolver())
-				.useStoryReporterBuilder(new StoryReporterBuilder())
-				.useViewGenerator(new FreemarkerViewGenerator())
-				.useParameterControls(new ParameterControls().useNameDelimiterLeft("[").useNameDelimiterRight("]"))*/
-		        
-        
+        return config;
     }
 
     private ParameterConverters getConverters() {
@@ -113,7 +67,9 @@ public abstract class AbstractStoryConfiguration extends JUnitStories {
 
     private StoryReporter[] getReporters() {
         WebDriverProvider webDriverProvider = context.getBean(WebDriverProvider.class);
-        return new StoryReporter[]{new ConsoleLogger(webDriverProvider)};
+        StoryReporter[] reporters = new StoryReporter[]{new ConsoleLogger(webDriverProvider)};
+
+        return reporters;
     }
 
     @Override
@@ -122,7 +78,7 @@ public abstract class AbstractStoryConfiguration extends JUnitStories {
     }
 
     protected Format[] storyFormat() {
-       return new Format[]{Format.IDE_CONSOLE, Format.XML, Format.HTML};
+        return new Format[]{Format.IDE_CONSOLE, Format.XML, Format.HTML};
     }
 
     protected ApplicationContext getContextInstance() {

@@ -6,7 +6,6 @@ com\automation\jbehave\format\CustomConfigurationFormat.class
 com\automation\jbehave\format\PropertyConverter.class
 com\automation\util\EmailSender$2.class
 com\automation\pages\CustomPage.class
-com\automation\test_runner\AllStories.class
 com\automation\pages\AbstractPage.class
 com\automation\configuration\pageobjects\PageObjectBeanPostProcessor.class
 com\automation\jbehave\ReportManager.class

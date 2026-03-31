@@ -1,18 +1,6 @@
 #org.jbehave.core.embedder.StoryManager
-#Wed Mar 25 13:56:48 EET 2026
-stories/Quotation/TC_001_Apex.story=34000
-stories/Quotation/TC_002_Apex.story=1094000
-stories/Quotation/TC_003_Apex.story=561000
-stories/Quotation/TC_004_Apex.story=536000
-stories/Quotation/TC_005_Apex.story=536000
-stories/Quotation/TC_006_Apex.story=357000
-stories/Quotation/TC_007_Apex.story=361000
-stories/Quotation/TC_008_Apex.story=354000
-stories/Quotation/TC_009_Apex.story=421000
-stories/Quotation/TC_010_Apex.story=413000
-stories/Quotation/TC_011_Apex.story=475000
-stories/Quotation/TC_012_Apex.story=568000
-stories/Quotation/TC_013_Apex.story=77000
-threadAverage=5787000
+#Tue Mar 31 10:01:04 EET 2026
+stories/TC_001_ApexTest.story=3000
+threadAverage=3000
 threads=1
-total=5787000
+total=3000
