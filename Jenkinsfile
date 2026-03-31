@@ -1,63 +1,34 @@
-pipeline {
-    agent any
-
-    tools {
-        maven 'Maven'
-        jdk 'JDK8'
-    }
-
-    stages {
+node {
+    try {
         stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/mbarghuthi/Dewan-Automation.git'
-            }
+            git branch: 'main', url: 'https://github.com/mbarghuthi/Apex.git'
         }
 
         stage('Clean') {
-            steps {
-                bat 'mvn clean'
-            }
+            bat 'mvn clean'
         }
 
         stage('Test') {
-            steps {
-                bat 'mvn test -DreportDirectory="%WORKSPACE%\\reports"'
-            }
+            bat 'mvn test -DreportDirectory="%WORKSPACE%\\reports"'
         }
-
+    } finally {
         stage('Archive Reports') {
-            steps {
-                archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
-                junit 'target/surefire-reports/*.xml'
-            }
+            archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
+            junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
         }
 
         stage('Publish HTML Report') {
-            steps {
-                publishHTML(target: [
-                    allowMissing: true,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'reports',
-                    reportFiles: '**/Dewan-Automation-Report.html',
-                    reportName: 'Extent Report',
-                    reportTitles: 'Dewan Automation Extent Report'
-                ])
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'Build finished'
-        }
-        success {
-            echo 'Build SUCCESS'
-        }
-        failure {
-            echo 'Build FAILED'
+            publishHTML(target: [
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports',
+                reportFiles: '**/*.html',
+                reportName: 'Extent Report',
+                reportTitles: 'Apex Automation Extent Report'
+            ])
         }
     }
 }
