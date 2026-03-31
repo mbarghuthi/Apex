@@ -22,8 +22,8 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 	public List<String> storyPaths() {
 		return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()),
 
-				String.format("stories/**/%s.story", STORY_NAME_PATTERN_ApexTest.trim()), "");
-//				String.format("stories/TC_001_ApexTest.story", STORY_NAME.trim()), "");
+//				String.format("stories/**/%s.story", STORY_NAME_PATTERN_ApexTest.trim()), "");
+				String.format("stories/TC_001_ApexTest.story", STORY_NAME.trim()), "");
 
 
 
