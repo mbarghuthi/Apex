@@ -1,5 +1,3 @@
-﻿node {
-    stage('Test') {
-        echo 'Pipeline is working'
-    }
+node {
+    echo 'Pipeline is working'
 }
