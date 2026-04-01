@@ -1,4 +1,6 @@
 node {
+    def testExitCode = 0
+
     try {
         stage('Checkout') {
             git branch: 'main', url: 'https://github.com/mbarghuthi/Apex.git'
@@ -9,7 +11,15 @@ node {
         }
 
         stage('Test') {
-            sh 'mvn test -DreportDirectory="$WORKSPACE/reports"'
+            testExitCode = sh(
+                script: 'mvn test -DreportDirectory="$WORKSPACE/reports"',
+                returnStatus: true
+            )
+
+            if (testExitCode != 0) {
+                currentBuild.result = 'UNSTABLE'
+                echo "Tests failed, but pipeline will continue to publish reports."
+            }
         }
     } finally {
         stage('Archive Reports') {
@@ -29,6 +39,10 @@ node {
                 reportName: 'Extent Report',
                 reportTitles: 'Apex Automation Extent Report'
             ])
+        }
+
+        if (testExitCode != 0) {
+            echo "Pipeline completed with test failures."
         }
     }
 }
