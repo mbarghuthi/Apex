@@ -8,7 +8,7 @@ node {
     }
 
     stage('Test') {
-        sh 'mvn test -DreportDirectory=$WORKSPACE/reports'
+        sh 'mvn test -DreportDirectory="$WORKSPACE/reports"'
     }
 
     stage('Archive Reports') {

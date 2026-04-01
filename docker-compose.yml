@@ -1,9 +1,8 @@
-﻿version: "3.8"
-
-services:
-
+﻿services:
   jenkins:
-    image: jenkins/jenkins:lts
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: jenkins
     ports:
       - "8080:8080"
@@ -22,9 +21,12 @@ services:
       - N8N_BASIC_AUTH_USER=admin
       - N8N_BASIC_AUTH_PASSWORD=admin123
       - GENERIC_TIMEZONE=Asia/Amman
+      - TZ=Asia/Amman
     volumes:
       - n8n_data:/home/node/.n8n
     restart: unless-stopped
+    depends_on:
+      - jenkins
 
 volumes:
   jenkins_data:
