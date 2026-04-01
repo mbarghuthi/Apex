@@ -26,9 +26,12 @@ node {
             archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
             archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
 
-            catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
-            }
+            junit(
+                testResults: 'target/surefire-reports/*.xml',
+                allowEmptyResults: true,
+                skipPublishingChecks: true,
+                skipMarkingBuildUnstable: true
+            )
         }
 
         stage('Publish HTML Report') {
