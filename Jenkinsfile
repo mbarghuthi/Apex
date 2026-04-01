@@ -18,7 +18,7 @@ node {
 
             if (testExitCode != 0) {
                 currentBuild.result = 'UNSTABLE'
-                echo "Tests failed, but pipeline will continue to publish reports."
+                echo "Tests failed, but pipeline will continue."
             }
         }
     } finally {
@@ -26,7 +26,7 @@ node {
             archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
             archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
             archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
-            junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
+            junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true, skipPublishingChecks: true
         }
 
         stage('Publish HTML Report') {
@@ -39,10 +39,6 @@ node {
                 reportName: 'Extent Report',
                 reportTitles: 'Apex Automation Extent Report'
             ])
-        }
-
-        if (testExitCode != 0) {
-            echo "Pipeline completed with test failures."
         }
     }
 }
