@@ -15,13 +15,13 @@ pipeline {
 
         stage('Clean') {
             steps {
-                bat 'mvn clean'
+                sh 'mvn clean'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test -DreportDirectory="%WORKSPACE%\\reports"'
+                sh 'mvn test -DreportDirectory="$WORKSPACE/reports"'
             }
         }
     }
@@ -41,7 +41,7 @@ pipeline {
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
                 reportDir: 'reports',
-                reportFiles: '**/Apex-Automation-Report.html',
+                reportFiles: 'Apex-Automation-Report.html',
                 reportName: 'Extent Report',
                 reportTitles: 'Apex Automation Extent Report'
             ])
