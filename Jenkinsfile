@@ -15,7 +15,13 @@ pipeline {
 
         stage('Clean') {
             steps {
-                bat 'mvn clean'
+                script {
+                    if (isUnix()) {
+                        sh 'mvn clean'
+                    } else {
+                        bat 'mvn clean'
+                    }
+                }
             }
         }
 
