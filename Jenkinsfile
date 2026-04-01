@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven'
-        jdk 'JDK8'
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -15,44 +10,33 @@ pipeline {
 
         stage('Clean') {
             steps {
-                bat 'mvn clean'
+                sh 'mvn clean'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test -DreportDirectory="%WORKSPACE%\\reports"'
+                sh 'mvn test -DreportDirectory="$WORKSPACE/reports"'
             }
         }
     }
 
     post {
         always {
-            echo 'Build finished'
-
             archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
             archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
             archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
-
-            junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
+            junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
 
             publishHTML(target: [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
                 reportDir: 'reports',
-                reportFiles: '**/Apex-Automation-Report.html',
+                reportFiles: '**/*.html',
                 reportName: 'Extent Report',
                 reportTitles: 'Apex Automation Extent Report'
             ])
-        }
-
-        success {
-            echo 'Build SUCCESS'
-        }
-
-        failure {
-            echo 'Build FAILED'
         }
     }
 }
