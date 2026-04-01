@@ -17,6 +17,7 @@ node {
             )
 
             if (testExitCode != 0) {
+                currentBuild.result = 'UNSTABLE'
                 echo "Tests failed, but pipeline will continue."
             }
         }
@@ -25,13 +26,7 @@ node {
             archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
             archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
             archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
-
-            junit(
-                testResults: 'target/surefire-reports/*.xml',
-                allowEmptyResults: true,
-                skipPublishingChecks: true,
-                skipMarkingBuildUnstable: true
-            )
+            junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true, skipPublishingChecks: true
         }
 
         stage('Publish HTML Report') {
