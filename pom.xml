@@ -23,9 +23,9 @@
 		<extent.version>2.41.2</extent.version>
 		<testng.version>7.8.0</testng.version>
 		<javax.mail.version>1.6.2</javax.mail.version>
-		<spring.core.version>7.0.6</spring.core.version>
-		<spring.context.version>7.0.6</spring.context.version>
-		<spring.beans.version>7.0.6</spring.beans.version>
+		<spring.core.version>5.3.30</spring.core.version>
+		<spring.context.version>5.3.30</spring.context.version>
+		<spring.beans.version>5.3.30</spring.beans.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
