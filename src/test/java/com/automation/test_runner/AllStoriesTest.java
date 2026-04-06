@@ -11,12 +11,21 @@ import java.util.List;
 
 public class AllStoriesTest extends JBehaveReportFormatter {
 
+	private static final String STORY_NAME_PATTERN_ApexTest= "*ApexTest*";
+	private static final String STORY_NAME = "*";
+
+	public AllStoriesTest() {
+		configuredEmbedder().embedderControls()
+				.doIgnoreFailureInStories(false)
+				.doIgnoreFailureInView(false)
+				.doVerboseFailures(true)
+				.doFailOnStoryTimeout(true);
+	}
+
 	@Override
 	public ApplicationContext getAnnotatedApplicationContext() {
 		return new AnnotationConfigApplicationContext(ProjectConfiguration.class);
 	}
-	private static final String STORY_NAME_PATTERN_ApexTest= "*ApexTest*";
-	private static final String STORY_NAME = "*";
 
 	@Override
 	public List<String> storyPaths() {
@@ -43,12 +52,6 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 	private static final String SPECIFIC_STORY = "stories/Quotation/TC_001_Apex.story";
 	private static final int RUN_COUNT = 3;
 
-
-
-
-
-
-
 // For running the story multiple times
 //	public List<String> storyPaths() {
 //		List<String> paths = new ArrayList<>();
@@ -57,6 +60,23 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 //		}
 //		return paths;
 //	}
+
+	@Override
+	public void run() throws Throwable {
+		// reset failure tracker before every full run
+		ConsoleLogger.resetFailures();
+
+		try {
+			super.run();
+		} catch (Throwable t) {
+			throw new RuntimeException("JBehave execution failed", t);
+		}
+
+		// Force Maven/JUnit failure if any story/step failed in JBehave
+		if (ConsoleLogger.hasFailures()) {
+			throw new RuntimeException("JBehave detected failed stories. Failing Maven build.");
+		}
+	}
 
 }
 
