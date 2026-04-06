@@ -32,47 +32,26 @@ pipeline {
         }
     }
 
-   post {
-       always {
-           echo 'Build finished'
+    post {
+        always {
+            echo 'Build finished'
 
-           // Create latest folder
-           bat '''
-           if exist reports\\latest rmdir /s /q reports\\latest
-           mkdir reports\\latest
+            archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
 
-           set "LATEST_DIR="
-           for /f "delims=" %%D in ('dir /ad /b /o-d reports') do (
-               if /i not "%%D"=="latest" (
-                   set "LATEST_DIR=%%D"
-                   goto :copy
-               )
-           )
+            junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
 
-           :copy
-           if defined LATEST_DIR (
-               xcopy "reports\\%LATEST_DIR%\\*" "reports\\latest\\" /E /I /Y
-           )
-           '''
-
-           archiveArtifacts artifacts: 'target/surefire-reports/**/*', allowEmptyArchive: true
-           archiveArtifacts artifacts: 'reports/**/*', allowEmptyArchive: true
-           archiveArtifacts artifacts: 'target/jbehave/**/*', allowEmptyArchive: true
-
-           junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
-
-           // 🔥 THIS IS THE KEY CHANGE
-           publishHTML(target: [
-               allowMissing: true,
-               alwaysLinkToLastBuild: true,
-               keepAll: false,
-               reportDir: 'reports/latest',
-               reportFiles: 'Apex-Automation-Report.html',
-               reportName: 'Extent Report',
-               reportTitles: 'Apex Automation Extent Report'
-           ])
-       }
-   }
+            publishHTML(target: [
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports',
+                reportFiles: '**/Apex-Automation-Report.html',
+                reportName: 'Extent Report',
+                reportTitles: 'Apex Automation Extent Report'
+            ])
+        }
 
         success {
             echo 'Build SUCCESS'
