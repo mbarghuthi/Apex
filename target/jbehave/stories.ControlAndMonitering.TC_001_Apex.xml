@@ -1,0 +1,13 @@
+<story path="stories/ControlAndMonitering/TC_001_Apex.story" title="">
+<scenario keyword="Scenario:" title="TC_001_Apex TC1S1 Apex Test Case Control and Monitoring - Aman Setup - Programs">
+<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
+<step outcome="successful">And [Input] I login as &apos;p:adminUsername&apos; with password &apos;p:password&apos;</step>
+<step outcome="successful">And [Progress] I wait for &apos;5&apos; sec</step>
+<step outcome="ignorable">!-- When [Input] I click on &apos;navControlButton&apos;</step>
+<step outcome="successful">When [Action] I ensure navbar is open using toggle &apos;navControlButton&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ControlAndMoniteringSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;AmanSetupSideMenu&apos;</step>
+<step outcome="successful">And [Input] I click on &apos;ProgramsSideMenu&apos;</step>
+<step outcome="successful">And [Assertion] Verify &apos;ProgramsTitle&apos; equals &apos;Programs&apos; text</step>
+<step outcome="successful">And [Input] Set &apos;SearchTreeInput&apos; value to &apos;Quotation&apos;</step>
+<step outcome="ignorable">!-- And [Assertion] Verify all results in tree &apos;ProgramsTree&apos; contain &apos;Quotation&apos;</step>

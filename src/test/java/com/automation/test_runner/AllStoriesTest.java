@@ -14,6 +14,7 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 
 	private static final String STORY_NAME_PATTERN_ApexTest= "*ApexTest*";
 	private static final String STORY_NAME = "*";
+	private static final String STORY_NAME_PATTERN_Apex= "*Apex*";
 
 	public AllStoriesTest() {
 		configuredEmbedder().embedderControls()
@@ -32,12 +33,12 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 	public List<String> storyPaths() {
 		return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()),
 
-				String.format("stories/**/%s.story", STORY_NAME_PATTERN_ApexTest.trim()), "");
+//				String.format("stories/**/%s.story", STORY_NAME_PATTERN_ApexTest.trim()), "");
 //				String.format("stories/TC_001_ApexTest.story", STORY_NAME.trim()), "");
 
 
 
-//				String.format("stories/**/**/%s.story", STORY_NAME.trim()), "");
+				String.format("stories/**/**/%s.story", STORY_NAME_PATTERN_Apex.trim()), "");
 // 				String.format("stories/ControlAndMonitering/**/%s.story", STORY_NAME.trim()), "");
 //				String.format("stories/FGA/**/%s.story", STORY_NAME.trim()), "");
 // 				String.format("stories/Login/**/%s.story", STORY_NAME.trim()), "");
