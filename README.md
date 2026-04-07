@@ -1,5 +1,1 @@
-"# Apex-Automation" 
-"# Apex-Automation" 
-"# Apex-Automation" 
-"# Apex-Automation" 
-"# Apex-Automation" 
+[![Build Status](http://172.17.48.1:8080/buildStatus/icon?job=Apex-Automation&style=flat-square)](http://172.17.48.1:8080/job/Apex-Automation/)
