@@ -1,6 +1,0 @@
-#org.jbehave.core.embedder.StoryManager
-#Tue Apr 07 10:23:29 EET 2026
-stories/TC_001_ApexTest.story=6000
-threadAverage=6000
-threads=1
-total=6000

@@ -9,25 +9,34 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/mbarghuthi/Apex.git'
+                git branch: 'main', url: 'https://github.com/mbarghuthi/Apex-Automation.git'
             }
         }
 
         stage('Clean') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh 'mvn clean'
-                    } else {
-                        bat 'mvn clean'
-                    }
-                }
+                bat 'mvn clean'
+            }
+        }
+
+        stage('Clean Reports Folder') {
+            steps {
+                bat '''
+                if exist "%WORKSPACE%\\reports" rmdir /s /q "%WORKSPACE%\\reports"
+                mkdir "%WORKSPACE%\\reports"
+                '''
             }
         }
 
         stage('Test') {
             steps {
                 bat 'mvn test -DreportDirectory="%WORKSPACE%\\reports"'
+            }
+        }
+
+        stage('Debug Reports') {
+            steps {
+                bat 'dir /s "%WORKSPACE%\\reports"'
             }
         }
     }
