@@ -1,6 +1,7 @@
 package com.automation.test_runner;
 
 import com.automation.configuration.ProjectConfiguration;
+import com.automation.jbehave.ConsoleLogger;
 import com.automation.jbehave.JBehaveReportFormatter;
 import org.jbehave.core.io.CodeLocations;
 import org.jbehave.core.io.StoryFinder;
@@ -64,7 +65,7 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 	@Override
 	public void run() throws Throwable {
 		// reset failure tracker before every full run
-		ConsoleLogger.resetFailures();
+		com.automation.jbehave.ConsoleLogger.resetFailures();
 
 		try {
 			super.run();
@@ -73,7 +74,7 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 		}
 
 		// Force Maven/JUnit failure if any story/step failed in JBehave
-		if (ConsoleLogger.hasFailures()) {
+		if (com.automation.jbehave.ConsoleLogger.hasFailures()) {
 			throw new RuntimeException("JBehave detected failed stories. Failing Maven build.");
 		}
 	}
