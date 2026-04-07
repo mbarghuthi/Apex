@@ -5,77 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="provided full story with some updates">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/AbstractStoryConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/AbstractStoryConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/Browsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/Browsers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/ProjectConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/ProjectConfiguration$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/ProjectConfiguration$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/ProjectConfiguration$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/ProjectConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/ProjectConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/pageobjects/PageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/pageobjects/PageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/configuration/pageobjects/PageObjectBeanPostProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/configuration/pageobjects/PageObjectBeanPostProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ConsoleLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ConsoleLogger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/JBehaveReportFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/JBehaveReportFormatter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/PropertyExamplesTableConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/PropertyExamplesTableConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/PropertyParameterConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/PropertyParameterConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ReportManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ReportManager$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ReportManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/ReportManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/CustomConfigurationFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/CustomConfigurationFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/PropertyConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/PropertyConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/PropertyConverterHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/jbehave/format/PropertyConverterHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/pages/AbstractPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/pages/AbstractPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/pages/AbstractPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/pages/AbstractPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/pages/CannedPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/pages/CannedPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/pages/CustomPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/pages/CustomPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/state/StateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/state/StateManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/steps/AbstractSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/steps/AbstractSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/steps/CannedSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/steps/CannedSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/steps/CustomSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/steps/CustomSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/steps/lifecycle/ExecutionLifecycle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/steps/lifecycle/ExecutionLifecycle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/util/EmailSender$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/util/EmailSender$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/util/EmailSender$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/util/EmailSender$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automation/util/EmailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automation/util/EmailSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/AfterStories.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/AfterStories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/BeforeStories.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/BeforeStories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_001_ApexTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/stories.TC_001_ApexTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jbehave/storyDurations.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2026-04-07T10-23-20_254.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.automation.test_runner.AllStoriesTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.automation.test_runner.AllStoriesTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/automation/test_runner/AllStoriesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/ControlAndMonitering/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/ControlAndMonitering/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/ControlAndMonitering/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/ControlAndMonitering/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/ControlAndMonitering/TC_005_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/ControlAndMonitering/TC_006_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/ControlAndMonitering/TC_007_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/FGA/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/FGA/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/FGA/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/FGA/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Login/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Login/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_001_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_002_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_003_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_004_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_005_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_006_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_007_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_008_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_009_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_010_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_011_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_012_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/Quotation/TC_013_Apex.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/TC_001_ApexTest.story" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stories/TC_002_ApexTest.story" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
