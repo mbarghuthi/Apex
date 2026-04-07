@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/mbarghuthi/Apex-Automation.git'
+                git branch: 'main', url: 'https://github.com/mbarghuthi/Apex.git'
             }
         }
 
