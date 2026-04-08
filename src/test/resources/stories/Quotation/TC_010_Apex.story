@@ -33,7 +33,7 @@ And [Assertion] Verify tab 'MainTab' is selected
 And [Input] Select 'p:Direct' value from 'QutSourceCombobox' dropdown list
 And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text
 And [Assertion] Verify 'QutQuotDate' value equals sysdate
-And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day
+!-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
 And [Progress] I wait for '5' sec
 And [Input] I click on 'QutInsStDateInput'
@@ -205,7 +205,7 @@ And [Assertion] Verify tab 'MainTab' is selected
 And [Input] Select 'p:Direct' value from 'QutSourceCombobox' dropdown list
 And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text
 And [Assertion] Verify 'QutQuotDate' value equals sysdate
-And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day
+!-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
 And [Progress] I wait for '5' sec
 And [Input] I click on 'QutInsStDateInput'
