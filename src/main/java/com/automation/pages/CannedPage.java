@@ -3234,4 +3234,10 @@ public class CannedPage extends AbstractPage<CannedPage> {
 					return false;
 				}
 		} catch (Exception e) { return false; } }
+
+
+	public void pressTab(String elementName) throws Exception {
+		WebElement element = getElementWithWait(this, elementName);
+		element.sendKeys(Keys.Tab);
+	}
 }

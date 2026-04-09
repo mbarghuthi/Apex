@@ -889,4 +889,12 @@ public class CannedSteps extends AbstractSteps {
 		// 2 seconds timeout
 		System.out.println("clickIfPresent('" + elementName + "') => " + clicked);
 	}
+
+
+	@Given("[Input] I press Tab on '$elementName'")
+	@When("[Input] I press Tab on '$elementName'")
+	@Then("[Input] I press Tab on '$elementName'")
+	public void press_enter_on_element(String elementName) throws Exception {
+		cannedPage.pressTab(elementName);
+	}
 }
