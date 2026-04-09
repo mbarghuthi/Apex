@@ -894,7 +894,7 @@ public class CannedSteps extends AbstractSteps {
 	@Given("[Input] I press Tab on '$elementName'")
 	@When("[Input] I press Tab on '$elementName'")
 	@Then("[Input] I press Tab on '$elementName'")
-	public void press_enter_on_element(String elementName) throws Exception {
+	public void press_tab_on_element(String elementName) throws Exception {
 		cannedPage.pressTab(elementName);
 	}
 }

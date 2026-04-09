@@ -3238,6 +3238,6 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	public void pressTab(String elementName) throws Exception {
 		WebElement element = getElementWithWait(this, elementName);
-		element.sendKeys(Keys.Tab);
+		element.sendKeys(Keys.TAB);
 	}
 }
