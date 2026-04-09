@@ -1971,7 +1971,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	// ************************************************************ Import From Excel Advanced Elements **********************************************************************************************
 
-	@FindBy(xpath = "//button[.//span[normalize-space()='Start Import']]")
+	@FindBy(xpath = "//span[normalize-space()='Start Import']")
 	public WebElement StartImportButton;
 
 	@FindBy(xpath = "//span[normalize-space()='Clear']")

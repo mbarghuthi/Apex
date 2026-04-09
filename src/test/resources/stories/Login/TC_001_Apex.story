@@ -30,6 +30,7 @@ Then [Assertion] Verify 'loginButton' is present
 Scenario:  TC_001_Apex 004 Apex Test Case Login - Invalid username and password
 
 Given [Navigation] I navigate to 'p:amanApex'
+And [Navigation] I reload page
 When [Input] I login as 'p:invalidUsername' with password 'p:invalidPassword'
 !-- Then [Assertion] Verify 'loginAlert' contains 'p:InvalidLoginCredentials' text
 Then [Assertion] Verify 'loginButton' is present
