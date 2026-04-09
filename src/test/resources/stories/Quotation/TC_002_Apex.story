@@ -379,7 +379,6 @@ And [Assertion] Verify 'SuccessfullyAlert' contains 'p:DataUpdatedConvertedToPol
 !-- And [Assertion] Verify text of 'ValidityStatusAllQuotationDetails' equals saved value 'p:Valid'
 !-- Logout
 And [Progress] I wait for '7' sec
-And [Progress] I wait for '7' sec
 Then [Input] I click on 'UserDDL'
 And [Input] I click on 'LogoutButton'
 And [Assertion] Verify 'loginButton' is present

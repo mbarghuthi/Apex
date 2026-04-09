@@ -35,9 +35,10 @@ And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text
 And [Assertion] Verify 'QutQuotDate' value equals sysdate
 !-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
-!-- And [Progress] I wait for '5' sec
-!-- And [Input] I click on 'QutInsStDateInput'
-!-- And [Input] I press Enter on 'QutInsStDateInput'
+And [Progress] I wait for '5' sec
+And [Input] I press Tab on 'QutInsStDateInput'
+And [Input] I click on 'QutInsStDateInput'
+And [Input] I press Enter on 'QutInsStDateInput'
 And [Progress] I wait for '5' sec
 !-- And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate plus '1' years minus one day
 And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate
@@ -250,9 +251,10 @@ And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text
 And [Assertion] Verify 'QutQuotDate' value equals sysdate
 !-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
-!-- And [Progress] I wait for '5' sec
-!-- And [Input] I click on 'QutInsStDateInput'
-!-- And [Input] I press Enter on 'QutInsStDateInput'
+And [Progress] I wait for '5' sec
+And [Input] I press Tab on 'QutInsStDateInput'
+And [Input] I click on 'QutInsStDateInput'
+And [Input] I press Enter on 'QutInsStDateInput'
 And [Progress] I wait for '5' sec
 !-- And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate plus '1' years minus one day
 And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate
