@@ -64,7 +64,9 @@ And [Input] I click on 'AmanControlSideMenu'
 And [Input] I click on 'ControlDatesSideMenu'
 And [Assertion] Verify 'ControlDatesTitle' equals 'p:ControlDates' text
 And [Assertion] Verify 'ControlDatesTable' is visible
+And [Progress] I wait for '5' sec
 And [Input] I click on 'CreateButton'
+And [Progress] I wait for '5' sec
 And [Javascript] I switch to iframe 'ControlDatesIframe'
 And [Input] I click on 'CreateButton'
 And [Assertion] Verify 'LocationCDErrorMsg' contains 'p:LocationCDEmptyErrorMsg' text

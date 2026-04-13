@@ -170,24 +170,62 @@ public class CustomPage extends AbstractPage<CustomPage> {
     // =====================================================================
     public void setIGValue(String regionIdOrAnyId, String rowText, String columnHeader, String value) throws Exception {
         WebDriver driver = webDriverProvider.get();
+
         waitForApexReady(driver);
 
         String regionId = resolveIgRegionId(regionIdOrAnyId);
+        String gridId = gridVcId(regionId);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVcId(regionId))));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.pollingEvery(Duration.ofMillis(500));
+        wait.ignoring(StaleElementReferenceException.class);
+        wait.ignoring(NoSuchElementException.class);
+
+        // Wait for IG container to exist and be visible
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridId)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(gridId)));
+
+        // Wait for any APEX processing/refresh to finish before touching the grid
+        waitForApexReady(driver);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".u-Processing")));
 
         ensureIGEditMode(regionId);
+
+        // Re-wait after edit mode in case IG refreshes/rebuilds
+        waitForApexReady(driver);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridId)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(gridId)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".u-Processing")));
 
         int colLeafIndex = resolveLeafHeaderIndex(regionId, columnHeader);
         if (colLeafIndex < 0) {
             throw new Exception("Header not found: " + columnHeader + "\nFound headers:\n" + dumpHeaders(regionId));
         }
 
-        WebElement row = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//div[@id='" + gridVcId(regionId) + "']//tr[@role='row' and .//td[normalize-space()=\"" + rowText + "\"]]")
-        ));
+        final String rowXpath =
+                "//div[@id='" + gridId + "']//tr[@role='row' and .//td[normalize-space()=\"" + rowText + "\"]]";
 
+        // Wait for the target row to be present and visible in a stable way
+        WebElement row = wait.until(driver1 -> {
+            List<WebElement> rows = driver1.findElements(By.xpath(rowXpath));
+            if (rows.isEmpty()) {
+                return null;
+            }
+
+            WebElement r = rows.get(0);
+            if (!r.isDisplayed()) {
+                return null;
+            }
+
+            List<WebElement> rowCells = r.findElements(By.cssSelector("td[role='gridcell']"));
+            if (rowCells.isEmpty()) {
+                return null;
+            }
+
+            return r;
+        });
+
+        // Re-locate cells fresh after row is stable
         List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
         if (colLeafIndex >= cells.size()) {
             throw new Exception("Column index out of range. idx=" + colLeafIndex + ", cells=" + cells.size());
@@ -196,17 +234,55 @@ public class CustomPage extends AbstractPage<CustomPage> {
         WebElement cell = cells.get(colLeafIndex);
         scrollTo(cell);
 
+        wait.until(ExpectedConditions.visibilityOf(cell));
+        wait.until(ExpectedConditions.elementToBeClickable(cell));
+
         String before = normalizeNumberString(safeText(cell));
 
-        boolean uiOk = trySetViaUi(cell, value, 3500);
+        boolean uiOk = false;
+        try {
+            uiOk = trySetViaUi(cell, value, 5000);
+        } catch (StaleElementReferenceException ex) {
+            // Re-find row/cell once if IG rebuilt the DOM during editing
+            row = wait.until(driver1 -> {
+                List<WebElement> rows = driver1.findElements(By.xpath(rowXpath));
+                if (rows.isEmpty()) {
+                    return null;
+                }
+                WebElement r = rows.get(0);
+                List<WebElement> rowCells = r.findElements(By.cssSelector("td[role='gridcell']"));
+                return rowCells.isEmpty() ? null : r;
+            });
+
+            cells = row.findElements(By.cssSelector("td[role='gridcell']"));
+            if (colLeafIndex >= cells.size()) {
+                throw new Exception("Column index out of range after refresh. idx=" + colLeafIndex + ", cells=" + cells.size());
+            }
+
+            cell = cells.get(colLeafIndex);
+            scrollTo(cell);
+            wait.until(ExpectedConditions.visibilityOf(cell));
+            wait.until(ExpectedConditions.elementToBeClickable(cell));
+
+            uiOk = trySetViaUi(cell, value, 5000);
+        }
+
         if (!uiOk) {
             boolean jsOk = setViaModel_ByForEach(regionId, rowText, columnHeader, value);
             if (!jsOk) {
-                throw new Exception("Failed to set value (UI + JS). region=" + regionId + ", row=" + rowText + ", column=" + columnHeader);
+                throw new Exception(
+                        "Failed to set value (UI + JS). region=" + regionId +
+                                ", row=" + rowText +
+                                ", column=" + columnHeader
+                );
             }
         }
 
-        waitUntilCellChangesToExpected(driver, regionId, rowText, colLeafIndex, before, value, 20);
+        // Wait again for APEX/IG to settle after setting the value
+        waitForApexReady(driver);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".u-Processing")));
+
+        waitUntilCellChangesToExpected(driver, regionId, rowText, colLeafIndex, before, value, 40);
     }
 
     private boolean trySetViaUi(WebElement cell, String value, long timeoutMs) {

@@ -37,6 +37,7 @@ And [Assertion] Verify 'QutQuotDate' value equals sysdate
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
 And [Progress] I wait for '5' sec
 And [Input] I press Tab on 'QutInsStDateInput'
+And [Progress] I wait for '3' sec
 And [Input] I click on 'QutInsStDateInput'
 And [Input] I press Enter on 'QutInsStDateInput'
 And [Progress] I wait for '5' sec
@@ -257,6 +258,7 @@ And [Assertion] Verify 'QutQuotDate' value equals sysdate
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
 And [Progress] I wait for '5' sec
 And [Input] I press Tab on 'QutInsStDateInput'
+And [Progress] I wait for '3' sec
 And [Input] I click on 'QutInsStDateInput'
 And [Input] I press Enter on 'QutInsStDateInput'
 And [Progress] I wait for '5' sec

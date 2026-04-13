@@ -1971,7 +1971,7 @@ public class CannedPage extends AbstractPage<CannedPage> {
 
 	// ************************************************************ Import From Excel Advanced Elements **********************************************************************************************
 
-	@FindBy(xpath = "//span[normalize-space()='Start Import']")
+	@FindBy(xpath = "//button[.//span[normalize-space()='Start Import']]")
 	public WebElement StartImportButton;
 
 	@FindBy(xpath = "//span[normalize-space()='Clear']")
@@ -2627,7 +2627,10 @@ public class CannedPage extends AbstractPage<CannedPage> {
 	public void scrollToElement(String elementName) throws Exception {
 		WebElement element = getElementWithWait(this, elementName);
 		JavascriptExecutor executor = (JavascriptExecutor) webDriverProvider.get();
-		executor.executeScript("arguments[0].scrollIntoView();", element);
+		executor.executeScript(
+				"arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+				element
+		);
 		log.info("I scroll to '" + elementName + "'");
 	}
 

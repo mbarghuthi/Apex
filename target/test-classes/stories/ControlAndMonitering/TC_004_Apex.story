@@ -362,7 +362,9 @@ And [Input] I click on 'UserIdCombobox'
 And [Input] Select 'p:autouId' value from 'PopupLOVSearchBar' dropdown list
 And [Progress] I wait 'UserNameText' To be appear
 And [Assertion] Verify 'UserQuotationPostingTable' is visible
+And [Progress] I wait for '5' sec
 And [Input] I click on 'UserQuotationPostingAddRow'
+And [Progress] I wait for '5' sec
 And [Assertion] Verify IG 'UserQuotationPostingTable' has an empty inserted row
 And [Progress] I wait for '5' sec
 And [Input] I click on 'UserQuotationPostingSaveButton' and if 'AlertDialog' not appear reclick

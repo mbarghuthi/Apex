@@ -29,9 +29,13 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                bat 'mvn test -DreportDirectory="%WORKSPACE%\\reports"'
-            }
+                  steps {
+                      bat '''
+                      chcp 65001
+                      set JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
+                      mvn test -DreportDirectory="%WORKSPACE%\\reports"
+                      '''
+                  }
         }
 
         stage('Debug Reports') {
