@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.automation.test_runner.AllStoriesTest" time="485.118" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.automation.test_runner.AllStoriesTest" time="91.259" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -19,7 +19,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_211\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\sjaber\AppData\Local\Temp\surefire5741012984778193188\surefirebooter7417005686259700153.jar C:\Users\sjaber\AppData\Local\Temp\surefire5741012984778193188 2026-04-13T12-14-19_490-jvmRun1 surefire8375733294274902543tmp surefire_02968773673327779449tmp"/>
+    <property name="sun.java.command" value="C:\Users\sjaber\AppData\Local\Temp\surefire4955779531208658139\surefirebooter7728587858734443392.jar C:\Users\sjaber\AppData\Local\Temp\surefire4955779531208658139 2026-04-13T16-51-16_829-jvmRun1 surefire6822122644471086617tmp surefire_09135098488411259346tmp"/>
     <property name="surefire.test.class.path" value="D:\Automation Quality Projects\Apex-evaluation\target\test-classes;D:\Automation Quality Projects\Apex-evaluation\target\classes;C:\Users\sjaber\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\sjaber\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\sjaber\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\sjaber\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\sjaber\.m2\repository\org\slf4j\slf4j-simple\1.7.36\slf4j-simple-1.7.36.jar;C:\Users\sjaber\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-core\5.3.21\spring-core-5.3.21.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-jcl\5.3.21\spring-jcl-5.3.21.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-context\5.3.21\spring-context-5.3.21.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-aop\5.3.21\spring-aop-5.3.21.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-expression\5.3.21\spring-expression-5.3.21.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-beans\5.3.21\spring-beans-5.3.21.jar;C:\Users\sjaber\.m2\repository\org\testng\testng\7.8.0\testng-7.8.0.jar;C:\Users\sjaber\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\sjaber\.m2\repository\org\webjars\jquery\3.6.1\jquery-3.6.1.jar;C:\Users\sjaber\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\Users\sjaber\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\sjaber\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\sjaber\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\sjaber\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\sjaber\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\sjaber\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\sjaber\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\sjaber\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\sjaber\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\sjaber\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\sjaber\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\sjaber\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\sjaber\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\sjaber\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\sjaber\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\sjaber\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\sjaber\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\Users\sjaber\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar;C:\Users\sjaber\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\sjaber\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\sjaber\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\sjaber\.m2\repository\cglib\cglib\3.2.8\cglib-3.2.8.jar;C:\Users\sjaber\.m2\repository\org\ow2\asm\asm\6.2.1\asm-6.2.1.jar;C:\Users\sjaber\.m2\repository\org\apache\ant\ant\1.10.3\ant-1.10.3.jar;C:\Users\sjaber\.m2\repository\org\apache\ant\ant-launcher\1.10.3\ant-launcher-1.10.3.jar;C:\Users\sjaber\.m2\repository\com\relevantcodes\extentreports\2.41.2\extentreports-2.41.2.jar;C:\Users\sjaber\.m2\repository\org\jsoup\jsoup\1.8.3\jsoup-1.8.3.jar;C:\Users\sjaber\.m2\repository\org\xerial\sqlite-jdbc\3.8.11.1\sqlite-jdbc-3.8.11.1.jar;C:\Users\sjaber\.m2\repository\org\freemarker\freemarker\2.3.23\freemarker-2.3.23.jar;C:\Users\sjaber\.m2\repository\org\mongodb\mongodb-driver\3.0.4\mongodb-driver-3.0.4.jar;C:\Users\sjaber\.m2\repository\org\mongodb\bson\3.0.4\bson-3.0.4.jar;C:\Users\sjaber\.m2\repository\org\mongodb\mongodb-driver-core\3.0.4\mongodb-driver-core-3.0.4.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-java\4.10.0\selenium-java-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-api\4.10.0\selenium-api-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.10.0\selenium-chrome-driver-4.10.0.jar;C:\Users\sjaber\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\sjaber\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\sjaber\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\sjaber\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\sjaber\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\sjaber\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\sjaber\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\sjaber\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\sjaber\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\sjaber\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.10.0\selenium-chromium-driver-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-json\4.10.0\selenium-json-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.10.0\selenium-manager-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v112\4.10.0\selenium-devtools-v112-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v113\4.10.0\selenium-devtools-v113-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v114\4.10.0\selenium-devtools-v114-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.10.0\selenium-devtools-v85-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.10.0\selenium-edge-driver-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.10.0\selenium-firefox-driver-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-http\4.10.0\selenium-http-4.10.0.jar;C:\Users\sjaber\.m2\repository\dev\failsafe\failsafe\3.3.1\failsafe-3.3.1.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.10.0\selenium-ie-driver-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.10.0\selenium-remote-driver-4.10.0.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-buffer\4.1.92.Final\netty-buffer-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-codec-http\4.1.92.Final\netty-codec-http-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-codec\4.1.92.Final\netty-codec-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-handler\4.1.92.Final\netty-handler-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-common\4.1.92.Final\netty-common-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.92.Final\netty-transport-classes-epoll-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.92.Final\netty-transport-classes-kqueue-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport-native-epoll\4.1.92.Final\netty-transport-native-epoll-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.92.Final\netty-transport-native-kqueue-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.92.Final\netty-transport-native-unix-common-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport\4.1.92.Final\netty-transport-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-resolver\4.1.92.Final\netty-resolver-4.1.92.Final.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-api\1.26.0\opentelemetry-api-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-context\1.26.0\opentelemetry-context-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.26.0\opentelemetry-exporter-logging-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.26.0\opentelemetry-sdk-metrics-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.26.0-alpha\opentelemetry-extension-incubator-1.26.0-alpha.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.26.0-alpha\opentelemetry-sdk-logs-1.26.0-alpha.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.26.0-alpha\opentelemetry-api-logs-1.26.0-alpha.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.26.0-alpha\opentelemetry-api-events-1.26.0-alpha.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.26.0\opentelemetry-sdk-common-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.26.0\opentelemetry-sdk-extension-autoconfigure-spi-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.26.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.26.0-alpha.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.26.0\opentelemetry-sdk-trace-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.26.0\opentelemetry-sdk-1.26.0.jar;C:\Users\sjaber\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.26.0-alpha\opentelemetry-semconv-1.26.0-alpha.jar;C:\Users\sjaber\.m2\repository\net\bytebuddy\byte-buddy\1.14.4\byte-buddy-1.14.4.jar;C:\Users\sjaber\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\sjaber\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\sjaber\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\sjaber\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\sjaber\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\sjaber\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\sjaber\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.10.0\selenium-safari-driver-4.10.0.jar;C:\Users\sjaber\.m2\repository\org\seleniumhq\selenium\selenium-support\4.10.0\selenium-support-4.10.0.jar;C:\Users\sjaber\.m2\repository\de\codecentric\jbehave-junit-runner\1.2.0\jbehave-junit-runner-1.2.0.jar;C:\Users\sjaber\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\sjaber\.m2\repository\org\hamcrest\hamcrest-integration\1.3\hamcrest-integration-1.3.jar;C:\Users\sjaber\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\sjaber\.m2\repository\commons-io\commons-io\2.4\commons-io-2.4.jar;C:\Users\sjaber\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\sjaber\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.10\plexus-utils-3.0.10.jar;C:\Users\sjaber\.m2\repository\com\thoughtworks\paranamer\paranamer\2.4\paranamer-2.4.jar;C:\Users\sjaber\.m2\repository\com\thoughtworks\xstream\xstream\1.4.7\xstream-1.4.7.jar;C:\Users\sjaber\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\sjaber\.m2\repository\xpp3\xpp3_min\1.1.4c\xpp3_min-1.1.4c.jar;C:\Users\sjaber\.m2\repository\org\jbehave\jbehave-spring\4.0.5\jbehave-spring-4.0.5.jar;C:\Users\sjaber\.m2\repository\org\jbehave\jbehave-core\4.0.5\jbehave-core-4.0.5.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-test\3.1.1.RELEASE\spring-test-3.1.1.RELEASE.jar;C:\Users\sjaber\.m2\repository\org\jbehave\web\jbehave-web-selenium\3.5.5\jbehave-web-selenium-3.5.5.jar;C:\Users\sjaber\.m2\repository\org\springframework\spring-web\3.1.1.RELEASE\spring-web-3.1.1.RELEASE.jar;C:\Users\sjaber\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\sjaber\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\sjaber"/>
@@ -32,7 +32,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\sjaber\AppData\Local\Temp\surefire5741012984778193188\surefirebooter7417005686259700153.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\sjaber\AppData\Local\Temp\surefire4955779531208658139\surefirebooter7728587858734443392.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_211\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_211\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,841 +61,446 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="run" classname="com.automation.test_runner.AllStoriesTest" time="485.11">
-    <error message="JBehave detected failed stories. Failing Maven build." type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: JBehave detected failed stories. Failing Maven build.
-	at com.automation.test_runner.AllStoriesTest.run(AllStoriesTest.java:80)
-]]></error>
-    <system-out><![CDATA[Directory: D:\Automation Quality Projects\Apex-evaluation\reports\Mon Apr 13 12-14-21 EEST 2026\ is created!
-Report Path: D:\Automation Quality Projects\Apex-evaluation\reports\Mon Apr 13 12-14-21 EEST 2026\
+  <testcase name="run" classname="com.automation.test_runner.AllStoriesTest" time="91.254">
+    <system-out><![CDATA[Directory: D:\Automation Quality Projects\Apex-evaluation\reports\Mon Apr 13 16-51-18 EEST 2026\ is created!
+Report Path: D:\Automation Quality Projects\Apex-evaluation\reports\Mon Apr 13 16-51-18 EEST 2026\
 
 Processing system properties {}
 Using controls EmbedderControls[batch=false,skip=false,generateViewAfterStories=false,ignoreFailureInStories=false,ignoreFailureInView=false,verboseFailures=true,verboseFiltering=false,storyTimeouts=7200,threads=1,failOnStoryTimeout=true]
-Running story stories/Quotation/TC_012_Apex.story
-13 Apr 2026 12:14:22,867 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
-13 Apr 2026 12:14:22,868 INFO : com.automation.jbehave.ConsoleLogger - Begin Story: TC_012_Apex.story
-13 Apr 2026 12:14:22,868 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
-13 Apr 2026 12:14:22,869 INFO : com.automation.jbehave.ConsoleLogger - Narrative[inOrderTo=,asA=,iWantTo=,soThat=]
-13 Apr 2026 12:14:22,869 INFO : com.automation.jbehave.ConsoleLogger - Lifecycle[before=Lifecycle.Steps[outcome=<null>,metaFilter=<null>,steps=[]],after={}]
-Using timeout for story TC_012_Apex.story of 7200 secs.
-13 Apr 2026 12:14:26,912 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
-13 Apr 2026 12:14:26,913 INFO : com.automation.jbehave.ConsoleLogger - Scenario: TC_012_Apex
-13 Apr 2026 12:14:26,913 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
-13 Apr 2026 12:14:26,916 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:amanApex] >> [http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login]
-13 Apr 2026 12:14:27,886 INFO : com.automation.pages.CannedPage - Navigating to the page: http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login
-13 Apr 2026 12:14:27,998 INFO : com.automation.jbehave.ConsoleLogger - Given [Navigation] I navigate to 'p:amanApex' (SUCCESSFUL)
-13 Apr 2026 12:14:28,000 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:adminUsername] >> [aman_opt]
-13 Apr 2026 12:14:28,001 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:password] >> [aman_opt]
-13 Apr 2026 12:14:31,270 INFO : com.automation.pages.CannedPage - Filled 'userName' with value: aman_opt
-13 Apr 2026 12:14:34,443 INFO : com.automation.pages.CannedPage - Clicked on 'password'
-13 Apr 2026 12:14:37,594 INFO : com.automation.pages.CannedPage - Filled 'password' with value: aman_opt
-13 Apr 2026 12:14:37,752 INFO : com.automation.pages.CannedPage - Clicked on 'login Button'
-13 Apr 2026 12:14:37,797 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I login as 'p:adminUsername' with password 'p:password' (SUCCESSFUL)
-13 Apr 2026 12:14:42,838 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:14:46,536 INFO : com.automation.pages.CannedPage - Clicked on 'QuotationCardDashboard'
-13 Apr 2026 12:14:46,569 INFO : com.automation.jbehave.ConsoleLogger - When [Input] I click on 'QuotationCardDashboard' (SUCCESSFUL)
-13 Apr 2026 12:14:46,928 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QuotationsTitle' equals 'Quotations' text (SUCCESSFUL)
-13 Apr 2026 12:14:50,623 INFO : com.automation.pages.CannedPage - Clicked on 'SPWaziriyahMrorrCard'
-13 Apr 2026 12:14:50,669 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'SPWaziriyahMrorrCard' (SUCCESSFUL)
-13 Apr 2026 12:14:51,511 INFO : com.automation.pages.CannedPage - Clicked on 'NewQuotationButton'
-13 Apr 2026 12:14:51,548 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NewQuotationButton' (SUCCESSFUL)
-13 Apr 2026 12:14:52,622 INFO : com.automation.pages.CannedPage - Clicked on 'FGACard'
-13 Apr 2026 12:14:52,650 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'FGACard' (SUCCESSFUL)
-13 Apr 2026 12:14:53,543 INFO : com.automation.pages.CannedPage - Clicked on 'EngineeringCard'
-13 Apr 2026 12:14:53,589 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'EngineeringCard' (SUCCESSFUL)
-13 Apr 2026 12:14:58,124 INFO : com.automation.pages.CannedPage - Clicked on 'OpenCoverCard'
-13 Apr 2026 12:14:58,158 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'OpenCoverCard' (SUCCESSFUL)
-13 Apr 2026 12:14:58,159 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Engineering] >> [23 - Engineering]
-13 Apr 2026 12:14:58,377 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutClassOfBusinessDisplay' equals 'p:Engineering' text (SUCCESSFUL)
-13 Apr 2026 12:14:58,378 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Engineering_OpenCover] >> [24 - Open Cover]
-13 Apr 2026 12:14:58,562 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutPolicyTypeDisplay' equals 'p:Engineering_OpenCover' text (SUCCESSFUL)
-13 Apr 2026 12:14:58,563 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Draft] >> [1 - Draft]
-13 Apr 2026 12:14:58,719 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutStatusDisplay' equals 'p:Draft' text (SUCCESSFUL)
-13 Apr 2026 12:14:58,720 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Valid] >> [1 - Valid]
-13 Apr 2026 12:14:58,906 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutValidityStatusDisplay' equals 'p:Valid' text (SUCCESSFUL)
-13 Apr 2026 12:14:58,908 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Quotation Details (IGNORED)
-13 Apr 2026 12:14:59,032 INFO : com.automation.pages.CannedPage - Tab 'MainTab' selected=true
-13 Apr 2026 12:14:59,054 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'MainTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:14:59,184 INFO : com.automation.pages.CannedPage - I scroll to 'CreateButton'
-13 Apr 2026 12:14:59,216 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:14:59,362 INFO : com.automation.pages.CannedPage - Clicked on 'CreateButton'
-13 Apr 2026 12:14:59,389 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:14:59,562 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'ErrorAlert' is enable (SUCCESSFUL)
-13 Apr 2026 12:14:59,563 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutSourceEmptyErrorMsg] >> [Source must have some value.]
+Running story stories/ControlAndMonitering/TC_003_Apex.story
+13 Apr 2026 16:51:20,088 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:20,089 INFO : com.automation.jbehave.ConsoleLogger - Begin Story: TC_003_Apex.story
+13 Apr 2026 16:51:20,089 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:20,090 INFO : com.automation.jbehave.ConsoleLogger - Narrative[inOrderTo=,asA=,iWantTo=,soThat=]
+13 Apr 2026 16:51:20,090 INFO : com.automation.jbehave.ConsoleLogger - Lifecycle[before=Lifecycle.Steps[outcome=<null>,metaFilter=<null>,steps=[]],after={}]
+Using timeout for story TC_003_Apex.story of 7200 secs.
+13 Apr 2026 16:51:25,599 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:25,599 INFO : com.automation.jbehave.ConsoleLogger - Scenario: TC_003_Apex
+13 Apr 2026 16:51:25,599 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:25,601 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:amanApex] >> [http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login]
+13 Apr 2026 16:51:26,835 INFO : com.automation.pages.CannedPage - Navigating to the page: http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login
+13 Apr 2026 16:51:26,880 INFO : com.automation.jbehave.ConsoleLogger - Given [Navigation] I navigate to 'p:amanApex' (SUCCESSFUL)
+13 Apr 2026 16:51:26,882 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I login as 'p:adminUsername' with password 'p:password' (IGNORED)
+13 Apr 2026 16:51:26,882 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:51:26,883 INFO : com.automation.jbehave.ConsoleLogger - !-- !-- When [Input] I click on 'navControlButton' (IGNORED)
+13 Apr 2026 16:51:26,884 INFO : com.automation.jbehave.ConsoleLogger - !-- When [Action] I ensure navbar is open using toggle 'navControlButton' (IGNORED)
+13 Apr 2026 16:51:26,884 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'ControlAndMoniteringSideMenu' (IGNORED)
+13 Apr 2026 16:51:26,885 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'MasterFilesSideMenu' (IGNORED)
+13 Apr 2026 16:51:26,885 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'LocationsAndBranchesSideMenu' (IGNORED)
+13 Apr 2026 16:51:26,886 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LocationsAndBranchesTitle' equals 'p:LocationsAndBranches' text (IGNORED)
+13 Apr 2026 16:51:26,887 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Select 'p:SaudiArabia' value from 'LocationCombobox' dropdown list (IGNORED)
+13 Apr 2026 16:51:26,887 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LocationsAndBranchesTable' is visible (IGNORED)
+13 Apr 2026 16:51:26,888 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '10' sec (IGNORED)
+13 Apr 2026 16:51:26,888 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'LocationsAndBranchesAddRowButton' (IGNORED)
+13 Apr 2026 16:51:26,889 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify IG 'LocationsAndBranchesTable' has an empty inserted row (IGNORED)
+13 Apr 2026 16:51:26,889 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:51:26,890 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'LocationsAndBranchesSaveButton' and if 'AlertDialog' not appear reclick (IGNORED)
+13 Apr 2026 16:51:26,890 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text (IGNORED)
+13 Apr 2026 16:51:26,891 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'OkButton' (IGNORED)
+13 Apr 2026 16:51:26,891 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Action] I delete the inserted row in IG 'LocationsAndBranchesTable' (IGNORED)
+13 Apr 2026 16:51:26,891 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '7' sec (IGNORED)
+13 Apr 2026 16:51:26,892 INFO : com.automation.jbehave.ConsoleLogger - !-- Then [Input] I click on 'UserDDL' (IGNORED)
+13 Apr 2026 16:51:26,892 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'LogoutButton' (IGNORED)
+13 Apr 2026 16:51:26,892 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'loginButton' is present (IGNORED)
+13 Apr 2026 16:51:26,983 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:26,983 INFO : com.automation.jbehave.ConsoleLogger - Scenario: TC_003_Apex
+13 Apr 2026 16:51:26,983 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:26,984 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:amanApex] >> [http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login]
+13 Apr 2026 16:51:27,186 INFO : com.automation.pages.CannedPage - Navigating to the page: http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login
+13 Apr 2026 16:51:27,234 INFO : com.automation.jbehave.ConsoleLogger - Given [Navigation] I navigate to 'p:amanApex' (SUCCESSFUL)
+13 Apr 2026 16:51:27,235 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I login as 'p:adminUsername' with password 'p:password' (IGNORED)
+13 Apr 2026 16:51:27,235 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:51:27,235 INFO : com.automation.jbehave.ConsoleLogger - !-- !-- When [Input] I click on 'navControlButton' (IGNORED)
+13 Apr 2026 16:51:27,235 INFO : com.automation.jbehave.ConsoleLogger - !-- When [Action] I ensure navbar is open using toggle 'navControlButton' (IGNORED)
+13 Apr 2026 16:51:27,235 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'ControlAndMoniteringSideMenu' (IGNORED)
+13 Apr 2026 16:51:27,235 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'MasterFilesSideMenu' (IGNORED)
+13 Apr 2026 16:51:27,235 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomersReceivableSideMenu' (IGNORED)
+13 Apr 2026 16:51:27,236 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'CustomersReceivableTariffTitle' equals 'p:CustomersReceivable' text (IGNORED)
+13 Apr 2026 16:51:27,236 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'CustomersReceivableTable' is visible (IGNORED)
+13 Apr 2026 16:51:27,236 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'AddACustomerButton' (IGNORED)
+13 Apr 2026 16:51:27,237 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '3' sec (IGNORED)
+13 Apr 2026 16:51:27,237 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomersReceivableSaveButton' (IGNORED)
+13 Apr 2026 16:51:27,238 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CloseIconButton' (IGNORED)
+13 Apr 2026 16:51:27,239 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LocationErrorMsg' contains 'p:LocationEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,239 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'BranchCRErrorMsg' contains 'p:BranchCREmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,240 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'CustTypeErrorMsg' contains 'p:CustTypeEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,241 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'NameEnglishErrorMsg' contains 'p:NameEnglishEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,242 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'CustStatusErrorMsg' contains 'p:CustStatusEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,243 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomerNameOpenPop' (IGNORED)
+13 Apr 2026 16:51:27,243 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'FirstNameEnErrorMsg' contains 'p:FirstNameEnEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,245 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LastNameEnErrorMsg' contains 'p:LastNameEnEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,245 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'FirstNameArErrorMsg' contains 'p:FirstNameArEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,246 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LastNameArErrorMsg' contains 'p:LastNameArEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,246 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Set 'FirstNameEnInput' value to 'random2' (IGNORED)
+13 Apr 2026 16:51:27,248 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'FirstNameEnInput' input is empty (IGNORED)
+13 Apr 2026 16:51:27,249 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Set 'LastNameEnInput' value to 'random2' (IGNORED)
+13 Apr 2026 16:51:27,249 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LastNameEnInput' input is empty (IGNORED)
+13 Apr 2026 16:51:27,250 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Set 'FirstNameArInput' value to 'random2' (IGNORED)
+13 Apr 2026 16:51:27,251 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'FirstNameArInput' input is empty (IGNORED)
+13 Apr 2026 16:51:27,251 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Set 'LastNameArInput' value to 'random2' (IGNORED)
+13 Apr 2026 16:51:27,252 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LastNameArInput' input is empty (IGNORED)
+13 Apr 2026 16:51:27,252 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:51:27,253 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomerNameCloseButton' (IGNORED)
+13 Apr 2026 16:51:27,253 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify tab 'CustomerDetailsTab' is selected (IGNORED)
+13 Apr 2026 16:51:27,253 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Set 'NoOfVisitInput' value to 'randomen' (IGNORED)
+13 Apr 2026 16:51:27,254 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Set 'AnnualIncomeInput' value to 'randomen' (IGNORED)
+13 Apr 2026 16:51:27,254 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Navigation] I scroll to top of page (IGNORED)
+13 Apr 2026 16:51:27,255 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomersReceivableSaveButton' (IGNORED)
+13 Apr 2026 16:51:27,255 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Navigation] I scroll to 'NoOfVisitErrorMsg' (IGNORED)
+13 Apr 2026 16:51:27,256 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'NoOfVisitErrorMsg' contains 'p:NoOfVisitInvalidErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,256 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'AnnualIncomeErrorMsg' contains 'p:AnnualIncomeInvalidErrorMsg' text (IGNORED)
+13 Apr 2026 16:51:27,257 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Navigation] I scroll to top of page (IGNORED)
+13 Apr 2026 16:51:27,257 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomerDetails2Tab' (IGNORED)
+13 Apr 2026 16:51:27,258 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify tab 'CustomerDetails2Tab' is selected (IGNORED)
+13 Apr 2026 16:51:27,258 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'AddressTab' (IGNORED)
+13 Apr 2026 16:51:27,258 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify tab 'AddressTab' is selected (IGNORED)
+13 Apr 2026 16:51:27,259 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'BranchesTab' (IGNORED)
+13 Apr 2026 16:51:27,259 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify tab 'BranchesTab' is selected (IGNORED)
+13 Apr 2026 16:51:27,259 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'BranchesCRTable' is visible (IGNORED)
+13 Apr 2026 16:51:27,260 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Navigation] I scroll to 'BranchesCRAddRowButton' (IGNORED)
+13 Apr 2026 16:51:27,260 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'BranchesCRAddRowButton' (IGNORED)
+13 Apr 2026 16:51:27,261 INFO : com.automation.jbehave.ConsoleLogger - !-- !-- And [Assertion] Verify IG 'BranchesCRTable' has an empty inserted row (IGNORED)
+13 Apr 2026 16:51:27,261 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:51:27,261 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'BranchesCRSaveButton' and if 'AlertDialog' not appear reclick (IGNORED)
+13 Apr 2026 16:51:27,262 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text (IGNORED)
+13 Apr 2026 16:51:27,262 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CROkButton' (IGNORED)
+13 Apr 2026 16:51:27,263 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Action] I delete the inserted row in IG 'BranchesCRTable' (IGNORED)
+13 Apr 2026 16:51:27,263 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CompanySizeTab' (IGNORED)
+13 Apr 2026 16:51:27,264 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify tab 'CompanySizeTab' is selected (IGNORED)
+13 Apr 2026 16:51:27,264 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'CompanySizeCRTable' is visible (IGNORED)
+13 Apr 2026 16:51:27,265 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Navigation] I scroll to 'CompanySizeCRAddRowButton' (IGNORED)
+13 Apr 2026 16:51:27,266 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CompanySizeCRAddRowButton' (IGNORED)
+13 Apr 2026 16:51:27,266 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify IG 'CompanySizeCRTable' has an empty inserted row (IGNORED)
+13 Apr 2026 16:51:27,267 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Action] I delete the inserted row in IG 'CompanySizeCRTable' (IGNORED)
+13 Apr 2026 16:51:27,267 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CancelButton' (IGNORED)
+13 Apr 2026 16:51:27,268 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'AddACustomerButton' is visible (IGNORED)
+13 Apr 2026 16:51:27,268 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '7' sec (IGNORED)
+13 Apr 2026 16:51:27,269 INFO : com.automation.jbehave.ConsoleLogger - !-- Then [Input] I click on 'UserDDL' (IGNORED)
+13 Apr 2026 16:51:27,269 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'LogoutButton' (IGNORED)
+13 Apr 2026 16:51:27,269 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'loginButton' is present (IGNORED)
+13 Apr 2026 16:51:27,347 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:27,347 INFO : com.automation.jbehave.ConsoleLogger - Scenario: TC_003_Apex
+13 Apr 2026 16:51:27,347 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:51:27,348 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:amanApex] >> [http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login]
+13 Apr 2026 16:51:27,540 INFO : com.automation.pages.CannedPage - Navigating to the page: http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login
+13 Apr 2026 16:51:27,574 INFO : com.automation.jbehave.ConsoleLogger - Given [Navigation] I navigate to 'p:amanApex' (SUCCESSFUL)
+13 Apr 2026 16:51:27,577 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:adminUsername] >> [aman_opt]
+13 Apr 2026 16:51:27,577 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:password] >> [aman_opt]
+13 Apr 2026 16:51:30,967 INFO : com.automation.pages.CannedPage - Filled 'userName' with value: aman_opt
+13 Apr 2026 16:51:34,135 INFO : com.automation.pages.CannedPage - Clicked on 'password'
+13 Apr 2026 16:51:37,387 INFO : com.automation.pages.CannedPage - Filled 'password' with value: aman_opt
+13 Apr 2026 16:51:37,557 INFO : com.automation.pages.CannedPage - Clicked on 'login Button'
+13 Apr 2026 16:51:37,599 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I login as 'p:adminUsername' with password 'p:password' (SUCCESSFUL)
+13 Apr 2026 16:51:42,646 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
+13 Apr 2026 16:51:42,646 INFO : com.automation.jbehave.ConsoleLogger - !-- When [Input] I click on 'navControlButton' (IGNORED)
+13 Apr 2026 16:51:43,041 INFO : com.automation.pages.CustomPage - Navbar opened successfully. aria-expanded=true | toggle=navControlButton
+13 Apr 2026 16:51:43,070 INFO : com.automation.jbehave.ConsoleLogger - When [Action] I ensure navbar is open using toggle 'navControlButton' (SUCCESSFUL)
+13 Apr 2026 16:51:43,284 INFO : com.automation.pages.CannedPage - Clicked on 'ControlAndMoniteringSideMenu'
+13 Apr 2026 16:51:43,317 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ControlAndMoniteringSideMenu' (SUCCESSFUL)
+13 Apr 2026 16:51:43,565 INFO : com.automation.pages.CannedPage - Clicked on 'MasterFilesSideMenu'
+13 Apr 2026 16:51:43,617 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'MasterFilesSideMenu' (SUCCESSFUL)
+13 Apr 2026 16:51:49,336 INFO : com.automation.pages.CannedPage - Clicked on 'PayablePartiesSideMenu'
+13 Apr 2026 16:51:49,366 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PayablePartiesSideMenu' (SUCCESSFUL)
+13 Apr 2026 16:51:49,367 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:PayableParties] >> [Payable Parties]
+13 Apr 2026 16:51:49,591 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'PayablePartiesTitle' equals 'p:PayableParties' text (SUCCESSFUL)
+13 Apr 2026 16:51:49,698 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'PayablePartiesTable' is visible (SUCCESSFUL)
+13 Apr 2026 16:51:54,254 INFO : com.automation.pages.CannedPage - Clicked on 'AddACustomerButton'
+13 Apr 2026 16:51:54,282 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'AddACustomerButton' (SUCCESSFUL)
+13 Apr 2026 16:51:57,318 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '3' sec (SUCCESSFUL)
+13 Apr 2026 16:51:57,439 INFO : com.automation.pages.CannedPage - Clicked on 'PayablePartiesSaveButton'
+13 Apr 2026 16:51:57,468 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PayablePartiesSaveButton' (SUCCESSFUL)
+13 Apr 2026 16:51:57,469 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:LocationEmptyErrorMsg] >> [Location must have some value.]
 ==========================================================
-Actual: Source must have some value.
+Actual: Location must have some value.
 ==========================================================
-13 Apr 2026 12:14:59,721 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutSourceErrorMsg' contains 'p:QutSourceEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:14:59,721 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutInsStDateEmptyErrorMsg] >> [Effective Date must have some value.]
+13 Apr 2026 16:51:57,622 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'LocationPPErrorMsg' contains 'p:LocationEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:57,623 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:BranchEmptyErrorMsg] >> [Branch must have some value.]
 ==========================================================
-Actual: Effective Date must have some value.
+Actual: Branch must have some value.
 ==========================================================
-13 Apr 2026 12:14:59,855 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutInsStDateErrorMsg' contains 'p:QutInsStDateEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:14:59,856 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutInsEdDateEmptyErrorMsg] >> [Expiry Date must have some value.]
+13 Apr 2026 16:51:57,752 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'BranchPPErrorMsg' contains 'p:BranchEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:57,753 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ClassEmptyErrorMsg] >> [Class must have some value.]
 ==========================================================
-Actual: Expiry Date must have some value.
+Actual: Class must have some value.
 ==========================================================
-13 Apr 2026 12:15:00,003 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutInsEdDateErrorMsg' contains 'p:QutInsEdDateEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:15:00,024 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:15:00,063 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:15:00,236 INFO : com.automation.pages.CannedPage - Clicked on 'CalculationsTab'
-13 Apr 2026 12:15:00,265 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CalculationsTab' (SUCCESSFUL)
-13 Apr 2026 12:15:00,398 INFO : com.automation.pages.CannedPage - Tab 'CalculationsTab' selected=true
-13 Apr 2026 12:15:00,418 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CalculationsTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:15:00,419 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutCalculationBasisEmptyErrorMsg] >> [Calculation Basis must have some value.]
+13 Apr 2026 16:51:57,882 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'ClassErrorMsg' contains 'p:ClassEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:57,882 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:CustomerTypeEmptyErrorMsg] >> [Customer Type must have some value.]
 ==========================================================
-Actual: Calculation Basis must have some value.
+Actual: Customer Type must have some value.
 ==========================================================
-13 Apr 2026 12:15:00,547 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutCalculationBasisErrorMsg' contains 'p:QutCalculationBasisEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:15:00,548 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutCrCdEmptyErrorMsg] >> [Currency must have some value.]
+13 Apr 2026 16:51:58,004 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CustomerTypeErrorMsg' contains 'p:CustomerTypeEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:58,005 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:CustomerNameEmptyErrorMsg] >> [Customer Name (English) must have some value.]
 ==========================================================
-Actual: Currency must have some value.
+Actual: Customer Name (English) must have some value.
 ==========================================================
-13 Apr 2026 12:15:00,666 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutCrCdErrorMsg' contains 'p:QutCrCdEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:15:00,778 INFO : com.automation.pages.CannedPage - Assert 'QutQuotNoCreateText' empty=true (actual='')
-13 Apr 2026 12:15:00,809 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutQuotNoCreateText' input is empty (SUCCESSFUL)
-13 Apr 2026 12:15:00,937 INFO : com.automation.pages.CannedPage - Clicked on 'MainTab'
-13 Apr 2026 12:15:00,968 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'MainTab' (SUCCESSFUL)
-13 Apr 2026 12:15:01,104 INFO : com.automation.pages.CannedPage - Tab 'MainTab' selected=true
-13 Apr 2026 12:15:01,140 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'MainTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:15:01,140 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Direct] >> [1-Direct]
-13 Apr 2026 12:15:01,739 INFO : com.automation.pages.CannedPage - Selected '1-Direct' from LOV 'QutSourceCombobox'
-13 Apr 2026 12:15:01,767 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Direct' value from 'QutSourceCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:15:01,769 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Account] >> [2-Account]
+13 Apr 2026 16:51:58,148 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CustomerNameErrorMsg' contains 'p:CustomerNameEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:58,149 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:StatusEmptyErrorMsg] >> [Status must have some value.]
 ==========================================================
-Actual: 2-Account
+Actual: Status must have some value.
 ==========================================================
-13 Apr 2026 12:15:01,972 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text (SUCCESSFUL)
-13 Apr 2026 12:15:02,146 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutQuotDate' value equals sysdate (SUCCESSFUL)
-13 Apr 2026 12:15:02,147 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day (IGNORED)
-Putting value in StateManager: key=, value=13/04/2026
-13 Apr 2026 12:15:02,501 INFO : com.automation.pages.CannedPage - Filled 'QutInsStDateInput' with value: 13/04/2026
-13 Apr 2026 12:15:02,527 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted' (SUCCESSFUL)
-13 Apr 2026 12:15:07,579 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:15:07,852 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Tab on 'QutInsStDateInput' (SUCCESSFUL)
-13 Apr 2026 12:15:08,126 INFO : com.automation.pages.CannedPage - Clicked on 'QutInsStDateInput'
-13 Apr 2026 12:15:08,159 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'QutInsStDateInput' (SUCCESSFUL)
-13 Apr 2026 12:15:08,387 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Enter on 'QutInsStDateInput' (SUCCESSFUL)
-13 Apr 2026 12:15:13,422 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:15:13,422 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate plus '1' years minus one day (IGNORED)
-13 Apr 2026 12:15:13,556 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate (SUCCESSFUL)
-13 Apr 2026 12:15:13,748 INFO : com.automation.pages.CannedPage - Clicked on 'CalculationsTab'
-13 Apr 2026 12:15:13,782 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CalculationsTab' (SUCCESSFUL)
-13 Apr 2026 12:15:13,966 INFO : com.automation.pages.CannedPage - Tab 'CalculationsTab' selected=true
-13 Apr 2026 12:15:13,999 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CalculationsTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:15:14,000 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ProRata] >> [1 - Pro Rata]
-13 Apr 2026 12:15:14,571 INFO : com.automation.pages.CannedPage - Selected '1 - Pro Rata' from LOV 'QutCalculationBasisCombobox'
-13 Apr 2026 12:15:14,608 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ProRata' value from 'QutCalculationBasisCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:15:14,610 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:SaudiRiyals] >> [1 - Saudi Riyals]
-13 Apr 2026 12:15:15,421 INFO : com.automation.pages.CannedPage - Selected '1 - Saudi Riyals' from LOV 'QutCrCdCombobox'
-13 Apr 2026 12:15:15,452 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:SaudiRiyals' value from 'QutCrCdCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:15:18,505 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '3' sec (SUCCESSFUL)
-13 Apr 2026 12:15:18,663 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutUnitPriceVal' equals '1' text (SUCCESSFUL)
-13 Apr 2026 12:15:18,765 INFO : com.automation.pages.CannedPage - I scroll to 'CreateButton'
-13 Apr 2026 12:15:18,801 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:15:18,935 INFO : com.automation.pages.CannedPage - Clicked on 'CreateButton'
-13 Apr 2026 12:15:18,975 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:15:24,024 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:15:24,106 INFO : com.automation.pages.CannedPage - I scroll to 'SuccessfullyAlert'
-13 Apr 2026 12:15:24,150 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'SuccessfullyAlert' (SUCCESSFUL)
-13 Apr 2026 12:15:24,151 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:DataSavedSuccessfully] >> [Data Saved Successfully.]
+13 Apr 2026 16:51:58,254 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CustStatusPPErrorMsg' contains 'p:StatusEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:58,413 INFO : com.automation.pages.CannedPage - Clicked on 'CustomerNamePPOpenPop'
+13 Apr 2026 16:51:58,445 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CustomerNamePPOpenPop' (SUCCESSFUL)
+13 Apr 2026 16:51:58,446 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:FirstNameEnEmptyErrorMsg] >> [First Name must have some value.]
 ==========================================================
-Actual: Data Saved Successfully.
+Actual: First Name must have some value.
 ==========================================================
-13 Apr 2026 12:15:24,305 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'SuccessfullyAlert' contains 'p:DataSavedSuccessfully' text (SUCCESSFUL)
-Fetched text from QutQuotNoCreateText: 735
-Putting value in StateManager: key=QuotationNo, value=735
-QuotationNo saved as: 735
-13 Apr 2026 12:15:24,468 INFO : com.automation.jbehave.ConsoleLogger - And [Action] I get text from 'QutQuotNoCreateText' and save it as 'QuotationNo' (SUCCESSFUL)
-13 Apr 2026 12:15:24,605 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:15:24,640 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:15:29,680 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:15:29,680 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Risk Details (IGNORED)
-13 Apr 2026 12:15:29,849 INFO : com.automation.pages.CannedPage - Clicked on 'AddNewRiskButton'
-13 Apr 2026 12:15:29,884 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'AddNewRiskButton' (SUCCESSFUL)
-13 Apr 2026 12:15:30,709 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'AddNewRiskIframe' (SUCCESSFUL)
-13 Apr 2026 12:15:31,036 INFO : com.automation.pages.CannedPage - Clicked on 'RiskTypeLiabilityCombobox'
-13 Apr 2026 12:15:31,067 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskTypeLiabilityCombobox' (SUCCESSFUL)
-13 Apr 2026 12:15:31,109 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:15:31,109 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Warehouse] >> [1 - Warehouse]
-13 Apr 2026 12:15:32,646 INFO : com.automation.pages.CannedPage - Selected '1 - Warehouse' from LOV 'PopupLOVSearchBar'
-13 Apr 2026 12:15:32,676 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Warehouse' value from 'PopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:15:32,858 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'AddNewRiskIframe' (SUCCESSFUL)
-13 Apr 2026 12:15:32,859 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ItemBasis] >> [2 - Item Basis]
-13 Apr 2026 12:15:33,056 INFO : com.automation.pages.CannedPage - Selected '2 - Item Basis' from <select> 'BreakdownCombobox'
-13 Apr 2026 12:15:33,090 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ItemBasis' value from 'BreakdownCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:15:33,303 INFO : com.automation.pages.CannedPage - Clicked on 'ApplyChangesButtonIframe'
-13 Apr 2026 12:15:33,376 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ApplyChangesButtonIframe' (SUCCESSFUL)
-13 Apr 2026 12:15:33,419 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:15:38,465 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:15:38,465 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Items Details (IGNORED)
-13 Apr 2026 12:15:38,637 INFO : com.automation.pages.CannedPage - Clicked on 'AddNewItemButton'
-13 Apr 2026 12:15:38,672 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'AddNewItemButton' (SUCCESSFUL)
-13 Apr 2026 12:15:38,983 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'FireRiskItemsIframe' (SUCCESSFUL)
-13 Apr 2026 12:15:39,300 INFO : com.automation.pages.CannedPage - Clicked on 'RiqItemCodeCombobox'
-13 Apr 2026 12:15:39,333 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiqItemCodeCombobox' (SUCCESSFUL)
-13 Apr 2026 12:15:39,376 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:15:39,378 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Buildings] >> [1 - Buildings]
-13 Apr 2026 12:15:40,405 INFO : com.automation.pages.CannedPage - Selected '1 - Buildings' from LOV 'PopupLOVSearchBar'
-13 Apr 2026 12:15:40,440 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Buildings' value from 'PopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:15:40,595 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'FireRiskItemsIframe' (SUCCESSFUL)
-13 Apr 2026 12:15:40,792 INFO : com.automation.pages.CannedPage - Clicked on 'RiqSaveButtonIframe'
-13 Apr 2026 12:15:40,825 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiqSaveButtonIframe' (SUCCESSFUL)
-13 Apr 2026 12:15:40,871 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:15:45,915 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:15:45,971 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:15:46,008 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:15:46,165 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:15:46,202 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:15:51,256 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:15:51,257 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Risk/Item Value Types (IGNORED)
-13 Apr 2026 12:15:51,387 INFO : com.automation.pages.CannedPage - I scroll to 'ItemCalculationButton'
-13 Apr 2026 12:15:51,424 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'ItemCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:15:51,635 INFO : com.automation.pages.CannedPage - Clicked on 'ItemCalculationButton'
-13 Apr 2026 12:15:51,672 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ItemCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:15:52,600 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'ItemCalculationIframe' (SUCCESSFUL)
-13 Apr 2026 12:15:52,873 INFO : com.automation.pages.CannedPage - Clicked on 'ItemCalculationEditButton'
-13 Apr 2026 12:15:52,903 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ItemCalculationEditButton' (SUCCESSFUL)
-13 Apr 2026 12:15:53,407 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=item_c_ig
-13 Apr 2026 12:15:53,733 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'item_c_ig' row '42 - Fire SI' Local/Amount can be filled (SUCCESSFUL)
-13 Apr 2026 12:15:54,039 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=item_c_ig
-13 Apr 2026 12:15:54,313 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=item_c_ig
-13 Apr 2026 12:15:56,488 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='42 - Fire SI' | col='Local' | value=19
-13 Apr 2026 12:15:59,772 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='2 - Rate' | col='Percent' | value=3
-13 Apr 2026 12:16:02,412 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='44 - Others SI' | col='Local' | value=19
-13 Apr 2026 12:16:05,486 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='45 - Others Rate' | col='Percent' | value=12
-13 Apr 2026 12:16:11,779 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I set SECOND IG 'item_c_ig' from first row '42 - Fire SI' to random numbers between '1' and '50' for all enabled cells excluding DDL (SUCCESSFUL)
-13 Apr 2026 12:16:16,818 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:16:16,853 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:16:16,963 INFO : com.automation.pages.CannedPage - I scroll to 'RiskCalculationButton'
-13 Apr 2026 12:16:16,998 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'RiskCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:16:17,173 INFO : com.automation.pages.CannedPage - Clicked on 'RiskCalculationButton'
-13 Apr 2026 12:16:17,210 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:16:17,495 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'RiskCalculationIframe' (SUCCESSFUL)
-13 Apr 2026 12:16:17,754 INFO : com.automation.pages.CannedPage - Clicked on 'RiskCalculationEditButton'
-13 Apr 2026 12:16:17,793 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskCalculationEditButton' (SUCCESSFUL)
-13 Apr 2026 12:16:17,794 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify IG 'RISK_CALC_REGION_ig' row '42 - Fire SI' Local/Amount can be filled (IGNORED)
-13 Apr 2026 12:16:18,148 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=RISK_CALC_REGION_ig
-13 Apr 2026 12:16:18,503 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=RISK_CALC_REGION_ig
-13 Apr 2026 12:16:20,869 INFO : com.automation.pages.CustomPage - [IG Fill] region=RISK_CALC_REGION_ig | row='5 - Discounts' | col='Percent' | value=14
-13 Apr 2026 12:16:24,811 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I set SECOND IG 'RISK_CALC_REGION_ig' from first row '42 - Fire SI' to random numbers between '1' and '50' for all enabled cells excluding DDL (SUCCESSFUL)
-13 Apr 2026 12:16:29,845 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:16:29,890 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:16:29,898 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:16:29,936 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:16:30,103 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:16:30,142 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:16:35,193 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:16:35,194 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill in Quotation Value Types (IGNORED)
-13 Apr 2026 12:16:35,359 INFO : com.automation.pages.CannedPage - Clicked on 'EditButtonQuotationValue'
-13 Apr 2026 12:16:35,391 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'EditButtonQuotationValue' (SUCCESSFUL)
-13 Apr 2026 12:16:40,435 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:16:40,942 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=calc_ig
-13 Apr 2026 12:16:41,377 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'calc_ig' row '11 - Issues Fees' Local/Amount can be filled (SUCCESSFUL)
-13 Apr 2026 12:16:42,043 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=calc_ig
-13 Apr 2026 12:16:46,932 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='9 - ICF Fees' | col='Premium %' | value=8
-13 Apr 2026 12:16:49,523 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='10 - Stamp Fees' | col='Premium %' | value=16
-13 Apr 2026 12:16:52,204 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='11 - Issues Fees' | col='Amount' | value=38
-13 Apr 2026 12:16:54,222 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='12 - Service Charge' | col='Amount' | value=13
-13 Apr 2026 12:16:56,174 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='14 - VAT' | col='Premium %' | value=3
-13 Apr 2026 12:16:58,119 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='14 - VAT' | col='Method' | value=45
-13 Apr 2026 12:17:08,796 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I set IG 'calc_ig' from first row '42 - Fire SI' to random numbers between '1' and '50' for all enabled cells excluding DDL (SUCCESSFUL)
-13 Apr 2026 12:17:09,052 INFO : com.automation.pages.CannedPage - Clicked on 'SaveButton'
-13 Apr 2026 12:17:09,083 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'SaveButton' (SUCCESSFUL)
-13 Apr 2026 12:17:14,108 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:17:14,142 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:17:14,190 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:17:19,239 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:17:19,477 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:17:19,515 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:17:24,559 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:17:24,560 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill in All Quotation Details (IGNORED)
-Getting value from StateManager: key=QuotationNo, value=735
-Expected value (from stateManager, key='QuotationNo'): 735
-Actual value (from element 'QutQuotNoAllQuotationDetails'): 735
-13 Apr 2026 12:17:24,738 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'QutQuotNoAllQuotationDetails' contains saved value 'QuotationNo' (SUCCESSFUL)
-13 Apr 2026 12:17:24,739 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Cheque] >> [2 - Cheque]
-13 Apr 2026 12:17:25,504 INFO : com.automation.pages.CannedPage - Selected '2 - Cheque' from LOV 'QutCollectionTypeCombobox'
-13 Apr 2026 12:17:25,542 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Cheque' value from 'QutCollectionTypeCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:17:25,661 INFO : com.automation.pages.CannedPage - I scroll to 'CustomerInfoButton'
-13 Apr 2026 12:17:25,700 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CustomerInfoButton' (SUCCESSFUL)
-13 Apr 2026 12:17:25,878 INFO : com.automation.pages.CannedPage - Clicked on 'CustomerInfoButton'
-13 Apr 2026 12:17:25,912 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CustomerInfoButton' (SUCCESSFUL)
-13 Apr 2026 12:17:25,912 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ClientName] >> [5349 - ?´?±???© ?§???????´?¢?? ?§???³?¹???¯???©]
-13 Apr 2026 12:17:26,990 INFO : com.automation.pages.CannedPage - Selected '5349 - شركة المنشآت السعودية' from LOV 'QurQutClientCombobox'
-13 Apr 2026 12:17:27,020 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ClientName' value from 'QurQutClientCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:17:27,021 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ClientName] >> [5349 - ?´?±???© ?§???????´?¢?? ?§???³?¹???¯???©]
-13 Apr 2026 12:17:28,350 INFO : com.automation.pages.CannedPage - Selected '5349 - شركة المنشآت السعودية' from LOV 'QurQutClientNoCombobox'
-13 Apr 2026 12:17:28,388 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ClientName' value from 'QurQutClientNoCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:17:28,640 INFO : com.automation.pages.CannedPage - Clicked on 'ApplyChangesButton'
-13 Apr 2026 12:17:28,735 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ApplyChangesButton' (SUCCESSFUL)
-13 Apr 2026 12:17:28,736 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:DataUpdatedSuccessfully] >> [Data Updated Successfully.]
+13 Apr 2026 16:51:58,573 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'FirstNameEnPPErrorMsg' contains 'p:FirstNameEnEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:58,573 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:LastNameEnEmptyErrorMsg] >> [Last Name must have some value]
 ==========================================================
-Actual: Data Updated Successfully.
+Actual: Last Name must have some value.
 ==========================================================
-13 Apr 2026 12:17:32,479 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'SuccessfullyAlert' contains 'p:DataUpdatedSuccessfully' text (SUCCESSFUL)
-13 Apr 2026 12:17:37,541 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:17:37,541 INFO : com.automation.jbehave.ConsoleLogger - !-- Risk Quotation Button (IGNORED)
-13 Apr 2026 12:17:37,554 INFO : com.automation.pages.CannedPage - I scroll to end of page
-13 Apr 2026 12:17:37,576 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to end of page (SUCCESSFUL)
-13 Apr 2026 12:17:38,964 INFO : com.automation.pages.CannedPage - Clicked on 'RiskQuotationButton'
-13 Apr 2026 12:17:38,994 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskQuotationButton' (SUCCESSFUL)
-13 Apr 2026 12:17:39,131 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'RiskTable' is visible (SUCCESSFUL)
-13 Apr 2026 12:17:41,236 INFO : com.automation.pages.CannedPage - Clicked on 'RiskDetailsBackButton'
-13 Apr 2026 12:17:41,265 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskDetailsBackButton' (SUCCESSFUL)
-13 Apr 2026 12:17:46,315 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:17:46,315 INFO : com.automation.jbehave.ConsoleLogger - !-- Beneficiary Button (IGNORED)
-13 Apr 2026 12:17:46,326 INFO : com.automation.pages.CannedPage - I scroll to end of page
-13 Apr 2026 12:17:46,363 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to end of page (SUCCESSFUL)
-13 Apr 2026 12:17:46,651 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryButton'
-13 Apr 2026 12:17:46,687 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryButton' (SUCCESSFUL)
-13 Apr 2026 12:17:47,251 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'BeneficiaryIframe' (SUCCESSFUL)
-13 Apr 2026 12:17:47,435 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'BeneficiaryTable' is visible (SUCCESSFUL)
-13 Apr 2026 12:17:47,809 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryAddRow'
-13 Apr 2026 12:17:47,835 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryAddRow' (SUCCESSFUL)
-13 Apr 2026 12:17:47,835 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'BeneficiarySerialRow' (IGNORED)
-13 Apr 2026 12:17:48,257 INFO : com.automation.pages.CannedPage - Filled 'BeneficiarySerialRow' with value: 1
-13 Apr 2026 12:17:48,289 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'BeneficiarySerialRow' value to '1' (SUCCESSFUL)
-13 Apr 2026 12:17:48,685 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryRow'
-13 Apr 2026 12:17:48,715 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryRow' (SUCCESSFUL)
-13 Apr 2026 12:17:49,438 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryComboboxRow'
-13 Apr 2026 12:17:49,488 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryComboboxRow' (SUCCESSFUL)
-13 Apr 2026 12:17:49,533 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:17:49,534 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ClientName] >> [5349 - ?´?±???© ?§???????´?¢?? ?§???³?¹???¯???©]
-13 Apr 2026 12:17:50,998 INFO : com.automation.pages.CannedPage - Selected '5349 - شركة المنشآت السعودية' from LOV 'PopupLOVSearchBar'
-13 Apr 2026 12:17:51,035 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ClientName' value from 'PopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:17:51,204 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'BeneficiaryIframe' (SUCCESSFUL)
-13 Apr 2026 12:17:56,261 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:17:56,829 INFO : com.automation.pages.CannedPage - Clicked on 'IdNumberRow'
-13 Apr 2026 12:17:56,867 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'IdNumberRow' (SUCCESSFUL)
-13 Apr 2026 12:17:57,489 INFO : com.automation.pages.CannedPage - Filled 'BeneficiaryIdNumberRow' with value: 1
-13 Apr 2026 12:17:57,526 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'BeneficiaryIdNumberRow' value to '1' (SUCCESSFUL)
-13 Apr 2026 12:17:57,888 INFO : com.automation.pages.CannedPage - Clicked on 'NationalityRow'
-13 Apr 2026 12:17:57,929 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NationalityRow' (SUCCESSFUL)
-13 Apr 2026 12:17:58,410 INFO : com.automation.pages.CannedPage - Clicked on 'NationalityRow'
-13 Apr 2026 12:17:58,446 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NationalityRow' (SUCCESSFUL)
-13 Apr 2026 12:17:58,447 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'BeneficiaryNationalityRow' (IGNORED)
-13 Apr 2026 12:17:58,482 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:17:58,482 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Afghani] >> [1 - Afghani]
-13 Apr 2026 12:18:00,074 INFO : com.automation.pages.CannedPage - Selected '1 - Afghani' from LOV 'BeneficiaryNationalityPopupLOVSearchBar'
-13 Apr 2026 12:18:00,103 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Afghani' value from 'BeneficiaryNationalityPopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:18:00,277 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'BeneficiaryIframe' (SUCCESSFUL)
-13 Apr 2026 12:18:00,643 INFO : com.automation.pages.CannedPage - Clicked on 'ClassificationRow'
-13 Apr 2026 12:18:00,685 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ClassificationRow' (SUCCESSFUL)
-13 Apr 2026 12:18:01,054 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryClassificationRow'
-13 Apr 2026 12:18:01,087 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryClassificationRow' (SUCCESSFUL)
-13 Apr 2026 12:18:01,087 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:PerRegistrationNo] >> [1 - Per Registration No]
-13 Apr 2026 12:18:01,338 INFO : com.automation.pages.CannedPage - Selected '1 - Per Registration No' from <select> 'BeneficiaryClassificationRow'
-13 Apr 2026 12:18:01,373 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:PerRegistrationNo' value from 'BeneficiaryClassificationRow' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:18:01,714 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiarySaveButton'
-13 Apr 2026 12:18:01,748 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiarySaveButton' (SUCCESSFUL)
-13 Apr 2026 12:18:06,791 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:18:06,831 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:18:07,037 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryIframeCloseButton'
-13 Apr 2026 12:18:07,071 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryIframeCloseButton' (SUCCESSFUL)
-13 Apr 2026 12:18:07,071 INFO : com.automation.jbehave.ConsoleLogger - !-- Covers Button (IGNORED)
-13 Apr 2026 12:18:07,590 INFO : com.automation.pages.CannedPage - Clicked on 'CoversButton'
-13 Apr 2026 12:18:07,623 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversButton' (SUCCESSFUL)
-13 Apr 2026 12:18:08,659 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'CoversIframe' (SUCCESSFUL)
-13 Apr 2026 12:18:11,717 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '3' sec (SUCCESSFUL)
-13 Apr 2026 12:18:11,823 ERROR: com.automation.jbehave.ConsoleLogger - java.lang.AssertionError: Expected element 'CoversTable' to be visible, but it is not.
-13 Apr 2026 12:18:12,035 INFO : com.automation.jbehave.ConsoleLogger - Screenshot saved successfully
-13 Apr 2026 12:18:12,081 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CoversTable' is visible (FAILED)
-13 Apr 2026 12:18:12,142 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoverDeleteFirstRow' if present (NOT PERFORMED)
-13 Apr 2026 12:18:12,190 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversSaveButton' (NOT PERFORMED)
-13 Apr 2026 12:18:12,233 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversAddRow' (NOT PERFORMED)
-13 Apr 2026 12:18:12,276 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversSerialRow' (NOT PERFORMED)
-13 Apr 2026 12:18:12,329 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'CoversSerialRow' value to '1' (NOT PERFORMED)
-13 Apr 2026 12:18:12,374 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversRow' (NOT PERFORMED)
-13 Apr 2026 12:18:12,418 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversComboboxRow' (NOT PERFORMED)
-13 Apr 2026 12:18:12,464 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (NOT PERFORMED)
-13 Apr 2026 12:18:12,465 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Aircraft] >> [4 - Aircraft]
-13 Apr 2026 12:18:12,499 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Aircraft' value from 'CoversPopupLOVSearchBar' dropdown list (NOT PERFORMED)
-13 Apr 2026 12:18:12,543 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'CoversIframe' (NOT PERFORMED)
-13 Apr 2026 12:18:12,592 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PremRow' (NOT PERFORMED)
-13 Apr 2026 12:18:12,633 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'CoversPremRow' value to '1' (NOT PERFORMED)
-13 Apr 2026 12:18:12,678 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversSaveButton' (NOT PERFORMED)
-13 Apr 2026 12:18:12,722 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (NOT PERFORMED)
-13 Apr 2026 12:18:12,770 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (NOT PERFORMED)
-13 Apr 2026 12:18:12,815 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CloseButtonFromPopup' (NOT PERFORMED)
-13 Apr 2026 12:18:12,815 INFO : com.automation.jbehave.ConsoleLogger - !-- REI Plan (IGNORED)
-13 Apr 2026 12:18:12,857 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'REIPlanButton' (NOT PERFORMED)
-13 Apr 2026 12:18:12,900 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'ReInsurancePlansIframe' (NOT PERFORMED)
-13 Apr 2026 12:18:12,944 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'REIPlanSaveButton' (NOT PERFORMED)
-13 Apr 2026 12:18:12,945 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ReinsurancePlanEmptyErrorMsg] >> [Reinsurance Plan must have some value.]
-13 Apr 2026 12:18:12,988 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'ReinsurancePlanErrorMsg' contains 'p:ReinsurancePlanEmptyErrorMsg' text (NOT PERFORMED)
-13 Apr 2026 12:18:12,989 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ReiMethodEmptyErrorMsg] >> [REI Method must have some value.]
-13 Apr 2026 12:18:13,038 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'ReiMethodErrorMsg' contains 'p:ReiMethodEmptyErrorMsg' text (NOT PERFORMED)
-13 Apr 2026 12:18:13,039 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Select '$optionValue' value from 'ReinsurancePlanCombobox' dropdown list (IGNORED)
-13 Apr 2026 12:18:13,039 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:PolicyWise] >> [Policy wise]
-13 Apr 2026 12:18:13,088 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:PolicyWise' value from 'ReiMethodCombobox' dropdown list (NOT PERFORMED)
-13 Apr 2026 12:18:13,089 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'REIPlanSaveButton' (IGNORED)
-13 Apr 2026 12:18:13,134 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (NOT PERFORMED)
-13 Apr 2026 12:18:13,176 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CloseButtonFromPopup' (NOT PERFORMED)
-13 Apr 2026 12:18:13,223 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'DeleteButton' (NOT PERFORMED)
-13 Apr 2026 12:18:13,265 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'DeleteButton' (NOT PERFORMED)
-13 Apr 2026 12:18:13,306 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'DeleteButtonPopup' (NOT PERFORMED)
-13 Apr 2026 12:18:13,350 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (NOT PERFORMED)
-13 Apr 2026 12:18:13,351 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QuotationDeletedSuccessfully] >> [Quotation Deleted Successfully!]
-13 Apr 2026 12:18:13,392 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'SuccessfullyAlert' contains 'p:QuotationDeletedSuccessfully' text (NOT PERFORMED)
-13 Apr 2026 12:18:13,393 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Cancelled] >> [4 - Cancelled]
-13 Apr 2026 12:18:13,437 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'SearchQuotationInput' value to 'p:Cancelled' (NOT PERFORMED)
-13 Apr 2026 12:18:13,478 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Enter on 'SearchQuotationInput' (NOT PERFORMED)
-13 Apr 2026 12:18:13,520 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (NOT PERFORMED)
-13 Apr 2026 12:18:13,565 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'QuotationNumberTable' (NOT PERFORMED)
-13 Apr 2026 12:18:13,607 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'QuotationNumberSearch' value to 'statemanager:QuotationNo' (NOT PERFORMED)
-13 Apr 2026 12:18:13,650 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Enter on 'QuotationNumberSearch' (NOT PERFORMED)
-13 Apr 2026 12:18:13,696 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (NOT PERFORMED)
-13 Apr 2026 12:18:13,740 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I reload page (NOT PERFORMED)
-13 Apr 2026 12:18:13,784 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'EditQuotationImg' (NOT PERFORMED)
-13 Apr 2026 12:18:13,828 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (NOT PERFORMED)
-13 Apr 2026 12:18:13,829 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Cancelled] >> [4 - Cancelled]
-13 Apr 2026 12:18:13,872 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'StatusAllQuotationDetails' equals saved value 'p:Cancelled' (NOT PERFORMED)
-13 Apr 2026 12:18:13,873 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Invalid] >> [2 - Invalid]
-13 Apr 2026 12:18:13,911 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'ValidityStatusAllQuotationDetails' equals saved value 'p:Invalid' (NOT PERFORMED)
-13 Apr 2026 12:18:13,970 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'QutQuotNoAllQuotationDetails' equals saved value 'statemanager:QuotationNo' (NOT PERFORMED)
-13 Apr 2026 12:18:13,971 INFO : com.automation.jbehave.ConsoleLogger - !-- Logout (IGNORED)
-13 Apr 2026 12:18:14,014 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '7' sec (NOT PERFORMED)
-13 Apr 2026 12:18:14,052 INFO : com.automation.jbehave.ConsoleLogger - Then [Input] I click on 'UserDDL' (NOT PERFORMED)
-13 Apr 2026 12:18:14,085 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'LogoutButton' (NOT PERFORMED)
-13 Apr 2026 12:18:14,123 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'loginButton' is present (NOT PERFORMED)
-13 Apr 2026 12:18:14,228 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
-13 Apr 2026 12:18:14,228 INFO : com.automation.jbehave.ConsoleLogger - Scenario: TC_012_Apex
-13 Apr 2026 12:18:14,228 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
-13 Apr 2026 12:18:14,228 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:amanApex] >> [http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login]
-13 Apr 2026 12:18:14,369 INFO : com.automation.pages.CannedPage - Navigating to the page: http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login
-13 Apr 2026 12:18:14,413 INFO : com.automation.jbehave.ConsoleLogger - Given [Navigation] I navigate to 'p:amanApex' (SUCCESSFUL)
-13 Apr 2026 12:18:14,414 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:adminUsername] >> [aman_opt]
-13 Apr 2026 12:18:14,414 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:password] >> [aman_opt]
-13 Apr 2026 12:18:17,653 INFO : com.automation.pages.CannedPage - Filled 'userName' with value: aman_opt
-13 Apr 2026 12:18:20,924 INFO : com.automation.pages.CannedPage - Clicked on 'password'
-13 Apr 2026 12:18:24,112 INFO : com.automation.pages.CannedPage - Filled 'password' with value: aman_opt
-13 Apr 2026 12:18:24,253 INFO : com.automation.pages.CannedPage - Clicked on 'login Button'
-13 Apr 2026 12:18:24,285 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I login as 'p:adminUsername' with password 'p:password' (SUCCESSFUL)
-13 Apr 2026 12:18:29,352 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:18:30,130 INFO : com.automation.pages.CannedPage - Clicked on 'QuotationCardDashboard'
-13 Apr 2026 12:18:30,166 INFO : com.automation.jbehave.ConsoleLogger - When [Input] I click on 'QuotationCardDashboard' (SUCCESSFUL)
-13 Apr 2026 12:18:30,474 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QuotationsTitle' equals 'Quotations' text (SUCCESSFUL)
-13 Apr 2026 12:18:31,947 INFO : com.automation.pages.CannedPage - Clicked on 'SPWaziriyahMrorrCard'
-13 Apr 2026 12:18:31,983 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'SPWaziriyahMrorrCard' (SUCCESSFUL)
-13 Apr 2026 12:18:32,864 INFO : com.automation.pages.CannedPage - Clicked on 'NewQuotationButton'
-13 Apr 2026 12:18:32,899 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NewQuotationButton' (SUCCESSFUL)
-13 Apr 2026 12:18:33,953 INFO : com.automation.pages.CannedPage - Clicked on 'FGACard'
-13 Apr 2026 12:18:33,988 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'FGACard' (SUCCESSFUL)
-13 Apr 2026 12:18:34,810 INFO : com.automation.pages.CannedPage - Clicked on 'EngineeringCard'
-13 Apr 2026 12:18:34,871 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'EngineeringCard' (SUCCESSFUL)
-13 Apr 2026 12:18:38,655 INFO : com.automation.pages.CannedPage - Clicked on 'OpenCoverCard'
-13 Apr 2026 12:18:38,693 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'OpenCoverCard' (SUCCESSFUL)
-13 Apr 2026 12:18:38,693 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Engineering] >> [23 - Engineering]
-13 Apr 2026 12:18:38,994 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutClassOfBusinessDisplay' equals 'p:Engineering' text (SUCCESSFUL)
-13 Apr 2026 12:18:38,995 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Engineering_OpenCover] >> [24 - Open Cover]
-13 Apr 2026 12:18:39,197 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutPolicyTypeDisplay' equals 'p:Engineering_OpenCover' text (SUCCESSFUL)
-13 Apr 2026 12:18:39,198 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Draft] >> [1 - Draft]
-13 Apr 2026 12:18:39,358 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutStatusDisplay' equals 'p:Draft' text (SUCCESSFUL)
-13 Apr 2026 12:18:39,359 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Valid] >> [1 - Valid]
-13 Apr 2026 12:18:39,557 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutValidityStatusDisplay' equals 'p:Valid' text (SUCCESSFUL)
-13 Apr 2026 12:18:39,557 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Quotation Details (IGNORED)
-13 Apr 2026 12:18:39,717 INFO : com.automation.pages.CannedPage - Tab 'MainTab' selected=true
-13 Apr 2026 12:18:39,761 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'MainTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:18:39,886 INFO : com.automation.pages.CannedPage - I scroll to 'CreateButton'
-13 Apr 2026 12:18:39,922 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:18:40,093 INFO : com.automation.pages.CannedPage - Clicked on 'CreateButton'
-13 Apr 2026 12:18:40,134 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:18:40,272 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'ErrorAlert' is enable (SUCCESSFUL)
-13 Apr 2026 12:18:40,272 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutSourceEmptyErrorMsg] >> [Source must have some value.]
+13 Apr 2026 16:51:58,713 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'LastNameEnPPErrorMsg' contains 'p:LastNameEnEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:58,713 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:FirstNameArEmptyErrorMsg] >> [?§???§?³?? ?§???£???? must have some value.]
 ==========================================================
-Actual: Source must have some value.
+Actual: الاسم الأول must have some value.
 ==========================================================
-13 Apr 2026 12:18:40,425 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutSourceErrorMsg' contains 'p:QutSourceEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:18:40,425 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutInsStDateEmptyErrorMsg] >> [Effective Date must have some value.]
+13 Apr 2026 16:51:58,841 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'FirstNameArPPErrorMsg' contains 'p:FirstNameArEmptyErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:51:58,841 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:LastNameArEmptyErrorMsg] >> [?§???§?³?? ?§???±?§?¨?¹ must have some value.]
 ==========================================================
-Actual: Effective Date must have some value.
+Actual: الاسم الرابع must have some value.
 ==========================================================
-13 Apr 2026 12:18:40,563 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutInsStDateErrorMsg' contains 'p:QutInsStDateEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:18:40,564 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutInsEdDateEmptyErrorMsg] >> [Expiry Date must have some value.]
+13 Apr 2026 16:51:58,967 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'LastNameArPPErrorMsg' contains 'p:LastNameArEmptyErrorMsg' text (SUCCESSFUL)
+Putting value in StateManager: key=, value=18
+13 Apr 2026 16:51:59,182 INFO : com.automation.pages.CannedPage - Filled 'FirstNameEnPPInput' with value: 18
+13 Apr 2026 16:51:59,211 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'FirstNameEnPPInput' value to 'random2' (SUCCESSFUL)
+13 Apr 2026 16:51:59,327 INFO : com.automation.pages.CannedPage - Assert 'FirstNameEnPPInput' empty=true (actual='')
+13 Apr 2026 16:51:59,348 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'FirstNameEnPPInput' input is empty (SUCCESSFUL)
+Putting value in StateManager: key=, value=87
+13 Apr 2026 16:51:59,674 INFO : com.automation.pages.CannedPage - Filled 'LastNameEnPPInput' with value: 87
+13 Apr 2026 16:51:59,706 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'LastNameEnPPInput' value to 'random2' (SUCCESSFUL)
+13 Apr 2026 16:51:59,886 INFO : com.automation.pages.CannedPage - Assert 'LastNameEnPPInput' empty=true (actual='')
+13 Apr 2026 16:51:59,920 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'LastNameEnPPInput' input is empty (SUCCESSFUL)
+Putting value in StateManager: key=, value=39
+13 Apr 2026 16:52:00,307 INFO : com.automation.pages.CannedPage - Filled 'FirstNameArPPInput' with value: 39
+13 Apr 2026 16:52:00,331 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'FirstNameArPPInput' value to 'random2' (SUCCESSFUL)
+13 Apr 2026 16:52:00,495 INFO : com.automation.pages.CannedPage - Assert 'FirstNameArPPInput' empty=true (actual='')
+13 Apr 2026 16:52:00,524 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'FirstNameArPPInput' input is empty (SUCCESSFUL)
+Putting value in StateManager: key=, value=49
+13 Apr 2026 16:52:00,805 INFO : com.automation.pages.CannedPage - Filled 'LastNameArPPInput' with value: 49
+13 Apr 2026 16:52:00,831 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'LastNameArPPInput' value to 'random2' (SUCCESSFUL)
+13 Apr 2026 16:52:00,933 INFO : com.automation.pages.CannedPage - Assert 'LastNameArPPInput' empty=true (actual='')
+13 Apr 2026 16:52:00,959 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'LastNameArPPInput' input is empty (SUCCESSFUL)
+13 Apr 2026 16:52:01,128 INFO : com.automation.pages.CannedPage - Clicked on 'CustomerNameCloseButton'
+13 Apr 2026 16:52:01,153 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CustomerNameCloseButton' (SUCCESSFUL)
+13 Apr 2026 16:52:01,628 INFO : com.automation.pages.CannedPage - Filled 'AccountNoInput' with value: VORcXfkYts
+13 Apr 2026 16:52:01,665 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'AccountNoInput' value to 'randomen' (SUCCESSFUL)
+13 Apr 2026 16:52:01,854 INFO : com.automation.pages.CannedPage - Clicked on 'PayablePartiesSaveButton'
+13 Apr 2026 16:52:01,880 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PayablePartiesSaveButton' (SUCCESSFUL)
+13 Apr 2026 16:52:01,881 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:AccountNoInvalidErrorMsg] >> [Account No must be a valid number.]
 ==========================================================
-Actual: Expiry Date must have some value.
+Actual: Account No must be a valid number.
 ==========================================================
-13 Apr 2026 12:18:40,726 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutInsEdDateErrorMsg' contains 'p:QutInsEdDateEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:18:40,738 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:18:40,777 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:18:41,019 INFO : com.automation.pages.CannedPage - Clicked on 'CalculationsTab'
-13 Apr 2026 12:18:41,053 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CalculationsTab' (SUCCESSFUL)
-13 Apr 2026 12:18:41,218 INFO : com.automation.pages.CannedPage - Tab 'CalculationsTab' selected=true
-13 Apr 2026 12:18:41,264 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CalculationsTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:18:41,265 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutCalculationBasisEmptyErrorMsg] >> [Calculation Basis must have some value.]
+13 Apr 2026 16:52:02,033 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'AccountNoErrorMsg' contains 'p:AccountNoInvalidErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:52:02,164 INFO : com.automation.pages.CannedPage - Tab 'CustomerDetailsTab' selected=true
+13 Apr 2026 16:52:02,193 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CustomerDetailsTab' is selected (SUCCESSFUL)
+13 Apr 2026 16:52:02,588 INFO : com.automation.pages.CannedPage - Filled 'CreditLimitInput' with value: YsMiaaFdBy
+13 Apr 2026 16:52:02,614 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'CreditLimitInput' value to 'randomen' (SUCCESSFUL)
+13 Apr 2026 16:52:02,969 INFO : com.automation.pages.CannedPage - Filled 'CreditAmountInput' with value: fumZbocGCp
+13 Apr 2026 16:52:03,000 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'CreditAmountInput' value to 'randomen' (SUCCESSFUL)
+13 Apr 2026 16:52:03,012 INFO : com.automation.pages.CannedPage - I scroll to top of page
+13 Apr 2026 16:52:03,037 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
+13 Apr 2026 16:52:03,230 INFO : com.automation.pages.CannedPage - Clicked on 'PayablePartiesSaveButton'
+13 Apr 2026 16:52:03,264 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PayablePartiesSaveButton' (SUCCESSFUL)
+13 Apr 2026 16:52:03,445 INFO : com.automation.pages.CannedPage - I scroll to 'CreditLimitErrorMsg'
+13 Apr 2026 16:52:03,472 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CreditLimitErrorMsg' (SUCCESSFUL)
+13 Apr 2026 16:52:03,472 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:CreditLimitInvalidErrorMsg] >> [Credit Limit must be a valid number.]
 ==========================================================
-Actual: Calculation Basis must have some value.
+Actual: Credit Limit must be a valid number.
 ==========================================================
-13 Apr 2026 12:18:41,424 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutCalculationBasisErrorMsg' contains 'p:QutCalculationBasisEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:18:41,425 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QutCrCdEmptyErrorMsg] >> [Currency must have some value.]
+13 Apr 2026 16:52:03,691 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CreditLimitErrorMsg' contains 'p:CreditLimitInvalidErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:52:03,691 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:CreditAmountInvalidErrorMsg] >> [Credit Amount must be a valid number.]
 ==========================================================
-Actual: Currency must have some value.
+Actual: Credit Amount must be a valid number.
 ==========================================================
-13 Apr 2026 12:18:41,560 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutCrCdErrorMsg' contains 'p:QutCrCdEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:18:41,698 INFO : com.automation.pages.CannedPage - Assert 'QutQuotNoCreateText' empty=true (actual='')
-13 Apr 2026 12:18:41,740 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutQuotNoCreateText' input is empty (SUCCESSFUL)
-13 Apr 2026 12:18:41,862 INFO : com.automation.pages.CannedPage - Clicked on 'MainTab'
-13 Apr 2026 12:18:41,900 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'MainTab' (SUCCESSFUL)
-13 Apr 2026 12:18:42,070 INFO : com.automation.pages.CannedPage - Tab 'MainTab' selected=true
-13 Apr 2026 12:18:42,111 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'MainTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:18:42,111 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Direct] >> [1-Direct]
-13 Apr 2026 12:18:42,716 INFO : com.automation.pages.CannedPage - Selected '1-Direct' from LOV 'QutSourceCombobox'
-13 Apr 2026 12:18:42,756 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Direct' value from 'QutSourceCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:18:42,756 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Account] >> [2-Account]
+13 Apr 2026 16:52:03,861 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CreditAmountErrorMsg' contains 'p:CreditAmountInvalidErrorMsg' text (SUCCESSFUL)
+13 Apr 2026 16:52:03,869 INFO : com.automation.pages.CannedPage - I scroll to top of page
+13 Apr 2026 16:52:03,900 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
+13 Apr 2026 16:52:04,129 INFO : com.automation.pages.CannedPage - Clicked on 'CustomerDetails2Tab'
+13 Apr 2026 16:52:04,157 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CustomerDetails2Tab' (SUCCESSFUL)
+13 Apr 2026 16:52:04,283 INFO : com.automation.pages.CannedPage - Tab 'CustomerDetails2Tab' selected=true
+13 Apr 2026 16:52:04,318 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CustomerDetails2Tab' is selected (SUCCESSFUL)
+13 Apr 2026 16:52:04,579 INFO : com.automation.pages.CannedPage - Clicked on 'AddressTab'
+13 Apr 2026 16:52:04,618 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'AddressTab' (SUCCESSFUL)
+13 Apr 2026 16:52:04,758 INFO : com.automation.pages.CannedPage - Tab 'AddressTab' selected=true
+13 Apr 2026 16:52:04,788 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'AddressTab' is selected (SUCCESSFUL)
+13 Apr 2026 16:52:04,953 INFO : com.automation.pages.CannedPage - Clicked on 'BranchesTab'
+13 Apr 2026 16:52:04,986 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BranchesTab' (SUCCESSFUL)
+13 Apr 2026 16:52:05,113 INFO : com.automation.pages.CannedPage - Tab 'BranchesTab' selected=true
+13 Apr 2026 16:52:05,145 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'BranchesTab' is selected (SUCCESSFUL)
+13 Apr 2026 16:52:05,262 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'BranchesTable' is visible (SUCCESSFUL)
+13 Apr 2026 16:52:05,359 INFO : com.automation.pages.CannedPage - I scroll to 'BranchesAddRowButton'
+13 Apr 2026 16:52:05,387 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'BranchesAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:05,538 INFO : com.automation.pages.CannedPage - Clicked on 'BranchesAddRowButton'
+13 Apr 2026 16:52:05,580 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BranchesAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:05,765 INFO : com.automation.pages.CustomPage - [IG DEBUG] Resolved repository name 'BranchesTable' to DOM id 'R150268016748535085_ig'
+13 Apr 2026 16:52:05,897 INFO : com.automation.pages.CustomPage - Inserted empty row verified. IG=R150268016748535085_ig | emptyCells=2/2
+13 Apr 2026 16:52:05,928 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'BranchesTable' has an empty inserted row (SUCCESSFUL)
+13 Apr 2026 16:52:10,964 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
+13 Apr 2026 16:52:11,299 INFO : com.automation.pages.CannedPage - Clicked on 'BranchesSaveButton', attempt 1
+13 Apr 2026 16:52:14,873 INFO : com.automation.pages.CannedPage - Popup 'AlertDialog' did not appear after attempt 1
+13 Apr 2026 16:52:15,137 INFO : com.automation.pages.CannedPage - Clicked on 'BranchesSaveButton', attempt 2
+13 Apr 2026 16:52:15,238 INFO : com.automation.pages.CannedPage - Popup 'AlertDialog' appeared after click on 'BranchesSaveButton'
+13 Apr 2026 16:52:15,267 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BranchesSaveButton' and if 'AlertDialog' not appear reclick (SUCCESSFUL)
+13 Apr 2026 16:52:15,267 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:CorrectErrorsBeforeSaving] >> [Correct errors before saving.]
 ==========================================================
-Actual: 2-Account
+Actual: Confirmation
+Correct errors before saving.
 ==========================================================
-13 Apr 2026 12:18:42,923 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text (SUCCESSFUL)
-13 Apr 2026 12:18:43,084 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutQuotDate' value equals sysdate (SUCCESSFUL)
-13 Apr 2026 12:18:43,084 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '0' months plus '30' day (IGNORED)
-Putting value in StateManager: key=, value=13/04/2026
-13 Apr 2026 12:18:43,424 INFO : com.automation.pages.CannedPage - Filled 'QutInsStDateInput' with value: 13/04/2026
-13 Apr 2026 12:18:43,462 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted' (SUCCESSFUL)
-13 Apr 2026 12:18:48,510 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:18:48,763 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Tab on 'QutInsStDateInput' (SUCCESSFUL)
-13 Apr 2026 12:18:49,045 INFO : com.automation.pages.CannedPage - Clicked on 'QutInsStDateInput'
-13 Apr 2026 12:18:49,089 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'QutInsStDateInput' (SUCCESSFUL)
-13 Apr 2026 12:18:49,274 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Enter on 'QutInsStDateInput' (SUCCESSFUL)
-13 Apr 2026 12:18:54,331 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:18:54,331 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate plus '1' years minus one day (IGNORED)
-13 Apr 2026 12:18:54,474 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutInsEdDateInput' value equals sysdate (SUCCESSFUL)
-13 Apr 2026 12:18:54,656 INFO : com.automation.pages.CannedPage - Clicked on 'CalculationsTab'
-13 Apr 2026 12:18:54,694 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CalculationsTab' (SUCCESSFUL)
-13 Apr 2026 12:18:54,786 INFO : com.automation.pages.CannedPage - Tab 'CalculationsTab' selected=true
-13 Apr 2026 12:18:54,821 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CalculationsTab' is selected (SUCCESSFUL)
-13 Apr 2026 12:18:54,822 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ProRata] >> [1 - Pro Rata]
-13 Apr 2026 12:18:55,287 INFO : com.automation.pages.CannedPage - Selected '1 - Pro Rata' from LOV 'QutCalculationBasisCombobox'
-13 Apr 2026 12:18:55,330 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ProRata' value from 'QutCalculationBasisCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:18:55,330 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:USDollars] >> [2 - US Dollars]
-13 Apr 2026 12:18:56,312 INFO : com.automation.pages.CannedPage - Selected '2 - US Dollars' from LOV 'QutCrCdCombobox'
-13 Apr 2026 12:18:56,386 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:USDollars' value from 'QutCrCdCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:18:59,422 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '3' sec (SUCCESSFUL)
-13 Apr 2026 12:18:59,573 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'QutUnitPriceVal' equals '3.75' text (SUCCESSFUL)
-13 Apr 2026 12:18:59,675 INFO : com.automation.pages.CannedPage - I scroll to 'CreateButton'
-13 Apr 2026 12:18:59,703 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:18:59,825 INFO : com.automation.pages.CannedPage - Clicked on 'CreateButton'
-13 Apr 2026 12:18:59,870 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CreateButton' (SUCCESSFUL)
-13 Apr 2026 12:19:04,931 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:19:05,007 INFO : com.automation.pages.CannedPage - I scroll to 'SuccessfullyAlert'
-13 Apr 2026 12:19:05,044 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'SuccessfullyAlert' (SUCCESSFUL)
-13 Apr 2026 12:19:05,044 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:DataSavedSuccessfully] >> [Data Saved Successfully.]
+13 Apr 2026 16:52:15,459 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text (SUCCESSFUL)
+13 Apr 2026 16:52:15,647 INFO : com.automation.pages.CannedPage - Clicked on 'PPOkButton'
+13 Apr 2026 16:52:15,683 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PPOkButton' (SUCCESSFUL)
+13 Apr 2026 16:52:17,740 INFO : com.automation.pages.CannedPage - I reload page
+13 Apr 2026 16:52:17,846 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I reload page (SUCCESSFUL)
+13 Apr 2026 16:52:18,144 INFO : com.automation.pages.CannedPage - Clicked on 'PeriodsTab'
+13 Apr 2026 16:52:18,180 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PeriodsTab' (SUCCESSFUL)
+13 Apr 2026 16:52:18,347 INFO : com.automation.pages.CannedPage - Tab 'PeriodsTab' selected=true
+13 Apr 2026 16:52:18,379 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'PeriodsTab' is selected (SUCCESSFUL)
+13 Apr 2026 16:52:18,478 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'PeriodsTable' is visible (SUCCESSFUL)
+13 Apr 2026 16:52:18,598 INFO : com.automation.pages.CannedPage - I scroll to 'PeriodsAddRowButton'
+13 Apr 2026 16:52:18,627 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'PeriodsAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:18,773 INFO : com.automation.pages.CannedPage - Clicked on 'PeriodsAddRowButton'
+13 Apr 2026 16:52:18,804 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PeriodsAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:23,846 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
+13 Apr 2026 16:52:23,984 INFO : com.automation.pages.CustomPage - [IG DEBUG] Resolved repository name 'PeriodsTable' to DOM id 'R154338093266095678_ig'
+13 Apr 2026 16:52:24,067 INFO : com.automation.pages.CustomPage - Inserted empty row verified. IG=R154338093266095678_ig | emptyCells=3/4
+13 Apr 2026 16:52:24,095 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'PeriodsTable' has an empty inserted row (SUCCESSFUL)
+13 Apr 2026 16:52:24,175 INFO : com.automation.pages.CustomPage - [IG DEBUG] Resolved repository name 'PeriodsTable' to DOM id 'R154338093266095678_ig'
+13 Apr 2026 16:52:24,325 INFO : com.automation.pages.CustomPage - Deleted inserted row in IG=R154338093266095678_ig
+13 Apr 2026 16:52:24,355 INFO : com.automation.jbehave.ConsoleLogger - And [Action] I delete the inserted row in IG 'PeriodsTable' (SUCCESSFUL)
+13 Apr 2026 16:52:24,750 INFO : com.automation.pages.CannedPage - Clicked on 'CommissionTab'
+13 Apr 2026 16:52:24,791 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CommissionTab' (SUCCESSFUL)
+13 Apr 2026 16:52:24,893 INFO : com.automation.pages.CannedPage - Tab 'CommissionTab' selected=true
+13 Apr 2026 16:52:24,922 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CommissionTab' is selected (SUCCESSFUL)
+13 Apr 2026 16:52:25,025 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CommissionTable' is visible (SUCCESSFUL)
+13 Apr 2026 16:52:25,187 INFO : com.automation.pages.CannedPage - I scroll to 'CommissionAddRowButton'
+13 Apr 2026 16:52:25,219 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CommissionAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:25,351 INFO : com.automation.pages.CannedPage - Clicked on 'CommissionAddRowButton'
+13 Apr 2026 16:52:25,382 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CommissionAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:25,567 INFO : com.automation.pages.CustomPage - [IG DEBUG] Resolved repository name 'CommissionTable' to DOM id 'R155877906567342590_ig'
+13 Apr 2026 16:52:25,733 INFO : com.automation.pages.CustomPage - Inserted empty row verified. IG=R155877906567342590_ig | emptyCells=13/17
+13 Apr 2026 16:52:25,761 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'CommissionTable' has an empty inserted row (SUCCESSFUL)
+13 Apr 2026 16:52:30,802 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
+13 Apr 2026 16:52:31,070 INFO : com.automation.pages.CannedPage - Clicked on 'CommissionSaveButton', attempt 1
+13 Apr 2026 16:52:34,604 INFO : com.automation.pages.CannedPage - Popup 'AlertDialog' did not appear after attempt 1
+13 Apr 2026 16:52:34,925 INFO : com.automation.pages.CannedPage - Clicked on 'CommissionSaveButton', attempt 2
+13 Apr 2026 16:52:35,051 INFO : com.automation.pages.CannedPage - Popup 'AlertDialog' appeared after click on 'CommissionSaveButton'
+13 Apr 2026 16:52:35,082 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CommissionSaveButton' and if 'AlertDialog' not appear reclick (SUCCESSFUL)
+13 Apr 2026 16:52:35,083 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:CorrectErrorsBeforeSaving] >> [Correct errors before saving.]
 ==========================================================
-Actual: Data Saved Successfully.
+Actual: Confirmation
+Correct errors before saving.
 ==========================================================
-13 Apr 2026 12:19:05,150 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'SuccessfullyAlert' contains 'p:DataSavedSuccessfully' text (SUCCESSFUL)
-Fetched text from QutQuotNoCreateText: 736
-Putting value in StateManager: key=QuotationNo, value=736
-QuotationNo saved as: 736
-13 Apr 2026 12:19:05,249 INFO : com.automation.jbehave.ConsoleLogger - And [Action] I get text from 'QutQuotNoCreateText' and save it as 'QuotationNo' (SUCCESSFUL)
-13 Apr 2026 12:19:05,378 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:19:05,419 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:19:10,478 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:19:10,478 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Risk Details (IGNORED)
-13 Apr 2026 12:19:10,599 INFO : com.automation.pages.CannedPage - Clicked on 'AddNewRiskButton'
-13 Apr 2026 12:19:10,647 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'AddNewRiskButton' (SUCCESSFUL)
-13 Apr 2026 12:19:11,460 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'AddNewRiskIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:11,742 INFO : com.automation.pages.CannedPage - Clicked on 'RiskTypeLiabilityCombobox'
-13 Apr 2026 12:19:11,794 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskTypeLiabilityCombobox' (SUCCESSFUL)
-13 Apr 2026 12:19:11,837 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:19:11,837 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Warehouse] >> [1 - Warehouse]
-13 Apr 2026 12:19:12,756 INFO : com.automation.pages.CannedPage - Selected '1 - Warehouse' from LOV 'PopupLOVSearchBar'
-13 Apr 2026 12:19:12,801 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Warehouse' value from 'PopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:19:12,955 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'AddNewRiskIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:12,955 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ItemBasis] >> [2 - Item Basis]
-13 Apr 2026 12:19:13,103 INFO : com.automation.pages.CannedPage - Selected '2 - Item Basis' from <select> 'BreakdownCombobox'
-13 Apr 2026 12:19:13,149 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ItemBasis' value from 'BreakdownCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:19:13,367 INFO : com.automation.pages.CannedPage - Clicked on 'ApplyChangesButtonIframe'
-13 Apr 2026 12:19:13,411 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ApplyChangesButtonIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:13,459 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:19:18,508 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:19:18,508 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Items Details (IGNORED)
-13 Apr 2026 12:19:18,704 INFO : com.automation.pages.CannedPage - Clicked on 'AddNewItemButton'
-13 Apr 2026 12:19:18,753 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'AddNewItemButton' (SUCCESSFUL)
-13 Apr 2026 12:19:19,462 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'FireRiskItemsIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:19,705 INFO : com.automation.pages.CannedPage - Clicked on 'RiqItemCodeCombobox'
-13 Apr 2026 12:19:19,745 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiqItemCodeCombobox' (SUCCESSFUL)
-13 Apr 2026 12:19:19,786 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:19:19,787 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Buildings] >> [1 - Buildings]
-13 Apr 2026 12:19:20,891 INFO : com.automation.pages.CannedPage - Selected '1 - Buildings' from LOV 'PopupLOVSearchBar'
-13 Apr 2026 12:19:20,933 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Buildings' value from 'PopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:19:21,139 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'FireRiskItemsIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:21,378 INFO : com.automation.pages.CannedPage - Clicked on 'RiqSaveButtonIframe'
-13 Apr 2026 12:19:21,452 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiqSaveButtonIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:21,513 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:19:26,561 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:19:26,611 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:19:26,650 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:19:26,811 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:19:26,863 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:19:31,924 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:19:31,925 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill the mandatory Risk/Item Value Types (IGNORED)
-13 Apr 2026 12:19:32,032 INFO : com.automation.pages.CannedPage - I scroll to 'ItemCalculationButton'
-13 Apr 2026 12:19:32,077 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'ItemCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:19:32,353 INFO : com.automation.pages.CannedPage - Clicked on 'ItemCalculationButton'
-13 Apr 2026 12:19:32,400 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ItemCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:19:32,833 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'ItemCalculationIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:33,109 INFO : com.automation.pages.CannedPage - Clicked on 'ItemCalculationEditButton'
-13 Apr 2026 12:19:33,156 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ItemCalculationEditButton' (SUCCESSFUL)
-13 Apr 2026 12:19:33,660 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=item_c_ig
-13 Apr 2026 12:19:34,082 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'item_c_ig' row '42 - Fire SI' Foreign/Foreign Amount can be filled (SUCCESSFUL)
-13 Apr 2026 12:19:34,549 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=item_c_ig
-13 Apr 2026 12:19:34,897 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=item_c_ig
-13 Apr 2026 12:19:36,993 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='42 - Fire SI' | col='Foreign' | value=4
-13 Apr 2026 12:19:40,098 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='2 - Rate' | col='Percent' | value=3
-13 Apr 2026 12:19:42,359 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='44 - Others SI' | col='Foreign' | value=24
-13 Apr 2026 12:19:45,948 INFO : com.automation.pages.CustomPage - [IG Fill] region=item_c_ig | row='45 - Others Rate' | col='Percent' | value=49
-13 Apr 2026 12:19:49,257 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I set SECOND IG 'item_c_ig' from first row '42 - Fire SI' to random numbers between '1' and '50' for all enabled cells excluding DDL (SUCCESSFUL)
-13 Apr 2026 12:19:54,313 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:19:54,361 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:19:54,431 INFO : com.automation.pages.CannedPage - I scroll to 'RiskCalculationButton'
-13 Apr 2026 12:19:54,472 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'RiskCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:19:54,705 INFO : com.automation.pages.CannedPage - Clicked on 'RiskCalculationButton'
-13 Apr 2026 12:19:54,755 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskCalculationButton' (SUCCESSFUL)
-13 Apr 2026 12:19:55,441 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'RiskCalculationIframe' (SUCCESSFUL)
-13 Apr 2026 12:19:55,788 INFO : com.automation.pages.CannedPage - Clicked on 'RiskCalculationEditButton'
-13 Apr 2026 12:19:55,828 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskCalculationEditButton' (SUCCESSFUL)
-13 Apr 2026 12:19:55,828 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify IG 'RISK_CALC_REGION_ig' row '42 - Fire SI' Foreign/Foreign Amount can be filled (IGNORED)
-13 Apr 2026 12:19:56,224 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=RISK_CALC_REGION_ig
-13 Apr 2026 12:19:56,619 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=RISK_CALC_REGION_ig
-13 Apr 2026 12:19:59,304 INFO : com.automation.pages.CustomPage - [IG Fill] region=RISK_CALC_REGION_ig | row='5 - Discounts' | col='Percent' | value=5
-13 Apr 2026 12:20:06,149 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I set SECOND IG 'RISK_CALC_REGION_ig' from first row '42 - Fire SI' to random numbers between '1' and '50' for all enabled cells excluding DDL (SUCCESSFUL)
-13 Apr 2026 12:20:11,205 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:20:11,250 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:20:11,261 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:20:11,302 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:20:11,406 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:20:11,444 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:20:16,485 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:20:16,485 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill in Quotation Value Types (IGNORED)
-13 Apr 2026 12:20:16,693 INFO : com.automation.pages.CannedPage - Clicked on 'EditButtonQuotationValue'
-13 Apr 2026 12:20:16,733 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'EditButtonQuotationValue' (SUCCESSFUL)
-13 Apr 2026 12:20:21,796 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:20:22,195 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=calc_ig
-13 Apr 2026 12:20:22,523 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'calc_ig' row '11 - Issues Fees' Foreign/Foreign Amount can be filled (SUCCESSFUL)
-13 Apr 2026 12:20:23,640 INFO : com.automation.pages.CustomPage - [IG DEBUG] IG is editable without invoking IG edit action. region=calc_ig
-13 Apr 2026 12:20:26,707 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='8 - Tax' | col='Premium %' | value=33
-13 Apr 2026 12:20:29,161 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='9 - ICF Fees' | col='Premium %' | value=1
-13 Apr 2026 12:20:31,815 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='10 - Stamp Fees' | col='Premium %' | value=43
-13 Apr 2026 12:20:34,180 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='11 - Issues Fees' | col='Foreign Amount' | value=36
-13 Apr 2026 12:20:35,875 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='12 - Service Charge' | col='Foreign Amount' | value=6
-13 Apr 2026 12:20:37,621 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='14 - VAT' | col='Premium %' | value=46
-13 Apr 2026 12:20:39,252 INFO : com.automation.pages.CustomPage - [IG Fill] region=calc_ig | row='14 - VAT' | col='Method' | value=13
-13 Apr 2026 12:20:47,918 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I set IG 'calc_ig' from first row '42 - Fire SI' to random numbers between '1' and '50' for all enabled cells excluding DDL (SUCCESSFUL)
-13 Apr 2026 12:20:48,180 INFO : com.automation.pages.CannedPage - Clicked on 'SaveButton'
-13 Apr 2026 12:20:48,223 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'SaveButton' (SUCCESSFUL)
-13 Apr 2026 12:20:53,283 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:20:53,314 INFO : com.automation.pages.CannedPage - I scroll to top of page
-13 Apr 2026 12:20:53,359 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to top of page (SUCCESSFUL)
-13 Apr 2026 12:20:58,391 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:20:58,537 INFO : com.automation.pages.CannedPage - Clicked on 'NextButton'
-13 Apr 2026 12:20:58,579 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NextButton' (SUCCESSFUL)
-13 Apr 2026 12:21:03,624 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:21:03,624 INFO : com.automation.jbehave.ConsoleLogger - !-- Fill in All Quotation Details (IGNORED)
-Getting value from StateManager: key=QuotationNo, value=736
-Expected value (from stateManager, key='QuotationNo'): 736
-Actual value (from element 'QutQuotNoAllQuotationDetails'): 736
-13 Apr 2026 12:21:03,765 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'QutQuotNoAllQuotationDetails' contains saved value 'QuotationNo' (SUCCESSFUL)
-13 Apr 2026 12:21:03,766 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Cheque] >> [2 - Cheque]
-13 Apr 2026 12:21:04,374 INFO : com.automation.pages.CannedPage - Selected '2 - Cheque' from LOV 'QutCollectionTypeCombobox'
-13 Apr 2026 12:21:04,420 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Cheque' value from 'QutCollectionTypeCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:04,579 INFO : com.automation.pages.CannedPage - I scroll to 'CustomerInfoButton'
-13 Apr 2026 12:21:04,621 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CustomerInfoButton' (SUCCESSFUL)
-13 Apr 2026 12:21:04,751 INFO : com.automation.pages.CannedPage - Clicked on 'CustomerInfoButton'
-13 Apr 2026 12:21:04,791 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CustomerInfoButton' (SUCCESSFUL)
-13 Apr 2026 12:21:04,791 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ClientName] >> [5349 - ?´?±???© ?§???????´?¢?? ?§???³?¹???¯???©]
-13 Apr 2026 12:21:05,688 INFO : com.automation.pages.CannedPage - Selected '5349 - شركة المنشآت السعودية' from LOV 'QurQutClientCombobox'
-13 Apr 2026 12:21:05,738 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ClientName' value from 'QurQutClientCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:05,738 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ClientName] >> [5349 - ?´?±???© ?§???????´?¢?? ?§???³?¹???¯???©]
-13 Apr 2026 12:21:06,731 INFO : com.automation.pages.CannedPage - Selected '5349 - شركة المنشآت السعودية' from LOV 'QurQutClientNoCombobox'
-13 Apr 2026 12:21:06,776 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ClientName' value from 'QurQutClientNoCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:06,943 INFO : com.automation.pages.CannedPage - Clicked on 'ApplyChangesButton'
-13 Apr 2026 12:21:06,983 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ApplyChangesButton' (SUCCESSFUL)
-13 Apr 2026 12:21:06,983 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:DataUpdatedSuccessfully] >> [Data Updated Successfully.]
-==========================================================
-Actual: Data Updated Successfully.
-==========================================================
-13 Apr 2026 12:21:10,418 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'SuccessfullyAlert' contains 'p:DataUpdatedSuccessfully' text (SUCCESSFUL)
-13 Apr 2026 12:21:15,465 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:21:15,465 INFO : com.automation.jbehave.ConsoleLogger - !-- Risk Quotation Button (IGNORED)
-13 Apr 2026 12:21:15,478 INFO : com.automation.pages.CannedPage - I scroll to end of page
-13 Apr 2026 12:21:15,526 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to end of page (SUCCESSFUL)
-13 Apr 2026 12:21:17,608 INFO : com.automation.pages.CannedPage - Clicked on 'RiskQuotationButton'
-13 Apr 2026 12:21:17,647 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskQuotationButton' (SUCCESSFUL)
-13 Apr 2026 12:21:17,816 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'RiskTable' is visible (SUCCESSFUL)
-13 Apr 2026 12:21:19,928 INFO : com.automation.pages.CannedPage - Clicked on 'RiskDetailsBackButton'
-13 Apr 2026 12:21:19,971 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'RiskDetailsBackButton' (SUCCESSFUL)
-13 Apr 2026 12:21:25,012 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:21:25,012 INFO : com.automation.jbehave.ConsoleLogger - !-- Beneficiary Button (IGNORED)
-13 Apr 2026 12:21:25,024 INFO : com.automation.pages.CannedPage - I scroll to end of page
-13 Apr 2026 12:21:25,070 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to end of page (SUCCESSFUL)
-13 Apr 2026 12:21:25,298 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryButton'
-13 Apr 2026 12:21:25,342 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryButton' (SUCCESSFUL)
-13 Apr 2026 12:21:25,606 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'BeneficiaryIframe' (SUCCESSFUL)
-13 Apr 2026 12:21:25,755 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'BeneficiaryTable' is visible (SUCCESSFUL)
-13 Apr 2026 12:21:25,948 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryAddRow'
-13 Apr 2026 12:21:25,993 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryAddRow' (SUCCESSFUL)
-13 Apr 2026 12:21:25,993 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'BeneficiarySerialRow' (IGNORED)
-13 Apr 2026 12:21:26,300 INFO : com.automation.pages.CannedPage - Filled 'BeneficiarySerialRow' with value: 1
-13 Apr 2026 12:21:26,335 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'BeneficiarySerialRow' value to '1' (SUCCESSFUL)
-13 Apr 2026 12:21:26,569 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryRow'
-13 Apr 2026 12:21:26,616 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryRow' (SUCCESSFUL)
-13 Apr 2026 12:21:26,906 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryComboboxRow'
-13 Apr 2026 12:21:26,946 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryComboboxRow' (SUCCESSFUL)
-13 Apr 2026 12:21:26,986 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:21:26,986 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ClientName] >> [5349 - ?´?±???© ?§???????´?¢?? ?§???³?¹???¯???©]
-13 Apr 2026 12:21:27,932 INFO : com.automation.pages.CannedPage - Selected '5349 - شركة المنشآت السعودية' from LOV 'PopupLOVSearchBar'
-13 Apr 2026 12:21:27,976 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:ClientName' value from 'PopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:28,177 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'BeneficiaryIframe' (SUCCESSFUL)
-13 Apr 2026 12:21:33,235 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:21:33,432 INFO : com.automation.pages.CannedPage - Clicked on 'IdNumberRow'
-13 Apr 2026 12:21:33,474 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'IdNumberRow' (SUCCESSFUL)
-13 Apr 2026 12:21:33,676 INFO : com.automation.pages.CannedPage - Filled 'BeneficiaryIdNumberRow' with value: 1
-13 Apr 2026 12:21:33,716 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'BeneficiaryIdNumberRow' value to '1' (SUCCESSFUL)
-13 Apr 2026 12:21:33,877 INFO : com.automation.pages.CannedPage - Clicked on 'NationalityRow'
-13 Apr 2026 12:21:33,914 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NationalityRow' (SUCCESSFUL)
-13 Apr 2026 12:21:34,133 INFO : com.automation.pages.CannedPage - Clicked on 'NationalityRow'
-13 Apr 2026 12:21:34,172 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'NationalityRow' (SUCCESSFUL)
-13 Apr 2026 12:21:34,172 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'BeneficiaryNationalityRow' (IGNORED)
-13 Apr 2026 12:21:34,214 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:21:34,214 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Afghani] >> [1 - Afghani]
-13 Apr 2026 12:21:35,145 INFO : com.automation.pages.CannedPage - Selected '1 - Afghani' from LOV 'BeneficiaryNationalityPopupLOVSearchBar'
-13 Apr 2026 12:21:35,186 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Afghani' value from 'BeneficiaryNationalityPopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:35,314 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'BeneficiaryIframe' (SUCCESSFUL)
-13 Apr 2026 12:21:35,520 INFO : com.automation.pages.CannedPage - Clicked on 'ClassificationRow'
-13 Apr 2026 12:21:35,557 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'ClassificationRow' (SUCCESSFUL)
-13 Apr 2026 12:21:35,799 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryClassificationRow'
-13 Apr 2026 12:21:35,842 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryClassificationRow' (SUCCESSFUL)
-13 Apr 2026 12:21:35,843 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:PerRegistrationNo] >> [1 - Per Registration No]
-13 Apr 2026 12:21:35,966 INFO : com.automation.pages.CannedPage - Selected '1 - Per Registration No' from <select> 'BeneficiaryClassificationRow'
-13 Apr 2026 12:21:36,008 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:PerRegistrationNo' value from 'BeneficiaryClassificationRow' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:36,209 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiarySaveButton'
-13 Apr 2026 12:21:36,250 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiarySaveButton' (SUCCESSFUL)
-13 Apr 2026 12:21:41,313 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:21:41,364 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:21:41,473 INFO : com.automation.pages.CannedPage - Clicked on 'BeneficiaryIframeCloseButton'
-13 Apr 2026 12:21:41,513 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'BeneficiaryIframeCloseButton' (SUCCESSFUL)
-13 Apr 2026 12:21:41,513 INFO : com.automation.jbehave.ConsoleLogger - !-- Covers Button (IGNORED)
-13 Apr 2026 12:21:41,737 INFO : com.automation.pages.CannedPage - Clicked on 'CoversButton'
-13 Apr 2026 12:21:41,779 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversButton' (SUCCESSFUL)
-13 Apr 2026 12:21:42,156 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'CoversIframe' (SUCCESSFUL)
-13 Apr 2026 12:21:42,363 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CoversTable' is visible (SUCCESSFUL)
-13 Apr 2026 12:21:42,634 INFO : com.automation.pages.CannedPage - Clicked on 'CoverDeleteFirstRow'
-clickIfPresent('CoverDeleteFirstRow') => true
-13 Apr 2026 12:21:42,675 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoverDeleteFirstRow' if present (SUCCESSFUL)
-13 Apr 2026 12:21:42,868 INFO : com.automation.pages.CannedPage - Clicked on 'CoversSaveButton'
-13 Apr 2026 12:21:42,913 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversSaveButton' (SUCCESSFUL)
-13 Apr 2026 12:21:43,166 INFO : com.automation.pages.CannedPage - Clicked on 'CoversAddRow'
-13 Apr 2026 12:21:43,202 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversAddRow' (SUCCESSFUL)
-13 Apr 2026 12:21:43,458 INFO : com.automation.pages.CannedPage - Clicked on 'CoversSerialRow'
-13 Apr 2026 12:21:43,498 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversSerialRow' (SUCCESSFUL)
-13 Apr 2026 12:21:43,730 INFO : com.automation.pages.CannedPage - Filled 'CoversSerialRow' with value: 1
-13 Apr 2026 12:21:43,768 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'CoversSerialRow' value to '1' (SUCCESSFUL)
-13 Apr 2026 12:21:43,934 INFO : com.automation.pages.CannedPage - Clicked on 'CoversRow'
-13 Apr 2026 12:21:43,967 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversRow' (SUCCESSFUL)
-13 Apr 2026 12:21:44,188 INFO : com.automation.pages.CannedPage - Clicked on 'CoversComboboxRow'
-13 Apr 2026 12:21:44,228 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversComboboxRow' (SUCCESSFUL)
-13 Apr 2026 12:21:44,273 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:21:44,274 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Aircraft] >> [4 - Aircraft]
-13 Apr 2026 12:21:45,217 INFO : com.automation.pages.CannedPage - Selected '4 - Aircraft' from LOV 'CoversPopupLOVSearchBar'
-13 Apr 2026 12:21:45,254 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:Aircraft' value from 'CoversPopupLOVSearchBar' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:45,421 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'CoversIframe' (SUCCESSFUL)
-13 Apr 2026 12:21:45,599 INFO : com.automation.pages.CannedPage - Clicked on 'PremRow'
-13 Apr 2026 12:21:45,636 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PremRow' (SUCCESSFUL)
-13 Apr 2026 12:21:45,901 INFO : com.automation.pages.CannedPage - Filled 'CoversPremRow' with value: 1
-13 Apr 2026 12:21:45,939 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'CoversPremRow' value to '1' (SUCCESSFUL)
-13 Apr 2026 12:21:46,146 INFO : com.automation.pages.CannedPage - Clicked on 'CoversSaveButton'
-13 Apr 2026 12:21:46,185 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CoversSaveButton' (SUCCESSFUL)
-13 Apr 2026 12:21:51,247 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:21:51,323 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:21:51,562 INFO : com.automation.pages.CannedPage - Clicked on 'CloseButtonFromPopup'
-13 Apr 2026 12:21:51,604 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CloseButtonFromPopup' (SUCCESSFUL)
-13 Apr 2026 12:21:51,605 INFO : com.automation.jbehave.ConsoleLogger - !-- REI Plan (IGNORED)
-13 Apr 2026 12:21:51,895 INFO : com.automation.pages.CannedPage - Clicked on 'REIPlanButton'
-13 Apr 2026 12:21:51,935 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'REIPlanButton' (SUCCESSFUL)
-13 Apr 2026 12:21:52,202 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch to iframe 'ReInsurancePlansIframe' (SUCCESSFUL)
-13 Apr 2026 12:21:52,402 INFO : com.automation.pages.CannedPage - Clicked on 'REIPlanSaveButton'
-13 Apr 2026 12:21:52,449 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'REIPlanSaveButton' (SUCCESSFUL)
-13 Apr 2026 12:21:52,449 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ReinsurancePlanEmptyErrorMsg] >> [Reinsurance Plan must have some value.]
-==========================================================
-Actual: Reinsurance Plan must have some value.
-==========================================================
-13 Apr 2026 12:21:52,618 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'ReinsurancePlanErrorMsg' contains 'p:ReinsurancePlanEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:21:52,619 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:ReiMethodEmptyErrorMsg] >> [REI Method must have some value.]
-==========================================================
-Actual: REI Method must have some value.
-==========================================================
-13 Apr 2026 12:21:52,744 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'ReiMethodErrorMsg' contains 'p:ReiMethodEmptyErrorMsg' text (SUCCESSFUL)
-13 Apr 2026 12:21:52,744 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] Select '$optionValue' value from 'ReinsurancePlanCombobox' dropdown list (IGNORED)
-13 Apr 2026 12:21:52,744 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:PolicyWise] >> [Policy wise]
-13 Apr 2026 12:21:52,893 INFO : com.automation.pages.CannedPage - Selected 'Policy wise' from <select> 'ReiMethodCombobox'
-13 Apr 2026 12:21:52,930 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Select 'p:PolicyWise' value from 'ReiMethodCombobox' dropdown list (SUCCESSFUL)
-13 Apr 2026 12:21:52,930 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'REIPlanSaveButton' (IGNORED)
-13 Apr 2026 12:21:52,977 INFO : com.automation.jbehave.ConsoleLogger - And [Javascript] I switch back to main content (SUCCESSFUL)
-13 Apr 2026 12:21:53,107 INFO : com.automation.pages.CannedPage - Clicked on 'CloseButtonFromPopup'
-13 Apr 2026 12:21:53,148 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CloseButtonFromPopup' (SUCCESSFUL)
-13 Apr 2026 12:21:53,279 INFO : com.automation.pages.CannedPage - I scroll to 'DeleteButton'
-13 Apr 2026 12:21:53,327 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'DeleteButton' (SUCCESSFUL)
-13 Apr 2026 12:21:53,492 INFO : com.automation.pages.CannedPage - Clicked on 'DeleteButton'
-13 Apr 2026 12:21:53,533 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'DeleteButton' (SUCCESSFUL)
-13 Apr 2026 12:21:53,701 INFO : com.automation.pages.CannedPage - Clicked on 'DeleteButtonPopup'
-13 Apr 2026 12:21:53,746 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'DeleteButtonPopup' (SUCCESSFUL)
-13 Apr 2026 12:21:58,802 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:21:58,802 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:QuotationDeletedSuccessfully] >> [Quotation Deleted Successfully!]
-==========================================================
-Actual: Quotation Deleted Successfully!
-==========================================================
-13 Apr 2026 12:21:58,972 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'SuccessfullyAlert' contains 'p:QuotationDeletedSuccessfully' text (SUCCESSFUL)
-13 Apr 2026 12:21:58,972 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Cancelled] >> [4 - Cancelled]
-13 Apr 2026 12:21:59,214 INFO : com.automation.pages.CannedPage - Filled 'SearchQuotationInput' with value: 4 - Cancelled
-13 Apr 2026 12:21:59,254 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'SearchQuotationInput' value to 'p:Cancelled' (SUCCESSFUL)
-13 Apr 2026 12:21:59,419 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Enter on 'SearchQuotationInput' (SUCCESSFUL)
-13 Apr 2026 12:21:59,577 INFO : com.automation.pages.CannedPage - Clicked on 'QuotationNumberTable'
-13 Apr 2026 12:21:59,609 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'QuotationNumberTable' (SUCCESSFUL)
-Getting value from StateManager: key=QuotationNo, value=736
-Setting value from state manager, key='QuotationNo': 736
-13 Apr 2026 12:21:59,935 INFO : com.automation.pages.CannedPage - Filled 'QuotationNumberSearch' with value: 736
-13 Apr 2026 12:21:59,970 INFO : com.automation.jbehave.ConsoleLogger - And [Input] Set 'QuotationNumberSearch' value to 'statemanager:QuotationNo' (SUCCESSFUL)
-13 Apr 2026 12:22:00,130 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I press Enter on 'QuotationNumberSearch' (SUCCESSFUL)
-13 Apr 2026 12:22:05,178 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '5' sec (SUCCESSFUL)
-13 Apr 2026 12:22:05,498 INFO : com.automation.pages.CannedPage - I reload page
-13 Apr 2026 12:22:06,316 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I reload page (SUCCESSFUL)
-13 Apr 2026 12:22:08,412 INFO : com.automation.pages.CannedPage - Clicked on 'EditQuotationImg'
-13 Apr 2026 12:22:08,456 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'EditQuotationImg' (SUCCESSFUL)
-13 Apr 2026 12:22:15,500 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '7' sec (SUCCESSFUL)
-13 Apr 2026 12:22:15,500 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Cancelled] >> [4 - Cancelled]
-Expected value (literal): 4 - Cancelled
-Actual value (from element 'StatusAllQuotationDetails'): 4 - Cancelled
-13 Apr 2026 12:22:15,672 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'StatusAllQuotationDetails' equals saved value 'p:Cancelled' (SUCCESSFUL)
-13 Apr 2026 12:22:15,672 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:Invalid] >> [2 - Invalid]
-Expected value (literal): 2 - Invalid
-Actual value (from element 'ValidityStatusAllQuotationDetails'): 2 - Invalid
-13 Apr 2026 12:22:15,782 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'ValidityStatusAllQuotationDetails' equals saved value 'p:Invalid' (SUCCESSFUL)
-Getting value from StateManager: key=QuotationNo, value=736
-Expected value (from stateManager, key='QuotationNo'): 736
-Actual value (from element 'QutQuotNoAllQuotationDetails'): 736
-13 Apr 2026 12:22:15,920 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify text of 'QutQuotNoAllQuotationDetails' equals saved value 'statemanager:QuotationNo' (SUCCESSFUL)
-13 Apr 2026 12:22:15,921 INFO : com.automation.jbehave.ConsoleLogger - !-- Logout (IGNORED)
-13 Apr 2026 12:22:23,004 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '7' sec (SUCCESSFUL)
-13 Apr 2026 12:22:23,171 INFO : com.automation.pages.CannedPage - Clicked on 'UserDDL'
-13 Apr 2026 12:22:23,205 INFO : com.automation.jbehave.ConsoleLogger - Then [Input] I click on 'UserDDL' (SUCCESSFUL)
-13 Apr 2026 12:22:23,950 INFO : com.automation.pages.CannedPage - Clicked on 'LogoutButton'
-13 Apr 2026 12:22:24,002 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'LogoutButton' (SUCCESSFUL)
-13 Apr 2026 12:22:24,208 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'loginButton' is present (SUCCESSFUL)
-13 Apr 2026 12:22:25,087 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
-13 Apr 2026 12:22:25,087 INFO : com.automation.jbehave.ConsoleLogger - End Story:  TC_012_Apex.story
-13 Apr 2026 12:22:25,087 INFO : com.automation.jbehave.ConsoleLogger - Status:  FAILED 
-13 Apr 2026 12:22:25,087 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:52:35,294 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text (SUCCESSFUL)
+13 Apr 2026 16:52:35,498 INFO : com.automation.pages.CannedPage - Clicked on 'PPOkButton'
+13 Apr 2026 16:52:35,528 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PPOkButton' (SUCCESSFUL)
+13 Apr 2026 16:52:35,642 INFO : com.automation.pages.CustomPage - [IG DEBUG] Resolved repository name 'CommissionTable' to DOM id 'R155877906567342590_ig'
+13 Apr 2026 16:52:35,874 INFO : com.automation.pages.CustomPage - Deleted inserted row in IG=R155877906567342590_ig
+13 Apr 2026 16:52:35,903 INFO : com.automation.jbehave.ConsoleLogger - And [Action] I delete the inserted row in IG 'CommissionTable' (SUCCESSFUL)
+13 Apr 2026 16:52:36,162 INFO : com.automation.pages.CannedPage - Clicked on 'CompanySizeTab'
+13 Apr 2026 16:52:36,194 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CompanySizeTab' (SUCCESSFUL)
+13 Apr 2026 16:52:36,301 INFO : com.automation.pages.CannedPage - Tab 'CompanySizeTab' selected=true
+13 Apr 2026 16:52:36,340 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify tab 'CompanySizeTab' is selected (SUCCESSFUL)
+13 Apr 2026 16:52:36,470 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'CompanySizeTable' is visible (SUCCESSFUL)
+13 Apr 2026 16:52:36,587 INFO : com.automation.pages.CannedPage - I scroll to 'CompanySizeAddRowButton'
+13 Apr 2026 16:52:36,616 INFO : com.automation.jbehave.ConsoleLogger - And [Navigation] I scroll to 'CompanySizeAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:36,856 INFO : com.automation.pages.CannedPage - Clicked on 'CompanySizeAddRowButton'
+13 Apr 2026 16:52:36,891 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'CompanySizeAddRowButton' (SUCCESSFUL)
+13 Apr 2026 16:52:37,174 INFO : com.automation.pages.CustomPage - [IG DEBUG] Resolved repository name 'CompanySizeTable' to DOM id 'R158009214115732960_ig'
+13 Apr 2026 16:52:37,281 INFO : com.automation.pages.CustomPage - Inserted empty row verified. IG=R158009214115732960_ig | emptyCells=4/6
+13 Apr 2026 16:52:37,313 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify IG 'CompanySizeTable' has an empty inserted row (SUCCESSFUL)
+13 Apr 2026 16:52:37,455 INFO : com.automation.pages.CustomPage - [IG DEBUG] Resolved repository name 'CompanySizeTable' to DOM id 'R158009214115732960_ig'
+13 Apr 2026 16:52:37,594 INFO : com.automation.pages.CustomPage - Deleted inserted row in IG=R158009214115732960_ig
+13 Apr 2026 16:52:37,622 INFO : com.automation.jbehave.ConsoleLogger - And [Action] I delete the inserted row in IG 'CompanySizeTable' (SUCCESSFUL)
+13 Apr 2026 16:52:38,609 INFO : com.automation.pages.CannedPage - Clicked on 'PPCancelButton'
+13 Apr 2026 16:52:38,657 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'PPCancelButton' (SUCCESSFUL)
+13 Apr 2026 16:52:45,707 INFO : com.automation.jbehave.ConsoleLogger - And [Progress] I wait for '7' sec (SUCCESSFUL)
+13 Apr 2026 16:52:45,847 INFO : com.automation.pages.CannedPage - Clicked on 'UserDDL'
+13 Apr 2026 16:52:45,876 INFO : com.automation.jbehave.ConsoleLogger - Then [Input] I click on 'UserDDL' (SUCCESSFUL)
+13 Apr 2026 16:52:46,393 INFO : com.automation.pages.CannedPage - Clicked on 'LogoutButton'
+13 Apr 2026 16:52:46,420 INFO : com.automation.jbehave.ConsoleLogger - And [Input] I click on 'LogoutButton' (SUCCESSFUL)
+13 Apr 2026 16:52:46,588 INFO : com.automation.jbehave.ConsoleLogger - And [Assertion] Verify 'loginButton' is present (SUCCESSFUL)
+13 Apr 2026 16:52:46,682 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:52:46,682 INFO : com.automation.jbehave.ConsoleLogger - Scenario: TC_003_Apex
+13 Apr 2026 16:52:46,682 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:52:46,682 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:amanApex] >> [http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login]
+13 Apr 2026 16:52:46,828 INFO : com.automation.pages.CannedPage - Navigating to the page: http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login
+13 Apr 2026 16:52:46,864 INFO : com.automation.jbehave.ConsoleLogger - Given [Navigation] I navigate to 'p:amanApex' (SUCCESSFUL)
+13 Apr 2026 16:52:46,864 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I login as 'p:adminUsername' with password 'p:password' (IGNORED)
+13 Apr 2026 16:52:46,865 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:52:46,865 INFO : com.automation.jbehave.ConsoleLogger - !-- !-- When [Input] I click on 'navControlButton' (IGNORED)
+13 Apr 2026 16:52:46,865 INFO : com.automation.jbehave.ConsoleLogger - !-- When [Action] I ensure navbar is open using toggle 'navControlButton' (IGNORED)
+13 Apr 2026 16:52:46,866 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'ControlAndMoniteringSideMenu' (IGNORED)
+13 Apr 2026 16:52:46,866 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'MasterFilesSideMenu' (IGNORED)
+13 Apr 2026 16:52:46,866 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'ClassSubclassLinkingSideMenu' (IGNORED)
+13 Apr 2026 16:52:46,866 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'ClassTitle' equals 'p:Class' text (IGNORED)
+13 Apr 2026 16:52:46,867 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'ClassTable' is visible (IGNORED)
+13 Apr 2026 16:52:46,867 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'ClassAddRowButton' (IGNORED)
+13 Apr 2026 16:52:46,867 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify IG 'ClassTable' has an empty inserted row (IGNORED)
+13 Apr 2026 16:52:46,868 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:52:46,868 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'ClassSaveButton' and if 'AlertDialog' not appear reclick (IGNORED)
+13 Apr 2026 16:52:46,868 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text (IGNORED)
+13 Apr 2026 16:52:46,868 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'OkButton' (IGNORED)
+13 Apr 2026 16:52:46,869 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Action] I delete the inserted row in IG 'ClassTable' (IGNORED)
+13 Apr 2026 16:52:46,869 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:52:46,869 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'SubClassTable' is visible (IGNORED)
+13 Apr 2026 16:52:46,869 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'SubClassAddRowButton' (IGNORED)
+13 Apr 2026 16:52:46,869 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify IG 'SubClassTable' has an empty inserted row (IGNORED)
+13 Apr 2026 16:52:46,869 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:52:46,869 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'SubClassSaveButton' and if 'AlertDialog' not appear reclick (IGNORED)
+13 Apr 2026 16:52:46,870 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text (IGNORED)
+13 Apr 2026 16:52:46,870 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'OkButton' (IGNORED)
+13 Apr 2026 16:52:46,870 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Action] I delete the inserted row in IG 'SubClassTable' (IGNORED)
+13 Apr 2026 16:52:46,870 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '7' sec (IGNORED)
+13 Apr 2026 16:52:46,870 INFO : com.automation.jbehave.ConsoleLogger - !-- Then [Input] I click on 'UserDDL' (IGNORED)
+13 Apr 2026 16:52:46,870 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'LogoutButton' (IGNORED)
+13 Apr 2026 16:52:46,870 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'loginButton' is present (IGNORED)
+13 Apr 2026 16:52:46,951 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:52:46,951 INFO : com.automation.jbehave.ConsoleLogger - Scenario: TC_003_Apex
+13 Apr 2026 16:52:46,951 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:52:46,951 INFO : com.automation.jbehave.PropertyParameterConverter - Parameter converted:[p:amanApex] >> [http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login]
+13 Apr 2026 16:52:47,078 INFO : com.automation.pages.CannedPage - Navigating to the page: http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/aman/login
+13 Apr 2026 16:52:47,111 INFO : com.automation.jbehave.ConsoleLogger - Given [Navigation] I navigate to 'p:amanApex' (SUCCESSFUL)
+13 Apr 2026 16:52:47,112 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I login as 'p:adminUsername' with password 'p:password' (IGNORED)
+13 Apr 2026 16:52:47,112 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:52:47,112 INFO : com.automation.jbehave.ConsoleLogger - !-- !-- When [Input] I click on 'navControlButton' (IGNORED)
+13 Apr 2026 16:52:47,112 INFO : com.automation.jbehave.ConsoleLogger - !-- When [Action] I ensure navbar is open using toggle 'navControlButton' (IGNORED)
+13 Apr 2026 16:52:47,113 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'ControlAndMoniteringSideMenu' (IGNORED)
+13 Apr 2026 16:52:47,113 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'MasterFilesSideMenu' (IGNORED)
+13 Apr 2026 16:52:47,113 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomersAddressScreenSideMenu' (IGNORED)
+13 Apr 2026 16:52:47,113 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'CustomerAddressTitle' equals 'p:CustomerAddress' text (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'CustomerAddressTable' is visible (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomerAddressAddRowButton' (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '5' sec (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify all fields in 'CustomerAddressRegionBody' are empty (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CustomerAddressSaveButton' (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'LocationCAErrorMsg' contains 'p:LocationEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'OfficeErrorMsg' contains 'p:OfficeEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'EndtNoErrorMsg' contains 'p:EndtNoEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'EndtYearErrorMsg' contains 'p:EndtYearEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'EndtTypeErrorMsg' contains 'p:EndtTypeEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,114 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'DepartmentCAErrorMsg' contains 'p:DepartmentEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,115 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'COBErrorMsg' contains 'p:COBEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,115 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'SourceErrorMsg' contains 'p:SourceEmptyErrorMsg' text (IGNORED)
+13 Apr 2026 16:52:47,115 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'CancelButton' (IGNORED)
+13 Apr 2026 16:52:47,115 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Progress] I wait for '7' sec (IGNORED)
+13 Apr 2026 16:52:47,115 INFO : com.automation.jbehave.ConsoleLogger - !-- Then [Input] I click on 'UserDDL' (IGNORED)
+13 Apr 2026 16:52:47,115 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Input] I click on 'LogoutButton' (IGNORED)
+13 Apr 2026 16:52:47,115 INFO : com.automation.jbehave.ConsoleLogger - !-- And [Assertion] Verify 'loginButton' is present (IGNORED)
+13 Apr 2026 16:52:47,966 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
+13 Apr 2026 16:52:47,966 INFO : com.automation.jbehave.ConsoleLogger - End Story:  TC_003_Apex.story
+13 Apr 2026 16:52:47,966 INFO : com.automation.jbehave.ConsoleLogger - Status:  PASSED 
+13 Apr 2026 16:52:47,966 INFO : com.automation.jbehave.ConsoleLogger - ==========================================================
 Sent message successfully....
 ]]></system-out>
     <system-err><![CDATA[[pool-2-thread-1] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
 [pool-2-thread-1] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\sjaber\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
-Apr 13, 2026 12:14:23 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+Apr 13, 2026 4:51:22 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Apr 13, 2026 12:14:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Apr 13, 2026 4:51:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 146
-Apr 13, 2026 12:14:26 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Apr 13, 2026 4:51:25 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Screenshot of page 'http://hq-opt-ins-21:9090/ordsapexqa/r/qaapex/quotation/all-quotation-details?session=5590009133656' has **NOT** been saved. If there is no error, perhaps the WebDriver type you are using is not compatible with taking screenshots
 ]]></system-err>
   </testcase>
 </testsuite>

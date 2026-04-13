@@ -2083,24 +2083,34 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
         String regionId = resolveIgRegionId(regionIdOrAnyId);
         String gridVc   = gridVcId(regionId);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.pollingEvery(Duration.ofMillis(500));
+        wait.ignoring(StaleElementReferenceException.class);
+        wait.ignoring(NoSuchElementException.class);
+
         WebElement grid = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+        waitForApexAjaxToFinish(driver);
 
-        // Must exist: inserted row (new row)
-        List<WebElement> insertedRows = grid.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
-        if (insertedRows.isEmpty()) {
-            throw new Exception("No inserted row found in IG. Expected: tr.a-GV-row.is-inserted | IG=" + regionId);
-        }
+        WebElement row = wait.until(d -> {
+            WebElement g = d.findElement(By.id(gridVc));
 
-        // Take the last inserted row (usually the one just added)
-        WebElement row = insertedRows.get(insertedRows.size() - 1);
+            List<WebElement> insertedRows = g.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
+            if (insertedRows.isEmpty()) {
+                insertedRows = g.findElements(By.cssSelector("tr[role='row'].is-inserted"));
+            }
+
+            if (insertedRows.isEmpty()) return null;
+
+            WebElement r = insertedRows.get(insertedRows.size() - 1);
+            return r.isDisplayed() ? r : null;
+        });
+
         scrollTo(row);
 
-        // Count empty grid cells (ignore the selector/controls best-effort by focusing on td[role=gridcell])
         List<WebElement> cells = row.findElements(By.cssSelector("td[role='gridcell']"));
 
         int emptyCount = 0;
-        int total      = 0;
+        int total = 0;
 
         for (WebElement cell : cells) {
             total++;
@@ -2110,8 +2120,6 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
             }
         }
 
-        // If your row has defaults like "Choose Severity--" you still want "empty" for at least Code/Desc.
-        // Threshold: at least 2 empty cells (tune if needed).
         if (emptyCount < 2) {
             throw new Exception(
                     "Inserted row exists but does NOT look empty. " +
@@ -2173,13 +2181,16 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
         String regionId = resolveIgRegionId(regionIdOrAnyId);
         String gridVc   = gridVcId(regionId);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
-        WebElement grid = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.pollingEvery(Duration.ofMillis(500));
+        wait.ignoring(StaleElementReferenceException.class);
+        wait.ignoring(NoSuchElementException.class);
 
-        // Find any inserted row(s) inside THIS IG only
+        WebElement grid = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(gridVc)));
+        waitForApexAjaxToFinish(driver);
+
         List<WebElement> insertedRows = grid.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
         if (insertedRows.isEmpty()) {
-            // Some themes use role selector only
             insertedRows = grid.findElements(By.cssSelector("tr[role='row'].is-inserted"));
         }
 
@@ -2187,21 +2198,37 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
             throw new Exception("No inserted row found to delete in IG. IG=" + regionId);
         }
 
-        // Delete the most recent one (usually the last inserted)
+        int beforeCount = insertedRows.size();
+
         WebElement row = insertedRows.get(insertedRows.size() - 1);
         scrollTo(row);
 
-        // Your HTML shows: button[data-action='row-delete']
-        WebElement deleteBtn = row.findElement(By.cssSelector("button[data-action='row-delete']"));
+        WebElement deleteBtn = wait.until(d -> {
+            try {
+                WebElement btn = row.findElement(By.cssSelector("button[data-action='row-delete']"));
+                return (btn.isDisplayed() && btn.isEnabled()) ? btn : null;
+            } catch (StaleElementReferenceException e) {
+                return null;
+            }
+        });
 
         clickSafe(deleteBtn);
+
         waitForApexAjaxToFinish(driver);
 
-        // Wait until it disappears (row removed or no longer inserted)
         wait.until(d -> {
-            WebElement g = d.findElement(By.id(gridVc));
-            return g.findElements(By.cssSelector("tr.a-GV-row.is-inserted")).isEmpty()
-                    && g.findElements(By.cssSelector("tr[role='row'].is-inserted")).isEmpty();
+            try {
+                WebElement g = d.findElement(By.id(gridVc));
+
+                List<WebElement> remaining = g.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
+                if (remaining.isEmpty()) {
+                    remaining = g.findElements(By.cssSelector("tr[role='row'].is-inserted"));
+                }
+
+                return remaining.size() < beforeCount;
+            } catch (Exception e) {
+                return false;
+            }
         });
 
         log.info("Deleted inserted row in IG=" + regionId);

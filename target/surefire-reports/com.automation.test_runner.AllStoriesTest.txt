@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.automation.test_runner.AllStoriesTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 485.118 s <<< FAILURE! - in com.automation.test_runner.AllStoriesTest
-com.automation.test_runner.AllStoriesTest.run  Time elapsed: 485.11 s  <<< ERROR!
-java.lang.RuntimeException: JBehave detected failed stories. Failing Maven build.
-	at com.automation.test_runner.AllStoriesTest.run(AllStoriesTest.java:80)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 91.259 s - in com.automation.test_runner.AllStoriesTest
