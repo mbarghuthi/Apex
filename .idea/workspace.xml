@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="provided full story with some updates">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/stories/ControlAndMonitering/TC_001_Apex.story" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/stories/ControlAndMonitering/TC_001_Apex.story" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

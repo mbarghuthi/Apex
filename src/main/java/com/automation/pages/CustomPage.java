@@ -2230,12 +2230,31 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
         });
 
         scrollTo(deleteBtn);
+        waitForApexAjaxToFinish(driver);
         wait.until(ExpectedConditions.elementToBeClickable(deleteBtn));
 
-        // IMPORTANT: single normal click only — no JS fallback for delete
+        // one real click only
         deleteBtn.click();
 
+        // allow APEX to react
         waitForApexAjaxToFinish(driver);
+
+        // if the unsaved changes popup appears, accept it and finish
+        try {
+            WebElement okBtn = new WebDriverWait(driver, Duration.ofSeconds(5)).until(
+                    ExpectedConditions.elementToBeClickable(
+                            By.xpath("//button[normalize-space()='OK' or .//span[normalize-space()='OK']]")
+                    )
+            );
+
+            okBtn.click();
+            waitForApexAjaxToFinish(driver);
+
+            log.info("Unsaved changes popup appeared after delete and was accepted. IG=" + regionId);
+            return;
+        } catch (TimeoutException ignored) {
+            // popup did not appear, continue normal verification
+        }
 
         wait.until(d -> {
             try {

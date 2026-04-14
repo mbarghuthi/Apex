@@ -258,6 +258,7 @@ And [Assertion] Verify tab 'ApplicationConfigurationTab' is selected
 !-- table-add save delete
 And [Assertion] Verify 'ApplicationConfigurationTable' is visible
 And [Input] I click on 'ApplicationConfigurationAddRowButton'
+And [Progress] I wait for '5' sec
 And [Assertion] Verify IG 'ApplicationConfigurationTable' has an empty inserted row
 !-- And [Progress] I wait for '5' sec
 !-- And [Input] I click on 'ApplicationConfigurationSaveButton'
