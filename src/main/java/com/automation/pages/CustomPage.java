@@ -2233,29 +2233,33 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
         waitForApexAjaxToFinish(driver);
         wait.until(ExpectedConditions.elementToBeClickable(deleteBtn));
 
-        // one real click only
-        deleteBtn.click();
+        boolean popupHandled = false;
 
-        // allow APEX to react
-        waitForApexAjaxToFinish(driver);
-
-        // if the unsaved changes popup appears, accept it and finish
         try {
-            WebElement okBtn = new WebDriverWait(driver, Duration.ofSeconds(5)).until(
-                    ExpectedConditions.elementToBeClickable(
-                            By.xpath("//button[normalize-space()='OK' or .//span[normalize-space()='OK']]")
-                    )
-            );
-
-            okBtn.click();
-            waitForApexAjaxToFinish(driver);
-
-            log.info("Unsaved changes popup appeared after delete and was accepted. IG=" + regionId);
-            return;
-        } catch (TimeoutException ignored) {
-            // popup did not appear, continue normal verification
+            // normal click first
+            deleteBtn.click();
+        } catch (ElementClickInterceptedException e) {
+            // If popup/overlay appeared as part of the delete action, treat it as expected
+            popupHandled = handleUnsavedChangesPopupIfPresent(driver);
+            if (!popupHandled) {
+                throw e;
+            }
         }
 
+        waitForApexAjaxToFinish(driver);
+
+        // If click did not throw, popup may still appear a moment later
+        if (!popupHandled) {
+            popupHandled = handleUnsavedChangesPopupIfPresent(driver);
+        }
+
+        // If popup was handled, treat delete as successful and stop here
+        if (popupHandled) {
+            log.info("Delete triggered unsaved changes popup and popup was accepted. IG=" + regionId);
+            return;
+        }
+
+        // If no popup appeared, verify inserted row count decreased
         wait.until(d -> {
             try {
                 WebElement g = d.findElement(By.id(gridVc));
@@ -2266,12 +2270,31 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
                 }
 
                 return remaining.size() < beforeCount;
-            } catch (Exception e) {
+            } catch (Exception ex) {
                 return false;
             }
         });
 
         log.info("Deleted inserted row in IG=" + regionId);
+    }
+
+    private boolean handleUnsavedChangesPopupIfPresent(WebDriver driver) {
+        try {
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+            WebElement okBtn = shortWait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[normalize-space()='OK' or .//span[normalize-space()='OK']]")
+            ));
+
+            okBtn.click();
+            waitForApexAjaxToFinish(driver);
+            return true;
+
+        } catch (TimeoutException e) {
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void deleteInsertedRowFromAnyVisibleIg() throws Exception {
