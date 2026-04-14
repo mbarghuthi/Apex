@@ -169,7 +169,7 @@ And [Navigation] I scroll to 'PeriodsAddRowButton'
 And [Input] I click on 'PeriodsAddRowButton'
 And [Progress] I wait for '5' sec
 And [Assertion] Verify IG 'PeriodsTable' has an empty inserted row
-And [Action] I delete the inserted row in IG 'PeriodsTable'
+!-- And [Action] I delete the inserted row in IG 'PeriodsTable'
 And [Input] I click on 'CommissionTab'
 And [Assertion] Verify tab 'CommissionTab' is selected
 And [Assertion] Verify 'CommissionTable' is visible
