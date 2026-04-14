@@ -33,7 +33,12 @@ public class ProjectConfiguration {
                     switch (Browsers.of(browserName)) {
                         case CHROME:
                             WebDriverManager.chromedriver().setup();
-                            driver = new ChromeDriver();
+
+                            ChromeOptions chromeOptions = new ChromeOptions();
+                            chromeOptions.addArguments("--window-size=1920,1080");
+
+                            driver = new ChromeDriver(chromeOptions);
+                            driver.manage().window().setSize(new Dimension(1920, 1080));
                             break;
                         case FIREFOX:
                             WebDriverManager.firefoxdriver().setup();

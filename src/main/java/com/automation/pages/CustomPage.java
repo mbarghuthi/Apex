@@ -2205,14 +2205,35 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
 
         WebElement deleteBtn = wait.until(d -> {
             try {
-                WebElement btn = row.findElement(By.cssSelector("button[data-action='row-delete']"));
+                WebElement freshGrid = d.findElement(By.id(gridVc));
+
+                List<WebElement> freshInsertedRows = freshGrid.findElements(By.cssSelector("tr.a-GV-row.is-inserted"));
+                if (freshInsertedRows.isEmpty()) {
+                    freshInsertedRows = freshGrid.findElements(By.cssSelector("tr[role='row'].is-inserted"));
+                }
+
+                if (freshInsertedRows.isEmpty()) {
+                    return null;
+                }
+
+                WebElement freshRow = freshInsertedRows.get(freshInsertedRows.size() - 1);
+                if (!freshRow.isDisplayed()) {
+                    return null;
+                }
+
+                WebElement btn = freshRow.findElement(By.cssSelector("button[data-action='row-delete']"));
                 return (btn.isDisplayed() && btn.isEnabled()) ? btn : null;
-            } catch (StaleElementReferenceException e) {
+
+            } catch (Exception e) {
                 return null;
             }
         });
 
-        clickSafe(deleteBtn);
+        scrollTo(deleteBtn);
+        wait.until(ExpectedConditions.elementToBeClickable(deleteBtn));
+
+        // IMPORTANT: single normal click only — no JS fallback for delete
+        deleteBtn.click();
 
         waitForApexAjaxToFinish(driver);
 
