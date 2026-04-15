@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0826a89a-9e89-42f5-b126-da99926bde7e" name="Changes" comment="provided full story with some updates">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/jbehave/ConsoleLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/jbehave/ConsoleLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation/pages/CustomPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automation/pages/CustomPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation/test_runner/AllStoriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automation/test_runner/AllStoriesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +63,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "D:/Automation Quality Projects/Apex-evaluation/src/test/java/com/automation/test_runner",
-    "last_opened_file_path": "D:/Automation Quality Projects/Apex-evaluation/src/main/java/com/automation/configuration",
+    "last_opened_file_path": "D:/Automation Quality Projects/Apex-evaluation/src/test/resources/stories/ControlAndMonitering",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4448276",

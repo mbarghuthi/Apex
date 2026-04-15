@@ -3429,4 +3429,31 @@ public void assertIgLocalAmountFillable(String regionIdOrAnyId, String rowText) 
         // If no editor appears, it is effectively read-only => PASS
         pressEscapeSafe();
     }
+
+    private String extractFolderName(String storyPath) {
+        if (storyPath == null || storyPath.trim().isEmpty()) {
+            return "UnknownFolder";
+        }
+
+        String normalizedPath = storyPath.replace("\\", "/");
+        String[] parts = normalizedPath.split("/");
+
+        if (parts.length >= 2) {
+            return parts[parts.length - 2];
+        }
+
+        return "UnknownFolder";
+    }
+
+    private String removeStoryExtension(String storyName) {
+        if (storyName == null || storyName.trim().isEmpty()) {
+            return "UnknownStory";
+        }
+
+        if (storyName.toLowerCase().endsWith(".story")) {
+            return storyName.substring(0, storyName.length() - 6);
+        }
+
+        return storyName;
+    }
 }

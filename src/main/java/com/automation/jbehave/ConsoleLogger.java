@@ -34,7 +34,6 @@ public class ConsoleLogger implements StoryReporter {
 	// Report Declarations
 	private static ExtentReports extent = ReportManager.createInstance();
 	private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
-	private static ExtentTest extentTest;
 
 	private static final Logger log = Logger.getLogger(ConsoleLogger.class);
 
@@ -68,18 +67,22 @@ public class ConsoleLogger implements StoryReporter {
 		return HAS_FAILURES.get();
 	}
 
+	@Override
 	public void storyNotAllowed(Story story, String filter) {
 		log.info(String.format("%s (NOT ALLOWED [filter: %s])", story, filter));
 		// Treat "not allowed" as not a failure for build result.
 	}
 
+	@Override
 	public void storyCancelled(Story story, StoryDuration storyDuration) {
 		log.info(String.format("%s (CANCELLED [duration: %s])", story, storyDuration));
 		HAS_FAILURES.set(true);
 	}
 
+	@Override
 	public void beforeStory(Story story, boolean givenStory) {
 		this.storyThreadLocal.set(story);
+
 		if (!story.getName().equals("BeforeStories") && !story.getName().equals("AfterStories")) {
 			this.runningStoryStatus.set(true);
 			this.reportBeforeStory(story);
@@ -89,16 +92,24 @@ public class ConsoleLogger implements StoryReporter {
 	private void reportBeforeStory(Story story) {
 		log.info("==========================================================");
 		log.info("Begin Story: " + story.getName());
+		log.info("Story Path: " + story.getPath());
+		log.info("Folder Name: " + extractFolderName(story.getPath()));
 		log.info("==========================================================");
 	}
 
+	@Override
 	public void afterStory(boolean givenStory) {
 		Story story = this.storyThreadLocal.get();
-		if (story != null && story.getName() != null
+
+		if (story != null
+				&& story.getName() != null
 				&& !story.getName().equals("BeforeStories")
 				&& !story.getName().equals("AfterStories")) {
 			this.reportAfterStory(story);
 		}
+
+		storyThreadLocal.remove();
+		runningStoryStatus.remove();
 	}
 
 	private void reportAfterStory(Story story) {
@@ -115,71 +126,118 @@ public class ConsoleLogger implements StoryReporter {
 		log.info("==========================================================");
 	}
 
+	@Override
 	public void narrative(Narrative narrative) {
 		log.info(narrative.toString());
 	}
 
+	@Override
 	public void lifecyle(Lifecycle lifecycle) {
 		log.info(lifecycle.toString());
 	}
 
+	@Override
 	public void scenarioNotAllowed(Scenario scenario, String filter) {
 		log.info(String.format("%s (NOT ALLOWED [filter: %s])", scenario, filter));
 	}
 
+	@Override
 	public void beforeScenario(String scenarioTitle) {
-		String scenarioKey = scenarioTitle.substring(0, scenarioTitle.indexOf(" ")).trim();
-		String scenarioName = scenarioTitle.substring(scenarioTitle.indexOf(" ")).trim();
-		extentTest = extent.startTest(scenarioName, scenarioKey);
+		Story currentStory = storyThreadLocal.get();
+
+		String folderName = "UnknownFolder";
+		String storyName = "UnknownStory";
+
+		if (currentStory != null) {
+			folderName = extractFolderName(currentStory.getPath());
+			storyName = removeStoryExtension(currentStory.getName());
+		}
+
+		String scenarioKey;
+		String scenarioName;
+
+		if (scenarioTitle != null && scenarioTitle.contains(" ")) {
+			scenarioKey = scenarioTitle.substring(0, scenarioTitle.indexOf(" ")).trim();
+			scenarioName = scenarioTitle.substring(scenarioTitle.indexOf(" ")).trim();
+		} else {
+			scenarioKey = scenarioTitle != null ? scenarioTitle.trim() : "Scenario";
+			scenarioName = scenarioTitle != null ? scenarioTitle.trim() : "Scenario";
+		}
+
+		String reportTestName = "[" + folderName + "] [" + storyName + "] " + scenarioName;
+
+		ExtentTest extentTest = extent.startTest(reportTestName, scenarioKey);
+		extentTest.assignCategory(folderName);
+
 		test.set(extentTest);
 		extent.flush();
 
 		log.info("==========================================================");
+		log.info("Folder: " + folderName);
+		log.info("Story: " + storyName);
 		log.info("Scenario: " + scenarioKey);
 		log.info("==========================================================");
 	}
 
+	@Override
 	public void scenarioMeta(Meta meta) {
 		log.info(meta.toString());
 	}
 
+	@Override
 	public void afterScenario() {
-		extent.endTest(extentTest);
-		extent.flush();
+		if (test.get() != null) {
+			extent.endTest(test.get());
+			extent.flush();
+			test.remove();
+		}
 	}
 
+	@Override
 	public void givenStories(GivenStories givenStories) {
 	}
 
+	@Override
 	public void givenStories(List<String> storyPaths) {
 	}
 
+	@Override
 	public void beforeExamples(List<String> steps, ExamplesTable table) {
 	}
 
+	@Override
 	public void example(Map<String, String> tableRow) {
 	}
 
+	@Override
 	public void afterExamples() {
 	}
 
+	@Override
 	public void beforeStep(String step) {
 	}
 
+	@Override
 	public void successful(String step) {
-		test.get().log(LogStatus.PASS, PropertyConverter.convert(step));
-		extent.flush();
+		if (test.get() != null) {
+			test.get().log(LogStatus.PASS, PropertyConverter.convert(step));
+			extent.flush();
+		}
 
 		log.info(String.format("%s (SUCCESSFUL)", step));
 	}
 
+	@Override
 	public void ignorable(String step) {
 		log.info(String.format("%s (IGNORED)", step));
 	}
 
+	@Override
 	public void pending(String step) {
-		test.get().log(LogStatus.ERROR, PropertyConverter.convert(step));
-		extent.flush();
+		if (test.get() != null) {
+			test.get().log(LogStatus.ERROR, PropertyConverter.convert(step));
+			extent.flush();
+		}
 
 		HAS_FAILURES.set(true);
 		this.runningStoryStatus.set(false);
@@ -187,36 +245,52 @@ public class ConsoleLogger implements StoryReporter {
 		log.info(String.format("%s (PENDING)", step));
 	}
 
+	@Override
 	public void notPerformed(String step) {
-		test.get().log(LogStatus.SKIP, PropertyConverter.convert(step));
-		extent.flush();
+		if (test.get() != null) {
+			test.get().log(LogStatus.SKIP, PropertyConverter.convert(step));
+			extent.flush();
+		}
 
 		log.info(String.format("%s (NOT PERFORMED)", step));
 	}
 
+	@Override
 	public void failed(String step, Throwable cause) {
-		test.get().log(LogStatus.FAIL, PropertyConverter.convert(step));
+		if (test.get() != null) {
+			test.get().log(LogStatus.FAIL, PropertyConverter.convert(step));
 
-		// Log the cause message if available
-		if (cause != null && cause.getCause() != null) {
-			test.get().log(LogStatus.INFO, cause.getCause().getMessage());
-			log.error(cause.getCause());
-		} else if (cause != null) {
-			test.get().log(LogStatus.INFO, cause.getMessage() != null ? cause.getMessage() : "Unknown error occurred");
-			log.error(cause);
+			if (cause != null && cause.getCause() != null) {
+				test.get().log(LogStatus.INFO, cause.getCause().getMessage());
+				log.error(cause.getCause());
+			} else if (cause != null) {
+				test.get().log(LogStatus.INFO,
+						cause.getMessage() != null ? cause.getMessage() : "Unknown error occurred");
+				log.error(cause);
+			} else {
+				test.get().log(LogStatus.INFO, "Unknown error occurred");
+				log.error("Unknown error occurred");
+			}
+
+			String screenshotBase64 = captureScreenshot();
+			if (screenshotBase64 != null && !screenshotBase64.isEmpty()) {
+				test.get().log(
+						LogStatus.INFO,
+						"Screenshot of the failure",
+						"<img src='data:image/png;base64," + screenshotBase64 + "' />"
+				);
+			}
+
+			extent.flush();
 		} else {
-			test.get().log(LogStatus.INFO, "Unknown error occurred");
-			log.error("Unknown error occurred");
+			if (cause != null && cause.getCause() != null) {
+				log.error(cause.getCause());
+			} else if (cause != null) {
+				log.error(cause);
+			} else {
+				log.error("Unknown error occurred");
+			}
 		}
-
-		// Capture and log screenshot if possible
-		String screenshotBase64 = captureScreenshot();
-		if (screenshotBase64 != null && !screenshotBase64.isEmpty()) {
-			test.get().log(LogStatus.INFO, "Screenshot of the failure",
-					"<img src='data:image/png;base64," + screenshotBase64 + "' />");
-		}
-
-		extent.flush();
 
 		HAS_FAILURES.set(true);
 		this.runningStoryStatus.set(false);
@@ -224,11 +298,13 @@ public class ConsoleLogger implements StoryReporter {
 		log.info(String.format("%s (FAILED)", step));
 	}
 
+	@Override
 	public void failedOutcomes(String step, OutcomesTable table) {
 		HAS_FAILURES.set(true);
 		this.runningStoryStatus.set(false);
 	}
 
+	@Override
 	public void restarted(String step, Throwable cause) {
 	}
 
@@ -237,15 +313,18 @@ public class ConsoleLogger implements StoryReporter {
 		HAS_FAILURES.set(true);
 	}
 
+	@Override
 	public void dryRun() {
 	}
 
+	@Override
 	public void pendingMethods(List<String> methods) {
 		HAS_FAILURES.set(true);
 	}
 
 	public String captureScreenshot() {
 		driver = webDriverProvider.get();
+
 		if (driver == null) {
 			log.error("WebDriver instance is null. Cannot capture screenshot.");
 			return null;
@@ -260,5 +339,32 @@ public class ConsoleLogger implements StoryReporter {
 			log.error("Failed to capture screenshot: " + e.getMessage());
 			return null;
 		}
+	}
+
+	private String extractFolderName(String storyPath) {
+		if (storyPath == null || storyPath.trim().isEmpty()) {
+			return "UnknownFolder";
+		}
+
+		String normalizedPath = storyPath.replace("\\", "/");
+		String[] parts = normalizedPath.split("/");
+
+		if (parts.length >= 2) {
+			return parts[parts.length - 2];
+		}
+
+		return "UnknownFolder";
+	}
+
+	private String removeStoryExtension(String storyName) {
+		if (storyName == null || storyName.trim().isEmpty()) {
+			return "UnknownStory";
+		}
+
+		if (storyName.toLowerCase().endsWith(".story")) {
+			return storyName.substring(0, storyName.length() - 6);
+		}
+
+		return storyName;
 	}
 }
