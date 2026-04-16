@@ -37,37 +37,66 @@ public class ProjectConfiguration {
                             WebDriverManager.chromedriver().setup();
 
                             ChromeOptions chromeOptions = new ChromeOptions();
-
-                            if (isJenkinsRun()) {
-                                chromeOptions.addArguments("--window-size=1920,1080");
-                            }
+                            chromeOptions.addArguments("--start-maximized");
+                            chromeOptions.addArguments("--window-size=1920,1080");
+                            chromeOptions.addArguments("--force-device-scale-factor=1");
+                            chromeOptions.addArguments("--disable-notifications");
+                            chromeOptions.addArguments("--disable-infobars");
+                            chromeOptions.addArguments("--remote-allow-origins=*");
 
                             driver = new ChromeDriver(chromeOptions);
 
-                            if (isJenkinsRun()) {
-                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            try {
+                                driver.manage().window().maximize();
+                            } catch (Exception e) {
+                                System.out.println("Could not maximize Chrome window: " + e.getMessage());
                             }
 
+                            try {
+                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            } catch (Exception e) {
+                                System.out.println("Could not set Chrome window size: " + e.getMessage());
+                            }
+
+                            System.out.println("Chrome window size after setup: " + driver.manage().window().getSize());
                             break;
 
                         case FIREFOX:
                             WebDriverManager.firefoxdriver().setup();
                             driver = new FirefoxDriver();
 
-                            if (isJenkinsRun()) {
-                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            try {
+                                driver.manage().window().maximize();
+                            } catch (Exception e) {
+                                System.out.println("Could not maximize Firefox window: " + e.getMessage());
                             }
 
+                            try {
+                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            } catch (Exception e) {
+                                System.out.println("Could not set Firefox window size: " + e.getMessage());
+                            }
+
+                            System.out.println("Firefox window size after setup: " + driver.manage().window().getSize());
                             break;
 
                         case IE:
                             WebDriverManager.iedriver().setup();
                             driver = new InternetExplorerDriver();
 
-                            if (isJenkinsRun()) {
-                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            try {
+                                driver.manage().window().maximize();
+                            } catch (Exception e) {
+                                System.out.println("Could not maximize IE window: " + e.getMessage());
                             }
 
+                            try {
+                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            } catch (Exception e) {
+                                System.out.println("Could not set IE window size: " + e.getMessage());
+                            }
+
+                            System.out.println("IE window size after setup: " + driver.manage().window().getSize());
                             break;
 
                         default:
@@ -94,21 +123,6 @@ public class ProjectConfiguration {
                     driver = null;
                 }
             }
-
-            private boolean isJenkinsRun() {
-                String workspace = System.getenv("WORKSPACE");
-                return workspace != null && !workspace.trim().isEmpty();
-            }
-
-//            public void switchToNewTab() {
-//                String originalWindow = driver.getWindowHandle();
-//                for (String windowHandle : driver.getWindowHandles()) {
-//                    if (!originalWindow.contentEquals(windowHandle)) {
-//                        driver.switchTo().window(windowHandle);
-//                        break;
-//                    }
-//                }
-//            }
         };
     }
 
