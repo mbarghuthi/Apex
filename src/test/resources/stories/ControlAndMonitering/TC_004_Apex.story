@@ -279,6 +279,7 @@ And [Assertion] Verify 'loginButton' is present
 Scenario:  TC_004_Apex TC4S9 Apex Test Case Control and Monitoring - Users & Authorities - User Privileges On Claim Payments
 
 Given [Navigation] I navigate to 'p:amanApex'
+And [Navigation] I reload page
 And [Input] I login as 'p:adminUsername' with password 'p:password'
 And [Progress] I wait for '5' sec
 !-- When [Input] I click on 'navControlButton'
@@ -291,9 +292,11 @@ And [Input] I click on 'UserCombobox'
 And [Input] Select 'p:TestingAutomationId' value from 'PopupLOVSearchBar' dropdown list
 And [Progress] I wait for '2' sec
 And [Input] Select 'p:paymentEstimate' value from 'AuthorityCombobox' dropdown list
+And [Progress] I wait for '5' sec
 And [Progress] I wait 'UserIdText' To be appear
 And [Assertion] Verify 'UAPTable' is visible
 And [Input] I click on 'UAPAddRow'
+And [Progress] I wait for '5' sec
 And [Assertion] Verify IG 'UAPTable' has an empty inserted row
 And [Input] I click on 'UAPSaveButton'
 And [Assertion] Verify 'AlertMsgBody' contains 'p:CorrectErrorsBeforeSaving' text

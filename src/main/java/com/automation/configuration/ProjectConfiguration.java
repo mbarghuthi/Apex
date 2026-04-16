@@ -37,19 +37,39 @@ public class ProjectConfiguration {
                             WebDriverManager.chromedriver().setup();
 
                             ChromeOptions chromeOptions = new ChromeOptions();
-                            chromeOptions.addArguments("--window-size=1920,1080");
+
+                            if (isJenkinsRun()) {
+                                chromeOptions.addArguments("--window-size=1920,1080");
+                            }
 
                             driver = new ChromeDriver(chromeOptions);
-                            driver.manage().window().setSize(new Dimension(1920, 1080));
+
+                            if (isJenkinsRun()) {
+                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            }
+
                             break;
+
                         case FIREFOX:
                             WebDriverManager.firefoxdriver().setup();
                             driver = new FirefoxDriver();
+
+                            if (isJenkinsRun()) {
+                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            }
+
                             break;
+
                         case IE:
                             WebDriverManager.iedriver().setup();
                             driver = new InternetExplorerDriver();
+
+                            if (isJenkinsRun()) {
+                                driver.manage().window().setSize(new Dimension(1920, 1080));
+                            }
+
                             break;
+
                         default:
                             throw new IllegalArgumentException("Invalid browser name: " + browserName);
                     }
@@ -64,7 +84,6 @@ public class ProjectConfiguration {
 
             @Override
             public boolean saveScreenshotTo(String path) {
-                // Add your implementation to save screenshot if needed
                 return false;
             }
 
@@ -74,6 +93,11 @@ public class ProjectConfiguration {
                     driver.quit();
                     driver = null;
                 }
+            }
+
+            private boolean isJenkinsRun() {
+                String workspace = System.getenv("WORKSPACE");
+                return workspace != null && !workspace.trim().isEmpty();
             }
 
 //            public void switchToNewTab() {
