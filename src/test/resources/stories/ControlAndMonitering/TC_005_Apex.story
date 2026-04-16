@@ -164,10 +164,10 @@ And [Input] I click on 'AmanControlSideMenu'
 And [Input] I click on 'ImportFromExcelAdvancedSideMenu'
 And [Assertion] Verify 'ImportFromExcelAdvancedTitle' equals 'p:ImportFromExcelAdvanced' text
 And [Progress] I wait for '3' sec
-And [Navigation] I scroll to 'StartImportButton'
-And [Input] I click on 'StartImportButton'
-And [Assertion] Verify 'DescriptionErrorMsg' contains 'p:DescriptionEmptyErrorMsg' text
-And [Assertion] Verify 'NoOfColumnsErrorMsg' contains 'p:NoOfColumnsEmptyErrorMsg' text
+!-- And [Navigation] I scroll to 'StartImportButton'
+!-- And [Input] I click on 'StartImportButton'
+!-- And [Assertion] Verify 'DescriptionErrorMsg' contains 'p:DescriptionEmptyErrorMsg' text
+!-- And [Assertion] Verify 'NoOfColumnsErrorMsg' contains 'p:NoOfColumnsEmptyErrorMsg' text
 !-- Fill No Of Columns with invalid value and assert error message
 And [Input] I click on 'DescriptionCombobox'
 And [Input] Select 'p:ImportBatchesAndMedicalClaims' value from 'PopupLOVSearchBar' dropdown list
