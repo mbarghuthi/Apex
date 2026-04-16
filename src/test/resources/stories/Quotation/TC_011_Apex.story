@@ -203,7 +203,7 @@ And [Input] I press Enter on 'SearchQuotationInput'
 And [Input] I click on 'QuotationNumberTable'
 And [Input] Set 'QuotationNumberSearch' value to 'statemanager:QuotationNo'
 And [Input] I press Enter on 'QuotationNumberSearch'
-And [Progress] I wait for '5' sec
+And [Progress] I wait for '7' sec
 And [Navigation] I reload page
 And [Input] I click on 'EditQuotationImg'
 And [Progress] I wait for '5' sec
@@ -421,7 +421,7 @@ And [Input] I press Enter on 'SearchQuotationInput'
 And [Input] I click on 'QuotationNumberTable'
 And [Input] Set 'QuotationNumberSearch' value to 'statemanager:QuotationNo'
 And [Input] I press Enter on 'QuotationNumberSearch'
-And [Progress] I wait for '5' sec
+And [Progress] I wait for '7' sec
 And [Navigation] I reload page
 And [Input] I click on 'EditQuotationImg'
 And [Progress] I wait for '5' sec
