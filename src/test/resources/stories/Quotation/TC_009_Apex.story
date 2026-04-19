@@ -35,7 +35,7 @@ And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text
 And [Assertion] Verify 'QutQuotDate' value equals sysdate
 !-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '1' months minus '1' day
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
-And [Progress] I wait for '5' sec
+And [Progress] I wait for '7' sec
 And [Input] I press Tab on 'QutInsStDateInput'
 And [Input] I click on 'QutInsStDateInput'
 And [Input] I press Enter on 'QutInsStDateInput'
@@ -59,6 +59,7 @@ And [Progress] I wait for '5' sec
 !-- Fill the mandatory Risk Details
 And [Input] I click on 'AddNewRiskButton'
 And [Javascript] I switch to iframe 'AddNewRiskIframe'
+And [Progress] I wait for '5' sec
 And [Input] I click on 'RiskTypeLiabilityCombobox'
 And [Javascript] I switch back to main content
 And [Input] Select 'p:Warehouse' value from 'PopupLOVSearchBar' dropdown list
@@ -209,7 +210,7 @@ And [Assertion] Verify 'QutPaymentTermCombobox' contains 'p:Account' text
 And [Assertion] Verify 'QutQuotDate' value equals sysdate
 !-- And [Assertion] Verify 'QutQuotValidityDate' value equals sysdate plus '1' months minus '1' day
 And [Input] Set 'QutInsStDateInput' value to 'sysdateformatted'
-And [Progress] I wait for '5' sec
+And [Progress] I wait for '7' sec
 And [Input] I press Tab on 'QutInsStDateInput'
 And [Input] I click on 'QutInsStDateInput'
 And [Input] I press Enter on 'QutInsStDateInput'
