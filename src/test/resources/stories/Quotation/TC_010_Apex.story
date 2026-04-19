@@ -50,7 +50,7 @@ And [Progress] I wait for '3' sec
 And [Assertion] Verify 'QutUnitPriceVal' equals '1' text
 And [Navigation] I scroll to 'CreateButton'
 And [Input] I click on 'CreateButton'
-And [Progress] I wait for '5' sec
+And [Progress] I wait for '7' sec
 And [Navigation] I scroll to 'SuccessfullyAlert'
 And [Assertion] Verify 'SuccessfullyAlert' contains 'p:DataSavedSuccessfully' text
 And [Action] I get text from 'QutQuotNoCreateText' and save it as 'QuotationNo'
@@ -223,7 +223,7 @@ And [Progress] I wait for '3' sec
 And [Assertion] Verify 'QutUnitPriceVal' equals '3.75' text
 And [Navigation] I scroll to 'CreateButton'
 And [Input] I click on 'CreateButton'
-And [Progress] I wait for '5' sec
+And [Progress] I wait for '7' sec
 And [Navigation] I scroll to 'SuccessfullyAlert'
 And [Assertion] Verify 'SuccessfullyAlert' contains 'p:DataSavedSuccessfully' text
 And [Action] I get text from 'QutQuotNoCreateText' and save it as 'QuotationNo'
