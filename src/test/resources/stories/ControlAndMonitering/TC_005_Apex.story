@@ -172,7 +172,7 @@ And [Progress] I wait for '3' sec
 And [Input] I click on 'DescriptionCombobox'
 And [Input] Select 'p:ImportBatchesAndMedicalClaims' value from 'PopupLOVSearchBar' dropdown list
 And [Input] I click on 'NoOfColumnsInput'
-And [Progress] I wait for '5' sec
+And [Progress] I wait for '7' sec
 And [Assertion] Verify 'OwnerInput' is filled
 And [Assertion] Verify 'TableNameInput' is filled
 And [Assertion] Verify 'NoOfColumnsInput' is filled
