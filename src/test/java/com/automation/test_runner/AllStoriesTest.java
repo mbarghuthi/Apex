@@ -34,11 +34,11 @@ public class AllStoriesTest extends JBehaveReportFormatter {
 		return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()),
 
 //				String.format("stories/**/%s.story", STORY_NAME_PATTERN_ApexTest.trim()), "");
-//				String.format("stories/TC_001_ApexTest.story", STORY_NAME.trim()), "");
+				String.format("stories/TC_001_ApexTest.story", STORY_NAME.trim()), "");
 
 
 
-				String.format("stories/**/**/%s.story", STORY_NAME_PATTERN_Apex.trim()), "");
+//				String.format("stories/**/**/%s.story", STORY_NAME_PATTERN_Apex.trim()), "");
 		
 // 				String.format("stories/ControlAndMonitering/**/%s.story", STORY_NAME.trim()), "");
 //				String.format("stories/FGA/**/%s.story", STORY_NAME.trim()), "");
