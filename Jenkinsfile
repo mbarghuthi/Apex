@@ -62,7 +62,8 @@ pipeline {
                 reportDir: 'reports',
                 reportFiles: '**/Apex-Automation-Report.html',
                 reportName: 'Extent Report',
-                reportTitles: 'Apex Automation Extent Report'
+                reportTitles: 'Apex Automation Extent Report',
+                includes: '**/*'
             ])
         }
 
