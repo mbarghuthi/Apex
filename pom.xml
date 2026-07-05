@@ -23,7 +23,7 @@
 
 		<selenium.version>4.10.0</selenium.version>
 		<cglib.version>3.2.8</cglib.version>
-		<spring.version>5.3.21</spring.version>
+		<spring.version>3.1.1.RELEASE</spring.version>
 		<extent.version>2.41.2</extent.version>
 		<testng.version>7.8.0</testng.version>
 		<javax.mail.version>1.6.2</javax.mail.version>
@@ -92,13 +92,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
 			<version>${spring.beans.version}</version>
-		</dependency>
-
-		<!-- Spring Test -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
 		</dependency>
 
 		<!-- TestNG -->
@@ -191,11 +184,11 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- Log4j 1.x API bridge to SLF4J -->
+		<!-- Log4j -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>log4j-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 
 	</dependencies>

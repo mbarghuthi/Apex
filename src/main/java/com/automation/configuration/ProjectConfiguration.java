@@ -16,7 +16,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @ComponentScan({"com.automation"})
-@PropertySource(value = "classpath:data/test-data.properties", encoding = "UTF-8")
+@PropertySource("classpath:data/test-data.properties")
 public class ProjectConfiguration {
 
     @Value("${browser.name}")
