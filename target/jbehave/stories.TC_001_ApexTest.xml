@@ -1,5 +1,0 @@
-<story path="stories/TC_001_ApexTest.story" title="">
-<scenario keyword="Scenario:" title="TC_001_Apex 001 Apex Test Case Testing">
-<step outcome="successful">Given [Navigation] I navigate to &apos;p:amanApex&apos;</step>
-</scenario>
-</story>
